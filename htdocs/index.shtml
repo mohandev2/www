@@ -49,8 +49,8 @@
 
 					<li>Developer's Plug-in guide updated in the
 						OpenHPI manual on-line.</li>
-					<li>Blade Center support</li>
 					<li>New IPMI-DIRECT plug-in</li>
+					<li>Blade Center support</li>
 					<ul>
 						<li>Blade center inventory support.</li>
 						<li>Blade Center simulator.</li>
