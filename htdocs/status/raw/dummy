@@ -26,7 +26,7 @@ saHpiUnsubscribe done
 saHpiEventGet done
 saHpiRdrGet done
 saHpiSensorReadingGet done
-saHpiSensorReadingConvert N/A it is infra.'s work
+saHpiSensorReadingConvert na it is infra.'s work
 saHpiSensorThresholdsGet done
 saHpiSensorThresholdsSet done
 saHpiSensorTypeGet done
@@ -37,16 +37,16 @@ saHpiControlStateGet done
 saHpiControlStateSet done
 saHpiEntityInventoryDataRead done
 saHpiEntityInventoryDataWrite done
-saHpiWatchdogTimerGet N/A watchdog plug-in will simulate it
-saHpiWatchdogTimerSet N/A watchdog plug-in will simulate it
-saHpiWatchdogTimerReset N/A watchdog plug-in will simulate it
-saHpiHotSwapControlRequest N/A it is infra.'s work
+saHpiWatchdogTimerGet impossible use watchdog plug-in to simulate it
+saHpiWatchdogTimerSet impossible use watchdog plug-in to simulate it
+saHpiWatchdogTimerReset impossible use watchdog plug-in to simulate it
+saHpiHotSwapControlRequest na it is infra.'s work
 saHpiResourceActiveSet done
 saHpiResourceInactiveSet done
-saHpiAutoInsertTimeoutGet N/A it is infra.'s work
-saHpiAutoInsertTimeoutSet N/A it is infra.'s work
-saHpiAutoExtractTimeoutGet N/A it is infra.'s work
-saHpiAutoExtractTimeoutSet N/A it is infra.'s work
+saHpiAutoInsertTimeoutGet na it is infra.'s work
+saHpiAutoInsertTimeoutSet na it is infra.'s work
+saHpiAutoExtractTimeoutGet na it is infra.'s work
+saHpiAutoExtractTimeoutSet na it is infra.'s work
 saHpiHotSwapStateGet done
 saHpiHotSwapActionRequest done
 saHpiResourcePowerStateGet done

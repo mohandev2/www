@@ -14,7 +14,7 @@ saHpiResourceIdGet
 saHpiEntitySchemaGet
 saHpiEventLogInfoGet 
 saHpiEventLogEntryGet 
-saHpiEventLogEntryAdd 
+saHpiEventLogEntryAdd impossible SEL doesn't support adding events from user
 saHpiEventLogEntryDelete 
 saHpiEventLogClear 
 saHpiEventLogTimeGet 
@@ -25,11 +25,11 @@ saHpiSubscribe
 saHpiUnsubscribe 
 saHpiEventGet 
 saHpiRdrGet functional
-saHpiSensorReadingGet functional
+saHpiSensorReadingGet 
 saHpiSensorReadingConvert 
 saHpiSensorThresholdsGet 
 saHpiSensorThresholdsSet 
-saHpiSensorTypeGet functional
+saHpiSensorTypeGet 
 saHpiSensorEventEnablesGet 
 saHpiSensorEventEnablesSet 
 saHpiControlTypeGet 
@@ -37,9 +37,9 @@ saHpiControlStateGet
 saHpiControlStateSet 
 saHpiEntityInventoryDataRead 
 saHpiEntityInventoryDataWrite 
-saHpiWatchdogTimerGet 
-saHpiWatchdogTimerSet 
-saHpiWatchdogTimerReset 
+saHpiWatchdogTimerGet impossible Current MIB doesn't support watchdogs
+saHpiWatchdogTimerSet impossible Current MIB doesn't support watchdogs
+saHpiWatchdogTimerReset impossible Current MIB doesn't support watchdogs
 saHpiHotSwapControlRequest 
 saHpiResourceActiveSet 
 saHpiResourceInactiveSet 
