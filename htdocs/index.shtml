@@ -1,883 +1,131 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <head>
-    <title>OpenHPI - Open Source Hardware Management</title>
-    <!--#include virtual="./openhpi.css" -->
-  </head>
-  
-  <body>
-    <table>
-        <tr>
-          <!--#include virtual="./sidebar.html" -->
-          <td valign="top">
-            <h1 align="center">Welcome to OpenHPI's web site!</h1>
-            <p>
-              OpenHPI is an open source project created with the
-              intent of providing an implementation of the <a
-              href="http://saforum.org">SA Forum's</a> Hardware
-              Platform Interface (HPI). HPI provides an abstracted
-              interface to managing computer hardware, typically for
-              chassis and rack based servers.  HPI includes a resource
-              modeling; access to and control over sensor, control,
-              watchdog, and inventory data associated with resources;
-              abstracted System Event Log interfaces; hardware events
-              and alerts; and a managed hotswap interface.
-            </p>
-            <p>
-              OpenHPI provides a modular mechanism for adding new
-              hardware and device support easily.  Many plugins exist
-              in the OpenHPI source tree to provide access to various
-              types of hardware.  This includes, but is not limited
-              to, IPMI based servers, Blade Center, and machines which
-              export data via sysfs.  For up to date status on these
-              components, please check out the <a
-              href="/status/">status page</a>.
-            </p>
-            <p>
-              The OpenHPI project is always looking for more
-              participation.  If you are interested in using OpenHPI,
-              or participating the evolution of OpenHPI, please join
-              our Mailing List by following the links on the sidebar.
-            </p>
-              <h2>OpenHPI<img src="./r_news.gif"></h2>
-            <dl>
-              <!-- add announce items below -->
-              <h3><img src="./new03.gif">OpenHPI 1.9.0 Development
-                Release Posted! (09/08/2004)</h3>
-              <p>
-                The OpenHPI team is pleased to announce the release of
-                OpenHPI 1.9.0, the first development release on the
-                road towards OpenHPI 2.0.0.  The release can be
-                downloaded from <a
-                  href="https://sourceforge.net/project/showfiles.php?group_id=71730&package_id=71373&release_id=265507">the OpenHPI project site</a>. 
-              </p>
-              <p>
-                This release includes the following major feature
-                changes:
-              </p>
-              <ul>
-                <li><b>Support for HPI B.01.01 interface</b>:
-                  OpenHPI 1.9.0 now users the HPI B.01.01 interface.
-                  As this is not compatible with HPI A.01.01,
-                  applications will need to be ported to HPI B in
-                  order to work with future versions of OpenHPI.
-                  (Note: not all HPI B functions are fully working at
-                  this time)
-                </li>
-                <li><b>Threaded Mode</b>: OpenHPI can now be run in
-                  a threaded mode by setting OPENHPI_THREADED=YES in
-                  the environment before launching an application.
-                  This will create an event thread, which will monitor
-                  handlers for events, providing a more real time
-                  access to information in certain scenarios.
-                </li>
-                <li><b>Much more granular locking</b>: The core
-                  OpenHPI library now uses much more granular locking
-                  of data structures to ensure thread safety.  This
-                  should provide greater performance, and allow for
-                  reentrant calls to plugins.  (Note: with this
-                  plugins must now ensure their own thread safety, as
-                  OpenHPI doesn't provide it for them.)
-                </li>
-                <li><b>HPI Utilities</b>: A much richer set of HPI
-                  Data utilities has been added to the OpenHPI utils
-                  library.  This includes conversion to string of
-                  nearly every defined and enumerated type in HPI
-                  B.01.01 as well as numerous validation routines.
-                </li>
-                <li><b>Full Event Storage</b>: Any event or eventlog
-                entry now has any associated Resource or RDRs stored
-                with it as well.  This ensures a consistent view of
-                events and their resources during hotswap scenarios.
-                </li>
-
-              </ul>
-              <p>
-                As this is a development release, many of the
-                components of the OpenHPI tree are in only partially
-                working states.  Three plugins are functioning with
-                the new interfaces (dummy, ipmi, and snmp_bc), and
-                some of the clients have been ported.  The OpenHPI
-                daemon, and SNMP subagent are still in process,
-                hopefully ready by OpenHPI 1.9.1 (due the end of Sept).
-              </p>
-              <p>
-                As always, feedback is highly valued.  Please post
-                questions and comments to <a
-                href="mailto:openhpi-devel@lists.sf.net">openhpi-devel@lists.sf.net</a>.
-              </p>
-              <p>
-                The complete feature/bug list for OpenHPI 1.9.0
-                follows:
-                <pre>
-              Changes for 1.9.0
--------------------
-New Features:
-Blade Center Plugin
-  927860 - Test sensor/control using static simulator
-  969995 - add CAPABILITY RESET & POWER to blades
-  971430 - add inventory support to blade center plugin
-  978458 - Add OPENHPI_DEBUG to rt-env.sh
-Build System
-  983722 - Change environment variable names to start with "OPENHPI_" 
-Dummy Plugin
-  971429 - add inventory support to dummy plugin
-HPI Clients
-  1009755 - Create a new client: hpitree to display hpi resources
-HPI Utils
-  1000849 - Delete utils/sensor_utils.c and h
-  1000852 - Consolidate timer utilities
-  1002627 - Create print utility to print Sensor Rec data
-  1002754 - Util to print idr structures
-  1002766 - Rename oh_print_textbuffer and oh_fprint_textbuffer 
-  1003013 - Add oh_print_textbuffer and oh_fprint_textbuffer 
-  1004864 - Create oh_encode_sensorreading utility
-  1006175 - Move snmp_derive_objid from BC plugin to SNMP utilities
-  1011902 - Change snmp_util.c and h to snmp_utils.c and h
-  991861 - Add locking mechanism to UID utils
-  993011 - Port unit test fo utilities to HPI B
-  999645 - Add decode functions to translate str back into HPI enums  
-None
-  986326 - change struct oh_sel to oh_el
-OpenHPI base library
-  1012640 - break up openhpi.h and add lock in hotswap.c
-  1018931 - add sensor event mask function in abi
-  1020194 - Get and Set Sensor Enable
-  858012 - use glib2.0 instead of glib1.2
-  884723 - create standard session / domain structures
-  909977 - Sensor RAW values not needed
-  927848 - Take get_self_id out of plugin interface
-  969539 - create safstrings.h
-  971428 - add support for inventory to infrastructure
-  975383 - store resource and rdr full structures in sel
-  983114 - Include rptentry and rdr in the event log.
-  992662 - Separate saHpiInitialize and saHpiFinalize from safhpi.c
-  996053 - Compliler warning idr-related functions in safhpi.c
-OpenIPMI Plugin
-  978737 - successfully compile ipmi plugin with HPI 1.1 header file
-SNMP Agent
-  860527 - Event Traps 'ADD' &amp; 'REMOVE' Resource  Required By C
-Test Suites
-  1007446 - HPI B Conf Test Documentation
-  991139 - Create a new test tree for Hpi B 1.01
-
-Fixed Bugs:
-Blade Center Plugin
-  1015692 - BC and RSA simulators segfaulted with new IDR's
-Build System
-  992572 - OH_PLUGIN_PATH should be generated in config.h
-Dummy plugin
-  983063 - Adjust dummy control prototypes
-HPI Clients
-  992133 - Compiler warnings in clients directory
-HPI Utils
-  1002038 - store full resource and rdr with el entry
-  1004035 - Enhance sahpi_time_utils
-  1006856 - Update DomainInfo from RPTable
-OpenHPI base library
-  1000779 - remove rpt ref from get_event
-  1000780 - check domain validity on event loop
-  1009745 - oh_init_state should be initialized
-  1024094 - mutiple return in saHpiSensorEventMasksSet
-  969289 - sel_utils add function needs to take EventT
-  977008 - rework event loop
-  977670 - event_queue should be GAsyncQueue type
-  979365 - Warning thrown for lock.c
-  979387 - saHpiInitilize function defined incorrectly
-  979392 - Plugin abi add_sel_entry needs to get an EventT
-  998258 - SaHpi2code.pl needs to run with use strict
-OpenIPMI plugin
-  1005801 - change Mode parameter in ohoi_set_control_state
-  1011916 - delete timeout in get_event
-  1021696 - assign rdr's parent in oh_event
-Watchdog plugin
-  1015843 - sync get_event with infrastructure
-
-              </pre>
-                </p>
-              
-              <h3>OpenHPI 1.0.0 Stable Released! (06/30/2004)</h3>
-              <p>
-                After a long year of development the OpenHPI Team is
-                proud to announce the release of OpenHPI 1.0.0.  This
-                release provides support for the SA Forum HPI A.1.1
-                specification.  OpenHPI 1.0.0 is available in source
-                format from <a
-                href="https://sourceforge.net/project/showfiles.php?group_id=71730">the
-                SourceForge file repository</a>.  Binary RPMs for
-                numerous platforms will be made available in the
-                coming weeks.
-              </p>
-              
-              <p>OpenHPI 1.0.0 supports the following
-                hardware:
-              </p>
-              <ul>
-                <li>IPMI based servers and blades (via OpenIPMI or
-                IPMIDirect plugins)</li> 
-                
-                <li>IBM Blade Center (via SNMP Blade Center
-                plugin)</li> 
-
-                <li>IBM xSeries servers (via SNMP RSA
-                plugin)</li> 
-                
-                <li>Linux 2.4 & 2.6 watchdog devices (via
-                watchdog plugin)</li> 
-                
-                <li>Linux 2.6 systems (via sysfs
-                plugin)</li> 
-
-                <li>A Dummy Plugin designed for testing
-                and writing HPI applications</li>
-                </ul>
-              <p>
-                The release contains a number of sample command
-                line utilities as example usage of the hpi interface.
-                These include:
-              </p>
-              <ul>
-                <li>hpisensor - displays live readings of all sensors
-                  discovered</li>
-                <li>hpiinv - displays inventory data for all resources
-                  which support it</li>
-                <li>hpisel - fetches and displays event logs for all
-                  resources in the system</li>
-                <li>hpipower/hpireset - power cycle or reset resources
-                  in the hpi instance</li>
-              </ul>
-              <p>
-                Along with the release there is a companion SNMP subagent
-                (provided separately) which provides an SNMP interface
-                to the OpenHPI library.  This allows users of SNMP client
-                software to gain access to HPI information quickly and
-                easily.
-              </p>
-              <p>
-                There is also an experimental HPI Daemon included
-                with the release.  The HPI Daemon is a user of the
-                OpenHPI library that provides HPI as a system
-                service.  Client applications can link to
-                libopenhpiclient which will transparently connect them
-                to the HPI Daemon.
-              </p>
-              <p>
-                A complete change list of everything since 0.9
-                follows:
-              </p>
-              <pre>
-Changes for 1.0.0
--------------------
-New Features:
-Build System
-  953747 - rpm installation defaultly includes ipmi-plugin configuratio
-IPMI Direct plugin
-  938011 - refactoring of reading inventory data
-OpenIPMI Plugin
-  942029 - add test tool set to ipmi plugin
-  952885 - IPMI Plug-in performance enhancement
-  953322 - investigate on threshold event failure in some sensor
-  953324 - investigate on threshold event failure on Lan interface
-RSA Plugin
-  934306 - Create Unit Tests for RSA Plugin
-SNMP Client plugin
-  931903 - Enable abi sensor functions
-Test Suites
-  938099 - HPITEST - Conformance Tests for Errors
-
-Fixed Bugs:
-Blade Center Plugin
-  942692 - BC Power Reset and Set generates Errors
-  951569 - hpitest Setting Event Log State Fails
-  954279 - entity_inventory_data conformance test fail
-  961800 - return SA_ERR_HPI_BUSY if snmp times out
-  965268 - interpret dates better
-  965297 - fix false detection of daughter cards
-  966718 - Conformance tests - Add events fail
-  977729 - BladeCenter doesn't support Blade Identity LED
-Build System
-  924029 - Makefile in examples ignores the --sysconfdir
-  968511 - --enable-debug not being used anymore
-Documentation
-  927550 - scrub manual for typos
-HPI Clients
-  976775 - hpiinv is no reporting inventory data correctly.
-HPI Utils
-  925518 - Move Sensor utils to utils/ lib
-  969633 - No absolute timestamp supported in sel utils
-IPMI Direct plugin
-  919410 - sensor SetEventEnables is buggy
-  953173 - compilation error in ipmi_sensor.cpp
-  962488 - IPMIDirect Aborts with list_resources
-None
-  943669 - make check fails at marshal_***, 0..7beta snapshot
-OpenHPI base library
-  919458 - auto inservtion/extraction only works when timeout is 0
-  944799 - Dynamically turn on/off debugging
-  965773 - blocking timeout doesn't seem to work
-  969212 - rpm dependency errors
-  969705 - Set default DEL severity to minor
-  974839 - clean rules broken all over the place
-  976994 - change OHDEBUG -> OPENHPI_DEBUG
-OpenIPMI plugin
-  947896 - AdvancedTCA entity string "invalid"
-  954105 - some valid sensor readings return error
-  957580 - set_resource_tag abi is not implemented
-  959749 - hpithres returns -1006 from ThresholdsGet
-  959753 - No Inventory RDRs are populated
-  965422 - use ipmi_fru_get_xx instead of ipmi_entity_get_xxx
-  968522 - empty Resource Tag
-  969022 - warning message in fetching  fru
-  969042 - control state is not correctly set
-  969076 - PosThdHysteresis and NegThdHysteresis is not correctly set
-  969093 - sensor discrete event is not populated to HPI
-  981666 - OpenIPMI 1.3.9 suggested
-Test Suites
-  914909 - test hs_001
-  950172 - HPI Conformance Test: error valid
-  965411 - Conformance driver does not handle segfault, remove tests
-  965936 - Two conformance sensor_threshold tests return NA?
-  979327 - Conformance Test does not restore Time
-
-              </pre>
-              <p>
-                Questions, Comments, or Bugs should be sent to the
-                OpenHPI development mailing list (openhpi-devel at
-                sourceforge dot net).
-              </p>
-              <p>
-                With OpenHPI 1.0.0 released, the OpenHPI team is now
-                fully focusing on the new HPI B.1.1 specification.
-                Expect to see new development releases in the near
-                future.
-              </p>
-              <p>
-                OpenHPI 1.0.0 was produced by the efforts of a large
-                number of individuals, without whom we could have
-                never accomplished such a quality implementation is
-                such a short window of time.  The following people
-                directly contributed to the success of this project
-                (if someone was left off the list, we are very sorry,
-                and please speak up on openhpi-devel).
-              </p>
-              <ul>
-                <li>David Ashley
-                <li>Jean-Michel Audet
-                <li>Andrea Brugger
-                <li>Chris Chia
-                <li>Andy Cress
-                <li>Sean Dague
-                <li>Julie Fleischer
-                <li>Kevin Gao
-                <li>David Judkovics
-                <li>Thomas Kanngieser
-                <li>James P. Ketrenos  	
-                <li>Rusty Lynch
-                <li>Carl McAdams
-                <li>Renier Morales
-                <li>Guo Ruijing
-                <li>Konrad Rzeszutek
-                <li>Peter D Phan
-                <li>Pierre Sangouard
-                <li>Steve Sherman
-                <li>Tariq Shureih
-                <li>Armin Stauber
-                <li>Bill Swortwood
-                <li>Louis Yan Zhuang
-                <li>Serge Zhukov
-              </ul>
-              <p>
-                Thanks again to everyone that made this a success.
-                Watch for OpenHPI 2.0 (electric bugallow)
-                coming to a theater near you soon. :)
-              </p>
-              <h3><img src="./new03.gif">OpenHPI 0.9 Released!
-                (06/03/2004)</h3>
-              <li>General Features</li>
-              <ul>
-                <li>Release Candidate for OpenHPI 1.0!</li>
-                <li>Optimize internal tables to use hash lookups</li>
-                <li>Core Library made 64bit clean</li>
-                <li>Fixed warnings with latest GNU autotools</li>
-              </ul>
-              <li>OpenIPMI Plugin</li>
-              <ul>
-                <li>Dependency upped to OpenIPMI 1.3.8 (Kernel 2.6
-                  driver recommended)</li>
-                <li>Multiple instances supported</li>
-              </ul>
-              <li>Blade Center Plugin</li>
-              <ul>
-                <li>Detect Daughter Boards correctly</li>
-                <li>Change behavior to support conformance tests</li>
-                <li>Raw LEDs convert now</li>
-                <li>Multiple instances supported</li>
-                <li>Resource Tags are more descriptive</li>
-              </ul>
-              <p>
-                The complete changelog follows:
-              </p>
-              <pre>
-Changes for 0.9
--------------------
-New Features:
-Blade Center Plugin
-  927857 - Add more sensors for BC/BCT
-  930435 - Re-structure BladeCenter's static simulator
-  947917 - Add BCT control for number of blade reboots
-  962259 - Support temp sensors on expansion cards
-Build System
-  940944 - test reporting enhancements
-  944538 - configure option to store config files on alternate place
-HPI Clients
-  956120 - add hpievent to monitor HPI event
-HPI Utils
-  926551 - Change rpt_utils to use hash tables
-OpenHPI Daemon Client
-  946784 - pkg config file for openhpiclient 
-OpenHPI Daemon
-  947758 - configure option for static linked daemon
-OpenIPMI Plugin
-  942172 - enhance sensor number allocation
-  942236 - extend struct ohoi_resource_id to ohoi_resource_info
-  942807 - retrieve Rdr by private data
-  944147 - add set_hysteresis test to toolset
-  952967 - IPMI hotswap event population
-SNMP Agent
-  944742 - cmdline options for AgentX-socket address
-  951430 - configure option to link against client library
-Test Suites
-  956276 - not neccesary to guard the length in saHpiRdrGet_T1
-Text Remoting Plugin
-  956157 - Need additional return code in conformance tests
-
-Fixed Bugs:
-Blade Center Plugin
-  942694 - SNMP MIB error saHpiEventLogStateGet
-  942698 - BCI SNMP MIB error on Conformance Tests
-  949419 - RAW LED values are not converted properly
-  950148 - HPI Conf Tests: Rdr get errors
-  950174 - HPI conf test: clearing event log errors 
-  951329 - Hpi Conf Test-Sensor Evt Enable Get failure
-  951574 - hpitest Clearing Event Log Unsupported
-  953546 - Blade add-in cards have no rdrs
-  954276 - All sensor_thresholds conformance tests fail
-  954277 - All sensor_reading_get conformance tests fail except one
-  954280 - sensor_reading_convert conformance tests are failing
-  956898 - Conformance Test: saHpiSensorEventEnablesGet_Set_T1.c 
-  961573 - Prime cache copy of the SEL during resource discovery 
-  964491 - saHpiParmControl Conformance test failing
-  964492 - Watchdog conformance test fails on BladeCenter
-Build System
-  944795 - need to relocate config files to --prefix location
-  944796 - install of libsnmp_xxx with --prefix fails
-  952796 - Make clean in clients/ shoud remove *.o files
-  952814 - Fix warnings from aclocal (automake 1.8)
-  962474 - add LIBRARY_PATH to rt-env.sh
-Documentation
-  953390 - Add BladeCenter snmp v1 and v3 configuration
-  953928 - Remove reference to date/schedule regarding BladeCenter
-HPI Clients
-  956086 - rename hpievent to hpithres
-HPI Utils
-  944675 - Missing null pointer checks in printevent and sensor utils
-IPMI Direct plugin
-  947019 - control number is not initialized
-  951347 - reentrance ABI calls
-None
-  947924 - make fails: No rule to make target `../marshal/libmarshal.la
-  949845 - Fix Makefile for Hpiview
-OpenHPI Daemon Client
-  939744 - LowMajor reading type should be SAHPI_SRF_INTERPRETED
-  944274 - saHpiUnsubscribe the events after failure
-OpenHPI Daemon
-  947016 - length of textbuffer is wrong defined
-  951352 - marshaling functions can fail
-  951975 - Timer to ping open connections not initialized
-OpenHPI base library
-  786523 - CT el_005, el_006 doesn't pass
-  854979 - SaHpiResoucreDiscover() fials on failure of One Plugin
-  944573 - vpath build fail
-  947026 - thread locking with data_access_lock
-  949481 - SensorCovert rejects raw only sensors
-  951566 - hpitest Retrival of Oldest and newest events
-  952003 - Complete failure if no plugin for handler in conf file
-  961650 - storing the rpt entry and rdr record in the session queue
-OpenIPMI plugin
-  932496 - EventLog RecordId and Time are invalid
-  940954 - Segmentation fault with multiple instances
-  942252 - reasonable to use sensor_count instead of rdr_count
-  943502 - the key type is ipmi_sensor_id_t instead of ipmi_sensor_t
-  943652 - eventq is not released & segfalt
-  948644 - ResetStateSet returns error -1005
-  956256 - hotswap capability is missing
-  957060 - ipmi_set_sensor_event_enables is not implemented
-  957513 - Resource Event or Rdr Event is populated twice
-  957535 - ipmi_set_sensor_event_enables is not implemented
-  966115 - Missing symbol posix_vlog makes plug-in unusable
-Test Suites
-  898162 - Conformance tests for saHpiEventLogEntryGet
-  950152 - Hpi Conf Tests: some test fail without data
-  956263 - compiler warning (gcc 3.3.2) in 
-  957567 - improve saHpiRptInfoGet_T1
-              </pre>
-
-              <h3>OpenHPI 0.7 Released!
-                (05/04/2004)</h3>
-              <pre>
-Changes for 0.7
--------------------
-New Features:
-Blade Center Plugin
-  914384 - SNMP V3
-  924135 - Support Error log strings that have multiple events
-  924137 - Support Event-only Sensors
-  924139 - Support hysteresis on BladeCenter chassis voltages
-  927795 - get_interpreted_value enhancement
-  927842 - Verify thresholds can be readable/writable
-  927846 - Change BCT discovery
-  927849 - Return valid return code for snmp_bc_set_inventory_info
-  927853 - Check ignore bit on all sensors/controls
-  930422 - Re-structure BladeCenter's static simulator
-Build System
-  923750 - seperate directory for marshal code
-  923752 - remote_client plugin for daemon.
-HPI Utils
-  922562 - Create ecode_utils to xlate hpi errror codes to string
-  923205 - A general util to print event record
-  940252 - Need a sel utility to prepend entry to the begin of list
-IPMI Direct plugin
-  913486 - SendMessage response tracking
-  917870 - removing of cIpmiEntity
-  917882 - change return code for SendCommand to HPI return code
-  934132 - support for diffenent LUNs
-OpenHPI base library
-  808046 - Persistance for Domain SEL
-  924206 - saHpiSubscribe and EventGet
-  927845 - Support multiple plugins and multiple instances of plugins
-OpenIPMI Plugin
-  883158 - Enable Control resource support
-  939629 - Add logic to support ATCA systems
-  943493 - LowMajor reading can be set in set_thres.c
-  943499 - new feature: dump rpttable
-Test Suites
-  923628 - Test names should map to HPI API
-  943202 - Create unit tests for the Unique ID utils
-
-Fixed Bugs:
-Blade Center Plugin
-  922781 - RSEL support with SNMPv3
-  928423 - SNMP v3: Timeout during snmpwalk
-  928427 - SNMP v3: snmpwalk 5.1 Vs. 5.0.9
-  928432 - SNMP v3: losing bc system event log entries
-  928435 - SNMP v3: set snmp session retry count
-  929988 - Move inventory code in snmp_bc.c to snmp_bc_inventory.c 
-  931454 - snmp_bc.so: undefined symbol: sim_banner
-  934215 - Need to use *real* dst info when call log2event()
-  941007 - Get rid of duplication definitions of external variables
-  941368 - Cleanup snmp_bc_sel.c
-  943161 - Need to update OIDs to match those in newer BC code
-Build System
-  899647 - Ensure SaHpi.h Types are enforced across OS's and platforms.
-  919109 - build issue with openhpid
-  922540 - consolodate openhpiutils headers
-  926553 - Detect and handle net-snmp-5.1
-  933755 - hpi.sym breaks make rpm
-  940404 - Add OPENHPI_UID_MAP variable to rt-env.sh.in
-  943886 - configure.ac still has release 0.6.0
-  944261 - fail in rpm build
-  947340 - update spec file to have right dependencies
-Documentation
-  927546 - ulinks broken in manual
-Dummy plugin
-  919235 - dummy not compiling on SUSE ia64
-HPI Utils
-  900055 - strict equal condition in oh_entity_path_equal function
-  922229 - hpievent does not compile
-  922230 - hpifru does not compile
-  922231 - hpiwdt does not compile
-  923348 - Move snmp utility calls public
-  924169 - UID_MAP env var should be OPENHPI_UID_MAP
-  928613 - ep_concat should use SAHPI_ENT_ROOT for end check
-  931423 - Utilities not handling entityinstance 0 right
-  934364 - check_ep() belongs in epath_utils
-  935230 - Eliminate entity path check from oh_add_rdr
-  935498 - entity path is only valid with SAHPI_ENT_ROOT
-  935922 - rpt_utils won't compile without adding stdio.h
-  939766 - Bad return types for calls in uid_utils
-IPMI Direct plugin
-  919410 - sensor SetEventEnables is buggy
-  943450 - make check doesn't build for ipmidirect
-None
-  943669 - make check fails at marshal_***, 0..7beta snapshot
-OpenHPI Daemon Client
-  938671 - Fix dbg statement
-OpenHPI Daemon
-  942608 - build fails on ia64
-  943841 - libmarshal doesn't work on non Intel platforms
-  947344 - openhpid won't run
-OpenHPI base library
-  812854 - saHpiEventGet() Error Checking
-  824648 - The event queue should be cleared after unsubscribe
-  841000 - saHpiEventGet blocking is done with a busy wait
-  895029 - OH_DEFAULT_UID_MAP undeclared
-  901159 - Segfault in saHpiFinalize() with 2 handlers per plugin
-  916962 - session_pop_event return code
-  919458 - auto inservtion/extraction only works when timeout is 0
-  923700 - openhpid cannot be successfully compiled
-  930781 - saHpiUnsubcribe needs revision
-  930785 - saHpiSubcribe needs revision
-  930788 - Improve process_session_event to handle active alarms
-  931242 - Hang in unload plugin
-  933751 - sanity checks need to be more strict
-  933780 - Debug macro should be in its own header file
-  934613 - Do not allow config.h to be included more than once
-OpenIPMI plugin
-  921805 - ./configure by itself spits some OpenIPMI warnings
-  924280 - IPMI plug-in takes too long to discover
-  925710 - Presence detection of Hot Swap Controllers output error
-  932098 - MCs no longer in RPT 
-  932492 - Lots of FRU errors displayed during discovery
-  933737 - hpievent test failed (EventGet & hyst_set)
-  933741 - Reset Controls not implemented
-  936669 - OpenIPMI 1.3.5 or later required
-  938833 - Multiple instances of IPMI plug-in does not work
-  939757 - IPMI threshold event isn't populated to HPI event
-  939762 - IPMI plugin doesn't poll threshold event from OpenIPMI
-  939776 - error in set_thresholds
-  940391 - IPMI plugin gets two calls for each MC reported
-  940862 - hpisel::clear sel fails
-  942136 - mistake in cvs check in. 
-  943893 - build of ipmi/t fails
-  944800 - seg fault when discovering AdvancedTCA system
-RSA Plugin
-  940051 - snmp_get() SEL entries receives NO_SUCH_NAME
-  940224 - segfault in parse_sel_entry
-  940285 - Discover segfaulted with snmp_rsa&snmp_bc plugins in config
-  941389 - hash table conflict, snmp_rsa and snmp_bc
-SNMP Agent
-  876304 - Make the MIB Sensor reading return dynamic data
-  923073 - getopt returns int not char
-SNMP Client plugin
-  891483 - SNMP plug-in should be 64bit clean
-  908608 - Change all mallocs() to g_malloc0()
-  908611 - Move all printf()'s to 'openhpi' style dbg()'s
-  914380 - Create Error Condition for snmp_get2()
-  927810 - Consolidate snmp utils calls 
-  942611 - build errors on amd64
-Test Suites
-  914909 - test hs_001
-</pre>
-
-              <br>
-              <h3>OpenHPI 0.6 Released! (03/22/2004)</h3>
-            <h4>New in this release:</h4>
-            <ul>
-              <li>Build System</li>
-              <ul>
-              <li>Debug messages are now configurable (configure
-                --enable-debug to turn them on).</li>
-              <li>Check for proper versions of Net-SNMP, OpenIPMI, and FAM.</li>
-              <li>Check for minimum supported GCC version (3.2.0)</li>
-              <li>CVS directory structure changed so plug-ins, core library,
-                EP and RPT utils and clients are siblings.</li>
-              <li>HPI command line utilities moved from Utils directory is now known as clients.</li>
-            </ul>
-            <li>Base Library</li>
-            <ul>
-              <li>saHpiResourceIdGet supported</li>
-              <li>Domain System Event logs supported with configurable
-              event severity threshold</li>
-              <li>Global configuration stanzas added to openhpi.conf</li>
-              <li>Entity Path and RPT utils are compiled as a seperate
-                library (libopenhpiutils.so).</li>
-              <li>Core library is now 64bit clean, and compiles on IA64 systems.</li>
-              <li>New libopenhpi_snmp for common snmp calls.</li>
-            </ul>
-            <li>Plugins</li>
-            <ul>
-              <li>IPMI-DIRECT plug-in:</li>
-            <ul>
-              <li>Fast discover process</li>
-              <li>Fail-safe RMCP connection</li>
-              <li>Framework for vendor specific features</li>
-              <li>Controls discovery added including FAN controls</li>
-              <li>Common base class for Sensors and Controls</li>
-            </ul>
-            <li>OpenIPMI based IPMI plug-in</li>
-            <ul>
-	      <li>Requires OpenIPMI library 1.2.21 or later (strict)</li>
-              <li>Support for set/get time on Management Controllers with SEL capability</li>
-              <li>FRU/Inventory support added</li>
-              <li>Support for MC Event Log clearing</li>
-              <li>Enhanced Management Controllers discovery and detection of SEL</li>
-            </ul>
-            <li>Blade Center plug-in</li>
-            <ul>
-              <li>Event log cache created to speed up event operations
-                (x100 speedup gained)</li>
-              <li>Support for time set/get operations</li>
-              <li>Support for event log clear</li>
-              <li>Enhanced event reporting</li>
-              <li>Various code clean ups</li>
-            </ul>
-            <li>RSA (Remote Service Adapter) plug-in</li>
-            <ul>
-              <li>First release of this plugin (snmp_rsa)</li>
-              <li>Resource discovery supported</li>
-            </ul>
-            <li>SNMP Client plug-in</li>
-            <ul>
-              <li>Support for HPI Subagent 0.2 added</li>
-              <li>Sensor tables supported</li>
-              <li>SNMP v3 authentication and encryption supported</li>
-            </ul>
-            </ul>
-            <li>HPI Daemon</li>
-            <ul>
-              <li>First release of new HPI client/daemon
-                prototype</li>
-              <li>libopenhpiclient.so created for using HPI client/daemon</li>
-            </ul>
-            <li>Documentation</li>
-            <ul>
-              <li>OpenHPI utility functions (libopenhpiutils.so)
-                documented in OpenHPI Manual.</li>
-              <li>Configuration for snmp_rsa added to manual</li>
-            </ul>
-            <li>Testing</li>
-            <ul>
-              <li>New unit tests for RPT utils.</li>
-            </ul>
-          </ul>
-
-              <h3>HPI Subagent 0.2 Released!
-                (3/04/2004)</h3>
-              <ul>
-              <li>Second release of the HPI SNMP sub-agent.
-
-              <li>Support for full implementation of the HPI-MIB v1.4
-                (included). This means HPI 1.0 instrumentation using
-                HPI-MIB objects in twenty-three tables:
-                <ul>
-                  <li>Resource Presence Table entities,
+<head>
+    <title>The OpenHPI Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="keywords" content="hpi, sa, forum, service, availability, hardware, platform, interface, c, programming, language, open, source, abstraction, layer">
+    <meta name="description" content="The OpenHPI Project, an open implementation of the SA Forum's HPI spec.">
+    <link rel="stylesheet" href="openhpi_tryout.css" type="text/css">
+</head>
+<body>
+    <div id="banner"><div><h1>The OpenHPI Project</h1><small>Open Hardware Platform Interface</small></div></div>
+    <table><tr>
+        <!--#include virtual="sidebar_tryout.html" -->
+        <td id="maincolumn">
+            <div class="mainsegment">
+                <h3>Welcome</h3>
+                <div>
+                    OpenHPI is an open source project created with the intent of providing an implementation of the <a href="http://saforum.org">SA Forum</a>'s Hardware Platform Interface (HPI). HPI provides an abstracted interface to managing computer hardware, typically for chassis and rack based servers. HPI includes resource modeling; access to and control over sensor, control, watchdog, and inventory data associated with resources; abstracted System Event Log interfaces; hardware events and alerts; and a managed hotswap interface.
+                    <p>OpenHPI provides a modular mechanism for adding new hardware and device support easily. Many plugins exist in the OpenHPI source tree to provide access to various types of hardware. This includes, but is not limited to, IPMI based servers, Blade Center, and machines which export data via sysfs. For up to date status on these components, please check out <a href="http://openhpi.sourceforge.net/status/">the status page</a>.
+                    <p>The OpenHPI project is always looking for more participants. If you are interested in using OpenHPI, or taking a part in the evolution of OpenHPI, please <a href="http://lists.sourceforge.net/mailman/listinfo/openhpi-devel">join our mailing list</a> and <a href="mailto:openhpi-devel@lists.sourceforge.net">drop us a line</a>.
+                </div>
+            </div>
+            <div class="mainsegment">
+                <h3>News</h3>
+                <h4>OpenHPI 1.9.0 Development Release Posted! (09/08/2004)</h4>
+                <div>
+                    The OpenHPI team is pleased to announce the release of OpenHPI 1.9.0, the first development release on the road towards OpenHPI 2.0.0. The release can be downloaded from the OpenHPI project site.
+                    <p>This release includes the following major feature changes:
                     <ul>
-                      <li>HotSwap capabilities,
+                        <li><b>Support for HPI B.01.01 interface:</b> OpenHPI 1.9.0 now users the HPI B.01.01 interface. As this is not compatible with HPI A.01.01, applications will need to be ported to HPI B in order to work with future versions of OpenHPI. (Note: not all HPI B functions are fully working at this time)</li>
+                        <li><b>Threaded Mode:</b> OpenHPI can now be run in a threaded mode by setting OPENHPI_THREADED=YES in the environment before launching an application. This will create an event thread, which will monitor handlers for events, providing a more real time access to information in certain scenarios.</li>
+                        <li><b>Much more granular locking:</b> The core OpenHPI library now uses much more granular locking of data structures to ensure thread safety. This should provide greater performance, and allow for reentrant calls to plugins. (Note: with this plugins must now ensure their own thread safety, as OpenHPI doesn't provide it for them.)</li>
+                        <li><b>HPI Utilities:</b> A much richer set of HPI Data utilities has been added to the OpenHPI utils library. This includes conversion to string of nearly every defined and enumerated type in HPI B.01.01 as well as numerous validation routines.</li>
+                        <li><b>Full Event Storage:</b> Any event or eventlog entry now has any associated Resource or RDRs stored with it as well. This ensures a consistent view of events and their resources during hotswap scenarios.</li>
                     </ul>
-                  <li>Resource Data Records,
-                    <ul>
-                      <li>Sensors
-                        <ul>
-                          <li>Current sensor reading,
-                            <ul>
-                              <li>Reading values for
-                                <ul>
-                                  <li>Max,
-                                  <li>Min,
-                                  <li>Nominal,
-                                  <li>Normal maximum,
-                                  <li>Normal minimum
-                                </ul>
-                              <li>Threshold values for:
-                                <ul>
-                                  <li>Upper Critical,
-                                  <li>Upper Major,
-                                  <li>Upper Minor,
-                                  <li>Lower Critical,
-                                  <li>Lower Major,
-                                  <li>Lower Minor,
-                                  <li>Positive Hysteresis,
-                                  <li>Negativie Hysteresis
-                                </ul>
-                            </ul>
-                        </ul>
-                      <li>Inventory,
-                      <li>Control,
-                      <li>Watchdog
-                    </ul>
-                  <li>Events and System Event Log
-                </ul>
-              <li>SGML Guide for writing a sub-agent using NetSNMP API, titled:
-                "NetSNMP subagent development manual."
-              
-              <li>Support for notifications/TRAPS as defined in the MIB:
-                <ul>
-                  <li>For Events:
-                    <ul>
-                      <li>Sensor,
-                      <li>Hot Swap,
-                      <li>Watchdog,
-                      <li>OEM,
-                      <li>User
-                    </ul>
-                  <li>For Resource Data Records,
-                  <li>For Resource Presence Table
-                </ul>
-              <li>Support for user configurable options:
-                <ul>
-                  <li>update timer for new RPT/RDR/Events ,
-                  <li>maximum events held in eventw row before they are
-                    automatically removed,
-                  <li>sending of new found RPT/RDR/Events during startup.
-                </ul>
-                
-              <li>Example code for retrieving instrumentation information
-                using SNMP.
-                
-              <li>Fix many bugs.
-            </ul>
-                  
-            <h3>OpenHPI 0.5 Released! (02/06/2004)</h3>
-              
-            <h4>New in this release:</h4>
-            <ul>
-              <li>Unit test framework documentation complete</li>
-              <li>195 unit tests added to openhpi tree (including ones
-                for rpt_utils, epath_utils, sel_utils, and snmp_bc
-                plugin)</li>
+                    <p>As this is a development release, many of the components of the OpenHPI tree are in only partially working states. Three plugins are functioning with the new interfaces (dummy, ipmi, and snmp_bc), and some of the clients have been ported. The OpenHPI daemon, and SNMP subagent are still in process, hopefully ready by OpenHPI 1.9.1 (due the end of Sept).
+                    <p> As always, feedback is highly valued. Please post questions and comments to <a href="mailto:openhpi-devel@lists.sourceforge.net">openhpi-devel@lists.sf.net</a>
+                    <p>The complete feature/bug list for OpenHPI 1.9.0 follows:
+                    <pre>
+    changes for 1.9.0
+    -------------------
+    new features:
+    blade center plugin
+    927860 - test sensor/control using static simulator
+    969995 - add capability reset &amp; power to blades
+    971430 - add inventory support to blade center plugin
+    978458 - add openhpi_debug to rt-env.sh
+    build system
+    983722 - change environment variable names to start with "openhpi_"
+    dummy plugin
+    971429 - add inventory support to dummy plugin
+    hpi clients
+    1009755 - create a new client: hpitree to display hpi resources
+    hpi utils
+    1000849 - delete utils/sensor_utils.c and h
+    1000852 - consolidate timer utilities
+    1002627 - create print utility to print sensor rec data
+    1002754 - util to print idr structures
+    1002766 - rename oh_print_textbuffer and oh_fprint_textbuffer
+    1003013 - add oh_print_textbuffer and oh_fprint_textbuffer
+    1004864 - create oh_encode_sensorreading utility
+    1006175 - move snmp_derive_objid from bc plugin to snmp utilities
+    1011902 - change snmp_util.c and h to snmp_utils.c and h
+    991861 - add locking mechanism to uid utils
+    993011 - port unit test fo utilities to hpi b
+    999645 - add decode functions to translate str back into hpi enums
+    none
+    986326 - change struct oh_sel to oh_el
+    openhpi base library
+    1012640 - break up openhpi.h and add lock in hotswap.c
+    1018931 - add sensor event mask function in abi
+    1020194 - get and set sensor enable
+    858012 - use glib2.0 instead of glib1.2
+    884723 - create standard session / domain structures
+    909977 - sensor raw values not needed
+    927848 - take get_self_id out of plugin interface
+    969539 - create safstrings.h
+    971428 - add support for inventory to infrastructure
+    975383 - store resource and rdr full structures in sel
+    983114 - include rptentry and rdr in the event log.
+    992662 - separate sahpiinitialize and sahpifinalize from safhpi.c
+    996053 - compliler warning idr-related functions in safhpi.c
+    openipmi plugin
+    978737 - successfully compile ipmi plugin with hpi 1.1 header file
+    snmp agent
+    860527 - event traps 'add' &amp; 'remove' resource  required by c
+    test suites
+    1007446 - hpi b conf test documentation
+    991139 - create a new test tree for hpi b 1.01
 
-              <li>IPMI-DIRECT plug-in:</li>
-            <ul>
-              <li>IPMI command reader support</li>
-              <li>IPMI SMI interface support</li>
-              <li>Support for FRU inventory data</li>
-              <li>saHpiAutoExtractTimeoutGeg/Set implemented</li>
-              <li>Separate thread for reading/processing SEL</li>
-            </ul>
-            <li>Blade Center support</li>
-            <ul>
-              <li>Power and Reset of resources enabled</li>
-              <li>Event Log Time control implemented</li>
-              <li>Rediscovery of resources works</li>
-              <li>Critical bug in Inventory support fixed</li>
-            </ul>
-            
-            <li>OpenIPMI based IPMI plug-in</li>
-            <ul>
-	      <li>Requires OpenIPMI library 1.2.7 or later</li>
-              <li>Code cleanup of old data structures</li>
-              <li>Initial implementation of control support</li>
-            </ul>
-            
-            <li>Infrastructure</li>
-            <ul>
-              <li>Rediscover / resource removal infrastructure added</li>
-              <li>Major code cleanup of old data structures</li>
-              <li>saHpiFinalize now clean up and unloads plugi-ins</li>
-              <li>Support for numeric entity types in epath_utils</li>
-              <li>System event log utilities added</li>
-              <li>Lots of bug fixes</li>
-            </ul>
-          </ul>
-				
-            <hr>
-		<h4>For questions of comments, please email the openhpi developers at <a href="mailto:openhpi-devel@lists.sf.net">mailing list</a></h4><br>
-		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
-            <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
-            <!-- hhmts start -->
-Last modified: Wed Sep  8 16:44:53 EDT 2004
-<!-- hhmts end -->
-          </td></tr>
-    </table>
-  </body>
+    fixed bugs:
+    blade center plugin
+    1015692 - bc and rsa simulators segfaulted with new idr's
+    build system
+    992572 - oh_plugin_path should be generated in config.h
+    dummy plugin
+    983063 - adjust dummy control prototypes
+    hpi clients
+    992133 - compiler warnings in clients directory
+    hpi utils
+    1002038 - store full resource and rdr with el entry
+    1004035 - enhance sahpi_time_utils
+    1006856 - update domaininfo from rptable
+    openhpi base library
+    1000779 - remove rpt ref from get_event
+    1000780 - check domain validity on event loop
+    1009745 - oh_init_state should be initialized
+    1024094 - mutiple return in sahpisensoreventmasksset
+    969289 - sel_utils add function needs to take eventt
+    977008 - rework event loop
+    977670 - event_queue should be gasyncqueue type
+    979365 - warning thrown for lock.c
+    979387 - sahpiinitilize function defined incorrectly
+    979392 - plugin abi add_sel_entry needs to get an eventt
+    998258 - sahpi2code.pl needs to run with use strict
+    openipmi plugin
+    1005801 - change mode parameter in ohoi_set_control_state
+    1011916 - delete timeout in get_event
+    1021696 - assign rdr's parent in oh_event
+    watchdog plugin
+    1015843 - sync get_event with infrastructure
+                    </pre>
+                </div>
+            </div>
+            <b>For questions or comments, please <a href="mailto:openhpi-devel@lists.sourceforge.net">email the openhpi developers</a>.</b>
+            <p>You can also contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a>.
+            <br>Last modified: Wed Sep  8 16:44:53 EDT 2004
+        </td>
+    </tr></table>
+</body>
 </html>

@@ -214,7 +214,7 @@ sub head_html {
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <meta name="keywords" content="hpi, sa, forum, service, availability, hardware, platform, interface, c, programming, language, open, source, abstraction, layer">
     <meta name="description" content="The OpenHPI Project, an open implementation of the SA Forum's HPI spec.">
-    <link rel="stylesheet" href="../openhpi_tryout.css" type="text/css">
+    <link rel="stylesheet" href="../openhpi.css" type="text/css">
     <link rel="stylesheet" href="status.css" type="text/css">
 </head>
 <body>
