@@ -4,14 +4,14 @@ saHpiInitialize   functional
 saHpiFinalize    done 
 saHpiSessionOpen functional
 saHpiSessionClose functional
-saHpiResourcesDiscover notdone Many RPT entries are discovered, but no RDRs yet
-saHpiRptInfoGet 
-saHpiRptEntryGet 
-saHpiRptEntryGetByResourceId 
-saHpiResourceSeveritySet 
-saHpiResourceTagSet 
-saHpiResourceIdGet 
-saHpiEntitySchemaGet
+saHpiResourcesDiscover semifunc Many RPT entries and RDRs are discovered. Not handling rediscovery.
+saHpiRptInfoGet functional
+saHpiRptEntryGet semifunc You can get resources, but they don't have the full information yet.
+saHpiRptEntryGetByResourceId semifunc
+saHpiResourceSeveritySet semifunc You can set this, but not handling resource absence yet.
+saHpiResourceTagSet done
+saHpiResourceIdGet done
+saHpiEntitySchemaGet done
 saHpiEventLogInfoGet 
 saHpiEventLogEntryGet 
 saHpiEventLogEntryAdd impossible SEL doesn't support adding events from user
@@ -23,17 +23,17 @@ saHpiEventLogStateGet
 saHpiEventLogStateSet 
 saHpiSubscribe 
 saHpiUnsubscribe 
-saHpiEventGet 
-saHpiRdrGet 
-saHpiSensorReadingGet 
+saHpiEventGet semifunc
+saHpiRdrGet semifunc
+saHpiSensorReadingGet semifunc
 saHpiSensorReadingConvert 
-saHpiSensorThresholdsGet 
-saHpiSensorThresholdsSet 
-saHpiSensorTypeGet 
+saHpiSensorThresholdsGet semifunc
+saHpiSensorThresholdsSet
+saHpiSensorTypeGet done
 saHpiSensorEventEnablesGet 
 saHpiSensorEventEnablesSet 
-saHpiControlTypeGet 
-saHpiControlStateGet 
+saHpiControlTypeGet done
+saHpiControlStateGet semifunc
 saHpiControlStateSet 
 saHpiEntityInventoryDataRead 
 saHpiEntityInventoryDataWrite 
