@@ -16,9 +16,9 @@ saHpiEventLogInfoGet functional SEL siz not supported in OpenIPMI
 saHpiEventLogEntryGet broken need more work with OpenIPMI
 saHpiEventLogEntryAdd broken need more work with OpenIPMI
 saHpiEventLogEntryDelete broken need more work with OpenIPMI
-saHpiEventLogClear broken need more work with OpenIPMI
-saHpiEventLogTimeGet functional need more work with OpenIPMI
-saHpiEventLogTimeSet functional need more work with OpenIPMI
+saHpiEventLogClear done
+saHpiEventLogTimeGet done
+saHpiEventLogTimeSet done
 saHpiEventLogStateGet functional need more work with OpenIPMI
 saHpiEventLogStateSet functional need more work with OpenIPMI
 saHpiSubscribe done
