@@ -4,10 +4,10 @@
     <title>OpenHPI - Open Source Hardware Management</title>
     <!--#include virtual="./openhpi.css" -->
   </head>
-
+  
   <body>
     <table>
-      <tr>
+        <tr>
         <!--#include virtual="./sidebar.html" -->
         <td valign="top">
             <h1 align="center">Welcome to OpenHPI's web site!</h1>
@@ -48,18 +48,27 @@
                 After a long year of development the OpenHPI Team is
                 proud to announce the release of OpenHPI 1.0.0.  This
                 release provides support for the SA Forum HPI A.1.1
-                specification.  The release supports the following
+                specification.  OpenHPI 1.0.0 is available in source
+                format from <a
+                  href="https://sourceforge.net/project/showfiles.php?group_id=71730">the SourceForge 
+                  file repository</a>.  Binary RPMs for numerous
+                platforms will be made available in the coming weeks.
+              </p>
+              
+              <p>OpenHPI 1.0.0 supports the following
                 hardware:
               </p>
-                <ul>
-                  <li>IPMI based servers and blades (via OpenIPMI or
-                    IPMIDirect plugins)</li>
-                  <li>IBM Blade Center (via SNMP Blade Center
-                    plugin)</li>
-                  <li>IBM xSeries servers (via SNMP RSA plugin)</li>
-                  <li>Linux 2.4 & 2.6 watchdog devices (via watchdog
-                    plugin)</li>
-                  <li>Linux 2.6 systems (via sysfs plugin)</li>
+              <ul>
+                <li>IPMI based servers and blades (via OpenIPMI or
+                  IPMIDirect plugins)</li>
+                <li>IBM Blade Center (via SNMP Blade Center
+                  plugin)</li>
+                <li>IBM xSeries servers (via SNMP RSA plugin)</li>
+                <li>Linux 2.4 & 2.6 watchdog devices (via watchdog
+                  plugin)</li>
+                <li>Linux 2.6 systems (via sysfs plugin)</li>
+                <li>A Dummy Plugin designed for testing and writing
+                  HPI applications</li>
                 </ul>
               <p>
                 The release contains a number of sample command
@@ -79,7 +88,7 @@
               <p>
                 Along with the release there is a companion SNMP subagent
                 (provided separately) which provides an SNMP interface
-                to an HPI library.  This allows users of SNMP client
+                to the OpenHPI library.  This allows users of SNMP client
                 software to gain access to HPI information quickly and
                 easily.
               </p>
@@ -705,7 +714,7 @@ Test Suites
 		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Wed Jun 30 15:25:24 EDT 2004
+Last modified: Thu Jul  1 12:01:50 EDT 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
