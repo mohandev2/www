@@ -71,6 +71,26 @@
                   handlers for events, providing a more real time
                   access to information in certain scenarios.
                 </li>
+                <li><b>Much more granular locking</b>: The core
+                  OpenHPI library now uses much more granular locking
+                  of data structures to ensure thread safety.  This
+                  should provide greater performance, and allow for
+                  reentrant calls to plugins.  (Note: with this
+                  plugins must now ensure their own thread safety, as
+                  OpenHPI doesn't provide it for them.)
+                </li>
+                <li><b>HPI Utilities</b>: A much richer set of HPI
+                  Data utilities has been added to the OpenHPI utils
+                  library.  This includes conversion to string of
+                  nearly every defined and enumerated type in HPI
+                  B.01.01 as well as numerous validation routines.
+                </li>
+                <li><b>Full Event Storage</b>: Any event or eventlog
+                entry now has any associated Resource or RDRs stored
+                with it as well.  This ensures a consistent view of
+                events and their resources during hotswap scenarios.
+                </li>
+
               </ul>
               <p>
                 As this is a development release, many of the
@@ -855,7 +875,7 @@ Test Suites
 		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Wed Sep  8 16:32:53 EDT 2004
+Last modified: Wed Sep  8 16:44:53 EDT 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
