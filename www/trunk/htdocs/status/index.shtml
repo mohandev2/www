@@ -13,7 +13,7 @@
             <h1>OpenHPI :: Status</h1>
             <p>
               OpenHPI is an open source project, so is continually a
-              work in progress.  As OpenHPI 1.0 is a set of 56 APIs,
+              work in progress.  HPI B.01.01 is a set of 79 APIs,
               which are fullfilled by both the OpenHPI infrastructure
               and OpenHPI plugins.  We will be providing tracking of
               the status of the APIs based on the following key.
@@ -47,6 +47,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
 <!-- hhmts start -->
+Last modified: Mon Sep 27 12:50:51 EDT 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
