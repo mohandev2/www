@@ -2,58 +2,58 @@ IPMI Plugin
 
 saHpiInitialize   functional    Need to move plugin loading out of function
 saHpiFinalize    done 
-saHpiSessionOpen done
-saHpiSessionClose done
-saHpiResourcesDiscover done
-saHpiRptInfoGet done
-saHpiRptEntryGet done
-saHpiRptEntryGetByResourceId na done in infrastructure
-saHpiResourceSeveritySet done
-saHpiResourceTagSet done
-saHpiResourceIdGet broken
-saHpiEntitySchemaGet na done in infrastructure
-saHpiEventLogInfoGet done
-saHpiEventLogEntryGet done
-saHpiEventLogEntryAdd broken
-saHpiEventLogEntryDelete broken need more work with OpenIPMI
-saHpiEventLogClear done
-saHpiEventLogTimeGet done
-saHpiEventLogTimeSet done
-saHpiEventLogStateGet functional need more work with OpenIPMI
-saHpiEventLogStateSet functional need more work with OpenIPMI
-saHpiSubscribe done
-saHpiUnsubscribe done
-saHpiEventGet done
-saHpiRdrGet done
-saHpiSensorReadingGet done
-saHpiSensorReadingConvert na done in infrastructure
-saHpiSensorThresholdsGet done 
-saHpiSensorThresholdsSet done
-saHpiSensorTypeGet na done in infrastructure
-saHpiSensorEventEnablesGet functional need more work with OpenIPMI
-saHpiSensorEventEnablesSet functional need more work with OpenIPMI
-saHpiControlTypeGet na done in infrastructure
-saHpiControlStateGet na no such function in IPMI now
-saHpiControlStateSet na no such function in IPMI now
-saHpiEntityInventoryDataRead broken need more work in OpenIPMI
-saHpiEntityInventoryDataWrite broken need more work in OpenIPMI
-saHpiWatchdogTimerGet done the function is in watchdog plug-in
-saHpiWatchdogTimerSet done the function is in watchdog plug-in
-saHpiWatchdogTimerReset done the function is in watchdog plug-in
-saHpiHotSwapControlRequest broken 
-saHpiResourceActiveSet broken
-saHpiResourceInactiveSet broken
-saHpiAutoInsertTimeoutGet broken
-saHpiAutoInsertTimeoutSet broken
-saHpiAutoExtractTimeoutGet broken
-saHpiAutoExtractTimeoutSet broken
-saHpiHotSwapStateGet broken
-saHpiHotSwapActionRequest broken
-saHpiResourcePowerStateGet broken
-saHpiResourcePowerStateSet broken
-saHpiHotSwapIndicatorStateGet broken 
-saHpiHotSwapIndicatorStateSet broken
-saHpiParmControl broken
+saHpiSessionOpen 	done
+saHpiSessionClose 	done
+saHpiResourcesDiscover 	done
+saHpiRptInfoGet 	done
+saHpiRptEntryGet 	done
+saHpiRptEntryGetByResourceId	 	na 	done in infrastructure
+saHpiResourceSeveritySet 	done
+saHpiResourceTagSet 	done
+saHpiResourceIdGet		done
+saHpiEntitySchemaGet 	na	done in infrastructure
+saHpiEventLogInfoGet 	done
+saHpiEventLogEntryGet 	done
+saHpiEventLogEntryAdd 	na
+saHpiEventLogEntryDelete 	done
+saHpiEventLogClear 	done
+saHpiEventLogTimeGet 	done
+saHpiEventLogTimeSet 	done
+saHpiEventLogStateGet 	na 	done in infrastructure
+saHpiEventLogStateSet 	na
+saHpiSubscribe 	done
+saHpiUnsubscribe 	done
+saHpiEventGet 	done
+saHpiRdrGet 	done
+saHpiSensorReadingGet 	done
+saHpiSensorReadingConvert 	na 	done in infrastructure
+saHpiSensorThresholdsGet 	done 
+saHpiSensorThresholdsSet 	done
+saHpiSensorTypeGet 	na 	done in infrastructure
+saHpiSensorEventEnablesGet 	done
+saHpiSensorEventEnablesSet 	done
+saHpiControlTypeGet		na 	done in infrastructure
+saHpiControlStateGet 	na 	no such function in IPMI now
+saHpiControlStateSet 	na 	no such function in IPMI now
+saHpiEntityInventoryDataRead 	done
+saHpiEntityInventoryDataWrite 	na
+saHpiWatchdogTimerGet 	na 	the function is in watchdog plug-in
+saHpiWatchdogTimerSet na the function is in watchdog plug-in
+saHpiWatchdogTimerReset na the function is in watchdog plug-in
+saHpiHotSwapControlRequest done
+saHpiResourceActiveSet done
+saHpiResourceInactiveSet done
+saHpiAutoInsertTimeoutGet na
+saHpiAutoInsertTimeoutSet na
+saHpiAutoExtractTimeoutGet na
+saHpiAutoExtractTimeoutSet na
+saHpiHotSwapStateGet done
+saHpiHotSwapActionRequest done
+saHpiResourcePowerStateGet na
+saHpiResourcePowerStateSet done
+saHpiHotSwapIndicatorStateGet done 
+saHpiHotSwapIndicatorStateSet done
+saHpiParmControl na
 saHpiResourceResetStateGet broken
 saHpiResourceResetStateSet done
 
