@@ -36,12 +36,14 @@
                     information yet on this status.  Please check back
                     later.</td></tr>
             </table>
-            <!--#include virtual="infrastruct.html" -->
+            <!--#include virtual="rollup.html" -->
+            <!--#include virtual="OpenHPIInfrastructure.html" -->
+            <!--#include virtual="DummyPlugin.html" -->
             <hr>
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
-            <!-- hhmts start -->
-Last modified: Fri Sep  5 16:58:47 EDT 2003
+<!-- hhmts start -->
+Last modified: Mon Sep  8 13:44:53 EDT 2003
 <!-- hhmts end -->
           </td></tr>
     </table>

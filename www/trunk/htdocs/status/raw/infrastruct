@@ -1,0 +1,65 @@
+OpenHPI Infrastructure
+
+saHpiInitialize   functional    Need to move plugin loading out of function
+saHpiFinalize    done 
+<tr><td class="functional">saHpiSessionOpen </td><td></td></tr>
+<tr><td class="semifunc">saHpiSessionClose </td><td></td></tr>
+<tr><td class="nodata">saHpiResourcesDiscover </td><td></td></tr>
+<tr><td class="nodata">saHpiRptInfoGet </td><td></td></tr>
+<tr><td class="nodata">saHpiRptEntryGet </td><td></td></tr>
+<tr><td class="nodata">saHpiRptEntryGetByResourceId </td><td></td></tr>
+<tr><td class="nodata">saHpiResourceSeveritySet </td><td></td></tr>
+<tr><td class="nodata">saHpiResourceTagSet </td><td></td></tr>
+<tr><td class="nodata">saHpiResourceIdGet </td><td></td></tr>
+<tr><td class="functional">saHpiEntitySchemaGet</td><td>Returns 0
+          always.  Need to add really entity path checking.</td></tr>
+<tr><td class="nodata">saHpiEventLogInfoGet </td><td></td></tr>
+<tr><td class="nodata">saHpiEventLogEntryGet </td><td></td></tr>
+<tr><td class="nodata">saHpiEventLogEntryAdd </td><td></td></tr>
+<tr><td class="nodata">saHpiEventLogEntryDelete </td><td></td></tr>
+<tr><td class="nodata">saHpiEventLogClear </td><td></td></tr>
+<tr><td class="nodata">saHpiEventLogTimeGet </td><td></td></tr>
+<tr><td class="nodata">saHpiEventLogTimeSet </td><td></td></tr>
+<tr><td class="nodata">saHpiEventLogStateGet </td><td></td></tr>
+<tr><td class="nodata">saHpiEventLogStateSet </td><td></td></tr>
+<tr><td class="nodata">saHpiSubscribe </td><td></td></tr>
+<tr><td class="nodata">saHpiUnsubscribe </td><td></td></tr>
+<tr><td class="nodata">saHpiEventGet </td><td></td></tr>
+<tr><td class="nodata">saHpiRdrGet </td><td></td></tr>
+<tr><td class="nodata">saHpiSensorReadingGet </td><td></td></tr>
+<tr><td class="nodata">saHpiSensorReadingConvert </td><td></td></tr>
+<tr><td class="nodata">saHpiSensorThresholdsGet </td><td></td></tr>
+<tr><td class="nodata">saHpiSensorThresholdsSet </td><td></td></tr>
+<tr><td class="nodata">saHpiSensorTypeGet </td><td></td></tr>
+<tr><td class="nodata">saHpiSensorEventEnablesGet </td><td></td></tr>
+<tr><td class="nodata">saHpiSensorEventEnablesSet </td><td></td></tr>
+<tr><td class="nodata">saHpiControlTypeGet </td><td></td></tr>
+<tr><td class="nodata">saHpiControlStateGet </td><td></td></tr>
+<tr><td class="nodata">saHpiControlStateSet </td><td></td></tr>
+<tr><td class="nodata">saHpiEntityInventoryDataRead </td><td></td></tr>
+<tr><td class="nodata">saHpiEntityInventoryDataWrite </td><td></td></tr>
+<tr><td class="nodata">saHpiWatchdogTimerGet </td><td></td></tr>
+<tr><td class="nodata">saHpiWatchdogTimerSet </td><td></td></tr>
+<tr><td class="nodata">saHpiWatchdogTimerReset </td><td></td></tr>
+<tr><td class="nodata">saHpiHotSwapControlRequest </td><td></td></tr>
+<tr><td class="nodata">saHpiResourceActiveSet </td><td></td></tr>
+<tr><td class="nodata">saHpiResourceInactiveSet </td><td></td></tr>
+<tr><td class="nodata">saHpiAutoInsertTimeoutGet</td><td></td></tr>
+<tr><td class="nodata">saHpiAutoInsertTimeoutSet</td><td></td></tr>
+<tr><td class="nodata">saHpiAutoExtractTimeoutGet</td><td></td></tr>
+<tr><td class="nodata">saHpiAutoExtractTimeoutSet</td><td></td></tr>
+<tr><td class="nodata">saHpiHotSwapStateGet </td><td></td></tr>
+<tr><td class="nodata">saHpiHotSwapActionRequest </td><td></td></tr>
+<tr><td class="nodata">saHpiResourcePowerStateGet </td><td></td></tr>
+<tr><td class="nodata">saHpiResourcePowerStateSet </td><td></td></tr>
+<tr><td class="nodata">saHpiHotSwapIndicatorStateGet </td><td></td></tr>
+<tr><td class="nodata">saHpiHotSwapIndicatorStateSet </td><td></td></tr>
+<tr><td class="nodata">saHpiParmControl </td><td></td></tr>
+<tr><td class="nodata">saHpiResourceResetStateGet </td><td></td></tr>
+<tr><td class="nodata">saHpiResourceResetStateSet </td><td></td></tr>
+</table>
+
+<p>
+<!-- place other notes about the current structure here -->
+</p>
+
