@@ -121,9 +121,7 @@
     1015843 - sync get_event with infrastructure
                     </pre>
                 </div>
-            </div>
-            <div class="mainsegment">
-                <h3>OpenHPI 1.0.0 Stable Released! (06/30/2004)</h3>
+                <h4>OpenHPI 1.0.0 Stable Released! (06/30/2004)</h4>
                 <div>
                     After a long year of development the OpenHPI Team is proud to announce the release of OpenHPI 1.0.0.  This release provides support for the SA Forum HPI A.1.1 specification.  OpenHPI 1.0.0 is available in source format from <a href="https://sourceforge.net/project/showfiles.php?group_id=71730">the SourceForge file repository</a>.  Binary RPMs for numerous platforms will be made available in the
                     coming weeks.
