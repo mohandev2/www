@@ -10,7 +10,7 @@
         <tr>
           <!--#include virtual="/sidebar.html" -->
           <td valign="top">
-            <h1>OpenHPI</h1>
+            <img src="images/openhpi_blue_blnk.gif">
             <p>
               Open HPI is an open source project created with the
               intent of providing an implementation of the <a
@@ -31,7 +31,7 @@
             <address><a href="people/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Sep  4 17:27:58 EDT 2003
+Last modified: Thu Sep  4 17:31:22 EDT 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
