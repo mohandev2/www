@@ -27,9 +27,13 @@
             <p>
               This project is just starting, so stay tuned for more info.
             </p>
-            <hr>
             <h2>News!</h2>
             <dl>
+              <dt>High Level Design Updates (9/5/2003)</dt>
+              <dd>The High Level Design is now much more in line with
+                the current OpenHPI code based.  Updates to this
+                document will be ongoing, and continuous over the next
+                few weeks.</dd>
               <dt>Website Updates (9/4/2003)</dt>
               <dd>We are in the process of updating the information on
                 the website to more accurately reflect the project
@@ -38,10 +42,10 @@
                 website.  Stay tuned for more developments</dd>
             </dl>
             <hr>
-            <address><a href="">Sean Dague</a></address>
+            <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Sep  4 17:58:15 EDT 2003
+Last modified: Fri Sep  5 16:58:47 EDT 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
