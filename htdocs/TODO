@@ -10,3 +10,11 @@ Infrastructure
 -------------------------
 * Make OpenHPI Thread Safe
 * Add Support for Multiple Domains
+* Support for setting handler entity root
+
+IPMI Plugin
+-------------------------
+* Resources Supported
+* SEL Supported
+
+
