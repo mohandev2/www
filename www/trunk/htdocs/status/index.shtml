@@ -43,13 +43,11 @@
                     later.</td></tr>
             </table>
             <!--#include virtual="rollup.html" -->
-            <!--#include virtual="OpenHPIInfrastructure.html" -->
-            <!--#include virtual="DummyPlugin.html" -->
             <hr>
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
 <!-- hhmts start -->
-Last modified: Thu Sep 11 16:48:13 EDT 2003
+Last modified: Fri Oct  3 17:57:00 EDT 2003
 <!-- hhmts end -->
           </td></tr>
     </table>

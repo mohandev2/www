@@ -33,7 +33,7 @@ foreach my $file (@files) {
 }
 
 foreach my $name (sort keys %status) {
-    my $safename = safename($name) . ".html";
+    my $safename = safename($name) . ".shtml";
     print_individual($safename, $name, $status{$name});
 }
 
@@ -49,7 +49,8 @@ sub print_composite {
     print OUT "<tr><th>HPI&nbsp;Function</th>";
     foreach my $work ((open_hpi_items())) {
         #$work =~ s/ /&nbsp;/;
-        print OUT "<th>$work</th>";
+        my $url = safename($work) . ".shtml";
+        print OUT "<th><a href=\"$url\">$work</a></th>";
     }
     print OUT "</tr>\n";
     
@@ -68,8 +69,12 @@ sub print_composite {
 sub print_individual {
     my ($sn, $name, $status) = @_;
     open(OUT,">$sn");
+    my $h = head_html();
+    my $t = foot_html();
     print OUT <<END;
-<h2>$name</h2>
+$h
+<h1>$name Details</h1>
+<p><a href="/status/">Return to Status Overview</a></p>
 <table>
 <tr><th>HPI Function</th><th>Notes</th></tr>
 END
@@ -78,7 +83,7 @@ END
         my $state = $$status{$func}{state} || $default_status;
         print OUT "<tr><td class=\"$state\">$func</td><td>$$status{$func}{notes}</td></tr>\n";
     }
-    print OUT "</table>\n";
+    print OUT "</table>\n$t";
     close(OUT);
 
 }
@@ -90,7 +95,7 @@ sub safename {
 }
 
 sub open_hpi_items {
-    my @array = ("OpenHPI Infrastructure","Dummy Plugin","IPMI Plugin","Sysfs Plugin","Text Remote Plugin","Linux Watchdog Plugin");
+    my @array = ("OpenHPI Infrastructure","Dummy Plugin","IPMI Plugin","Sysfs Plugin","Text Remote Plugin","SNMP Blade Center","Linux Watchdog Plugin");
     return @array;
 }
 
@@ -153,4 +158,32 @@ sub hpi_func_array {
                    saHpiResourceResetStateGet 
                    saHpiResourceResetStateSet);
     return @array;
+}
+
+sub head_html {
+    return <<'HEAD';
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>OpenHPI - Status</title>
+    <!--#include virtual="/openhpi.css" -->
+  </head>
+
+  <body>
+    <table>
+        <tr>
+          <!--#include virtual="/sidebar.html" -->
+          <td valign="top">
+HEAD
+}
+
+sub foot_html {
+    return <<'FOOT';
+            <hr>
+            <address><a href="http://dague.net/sean">Sean Dague</a></address>
+          </td></tr>
+    </table>
+  </body>
+</html>
+FOOT
 }

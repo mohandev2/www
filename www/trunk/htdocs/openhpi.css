@@ -26,6 +26,11 @@ TD.na { background-color: #0022aa; color: #ffffff }
 TD.impossible { background-color: #000000; color: #ffffff}
 TD.nodata { background-color: #990099; color: #ffff00 }
 
+TD.Closed { background-color: #009900; color: #ffffff }
+TD.Open { background-color: #ffff00 }
+TD.Pending { background-color: #11ff00 }
+TD.Bad { background-color: #ff0000 }
+
 DT { font-size: 14pt; font-weight: bold }
 DD { padding-bottom: 15 }
 DD.nest { padding-bottom: 0 }
