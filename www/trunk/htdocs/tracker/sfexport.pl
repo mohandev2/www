@@ -19,13 +19,13 @@ use HTML::LinkExtor;
 use HTTP::Response;
 use HTTP::Request::Common;
 use Data::Dumper;
-#use LWP::Debug qw(level); level('+');
+use LWP::Debug qw(level); level('+');
 use strict;
 
 our @track = ();
 
 my $ua = new LWP::UserAgent();
-$ua->env_proxy(1);
+$ua->env_proxy(0);
 
 my @bugs = process_tracker(532251);
 my @features = process_tracker(532254);
