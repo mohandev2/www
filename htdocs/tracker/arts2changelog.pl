@@ -7,11 +7,13 @@ my $rel = shift;
 
 our $VAR1;
 
-my @f = load_items("features.txt");
-my @b = load_items("bugs.txt");
+my $data = load_data("tracker.db");
+# = load_items("features.txt");
+#my @b = load_items("bugs.txt");
 
 my $features = {};
-foreach my $tmp (@f) {
+foreach my $key (sort keys (%{$data->{features}->{data}})) {
+    my $tmp = $data->{features}->{data}->{$key};
     $tmp->{Type} = "Feature";
     if($tmp->{Status} =~ /Deleted/) {
         next;
@@ -27,7 +29,8 @@ foreach my $tmp (@f) {
 }
 
 my $bugs = {};
-foreach my $tmp (@b) {
+foreach my $key (sort keys (%{$data->{bugs}->{data}})) {
+    my $tmp = $data->{bugs}->{data}->{$key};
     $tmp->{Type} = "Bug";
     if($tmp->{Status} =~ /Deleted/) {
         next;
@@ -81,4 +84,24 @@ sub load_items {
     my @value = @$VAR1;
     
     return @value;
+}
+
+#########################################
+sub load_data {
+    my $data = {};
+    my $file = shift;
+    my $VAR1 = undef;
+    my $tmp;
+    
+    return $data if(!-e $file);
+    
+    open(IN,"<$file") or die "Can't open $file";
+    {
+        local $/ = undef;
+        $tmp = <IN>;
+    }
+    close(IN);
+    eval $tmp;
+    $data = $VAR1;
+    return $data;
 }
