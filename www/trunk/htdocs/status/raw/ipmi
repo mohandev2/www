@@ -5,16 +5,16 @@ saHpiFinalize    done
 saHpiSessionOpen done
 saHpiSessionClose done
 saHpiResourcesDiscover done
-saHpiRptInfoGet functional
-saHpiRptEntryGet functional
+saHpiRptInfoGet done
+saHpiRptEntryGet done
 saHpiRptEntryGetByResourceId na done in infrastructure
 saHpiResourceSeveritySet done
 saHpiResourceTagSet done
 saHpiResourceIdGet broken
 saHpiEntitySchemaGet na done in infrastructure
-saHpiEventLogInfoGet functional SEL siz not supported in OpenIPMI 
-saHpiEventLogEntryGet broken need more work with OpenIPMI
-saHpiEventLogEntryAdd broken need more work with OpenIPMI
+saHpiEventLogInfoGet done
+saHpiEventLogEntryGet done
+saHpiEventLogEntryAdd broken
 saHpiEventLogEntryDelete broken need more work with OpenIPMI
 saHpiEventLogClear done
 saHpiEventLogTimeGet done
@@ -28,7 +28,7 @@ saHpiRdrGet done
 saHpiSensorReadingGet done
 saHpiSensorReadingConvert na done in infrastructure
 saHpiSensorThresholdsGet done 
-saHpiSensorThresholdsSet broken
+saHpiSensorThresholdsSet done
 saHpiSensorTypeGet na done in infrastructure
 saHpiSensorEventEnablesGet functional need more work with OpenIPMI
 saHpiSensorEventEnablesSet functional need more work with OpenIPMI
@@ -55,5 +55,5 @@ saHpiHotSwapIndicatorStateGet broken
 saHpiHotSwapIndicatorStateSet broken
 saHpiParmControl broken
 saHpiResourceResetStateGet broken
-saHpiResourceResetStateSet broken
+saHpiResourceResetStateSet done
 
