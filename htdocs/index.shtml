@@ -22,6 +22,74 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.1.0 Development Release is out! (04/04/2005)</h4>
+		<div>
+			OpenHPI 2.1.0 is out! This is our first development release since 2.0.0 came out. Following, a summary of the features for this release:
+			<ul>
+				<li>openhpi-switcher - OpenHPI has 2 different connection libraries, a stand alone version suitable for most purposes, and a client library which connects to an HPI service daemon, needed in more demanding environments. openhpi-switcher manages which one is the default on the system.</li>
+				<li>Improved session management in the client library.</li>
+				<li>New client, hpitree, shows existing resource topology.</li>
+				<li>Ported IPMI pluging to work with the latest OpenIPMI 1.4.x library.</li>
+				<li>Improved support for redundancy sensors in BladeCenter plugin.</li>
+			</ul>
+
+			Here is the complete feature and bug detail list for
+2.1.0:
+			<pre>
+Changes for 2.1.0
+-------------------
+New Features:
+Blade Center Plugin
+  1165715 - Change SAHPI_ENT_INTERCONNECT to SAHPI_ENT_SWITCH
+  1172739 - Validate redundancy sensors
+HPI Clients
+  1154781 - Add new application client to display system topology
+HPI Utils
+  1161047 - Display ResourceInfo and Severity for RDRs
+  1164166 - Add oh_valid_eventstate option to check for exclusive events
+  1172759 - hpitree - sensors can not support readable thresholds
+IPMI Direct plugin
+  1151011 - Update head with all bug fixes from 2.0.x
+OpenHPI Daemon Client
+  1166147 - Improve Session Management in the Client
+OpenHPI base library
+  1172756 - Transparently switch between standalone and daemon libs
+OpenIPMI Plugin
+  1100592 - Port IPMI plug-in to use OpenIPMI 1.4.x
+
+Fixed Bugs:
+Blade Center Plugin
+  1050151 - make distcheck fails, libsnmp_bc.so is not portable!
+  1123408 - using hpiview, reading wrong sensor
+  1152049 - Occational segfault in snmp_bc, CVS Head
+  1164891 - fail on make distcheck
+Build System
+  1166501 - make distcheck fails &quot;ERROR: files left after uninstall&quot;
+  1167056 - build breaks, cvs HEAD 03/20 07:00 hrs
+HPI Utils
+  1121492 - make check fails el_test025.c, cvs HEAD
+  1164828 - Remove check for lesser thresholds in oh_validate_eventstate
+IPMI Direct plugin
+  1120808 - cvs HEAD, ipmidirect build fails
+None
+  949399 - Hpiview does not rediscover resources
+OpenHPI Daemon Client
+  943669 - make check fails at marshal_***, 0..7beta snapshot
+OpenHPI Daemon
+  1172943 - installed init script doesn't work
+OpenHPI base library
+  1152213 - Increase buffer size for global parameters
+  1163623 - sensor event enable status change does not generate an event
+  1172858 - ohpi_035 segfaults in HEAD branch
+OpenIPMI plugin
+  1066539 - no entitiy in ATCA supports power or reset
+  1086122 - Can't set (write) Inventory fields
+  1095256 - Takes 5 Discovery passes to fill in FRU data
+  1120732 - 2.0.1 Tarball: OpenIPMI fails
+  1144652 - Build fails: CVS Head 02/19/05 Checkout
+  1167975 - Wrong Entity Type assigned for ATCA Entity
+			</pre>
+		</div>
     <h4>OpenHPI 2.0.3 Stable Release (03/08/2005)</h4>
   <div>
    OpenHPI 2.0.3 has been released. This is essentially a bug fix from head to tail. The following bug fixes were geared to resolve threading issues:
