@@ -22,6 +22,124 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+                <h4>OpenHPI 1.9.2 Development Release (11/02/2004)</h4>
+                <div>
+                    Once again, the OpenHpi team is back with another release. OpenHPI 1.9.2, the third development release of the OpenHPI library since 1.9.0 supporting the HPI B.01.01 spec and on the way to the next stable version 2.0.0.
+                    <p>Being a development release, various library components are only partially working. The plugins which are known to work are dummy, ipmi, sysfs, watchdog and snmp_bc. More unit tests have been added and numerous bugs have been fixed and features closed. See the changelog below for details. At the base library level, a couple of enhancements of note are:
+                    <ul>
+                        <li><b>Improved dynamic configuration interface</b> - No need to open a session with saHpiSessionOpen to use this interface now. The library now has much better self-initialization logic to handler this.</li>
+                        <li><b>Updated resource presence table utilities</b> - Correct handling of instrument id numbers in sensor RDRs according to the HPI B spec. This goes to enforce the limitations on the sensor instrument id numbers because of reserved id ranges in the new spec.</li>
+                    </ul>
+                    We invite everyone to download this new release and share your experiences with us. Voice any questions, problems, or suggestions on the OpenHPI mailing list (<a href="mailto:openhpi-devel@lists.sourceforge.net">openhpi-devel@lists.sf.net</a>).
+                    <pre>
+Changes for 1.9.2
+-------------------
+New Features:
+Blade Center Plugin
+  1041132 - Externalize functions in snmp_bc.c
+  1041134 - Unit tests for functions in snmp_bc.c using simulator
+  1041832 - EventLog Overflow flag management
+  1041948 - Unit testing snmp_bc sensor functions
+  1045030 - Unit tests for bc sensor threshold functions
+  1046475 - Support BCT Chassis Health OID
+  1047984 - Do discovery when resources added/removed
+  1047985 - Support user defined resource severity
+  1047993 - Remove MM temp sensor on chassis
+  1048990 - Unit tests for bc Event Log functions
+  1049381 - Unit tests for bc Idr functions
+  1050882 - Add unit tests for bc hotswap functions
+  1051226 - Add unit tests for bc time get/set functions
+  1051714 - Support Setting resource failed flag for unexpected failures
+  1052828 - rename bc_sel_entry struct to remove bc_
+  1053357 - Add unit tests for bc discover
+  1053373 - Port hotswap to B.1.1 functionality
+  1053470 - Port power code to B.1.1
+  1053471 - Port reset code to B.1.1
+  983557 - Create utility to convert BC UUIDs to HPI GUIDs
+  983632 - Port BladeCenter event code to B.1.1 funtionality
+HPI Utils
+  1002770 - Create new utilites to print Control Records
+  1015507 - Create utilities to print SaHpiEventT
+  1031029 - oh_append_data is added
+  1032845 - Create oh_valid_textbuffer()
+  1047838 - Change snmp_derive_oid to take pointer to entity path
+  1051721 - rename snmp_derive_objid and make as a standard utility
+  1052324 - Add print support for event optional sensor data
+  1053035 - Create oh_compare_sensorreading function
+  1053043 - Turn off tracing by default in rt-env.sh
+  979338 - Port printevent utilities to HPI B
+OpenHPI Daemon
+  969543 - port marshal types to HPI B
+OpenHPI base library
+  1020228 - sensor event masks
+  1023448 - change get_sensor_data to get_sensor_reading
+  1038784 - Use oHpi without opening a session.
+  1053436 - Eliminate getenv calls. Use global_param interface instead.
+  880143 - create test plan for epath_utils
+OpenIPMI Plugin
+  1020107 - sensor event enable
+  1021678 - sensor data format
+  1023477 - support reading and event state
+  1024098 - add sensor event mask feature
+  1025522 - add inventory feature
+  1028325 - enhancement for event sensor enable and mask
+Web Site
+  1046602 - Write nice stylesheet for website
+
+Fixed Bugs:
+Blade Center Plugin
+  1042695 - BEAM report: enhance snmp_bc_inventory.c
+  1043671 - Make returncode consistent, SA_ERR_HPI_INVALID_RESOURCE
+  1046624 - Xlate bc 'No temperature' &amp; 'No voltage' to HPI_ERR_BUSY
+  1046627 - Translate snmp error codes to hpi error code
+  1048117 - Fix snmp_bc_sensor.c problems found during unit testing
+  1048991 - Fix bc_sel problems found with unit tests.
+  1049392 - Fix BEAM complaint of CHECK_END macro
+  1050912 - Fix bugs found during bc hotswap unit tests
+  1051744 - Remove +- 1 from hysteresis calculations
+  1053359 - Fix problems in bc discover found with unit tests.
+  1053740 - Fix problems in unit tests with new snmp_bc_hotswap.c code
+  1053770 - build fails, snmp_bc_utils.c:36, gcc 3.3.3
+HPI Utils
+  1028331 - Unit tests for rpt, rdr struct_utils
+  1037154 - saHpiEventLog* return OK when they shouldn't
+  1041127 - cvs head: build fails - rpt_utils.c:68 warning message
+  1046383 - oh_encode_sensorreading - return 0 for non-numeric string
+  1050066 - 64-bit: make distcheck fails
+  1051713 - Add generated utility files to make clean
+OpenHPI base library
+  1018837 - maybe lt_dlclose handler when error is in static plugin
+  1029077 - Fail to export saHpiSensorEnableGet and saHpiSensorEnableSet
+  1036723 - DomainTagSet errors
+  1037146 - DRT functions return UNSUPPORTED
+  1038742 - saHpiSessionOpen vulnerable to failed initialization
+  1045353 - Use trace for informational message in Idr func
+  1058398 - oHpiPluginInfo can deadlock
+  969316 - minimum instrument numbers
+  971373 - rpt utils updates counter even if no change occured
+  987692 - process_hotswap_policy do nothing
+OpenIPMI plugin
+  1025627 - a series of bugs
+  1031032 - bugs in event log
+  1032380 - clean up source code
+  1033805 - segfault when rptentry is null in sensor_threshold_event
+  1035458 - fix several bugs in sensor
+  1036793 - Incorrect error code when calling saHpiSensorThresholdsGet
+  1036820 - Fail to set sensor event mask
+  1036872 - event enable and mask can be set when sensor disable
+  1054347 - HPI Reset won't work over LAN interface
+  1054348 - set_power_state abi limited to POWER_OFF
+  957525 - get_power_state abi is not implemented
+  957530 - get_reset_state is not implemented
+SNMP Agent
+  931272 - More Approprite PDU respone data
+  948572 - openhpi-subagent configure needs to check for bzip2-devel
+Sysfs plugin
+  1011908 - change sprintf to snprintf &amp; delete timeout in get_event
+Test Suites
+  1050985 - saHpiIdrFieldGet_T8.test loops forever
+                    </pre>
+                </div>
               <h4>OpenHPI 1.9.1 Development Release (10/08/2004)</h4>
               <div>
                 The OpenHPI Team is proud to announce the release OpenHPI 1.9.1, the
@@ -68,7 +186,7 @@ Sysfs Plugin
 Fixed Bugs:
 Blade Center Plugin
   1020758 - blade center sim tests fail in distcheck
-  1023036 - Cleanup snmp_bc_snmp_get()/snmp_bc_snmp_set() interfaces 
+  1023036 - Cleanup snmp_bc_snmp_get()/snmp_bc_snmp_set() interfaces
   1025911 - Same IdrId for resource of same type
 Build System
   1021700 - need twice ./Bigbuild.infra
@@ -87,7 +205,7 @@ OpenHPI base library
   1037174 - saHpiRptEntryGet returns wrong error codes
   1037190 - saHpiUnsubscribe doesn't work
   1037194 - test saHpiSessionOpen_T4 segfaults
-  1037854 - distcheck fails  1.9.1 branch (& cvs head), FAIL: ohpi_035 
+  1037854 - distcheck fails  1.9.1 branch (& cvs head), FAIL: ohpi_035
   927917 - check for ignore on sensor functions
 OpenIPMI plugin
   1022890 - timeout make peformance decline
@@ -97,7 +215,7 @@ OpenIPMI plugin
                 </pre>
                 </div>
 
-   
+
 
                 <h4>OpenHPI 1.9.0 Development Release Posted! (09/08/2004)</h4>
                 <div>
