@@ -34,7 +34,7 @@ TD.Pending { background-color: #11ff00 }
 TD.Bad { background-color: #ff0000 }
 
 .strong { font-weight: bold; color: #aa0000 }
-DT.announce { font-size: 14pt; font-weight: bold; padding-top: 15}
+DT.announce { font-size: 16pt; font-weight: bold; padding-top: 15}
 DT.name { font-weight: bold; padding-top: 10}
 DD { padding-bottom: 0 }
 
