@@ -18,7 +18,8 @@
             </p>
             <dl>
               <dt>Tariq Shureih - OpenHPI Maintainer</dt>
-              <dd>Focus Areas: OpenHPI core library and the IPMI Plugin.</dd>
+              <dd>Focus Areas: OpenHPI core library, the IPMI Plugin, 
+			  			overall design and releases.</dd>
               
               <dt><a href="http://dague.net/sean">Sean Dague</a> -
                 Developer, Webmaster, Planner</dt>
@@ -42,7 +43,10 @@
               
               <dt>Louis Zhuang - Developer</dt>
               <dd>Focus Areas: OpenHPI core library, IPMI plugin,
-                Dummy plugin, OpenHPI Simulator</dd>
+                Dummy plugin</dd>
+              
+              <dt>Julie Fleischer - Developer</dt>
+              <dd>Focus Areas: Sysfs and watchdog plug-ins</dd>
               
             </dl>
             
