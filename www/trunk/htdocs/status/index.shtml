@@ -20,7 +20,7 @@
             </p>
             <table>
                 <tr><td class="broken">Broken</td><td>Functionality
-                    hasn't be started yet, or is in a non operational state</td></tr>
+                    hasn't been started yet, or is in a non operational state</td></tr>
                 <tr><td class="semifunc">Semi Functional</td><td>Functionality
                     exists, but isn't guaranteed to work properly.
                     Considered alpha level functionality.</td></tr>
