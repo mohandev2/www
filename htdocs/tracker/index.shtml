@@ -10,44 +10,26 @@
         <tr>
           <!--#include virtual="/sidebar.html" -->
           <td valign="top">
-            <h1>OpenHPI :: Status</h1>
+            <h1>OpenHPI :: Task Lists</h1>
+            <strong>Next Release Target is 0.3.  Expected Release data
+            October 15th, 2003</strong>
             <p>
-              OpenHPI is an open source project, so is continually a
-              work in progress.  As OpenHPI 1.0 is a set of 56 APIs,
-              which are fullfilled by both the OpenHPI infrastructure
-              and OpenHPI plugins.  We will be providing tracking of
-              the status of the APIs based on the following key.
+              The following is a tracker extract of bugs and features
+              for OpenHPI associated with releases.  They are color coded
             </p>
             <table>
-                <tr><td class="broken">Broken</td><td>Functionality
-                    hasn't been started yet, or is in a non operational state</td></tr>
-                <tr><td class="notdone">Not Done</td><td>Functionality
-                    is in progress.  It probably doesn't do what it
-                    should, but it shouldn't crash the system.</td></tr>
-                <tr><td class="semifunc">Semi Functional</td><td>Functionality
-                    exists, but isn't guaranteed to work properly.
-                    Considered alpha level functionality.</td></tr>
-                <tr><td class="functional">Functional</td><td>Functionality
-                    exists, and <em>should work</em>.  It has not be
-                    extensively tested, and should be considered beta quality</td></tr>
-                <tr><td class="done">Done</td><td>Functionality exists
-                    and has been tested aggressively.  Considered GA quality</td></tr>
-                <tr><td class="impossible">Impossible</td><td>It is
-                    impossible to implement this function.  This may
-                    be the case for some functions on some hardware.</td></tr>
-                <tr><td class="na">No Applicable</td><td>This code
-                    isn't supposed to do this function.  This is used
-                    for HPI calls that are entirely handled in the infrastructure.</td></tr>
-                <tr><td class="nodata">No Data</td><td>There is no
-                    information yet on this status.  Please check back
-                    later.</td></tr>
+                <tr><td class="Bad">Open and Unassigned</td></tr>
+                <tr><td class="Open">Open and Assigned</td></tr>
+                <tr><td class="Pending">Pending (Beta
+                    quality)</td></tr>
+                <tr><td class="Closed">Closed and Fixed</td></tr>
             </table>
             <!--#include virtual="data.html" -->
             <hr>
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
 <!-- hhmts start -->
-Last modified: Thu Sep 11 16:48:13 EDT 2003
+Last modified: Fri Oct  3 17:32:15 EDT 2003
 <!-- hhmts end -->
           </td></tr>
     </table>

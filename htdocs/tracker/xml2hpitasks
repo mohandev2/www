@@ -70,7 +70,7 @@ sub print_item_html {
     }
     
     my $url = "https://sourceforge.net/tracker/index.php?func=detail&amp;aid=$bid&amp;group_id=71730";
-    if($art->{artifact_type}->{content} =~ /Features/) {
+    if($art->{artifact_type}->{content} =~ /Feature/) {
         $url .= "&amp;atid=532254";
     } elsif($art->{artifact_type}->{content} =~ /Bugs/) {
         $url .= "&amp;atid=532251";

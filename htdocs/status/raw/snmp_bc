@@ -1,0 +1,59 @@
+SNMP Blade Center
+
+saHpiInitialize   functional    
+saHpiFinalize    done 
+saHpiSessionOpen functional
+saHpiSessionClose functional
+saHpiResourcesDiscover notdone Many RPT entries are discovered, but no RDRs yet
+saHpiRptInfoGet 
+saHpiRptEntryGet 
+saHpiRptEntryGetByResourceId 
+saHpiResourceSeveritySet 
+saHpiResourceTagSet 
+saHpiResourceIdGet 
+saHpiEntitySchemaGet
+saHpiEventLogInfoGet 
+saHpiEventLogEntryGet 
+saHpiEventLogEntryAdd 
+saHpiEventLogEntryDelete 
+saHpiEventLogClear 
+saHpiEventLogTimeGet 
+saHpiEventLogTimeSet 
+saHpiEventLogStateGet 
+saHpiEventLogStateSet 
+saHpiSubscribe 
+saHpiUnsubscribe 
+saHpiEventGet 
+saHpiRdrGet functional
+saHpiSensorReadingGet functional
+saHpiSensorReadingConvert 
+saHpiSensorThresholdsGet 
+saHpiSensorThresholdsSet 
+saHpiSensorTypeGet functional
+saHpiSensorEventEnablesGet 
+saHpiSensorEventEnablesSet 
+saHpiControlTypeGet 
+saHpiControlStateGet 
+saHpiControlStateSet 
+saHpiEntityInventoryDataRead 
+saHpiEntityInventoryDataWrite 
+saHpiWatchdogTimerGet 
+saHpiWatchdogTimerSet 
+saHpiWatchdogTimerReset 
+saHpiHotSwapControlRequest 
+saHpiResourceActiveSet 
+saHpiResourceInactiveSet 
+saHpiAutoInsertTimeoutGet
+saHpiAutoInsertTimeoutSet
+saHpiAutoExtractTimeoutGet
+saHpiAutoExtractTimeoutSet
+saHpiHotSwapStateGet 
+saHpiHotSwapActionRequest 
+saHpiResourcePowerStateGet 
+saHpiResourcePowerStateSet 
+saHpiHotSwapIndicatorStateGet 
+saHpiHotSwapIndicatorStateSet 
+saHpiParmControl 
+saHpiResourceResetStateGet 
+saHpiResourceResetStateSet 
+
