@@ -8,20 +8,20 @@
   <body>
     <table>
         <tr>
-        <!--#include virtual="./sidebar.html" -->
-        <td valign="top">
+          <!--#include virtual="./sidebar.html" -->
+          <td valign="top">
             <h1 align="center">Welcome to OpenHPI's web site!</h1>
             <p>
               OpenHPI is an open source project created with the
               intent of providing an implementation of the <a
-                href="http://saforum.org">SA Forum's</a> Hardware Platform
-              Interface (HPI). HPI provides an abstracted interface to
-              managing computer hardware, typically for chassis and
-              rack based servers.  HPI includes a resource modeling;
-              access to and control over sensor, control, watchdog,
-              and inventory data associated with resources; abstracted
-              System Event Log interfaces; hardware events and alerts;
-              and a managed hotswap interface.
+              href="http://saforum.org">SA Forum's</a> Hardware
+              Platform Interface (HPI). HPI provides an abstracted
+              interface to managing computer hardware, typically for
+              chassis and rack based servers.  HPI includes a resource
+              modeling; access to and control over sensor, control,
+              watchdog, and inventory data associated with resources;
+              abstracted System Event Log interfaces; hardware events
+              and alerts; and a managed hotswap interface.
             </p>
             <p>
               OpenHPI provides a modular mechanism for adding new
@@ -31,7 +31,7 @@
               to, IPMI based servers, Blade Center, and machines which
               export data via sysfs.  For up to date status on these
               components, please check out the <a
-                href="/status/">status page</a>.
+              href="/status/">status page</a>.
             </p>
             <p>
               The OpenHPI project is always looking for more
@@ -42,17 +42,151 @@
               <h2>OpenHPI<img src="./r_news.gif"></h2>
             <dl>
               <!-- add announce items below -->
-              <h3><img src="./new03.gif">OpenHPI 1.0.0 Stable
-                Released! (06/30/2004)</h3>
+              <h3><img src="./new03.gif">OpenHPI 1.9.0 Development
+                Release Posted! (09/08/2004)</h3>
+              <p>
+                The OpenHPI team is pleased to announce the release of
+                OpenHPI 1.9.0, the first development release on the
+                road towards OpenHPI 2.0.0.  The release can be
+                downloaded from <a
+                  href="https://sourceforge.net/project/showfiles.php?group_id=71730&package_id=71373&release_id=265507">the OpenHPI project site</a>. 
+              </p>
+              <p>
+                This release includes the following major feature
+                changes:
+              </p>
+              <ul>
+                <li><b>Support for HPI B.01.01 interface</b>:
+                  OpenHPI 1.9.0 now users the HPI B.01.01 interface.
+                  As this is not compatible with HPI A.01.01,
+                  applications will need to be ported to HPI B in
+                  order to work with future versions of OpenHPI.
+                  (Note: not all HPI B functions are fully working at
+                  this time)
+                </li>
+                <li><b>Threaded Mode</b>: OpenHPI can now be run in
+                  a threaded mode by setting OPENHPI_THREADED=YES in
+                  the environment before launching an application.
+                  This will create an event thread, which will monitor
+                  handlers for events, providing a more real time
+                  access to information in certain scenarios.
+                </li>
+              </ul>
+              <p>
+                As this is a development release, many of the
+                components of the OpenHPI tree are in only partially
+                working states.  Three plugins are functioning with
+                the new interfaces (dummy, ipmi, and snmp_bc), and
+                some of the clients have been ported.  The OpenHPI
+                daemon, and SNMP subagent are still in process,
+                hopefully ready by OpenHPI 1.9.1 (due the end of Sept).
+              </p>
+              <p>
+                As always, feedback is highly valued.  Please post
+                questions and comments to <a
+                href="mailto:openhpi-devel@lists.sf.net">openhpi-devel@lists.sf.net</a>.
+              </p>
+              <p>
+                The complete feature/bug list for OpenHPI 1.9.0
+                follows:
+                <pre>
+              Changes for 1.9.0
+-------------------
+New Features:
+Blade Center Plugin
+  927860 - Test sensor/control using static simulator
+  969995 - add CAPABILITY RESET & POWER to blades
+  971430 - add inventory support to blade center plugin
+  978458 - Add OPENHPI_DEBUG to rt-env.sh
+Build System
+  983722 - Change environment variable names to start with "OPENHPI_" 
+Dummy Plugin
+  971429 - add inventory support to dummy plugin
+HPI Clients
+  1009755 - Create a new client: hpitree to display hpi resources
+HPI Utils
+  1000849 - Delete utils/sensor_utils.c and h
+  1000852 - Consolidate timer utilities
+  1002627 - Create print utility to print Sensor Rec data
+  1002754 - Util to print idr structures
+  1002766 - Rename oh_print_textbuffer and oh_fprint_textbuffer 
+  1003013 - Add oh_print_textbuffer and oh_fprint_textbuffer 
+  1004864 - Create oh_encode_sensorreading utility
+  1006175 - Move snmp_derive_objid from BC plugin to SNMP utilities
+  1011902 - Change snmp_util.c and h to snmp_utils.c and h
+  991861 - Add locking mechanism to UID utils
+  993011 - Port unit test fo utilities to HPI B
+  999645 - Add decode functions to translate str back into HPI enums  
+None
+  986326 - change struct oh_sel to oh_el
+OpenHPI base library
+  1012640 - break up openhpi.h and add lock in hotswap.c
+  1018931 - add sensor event mask function in abi
+  1020194 - Get and Set Sensor Enable
+  858012 - use glib2.0 instead of glib1.2
+  884723 - create standard session / domain structures
+  909977 - Sensor RAW values not needed
+  927848 - Take get_self_id out of plugin interface
+  969539 - create safstrings.h
+  971428 - add support for inventory to infrastructure
+  975383 - store resource and rdr full structures in sel
+  983114 - Include rptentry and rdr in the event log.
+  992662 - Separate saHpiInitialize and saHpiFinalize from safhpi.c
+  996053 - Compliler warning idr-related functions in safhpi.c
+OpenIPMI Plugin
+  978737 - successfully compile ipmi plugin with HPI 1.1 header file
+SNMP Agent
+  860527 - Event Traps 'ADD' &amp; 'REMOVE' Resource  Required By C
+Test Suites
+  1007446 - HPI B Conf Test Documentation
+  991139 - Create a new test tree for Hpi B 1.01
+
+Fixed Bugs:
+Blade Center Plugin
+  1015692 - BC and RSA simulators segfaulted with new IDR's
+Build System
+  992572 - OH_PLUGIN_PATH should be generated in config.h
+Dummy plugin
+  983063 - Adjust dummy control prototypes
+HPI Clients
+  992133 - Compiler warnings in clients directory
+HPI Utils
+  1002038 - store full resource and rdr with el entry
+  1004035 - Enhance sahpi_time_utils
+  1006856 - Update DomainInfo from RPTable
+OpenHPI base library
+  1000779 - remove rpt ref from get_event
+  1000780 - check domain validity on event loop
+  1009745 - oh_init_state should be initialized
+  1024094 - mutiple return in saHpiSensorEventMasksSet
+  969289 - sel_utils add function needs to take EventT
+  977008 - rework event loop
+  977670 - event_queue should be GAsyncQueue type
+  979365 - Warning thrown for lock.c
+  979387 - saHpiInitilize function defined incorrectly
+  979392 - Plugin abi add_sel_entry needs to get an EventT
+  998258 - SaHpi2code.pl needs to run with use strict
+OpenIPMI plugin
+  1005801 - change Mode parameter in ohoi_set_control_state
+  1011916 - delete timeout in get_event
+  1021696 - assign rdr's parent in oh_event
+Watchdog plugin
+  1015843 - sync get_event with infrastructure
+
+              </pre>
+                </p>
+              
+              <h3>OpenHPI 1.0.0 Stable Released! (06/30/2004)</h3>
               <p>
                 After a long year of development the OpenHPI Team is
                 proud to announce the release of OpenHPI 1.0.0.  This
                 release provides support for the SA Forum HPI A.1.1
                 specification.  OpenHPI 1.0.0 is available in source
                 format from <a
-                  href="https://sourceforge.net/project/showfiles.php?group_id=71730">the SourceForge 
-                  file repository</a>.  Binary RPMs for numerous
-                platforms will be made available in the coming weeks.
+                href="https://sourceforge.net/project/showfiles.php?group_id=71730">the
+                SourceForge file repository</a>.  Binary RPMs for
+                numerous platforms will be made available in the
+                coming weeks.
               </p>
               
               <p>OpenHPI 1.0.0 supports the following
@@ -60,15 +194,22 @@
               </p>
               <ul>
                 <li>IPMI based servers and blades (via OpenIPMI or
-                  IPMIDirect plugins)</li>
+                IPMIDirect plugins)</li> 
+                
                 <li>IBM Blade Center (via SNMP Blade Center
-                  plugin)</li>
-                <li>IBM xSeries servers (via SNMP RSA plugin)</li>
-                <li>Linux 2.4 & 2.6 watchdog devices (via watchdog
-                  plugin)</li>
-                <li>Linux 2.6 systems (via sysfs plugin)</li>
-                <li>A Dummy Plugin designed for testing and writing
-                  HPI applications</li>
+                plugin)</li> 
+
+                <li>IBM xSeries servers (via SNMP RSA
+                plugin)</li> 
+                
+                <li>Linux 2.4 & 2.6 watchdog devices (via
+                watchdog plugin)</li> 
+                
+                <li>Linux 2.6 systems (via sysfs
+                plugin)</li> 
+
+                <li>A Dummy Plugin designed for testing
+                and writing HPI applications</li>
                 </ul>
               <p>
                 The release contains a number of sample command
@@ -714,7 +855,7 @@ Test Suites
 		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Jul  1 12:01:50 EDT 2004
+Last modified: Wed Sep  8 16:32:53 EDT 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
