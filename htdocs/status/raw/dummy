@@ -7,11 +7,11 @@ saHpiSessionClose done
 saHpiResourcesDiscover done
 saHpiRptInfoGet done
 saHpiRptEntryGet done
-saHpiRptEntryGetByResourceId broken nothing to do in dummy
+saHpiRptEntryGetByResourceId na nothing to do in dummy
 saHpiResourceSeveritySet done
 saHpiResourceTagSet done
-saHpiResourceIdGet done
-saHpiEntitySchemaGet done
+saHpiResourceIdGet broken this isn't done yet
+saHpiEntitySchemaGet na done in infrastructure
 saHpiEventLogInfoGet done
 saHpiEventLogEntryGet done
 saHpiEventLogEntryAdd done
@@ -29,10 +29,10 @@ saHpiSensorReadingGet done
 saHpiSensorReadingConvert na it is infra.'s work
 saHpiSensorThresholdsGet done
 saHpiSensorThresholdsSet done
-saHpiSensorTypeGet done
+saHpiSensorTypeGet na done in infrastructure
 saHpiSensorEventEnablesGet done
 saHpiSensorEventEnablesSet done
-saHpiControlTypeGet done
+saHpiControlTypeGet na done in infrastructure
 saHpiControlStateGet done
 saHpiControlStateSet done
 saHpiEntityInventoryDataRead done
