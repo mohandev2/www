@@ -30,15 +30,16 @@ our %opts = ();
 # options -
 #    -a        : get all (means you must use the SF tracker)
 #    -m mbox   : get a delta from an mbox (you must have a tracker mbox)
+#    -s single : get a single artifact
 #    -h        : usage
 
-getopts('ahm:t:', \%opts);
+getopts('ahm:t:s:', \%opts);
 
 if($opts{h}) { 
     usage(); 
 }
 
-unless($opts{a} or $opts{'m'}) {
+unless($opts{a} or $opts{'m'} or $opts{'s'}) {
     print Dumper(\%opts);
     usage("must specify either -a or -m mbox");
 }
@@ -79,6 +80,9 @@ if($opts{a}) {
 }
 if($opts{'m'}) {
     pull_from_mbox($data, $opts{'m'}, $opts{'t'});
+}
+if($opts{'s'}) {
+    pull_single($data, $opts{'s'});
 }
 
 # always set the newest globally before saving
@@ -121,11 +125,41 @@ sub pull_all {
 # pull_from_mbox($data) - pull from an mbox file
 #
 ######################################################
+sub pull_single {
+    my ($data, $item) = @_;
+
+    foreach my $t (keys %$data) {
+        my %ids = ();
+        my @ids = ($item);
+        
+        # make them unique
+        foreach my $i (@ids) { $ids{$i}++; }
+
+        foreach my $i (sort keys %ids) {
+            print "Getting data for TID: $data->{$t}->{trackerid}, ID: $i\n";
+            my %data = get_artifact(OPENHPI,
+                                    $data->{$t}->{trackerid},
+                                    $i);
+            if(!$data{Number}) {
+                next;
+            }
+            print Dumper(\%data);
+            $data->{$t}->{data}->{$i} = \%data;
+            delay("in pull_single");
+        }
+    }
+}
+
+######################################################
+#
+# pull_from_mbox($data) - pull from an mbox file
+#
+######################################################
 
 sub pull_from_mbox {
     my ($data, $mbox, $backlog) = @_;
     
-    $backlog ||= 7; # number of days of backlog
+    $backlog ||= 40; # number of days of backlog
 
     foreach my $t (keys %$data) {
         my %ids = ();
@@ -299,11 +333,13 @@ sub get_artifact {
     
     $keys{mtime} = convert_time($keys{"Date Submitted"});
 
-    if($content =~ /<title>SourceForge.net: Detail:(\d+) - (.*?)<\/title>/is) {
+    if($content =~ m{<h2>\s*\[\s*(\d+)\s*\]\s*(.*?)\s*</h2>}is) {
         $keys{Number} = $1;
         $keys{Title} = $2;
     }
     $keys{Link} = gen_url($project, $tracker, $id);
+
+#    print STDERR Dumper(\%keys);
     
     return %keys;
 }
