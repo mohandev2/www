@@ -32,7 +32,7 @@ our %opts = ();
 #    -m mbox   : get a delta from an mbox (you must have a tracker mbox)
 #    -h        : usage
 
-getopts('ahm:', \%opts);
+getopts('ahm:t:', \%opts);
 
 if($opts{h}) { 
     usage(); 
@@ -78,7 +78,7 @@ if($opts{a}) {
     pull_all($data);
 }
 if($opts{'m'}) {
-    pull_from_mbox($data, $opts{'m'});
+    pull_from_mbox($data, $opts{'m'}, $opts{'t'});
 }
 
 # always set the newest globally before saving
@@ -123,11 +123,13 @@ sub pull_all {
 ######################################################
 
 sub pull_from_mbox {
-    my ($data, $mbox) = @_;
+    my ($data, $mbox, $backlog) = @_;
     
+    $backlog ||= 7; # number of days of backlog
+
     foreach my $t (keys %$data) {
         my %ids = ();
-        my @ids = find_mbox_items_newer($mbox, $data->{$t}->{newest}, $data->{$t}->{trackerid});
+        my @ids = find_mbox_items_newer($mbox, $backlog, $data->{$t}->{newest}, $data->{$t}->{trackerid});
         
         # make them unique
         foreach my $i (@ids) { $ids{$i}++; }
@@ -155,7 +157,7 @@ sub find_mbox_items_newer {
     use Mail::Box::Manager;
     my @ids = ();
     
-    my ($file, $newest, $trackerid) = @_;
+    my ($file, $backdays, $newest, $trackerid) = @_;
 
     my $time = $newest - 7*24*60*60; # back a week
     
