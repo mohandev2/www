@@ -1,24 +1,24 @@
 Dummy Plugin
 
-saHpiInitialize   functional    Need to move plugin loading out of function
+saHpiInitialize   done
 saHpiFinalize    done 
-saHpiSessionOpen functional
-saHpiSessionClose functional
-saHpiResourcesDiscover 
-saHpiRptInfoGet 
-saHpiRptEntryGet 
+saHpiSessionOpen semifunc   Dummy doesn't allow for multiple instances
+saHpiSessionClose semifunc  Works, but should probably do some cleanup
+saHpiResourcesDiscover done
+saHpiRptInfoGet done
+saHpiRptEntryGet done
 saHpiRptEntryGetByResourceId 
 saHpiResourceSeveritySet 
 saHpiResourceTagSet 
 saHpiResourceIdGet 
-saHpiEntitySchemaGet
+saHpiEntitySchemaGet done
 saHpiEventLogInfoGet 
 saHpiEventLogEntryGet 
-saHpiEventLogEntryAdd 
+saHpiEventLogEntryAdd functional
 saHpiEventLogEntryDelete 
 saHpiEventLogClear 
-saHpiEventLogTimeGet 
-saHpiEventLogTimeSet 
+saHpiEventLogTimeGet broken
+saHpiEventLogTimeSet broken
 saHpiEventLogStateGet 
 saHpiEventLogStateSet 
 saHpiSubscribe 
@@ -37,9 +37,9 @@ saHpiControlStateGet
 saHpiControlStateSet 
 saHpiEntityInventoryDataRead 
 saHpiEntityInventoryDataWrite 
-saHpiWatchdogTimerGet 
-saHpiWatchdogTimerSet 
-saHpiWatchdogTimerReset 
+saHpiWatchdogTimerGet broken
+saHpiWatchdogTimerSet broken
+saHpiWatchdogTimerReset broken
 saHpiHotSwapControlRequest 
 saHpiResourceActiveSet 
 saHpiResourceInactiveSet 
