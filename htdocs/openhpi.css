@@ -17,17 +17,13 @@ A:active { color: red; text-decoration: none }
 .whitelink:active { color: #ffffff; text-decoration: none }
 .whitelink:visited { color: #ffffff }
 
-TR.broken { background-color: red }
-TR.semifunc { background-color: orange }
-TR.functional { background-color: yellow }
-TR.done { background-color: green }
-TR.impossible { background-color: black; color: white }
-
-TD.broken { background-color: red }
-TD.semifunc { background-color: orange }
-TD.functional { background-color: yellow }
-TD.done { background-color: green; color: white }
-TD.impossible { background-color: black; color: white }
-TD.nodata { background-color: purple; color: yellow }
+TD.broken { background-color: #ff0000 }
+TD.notdone { background-color: #ff8800 }
+TD.semifunc { background-color: #ffff00}
+TD.functional { background-color: #11ff00}
+TD.done { background-color: #009900; color: #ffffff }
+TD.na { background-color: #0022aa; color: #ffffff }
+TD.impossible { background-color: #000000; color: #ffffff}
+TD.nodata { background-color: #990099; color: #ffff00 }
 
 </style>
