@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <title>OpenHPI</title>
+    <title>OpenHPI - Open Source Hardware Management</title>
     <!--#include virtual="/openhpi.css" -->
   </head>
 
@@ -10,7 +10,6 @@
         <tr>
           <!--#include virtual="/sidebar.html" -->
           <td valign="top">
-            <!-- <img src="images/openhpi_blue_blnk.gif"> -->
             <h1 align="center">OpenHPI</h1>
             <p>
               OpenHPI is an open source project created with the
@@ -156,7 +155,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Sat Dec  6 13:38:11 EST 2003
+Last modified: Sat Dec  6 13:40:26 EST 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
