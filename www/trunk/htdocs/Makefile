@@ -2,7 +2,7 @@
 #
 
 SDIR=status
-SDATA=$(shell ls $(SDIR)/raw/*)
+SDATA=$(shell ls -d $(SDIR)/raw/* | grep -v CVS)
 SPROG=compile_status.pl
 
 SERVER=shell1.sourceforge.net
@@ -19,6 +19,5 @@ all: status/rollup.html
 
 $(SDIR)/$(SPROG):
 
-status/rollup.html: 
-	echo $(SDATA)
+status/rollup.html: $(SDATA) $(SDIR)/$(SPROG)
 	cd $(SDIR) && ./$(SPROG)
