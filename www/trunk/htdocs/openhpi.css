@@ -103,6 +103,14 @@ pre {
 }
 
 /* Docbook formatting statements */
+h3.SECT3 {
+    border: 0;
+    font-family: sans-serif, serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
 h1 a:hover, h2 a:hover, h3 a:hover {
     color: #51657B;
     text-decoration: none;
