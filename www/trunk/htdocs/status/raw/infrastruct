@@ -25,11 +25,11 @@ saHpiSubscribe			done
 saHpiUnsubscribe		done
 saHpiEventGet			done	needs threading for 2 of the modes of operation
 saHpiEventAdd			done
-saHpiAlarmGetNext		notdone
-saHpiAlarmGet			notdone
-saHpiAlarmAcknowledge		notdone
-saHpiAlarmAdd			notdone
-saHpiAlarmDelete		notdone
+saHpiAlarmGetNext		done
+saHpiAlarmGet			done
+saHpiAlarmAcknowledge		done
+saHpiAlarmAdd			done
+saHpiAlarmDelete		done
 saHpiRdrGet			done
 saHpiRdrGetByInstrumentId	done
 saHpiSensorReadingGet		done
@@ -63,17 +63,17 @@ saHpiAnnunciatorAdd		notdone
 saHpiAnnunciatorDelete		notdone
 saHpiAnnunciatorModeGet		notdone
 saHpiAnnunciatorModeSet		notdone
-saHpiHotSwapPolicyCancel
-saHpiResourceActiveSet
-saHpiResourceInactiveSet
-saHpiAutoInsertTimeoutGet
-saHpiAutoInsertTimeoutSet
-saHpiAutoExtractTimeoutGet
-saHpiAutoExtractTimeoutSet
-saHpiHotSwapStateGet
-saHpiHotSwapActionRequest
-saHpiHotSwapIndicatorStateGet
-saHpiHotSwapIndicatorStateSet
+saHpiHotSwapPolicyCancel	done
+saHpiResourceActiveSet		done
+saHpiResourceInactiveSet		done
+saHpiAutoInsertTimeoutGet		done
+saHpiAutoInsertTimeoutSet		done
+saHpiAutoExtractTimeoutGet		done
+saHpiAutoExtractTimeoutSet		done
+saHpiHotSwapStateGet		done
+saHpiHotSwapActionRequest		done
+saHpiHotSwapIndicatorStateGet		done
+saHpiHotSwapIndicatorStateSet		done
 saHpiParmControl		done
 saHpiResourceResetStateGet	done
 saHpiResourceResetStateSet	done
