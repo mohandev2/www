@@ -7,9 +7,9 @@
 
   <body>
     <table>
-        <tr>
-          <!--#include virtual="/sidebar.html" -->
-          <td valign="top">
+      <tr>
+        <!--#include virtual="/sidebar.html" -->
+        <td valign="top">
             <h1 align="center">OpenHPI</h1>
             <p>
               OpenHPI is an open source project created with the
@@ -42,6 +42,51 @@
             <h2>News!</h2>
             <dl>
               <!-- add announce items below -->
+            <dt class="announce">OpenHPI SNMP Subagent 0.1 Released (12/17/2003)</dt>
+            <dd>
+              I am pleased to announce the initial release of the OpenHPI
+        SNMP Subagent.  This provides an SNMP interface to OpenHPI
+        data structures, allowing OpenHPI enabled hardware to be
+        accessed and controlled via SNMP.
+        
+        <ul>
+          <li>First release of the HPI SNMP sub-agent.</li>
+          <ul>
+            Through this subagent one can includes support for multiple 
+            different types of hardware including: IPMI, IBM Blade Center 
+            (via SNMP), Linux Watchdog devices, and Sysfs based systems.
+          </ul>
+        <li>Support for full implementation of the HPI-MIB v1.3 
+         (included). This means HPI 1.0 instrumentation using 
+          HPI-MIB objects in nine tables:</li>
+          <ul>
+            <li>Resource Presence Table entities
+                <ul><li>HotSwap capabilities</li></ul>
+        <li>Resource Data Records</li>
+              <ul>
+                <li>Sensors</li>
+                <li>Inventory</li>
+                <li>Control</li>
+                <li>Watchdog</li>
+                </ul>
+              <li>Events and System Event Log</li>
+          </ul>
+        <li><strong>NOTE:</strong> The OID of the HPI-MIB v1.3 is 'experimental.90.'
+            This MIB branch location *WILL* change in the next
+            release. Consider this a technology review code.</li>
+          
+          <li>Support for user configurable options:</li>
+              <ul>
+                <li>update timer for new RPT/RDR/Events</li>
+                <li>maximum events held in events row before they are
+                  automatically removed</li>
+                <li>sending of new found RPT/RDR/Events during startup</li>
+              </ul>
+              <li>Example code for retrieving instrumentation information
+                using SNMP</li>
+              </ul>
+              </dd>
+
 			  <dt class="announce">OpenHPI 0.4 Released! (12/11/2003)</dt>
 
 			  		<h3>New in this release:</h3>
@@ -192,7 +237,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Sat Dec  6 13:40:26 EST 2003
+Last modified: Wed Dec 17 16:53:03 EST 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
