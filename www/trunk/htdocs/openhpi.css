@@ -127,6 +127,7 @@ DD { padding-bottom: 0 }
 table.report {width: 600; border-width: thin; border-style: solid}
 tr.na {color: grey}
 tr.ok {background-color: #dde244}
+tr.bad {background-color: red}
 tr.good {background-color: #4ae544}
 tr.great {background-color: green; color: white}
 tr.notexec {background-color: #e84545}
