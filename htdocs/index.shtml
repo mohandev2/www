@@ -43,8 +43,154 @@
             <dl>
               <!-- add announce items below -->
               
-              <h3><img src="./new03.gif">OpenHPI 0.7 Released! (05/04/2004)</h3>
-	<br>
+              <h3><img src="./new03.gif">OpenHPI 0.7 Released!
+                (05/04/2004)</h3>
+              <pre>
+Changes for 0.7
+-------------------
+New Features:
+Blade Center Plugin
+  914384 - SNMP V3
+  924135 - Support Error log strings that have multiple events
+  924137 - Support Event-only Sensors
+  924139 - Support hysteresis on BladeCenter chassis voltages
+  927795 - get_interpreted_value enhancement
+  927842 - Verify thresholds can be readable/writable
+  927846 - Change BCT discovery
+  927849 - Return valid return code for snmp_bc_set_inventory_info
+  927853 - Check ignore bit on all sensors/controls
+  930422 - Re-structure BladeCenter's static simulator
+Build System
+  923750 - seperate directory for marshal code
+  923752 - remote_client plugin for daemon.
+HPI Utils
+  922562 - Create ecode_utils to xlate hpi errror codes to string
+  923205 - A general util to print event record
+  940252 - Need a sel utility to prepend entry to the begin of list
+IPMI Direct plugin
+  913486 - SendMessage response tracking
+  917870 - removing of cIpmiEntity
+  917882 - change return code for SendCommand to HPI return code
+  934132 - support for diffenent LUNs
+OpenHPI base library
+  808046 - Persistance for Domain SEL
+  924206 - saHpiSubscribe and EventGet
+  927845 - Support multiple plugins and multiple instances of plugins
+OpenIPMI Plugin
+  883158 - Enable Control resource support
+  939629 - Add logic to support ATCA systems
+  943493 - LowMajor reading can be set in set_thres.c
+  943499 - new feature: dump rpttable
+Test Suites
+  923628 - Test names should map to HPI API
+  943202 - Create unit tests for the Unique ID utils
+
+Fixed Bugs:
+Blade Center Plugin
+  922781 - RSEL support with SNMPv3
+  928423 - SNMP v3: Timeout during snmpwalk
+  928427 - SNMP v3: snmpwalk 5.1 Vs. 5.0.9
+  928432 - SNMP v3: losing bc system event log entries
+  928435 - SNMP v3: set snmp session retry count
+  929988 - Move inventory code in snmp_bc.c to snmp_bc_inventory.c 
+  931454 - snmp_bc.so: undefined symbol: sim_banner
+  934215 - Need to use *real* dst info when call log2event()
+  941007 - Get rid of duplication definitions of external variables
+  941368 - Cleanup snmp_bc_sel.c
+  943161 - Need to update OIDs to match those in newer BC code
+Build System
+  899647 - Ensure SaHpi.h Types are enforced across OS's and platforms.
+  919109 - build issue with openhpid
+  922540 - consolodate openhpiutils headers
+  926553 - Detect and handle net-snmp-5.1
+  933755 - hpi.sym breaks make rpm
+  940404 - Add OPENHPI_UID_MAP variable to rt-env.sh.in
+  943886 - configure.ac still has release 0.6.0
+  944261 - fail in rpm build
+  947340 - update spec file to have right dependencies
+Documentation
+  927546 - ulinks broken in manual
+Dummy plugin
+  919235 - dummy not compiling on SUSE ia64
+HPI Utils
+  900055 - strict equal condition in oh_entity_path_equal function
+  922229 - hpievent does not compile
+  922230 - hpifru does not compile
+  922231 - hpiwdt does not compile
+  923348 - Move snmp utility calls public
+  924169 - UID_MAP env var should be OPENHPI_UID_MAP
+  928613 - ep_concat should use SAHPI_ENT_ROOT for end check
+  931423 - Utilities not handling entityinstance 0 right
+  934364 - check_ep() belongs in epath_utils
+  935230 - Eliminate entity path check from oh_add_rdr
+  935498 - entity path is only valid with SAHPI_ENT_ROOT
+  935922 - rpt_utils won't compile without adding stdio.h
+  939766 - Bad return types for calls in uid_utils
+IPMI Direct plugin
+  919410 - sensor SetEventEnables is buggy
+  943450 - make check doesn't build for ipmidirect
+None
+  943669 - make check fails at marshal_***, 0..7beta snapshot
+OpenHPI Daemon Client
+  938671 - Fix dbg statement
+OpenHPI Daemon
+  942608 - build fails on ia64
+  943841 - libmarshal doesn't work on non Intel platforms
+  947344 - openhpid won't run
+OpenHPI base library
+  812854 - saHpiEventGet() Error Checking
+  824648 - The event queue should be cleared after unsubscribe
+  841000 - saHpiEventGet blocking is done with a busy wait
+  895029 - OH_DEFAULT_UID_MAP undeclared
+  901159 - Segfault in saHpiFinalize() with 2 handlers per plugin
+  916962 - session_pop_event return code
+  919458 - auto inservtion/extraction only works when timeout is 0
+  923700 - openhpid cannot be successfully compiled
+  930781 - saHpiUnsubcribe needs revision
+  930785 - saHpiSubcribe needs revision
+  930788 - Improve process_session_event to handle active alarms
+  931242 - Hang in unload plugin
+  933751 - sanity checks need to be more strict
+  933780 - Debug macro should be in its own header file
+  934613 - Do not allow config.h to be included more than once
+OpenIPMI plugin
+  921805 - ./configure by itself spits some OpenIPMI warnings
+  924280 - IPMI plug-in takes too long to discover
+  925710 - Presence detection of Hot Swap Controllers output error
+  932098 - MCs no longer in RPT 
+  932492 - Lots of FRU errors displayed during discovery
+  933737 - hpievent test failed (EventGet & hyst_set)
+  933741 - Reset Controls not implemented
+  936669 - OpenIPMI 1.3.5 or later required
+  938833 - Multiple instances of IPMI plug-in does not work
+  939757 - IPMI threshold event isn't populated to HPI event
+  939762 - IPMI plugin doesn't poll threshold event from OpenIPMI
+  939776 - error in set_thresholds
+  940391 - IPMI plugin gets two calls for each MC reported
+  940862 - hpisel::clear sel fails
+  942136 - mistake in cvs check in. 
+  943893 - build of ipmi/t fails
+  944800 - seg fault when discovering AdvancedTCA system
+RSA Plugin
+  940051 - snmp_get() SEL entries receives NO_SUCH_NAME
+  940224 - segfault in parse_sel_entry
+  940285 - Discover segfaulted with snmp_rsa&snmp_bc plugins in config
+  941389 - hash table conflict, snmp_rsa and snmp_bc
+SNMP Agent
+  876304 - Make the MIB Sensor reading return dynamic data
+  923073 - getopt returns int not char
+SNMP Client plugin
+  891483 - SNMP plug-in should be 64bit clean
+  908608 - Change all mallocs() to g_malloc0()
+  908611 - Move all printf()'s to 'openhpi' style dbg()'s
+  914380 - Create Error Condition for snmp_get2()
+  927810 - Consolidate snmp utils calls 
+  942611 - build errors on amd64
+Test Suites
+  914909 - test hs_001
+</pre>
+
+              <br>
               <h3>OpenHPI 0.6 Released! (03/22/2004)</h3>
             <h4>New in this release:</h4>
             <ul>
@@ -250,7 +396,7 @@
 		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: <!--#flastmod file="index.shtml" -->
+Last modified: Mon May 24 15:05:53 EDT 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
