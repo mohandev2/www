@@ -20,7 +20,7 @@ closedir(DIR);
 # read each file
 
 foreach my $file (@files) {
-    if(/~/) {next;}
+    if($file =~ /~/) {next;}
     open(IN,"$SDIR/$file");
     my $name = <IN>;
     $name =~ s/\s+$//;
