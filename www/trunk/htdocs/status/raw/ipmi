@@ -7,11 +7,11 @@ saHpiSessionClose functional
 saHpiResourcesDiscover functional
 saHpiRptInfoGet functional
 saHpiRptEntryGet functional
-saHpiRptEntryGetByResourceId done
+saHpiRptEntryGetByResourceId na done in infrastructure
 saHpiResourceSeveritySet done
 saHpiResourceTagSet done
 saHpiResourceIdGet broken
-saHpiEntitySchemaGet done
+saHpiEntitySchemaGet na done in infrastructure
 saHpiEventLogInfoGet functional need more work with OpenIPMI
 saHpiEventLogEntryGet functional need more work with OpenIPMI
 saHpiEventLogEntryAdd functional need more work with OpenIPMI
@@ -26,13 +26,13 @@ saHpiUnsubscribe done
 saHpiEventGet functional need more work with OpenIPMI
 saHpiRdrGet functional
 saHpiSensorReadingGet functional
-saHpiSensorReadingConvert functional need more work with OpenIPMI 
+saHpiSensorReadingConvert na done in infrastructure
 saHpiSensorThresholdsGet functional need more work with OpenIPMI
 saHpiSensorThresholdsSet functional need more work with OpenIPMI
-saHpiSensorTypeGet functional functional need more work with OpenIPMI
+saHpiSensorTypeGet na done in infrastructure
 saHpiSensorEventEnablesGet functional need more work with OpenIPMI
 saHpiSensorEventEnablesSet functional need more work with OpenIPMI
-saHpiControlTypeGet broken no such function in IPMI now
+saHpiControlTypeGet na done in infrastructure
 saHpiControlStateGet broken no such function in IPMI now
 saHpiControlStateSet broken no such function in IPMI now
 saHpiEntityInventoryDataRead broken need more work in OpenIPMI
