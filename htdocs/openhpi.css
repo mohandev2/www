@@ -38,6 +38,6 @@ DT.announce { font-size: 14pt; font-weight: bold; padding-top: 15}
 DD { padding-bottom: 0 }
 DD.strong { font-weight: bold; color: #aa0000}
 
-H3.author { padding-top: 0; padding-bottom: 0 }
+H3.author { margin: 0; padding-top: 0; padding-bottom: 0 }
 PRE.programlisting { background-color: #aaaaaa }
 </style>
