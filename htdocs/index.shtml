@@ -43,7 +43,7 @@
             <dl>
               <!-- add announce items below -->
               
-              <dt class="announce"><!-- <img src="./new03.gif"> -->OpenHPI 0.6 Released! (03/22/2004)</dt>
+              <dt class="announce"><img src="./new03.gif">OpenHPI 0.6 Released! (03/22/2004)</dt>
               
             <b>New in this release:</b>
             <ul>
@@ -55,7 +55,7 @@
               <li>Check for minimum supported GCC version (3.2.0)</li>
               <li>CVS directory structure changed so plug-ins, core library,
                 EP and RPT utils and clients are siblings.</li>
-              <li>HPI command line utilities moved from Utils directory is now knows as clients.</li>
+              <li>HPI command line utilities moved from Utils directory is now known as clients.</li>
             </ul>
             <li>Base Library</li>
             <ul>
@@ -81,7 +81,9 @@
             <li>OpenIPMI based IPMI plug-in</li>
             <ul>
 	      <li>Requires OpenIPMI library 1.2.21 or later (strict)</li>
+              <li>Support for set/get time on Management Controllers with SEL capability</li>
               <li>FRU/Inventory support added</li>
+              <li>Support for MC Event Log clearing</li>
               <li>Enhanced Management Controllers discovery and detection of SEL</li>
             </ul>
             <li>Blade Center plug-in</li>
