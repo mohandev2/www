@@ -86,11 +86,10 @@
                       <li>Control,
                       <li>Watchdog
                     </ul>
+                  <li>Events and System Event Log
                 </ul>
-              <li>Events and System Event Log
-            </ul>
-            <li>SGML Guide for writing a sub-agent using NetSNMP API, titled:
-              "NetSNMP subagent development manual."
+              <li>SGML Guide for writing a sub-agent using NetSNMP API, titled:
+                "NetSNMP subagent development manual."
               
               <li>Support for notifications/TRAPS as defined in the MIB:
                 <ul>
@@ -369,7 +368,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Mar  4 10:45:57 EST 2004
+Last modified: Thu Mar  4 10:47:01 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
