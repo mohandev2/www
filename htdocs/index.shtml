@@ -10,7 +10,8 @@
         <tr>
           <!--#include virtual="/sidebar.html" -->
           <td valign="top">
-            <img src="images/openhpi_blue_blnk.gif">
+            <!-- <img src="images/openhpi_blue_blnk.gif"> -->
+            <h1>OpenHPI</h1>
             <p>
               Open HPI is an open source project created with the
               intent of providing an implementation of the <a
@@ -26,12 +27,21 @@
             <p>
               This project is just starting, so stay tuned for more info.
             </p>
-            
             <hr>
-            <address><a href="people/sean">Sean Dague</a></address>
+            <h2>News!</h2>
+            <dl>
+              <dt>Website Updates (9/4/2003)</dt>
+              <dd>We are in the process of updating the information on
+                the website to more accurately reflect the project
+                current status.  This will also mean keeping the high
+                level design information much more up to date on the
+                website.  Stay tuned for more developments</dd>
+            </dl>
+            <hr>
+            <address><a href="">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Sep  4 17:31:22 EDT 2003
+Last modified: Thu Sep  4 17:58:15 EDT 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
