@@ -33,6 +33,7 @@ TD.Open { background-color: #ffff00 }
 TD.Pending { background-color: #11ff00 }
 TD.Bad { background-color: #ff0000 }
 
+LI.strong { font-weight: bold; color: #aa0000 }
 DT { font-size: 14pt; font-weight: bold; padding-top: 15}
 DD { padding-bottom: 0 }
 DD.strong { font-weight: bold; color: #aa0000}
