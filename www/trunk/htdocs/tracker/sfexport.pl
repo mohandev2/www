@@ -19,7 +19,7 @@ use HTML::LinkExtor;
 use HTTP::Response;
 use HTTP::Request::Common;
 use Data::Dumper;
-use LWP::Debug qw(level); level('+');
+#use LWP::Debug qw(level); level('+');
 use strict;
 
 our @track = ();
@@ -60,14 +60,18 @@ sub process_tracker {
                              atid => $tid,
                              _status => 100,
                              set => "custom",
-                            );
- 
+                          );
+    print "Resting to keep SF off our back\n";
+    sleep 2;
+			  
     foreach my $i (@links) {
         if($i->{href} =~ /offset/) { next; }
 
         my %keys = get_artifact($i->{href});
         print "processed $i->{href}\n";
         push @arts, \%keys;
+	print "Resting to keep SF off our back\n";
+	sleep 2;
     }
     return @arts;
 }
@@ -101,6 +105,7 @@ sub suck_tracker {
     my $p = HTML::LinkExtor->new(\&callback);      
     my $res = $ua->request(POST $base,
                            \%vars);
+		   #print $res->content;
     
     $p->parse($res->content);
     
@@ -116,6 +121,9 @@ sub suck_tracker {
         $res = $ua->request(GET "http://sourceforge.net" . $item->{href});
         $p->parse($res->content);
         $item = $track[scalar(@track) - 1];
+	print "Resting to keep SF off our back on tracker\n";
+	sleep 2;
+	#print $res->content;
     }
     return @track;
 }
