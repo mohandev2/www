@@ -22,7 +22,7 @@
                 overall design and releases.</dd>
               
               <dt class="name">David Ashley (IBM) - Developer</dt>
-              <dd>Focus Areas: System Event Log support, RSA Plugin</dd>
+              <dd>Focus Areas: RSA Plugin, Event Logs, OpenHPI Daemon</dd>
               
               <dt class="name">Chris Chia (IBM) - Developer</dt>
               <dd>Focus Areas: Testing</dd>
@@ -41,8 +41,8 @@
               <dd>Focus Areas: HPI Conformance Test Suite</dd>
 
               <dt class="name">David Judkovics (IBM) - Developer</dt>
-              <dd>Focus Areas: SNMP Client plugin, Threading
-                Support, Dummy plugin</dd>
+              <dd>Focus Areas: HPI SNMP Agent, SNMP Client plugin,
+                Threading Support, Dummy plugin</dd>
 
               <dt class="name">Thomas Kanngieser (FCI) -
                 Developer</dt>
@@ -52,6 +52,9 @@
               <dt class="name">Rusty Lynch (Intel) - Developer</dt>
               <dd>Focus Areas: OpenHPI core library, Watchdog plugin.
                 Note: Rusty is the previous OpenHPI maintainer.</dd>
+
+              <dt class="name">Carl McAdams (IBM) - Developer</dt>
+              <dd>Focus Areas: HPI Conformance Test Suite</dd>
 
               <dt class="name">Renier Morales (IBM) - Developer</dt>
               <dd>Focus Areas: OpenHPI core library, RPT utilities,
@@ -77,7 +80,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
 <!-- hhmts start -->
-Last modified: Sun Feb 15 12:02:20 EST 2004
+Last modified: Tue Sep 28 09:08:11 EDT 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
