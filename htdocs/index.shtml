@@ -47,19 +47,29 @@
               
             <h3>New in this release:</h3>
             <ul>
-              <li>EP and RPT utils are compiled as a seperate library.</li>
-              <li>Utils directory is now knows as clients.</li>
+              <li>Build System</li>
+              <ul>
+              <li>Debug messages are now configurable (configure
+                --enable-debug to turn them on).</li>
+              <li>Check for proper versions of Net-SNMP, OpenIPMI, and FAM.</li>
+              <li>Check for minimum supported GCC version (3.2.0)</li>
               <li>CVS directory structure changed so plug-ins, core library,
-		  EP and RPT utils and clients are parallel. </li>
-              <li>Internal helper utility documentation added to OpenHPI Manual.</li>
-              <li>Core library compiled on IA64 systems.</li>
-              <li>Debug flag is now configurable (configure --enable-debug).</li>
-              <li>Minimum GCC version supported is 3.2.0.</li>
-              <li>Configure script will check for net-snmp, OpenIPMI and FAM.</li>
+                EP and RPT utils and clients are siblings.</li>
+              <li>HPI command line utilities moved from Utils directory is now knows as clients.</li>
+            </ul>
+            <li>Base Library</li>
+            <ul>
+              <li>saHpiResourceIdGet supported</li>
+              <li>Domain System Event logs supported with configurable
+              event severity threshold</li>
+              <li>Global configuration stanzas added to openhpi.conf</li>
+              <li>Entity Path and RPT utils are compiled as a seperate
+                library (libopenhpiutils.so).</li>
+              <li>Core library is now 64bit clean, and compiles on IA64 systems.</li>
               <li>New libopenhpi_snmp for common snmp calls.</li>
-              <li>New unit tests for RPT utils.</li>
-
-
+            </ul>
+            <li>Plugins</li>
+            <ul>
               <li>IPMI-DIRECT plug-in:</li>
             <ul>
               <li>Fast discover process</li>
@@ -68,21 +78,49 @@
               <li>Controls discovery added including FAN controls</li>
               <li>Common base class for Sensors and Controls</li>
             </ul>
-            <li>Blade Center support</li>
-            <ul>
-              <li>Code clean-up and otimization</li>
-              <li>Enabled snmp v3</li>
-              <li>Enhanced even reporting</li>
-
-            </ul>
-            
             <li>OpenIPMI based IPMI plug-in</li>
             <ul>
 	      <li>Requires OpenIPMI library 1.2.21 or later (strict)</li>
               <li>FRU/Inventory support added</li>
               <li>Enhanced Management Controllers discovery and detection of SEL</li>
             </ul>
-            
+            <li>Blade Center plug-in</li>
+            <ul>
+              <li>Event log cache created to speed up event operations
+                (x100 speedup gained)</li>
+              <li>Support for time set/get operations</li>
+              <li>Support for event log clear</li>
+              <li>Enhanced event reporting</li>
+              <li>Various code clean ups</li>
+            </ul>
+            <li>RSA (Remote Service Adapter) plug-in</li>
+            <ul>
+              <li>First release of this plugin (snmp_rsa)</li>
+              <li>Resource discovery supported</li>
+            </ul>
+            <li>SNMP Client plug-in</li>
+            <ul>
+              <li>Support for HPI Subagent 0.2 added</li>
+              <li>Sensor tables supported</li>
+              <li>SNMP v3 authentication and encryption supported</li>
+            </ul>
+            </ul>
+            <li>HPI Daemon</li>
+            <ul>
+              <li>First release of new HPI client/daemon
+                prototype</li>
+              <li>libopenhpiclient.so created for using HPI client/daemon</li>
+            </ul>
+            <li>Documentation</li>
+            <ul>
+              <li>OpenHPI utility functions (libopenhpiutils.so)
+                documented in OpenHPI Manual.</li>
+              <li>Configuration for snmp_rsa added to manual</li>
+            </ul>
+            <li>Testing</li>
+            <ul>
+              <li>New unit tests for RPT utils.</li>
+            </ul>
           </ul>
 
               <dt class="announce">HPI Subagent 0.2 Released!
@@ -209,7 +247,7 @@
 		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Mar 22 18:14:24 EST 2004
+Last modified: Tue Mar 23 10:57:07 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
