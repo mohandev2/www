@@ -30,7 +30,7 @@ Sysfs Plugin
 
 Dummy Plugin
 -------------------------
-* Support multiple instances
+* Support multiple instances (v 0.3)
 
 Watchdog Plugin
 -------------------------
@@ -38,12 +38,23 @@ Watchdog Plugin
 
 Blade Center Plugin
 -------------------------
-* Resources
-* RDR
+* Resources (v 0.3)
+* RDR (v 0.3)
 * SEL 
 * Events 
 * HPI Set Functions
 * Hot Swap
+
+SNMP v3 Remoting
+-------------------------
+* Design (soon)
+* Resources (v 0.3)
+* RDR (v 0.3)
+* SEL (v 0.3)
+* Events (v 0.4)
+* HPI Set Functions
+* Hot Swap
+* Watchdog
 
 Simulator Plugin
 -------------------------
