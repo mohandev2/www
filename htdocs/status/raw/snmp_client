@@ -1,11 +1,11 @@
 Snmp Client plugin
 
-saHpiInitialize functional    
-saHpiFinalize functional 
-saHpiSessionOpen functional
-saHpiSessionClose functional
-saHpiResourcesDiscover functional
-saHpiRptInfoGet functional
+saHpiInitialize done    
+saHpiFinalize done 
+saHpiSessionOpen done
+saHpiSessionClose done
+saHpiResourcesDiscover done
+saHpiRptInfoGet done
 saHpiRptEntryGet broken
 saHpiRptEntryGetByResourceId na
 saHpiResourceSeveritySet broken
@@ -25,15 +25,15 @@ saHpiSubscribe na
 saHpiUnsubscribe na 
 saHpiEventGet broken
 saHpiRdrGet broken
-saHpiSensorReadingGet functional
+saHpiSensorReadingGet done
 saHpiSensorReadingConvert na
-saHpiSensorThresholdsGet functional
-saHpiSensorThresholdsSet functional
+saHpiSensorThresholdsGet done
+saHpiSensorThresholdsSet done
 saHpiSensorTypeGet na
-saHpiSensorEventEnablesGet functional
-saHpiSensorEventEnablesSet functional
+saHpiSensorEventEnablesGet done
+saHpiSensorEventEnablesSet done
 saHpiControlTypeGet na
-saHpiControlStateGet functional
+saHpiControlStateGet done
 saHpiControlStateSet broken 
 saHpiEntityInventoryDataRead  broken
 saHpiEntityInventoryDataWrite broken 
