@@ -1,88 +1,97 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <head>
+<head>
     <title>OpenHPI - Contributors</title>
-    <!--#include virtual="/openhpi.css" -->
-  </head>
-
-  <body>
-    <table>
-        <tr>
-          <!--#include virtual="/sidebar.html" -->
-          <td valign="top">
-            <h1>OpenHPI :: Contributors</h1>
-            <p>
-              The following people make up the HPI team.  They are the
-              ones that can be found on the openhpi mailing lists or
-              irc.
-            </p>
-            <dl>
-              <dt class="name">Tariq Shureih (Intel) - OpenHPI Maintainer</dt>
-              <dd>Focus Areas: OpenHPI core library, OpenIPMI Plugin, 
-                overall design and releases.</dd>
-              
-              <dt class="name">David Ashley (IBM) - Developer</dt>
-              <dd>Focus Areas: RSA Plugin, Event Logs, OpenHPI Daemon</dd>
-              
-              <dt class="name">Chris Chia (IBM) - Developer</dt>
-              <dd>Focus Areas: Testing</dd>
-
-              <dt class="name"><a href="http://dague.net/sean">Sean
-                  Dague</a> (IBM) -
-                Developer, Webmaster</dt>
-              <dd>Focus Areas: OpenHPI 
-                core library, Build System, Documentation, Testing
-              </dd>
-
-              <dt class="name">Julie Fleischer (Intel) - Developer</dt>
-              <dd>Focus Areas: Sysfs and watchdog plug-ins</dd>
-              
-              <dt class="name">Kevin Gao (Intel) - Developer</dt>
-              <dd>Focus Areas: HPI Conformance Test Suite</dd>
-
-              <dt class="name">David Judkovics (IBM) - Developer</dt>
-              <dd>Focus Areas: HPI SNMP Agent, SNMP Client plugin,
-                Threading Support, Dummy plugin</dd>
-
-              <dt class="name">Thomas Kanngieser (FCI) -
-                Developer</dt>
-              <dd>Focus Areas: OpenHPI core library, IPMI Direct
-                plugin, HPIView GUI</dd>
-
-              <dt class="name">Rusty Lynch (Intel) - Developer</dt>
-              <dd>Focus Areas: OpenHPI core library, Watchdog plugin.
-                Note: Rusty is the previous OpenHPI maintainer.</dd>
-
-              <dt class="name">Carl McAdams (IBM) - Developer</dt>
-              <dd>Focus Areas: HPI Conformance Test Suite</dd>
-
-              <dt class="name">Renier Morales (IBM) - Developer</dt>
-              <dd>Focus Areas: OpenHPI core library, RPT utilities,
-                PowerPC enablement.</dd>
-              
-              <dt class="name">Peter Phan (IBM) - Developer</dt>
-              <dd>Focus Areas: Blade Center Plugin</dd>
-              
-              <dt class="name">Konrad Rzeszutek (IBM) - Developer</dt>
-              <dd>Focus Areas: HPI SNMP Subagent</dd>
-              
-              <dt class="name">Steve Sherman (IBM) - Developer</dt>
-              <dd>Focus Areas: Blade Center Plugin</dd>
-              
-              <dt class="name">Louis Zhuang (Intel) - Developer</dt>
-              <dd>Focus Areas: OpenHPI core library, IPMI plugin,
-                Dummy plugin</dd>
-              
-              
-            </dl>
-            
-            <hr>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="keywords" content="hpi, sa, forum, service, availability, hardware, platform, interface, c, programming, language, open, source, abstraction, layer">
+    <meta name="description" content="The OpenHPI Project, an open implementation of the SA Forum's HPI spec.">
+    <link rel="stylesheet" href="../openhpi_tryout.css" type="text/css">
+    <style type="text/css">
+        ul.names { list-style-type: none }
+        ul.names li { padding: 0 0 10px 0 }
+    </style>
+</head>
+<body>
+    <div id="banner"><div><h1>The OpenHPI Project</h1><small>Open Hardware Platform Interface</small></div></div>
+    <table><tr>
+        <!--#include virtual="../sidebar_tryout.html" -->
+        <td id="maincolumn">
+            <div class="mainsegment">
+                <h3>Contributors</h3>
+                <div>
+                    The following people make up the HPI team. They can be found on the <a href="mailto:openhpi-devel@lists.sourceforge.net">openhpi mailing list</a> or IRC (irc.freenode.net, #openhpi).
+                </div>
+                <div>
+                    <ul class="names">
+                        <li>
+                            <strong>Tariq Shureih (Intel) - OpenHPI Maintainer</strong><br>
+                            &#187; Focus Areas: OpenHPI core library, OpenIPMI Plugin, overall design and releases.
+                        </li>
+                        <li>
+                            <strong>David Ashley (IBM) - Developer</strong><br>
+                            &#187; Focus Areas: RSA Plugin, Event Logs, OpenHPI Daemon.
+                        </li>
+                        <li>
+                            <strong>Chris Chia (IBM) - Developer</strong><br>
+                            &#187; Focus Areas: Testing.
+                        </li>
+                        <li>
+                            <strong><a href="http://dague.net/sean">Sean Dague</a> (IBM) - Developer,  Webmaster</strong><br>
+                            &#187; Focus Areas: OpenHPI core library, Build System, Documentation, Testing.
+                        </li>
+                        <li>
+                            <strong>Julie Fleischer (Intel) - Developer</strong><br>
+                            &#187; Focus Areas: Sysfs and watchdog plug-ins.
+                        </li>
+                        <li>
+                            <strong>Kevin Gao (Intel) - Developer</strong><br>
+                            &#187; Focus Areas: HPI Conformance Test Suite.
+                        </li>
+                        <li>
+                            <strong>David Judkovics (IBM) - Developer</strong><br>
+                            &#187; Focus Areas: HPI SNMP Agent, SNMP Client plugin, Threading Support, Dummy plugin.
+                        </li>
+                        <li>
+                            <strong>Thomas Kanngieser (FCI) - Developer</strong><br>
+                            &#187; Focus Areas: OpenHPI core library, IPMI Direct plugin, HPIView GUI.
+                        </li>
+                        <li>
+                            <strong>Rusty Lynch (Intel) - Developer</strong><br>
+                            &#187; Focus Areas: OpenHPI core library, Watchdog plugin. Note: Rusty is the previous OpenHPI maintainer.
+                        </li>
+                        <li>
+                            <strong>Carl McAdams (IBM) - Developer</strong><br>
+                            &#187; Focus Areas: HPI Conformance Test Suite.
+                        </li>
+                        <li>
+                            <strong>Renier Morales (IBM) - Developer</strong><br>
+                            &#187; Focus Areas: OpenHPI core library, RPT utilities, PowerPC enablement.
+                        </li>
+                        <li>
+                            <strong>Peter Phan (IBM) - Developer</strong><br>
+                            &#187; Focus Areas: Blade Center Plugin.
+                        </li>
+                        <li>
+                            <strong>Konrad Rzeszutek (IBM) - Developer</strong><br>
+                            &#187; Focus Areas: HPI SNMP Subagent.
+                        </li>
+                        <li>
+                            <strong>Steve Sherman (IBM) - Developer</strong><br>
+                            &#187; Focus Areas: Blade Center Plugin.
+                        </li>
+                        <li>
+                            <strong>Louis Zhuang (Intel) - Developer</strong><br>
+                            &#187; Focus Areas: OpenHPI core library, IPMI plugin, Dummy plugin.
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
-<!-- hhmts start -->
-Last modified: Tue Sep 28 09:08:11 EDT 2004
-<!-- hhmts end -->
-          </td></tr>
-    </table>
-  </body>
+            <!-- hhmts start -->
+            Last modified: Tue Sep 28 09:08:11 EDT 2004
+            <!-- hhmts end -->
+        </td>
+    </tr></table>
+</body>
 </html>
