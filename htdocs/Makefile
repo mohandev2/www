@@ -17,10 +17,14 @@ RSYNC=rsync -rlvC --exclude '.emacs*' --rsh=ssh ./ $(USER)$(SERVER):$(DIR)
 CHMOD=ssh $(USER)$(SERVER) "find $(DIR) -user `whoami` -exec chmod g+w {} \;"
 CHMODD=ssh $(USER)$(SERVER) "find $(DIR) -user `whoami` -type d -exec chmod g+s {} \;"
 
-all: status/rollup.html
+all: uptodate status/rollup.html 
 	$(RSYNC)
 	$(CHMOD)
 	$(CHMODD)
+
+uptodate:
+	cvs up -dP
+	cvs ci
 
 $(SDIR)/$(SPROG):
 
