@@ -32,6 +32,9 @@
                 <tr><td class="impossible">Impossible</td><td>It is
                     impossible to implement this function.  This may
                     be the case for some functions on some hardware.</td></tr>
+                <tr><td class="nodata">No Data</td><td>There is no
+                    information yet on this status.  Please check back
+                    later.</td></tr>
             </table>
             <!--#include virtual="infrastruct.html" -->
             <hr>

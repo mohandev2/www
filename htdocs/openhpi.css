@@ -26,7 +26,8 @@ TR.impossible { background-color: black; color: white }
 TD.broken { background-color: red }
 TD.semifunc { background-color: orange }
 TD.functional { background-color: yellow }
-TD.done { background-color: green }
+TD.done { background-color: green; color: white }
 TD.impossible { background-color: black; color: white }
+TD.nodata { background-color: purple; color: yellow }
 
 </style>
