@@ -39,5 +39,5 @@ DD { padding-bottom: 0 }
 
 .author { margin: 0}
 .AUTHOR { margin: 0 }
-.programlisting { background-color: #aaaaaa; border: 1px; border-color: #000000 }
+.programlisting { background-color: #bbbbbb; border-style: solid; border-width: 1px; border-color: #000000 }
 </style>
