@@ -1,4 +1,4 @@
-IPMI
+IPMI Plugin
 
 saHpiVersionGet			na Supported in Infra-structure code
 saHpiSessionOpen		done
