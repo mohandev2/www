@@ -7,7 +7,7 @@ saHpiSessionClose functional
 saHpiResourcesDiscover semifunc Many RPT entries and RDRs are discovered. Not handling rediscovery.
 saHpiRptInfoGet functional
 saHpiRptEntryGet semifunc You can get resources, but they don't have the full information yet.
-saHpiRptEntryGetByResourceId semifunc
+saHpiRptEntryGetByResourceId na done in infrastructure
 saHpiResourceSeveritySet semifunc You can set this, but not handling resource absence yet.
 saHpiResourceTagSet 
 saHpiResourceIdGet 
