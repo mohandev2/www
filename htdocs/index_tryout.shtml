@@ -9,79 +9,10 @@
 </head>
 <body>
     <div id="banner"><div><h1>The OpenHPI Project</h1><small>Open Hardware Platform Interface</small></div></div>
-    <div>
-        <div id="navbar">
-            <div class="navsegment">
-				<h4>Main</h4>
-				<ul>
-					<li><a href="http://openhpi.sourceforge.net">Home</a></li>
-					<li><a href="http://sourceforge.net/projects/openhpi">SF Project Page</a></li>
-				</ul>
-			</div>
-            <div class="navsegment">
-				<h4>Status</h4>
-				<ul>
-					<li><a href="http://openhpi.sourceforge.net/status/">Infrastructure &amp; Plugins</a></li>
-					<li><a href="http://openhpi.sourceforge.net/tracker/">Bugs &amp; Features</a></li>
-				</ul>
-			</div>
-            <div class="navsegment">
-				<h4>Tests</h4>
-				<ul>
-					<li><a href="http://openhpi.sourceforge.net/coverage_report/">Unit Testing</a></li>
-					<li><a href="http://openhpi.sourceforge.net/conform_report/">Conformance Testing</a></li>
-				</ul>
-			</div>
-            <div class="navsegment">
-				<h4>Developers</h4>
-				<ul>
-					<li><a href="http://openhpi.sourceforge.net/people/">Members</a></li>
-					<li><a href="http://openhpi.sourceforge.net/contribute/">Contributor Guide</a></li>
-				</ul>
-			</div>
-            <div class="navsegment">
-				<h4>Email</h4>
-				<ul>
-					<li><a href="http://lists.sourceforge.net/mailman/listinfo/openhpi-devel">Mailing List</a></li>
-					<li><a href="http://sourceforge.net/mailarchive/forum.php?forum_id=25480">Archives</a></li>
-				</ul>
-			</div>
-			<div class="navsegment">
-				<h4>Documentation</h4>
-				<ul>
-					<li><a href="http://openhpi.sourceforge.net/manual/book1.html">Manual</a></li>
-					<li><a href="http://openhpi.sourceforge.net/subagent-manual/book1.html">SNMP Subagent Manual</a></li>
-					<li><a href="http://openhpi.sourceforge.net/test_spec/book1.html">Conformance Test</a></li>
-					<li><a href="http://openhpi.sourceforge.net/func_test/book1.html">Functional Test</a></li>
-					<li><a href="http://cvs.sourceforge.net/viewcvs.py/openhpi/openhpi-subagent/mib/hpi-mib.mib?rev=HEAD">HPI MIB</a></li>
-				</ul>
-			</div>
-			<div class="navsegment">
-				<h4>Releases</h4>
-				<ul>
-					<li><a href="https://sourceforge.net/project/showfiles.php?group_id=71730&amp;package_id=71373&amp;release_id=265507">Development - 1.9.0</a></li>
-					<li><a href="https://sourceforge.net/project/showfiles.php?group_id=71730&amp;package_id=122642">Stable - 1.0</a></li>
-					<li><a href="https://sourceforge.net/project/showfiles.php?group_id=71730&amp;package_id=104361">SNMP Subagent - 1.0</a></li>
-				</ul>
-			</div>
-            <div class="navsegment">
-				<h4>Binary RPMS</h4>
-				<ul>
-					<li><a href="http://openhpi.sourceforge.net/rpms/SuSE/">SuSE</a></li>
-					<li><a href="http://openhpi.sourceforge.net/rpms/Fedora/">Fedora/RedHat</a></li>
-				</ul>
-			</div>
-            <div class="navsegment">
-				<h4>Related Sites</h4>
-				<ul>
-					<li><a href="http://saforum.org/">SA Forum</a></li>
-					<li><a href="http://openipmi.sourceforge.net">OpenIPMI</a></li>
-					<li><a href="http://net-snmp.sourceforge.net">Net-SNMP</a></li>
-				</ul>
-			</div>
-        </div>
-        <div id="content">
-            <div class="portion">
+    <table><tr>
+        <!--#include virtual="./sidebar_tryout.html" -->
+        <td id="maincolumn">
+            <div class="mainsegment">
                 <h3>Welcome</h3>
                 <div>
                     OpenHPI is an open source project created with the intent of providing an implementation of the <a href="http://saforum.org">SA Forum</a>'s Hardware Platform Interface (HPI). HPI provides an abstracted interface to managing computer hardware, typically for chassis and rack based servers. HPI includes resource modeling; access to and control over sensor, control, watchdog, and inventory data associated with resources; abstracted System Event Log interfaces; hardware events and alerts; and a managed hotswap interface.
@@ -89,7 +20,7 @@
                     <p>The OpenHPI project is always looking for more participants. If you are interested in using OpenHPI, or taking a part in the evolution of OpenHPI, please <a href="http://lists.sourceforge.net/mailman/listinfo/openhpi-devel">join our mailing list</a> and <a href="mailto:openhpi-devel@lists.sourceforge.net">drop us a line</a>.
                 </div>
             </div>
-            <div class="portion">
+            <div class="mainsegment">
                 <h3>News</h3>
                 <h4>OpenHPI 1.9.0 Development Release Posted! (09/08/2004)</h4>
                 <div>
@@ -156,7 +87,7 @@
     test suites
     1007446 - hpi b conf test documentation
     991139 - create a new test tree for hpi b 1.01
-    
+
     fixed bugs:
     blade center plugin
     1015692 - bc and rsa simulators segfaulted with new idr's
@@ -194,7 +125,7 @@
             <b>For questions or comments, please <a href="mailto:openhpi-devel@lists.sourceforge.net">email the openhpi developers</a>.</b>
             <p>You can also contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a>.
             <br>Last modified: Wed Sep  8 16:44:53 EDT 2004
-        </div>
-    </div>
+        </td>
+    </tr></table>
 </body>
 </html>
