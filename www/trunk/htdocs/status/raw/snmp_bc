@@ -14,7 +14,7 @@ saHpiResourceTagSet		done
 saHpiResourceIdGet		na Supported in Infra-structure code
 saHpiEventLogInfoGet		done
 saHpiEventLogEntryGet		done
-saHpiEventLogEntryAdd		done Hardware does not allow user events to be added to log
+saHpiEventLogEntryAdd		impossible Hardware does not allow user events to be added to log
 saHpiEventLogClear		done
 saHpiEventLogTimeGet		done Infra-structure gets time thru saHpiEventLogInfoGet internally
 saHpiEventLogTimeSet		done
@@ -37,44 +37,44 @@ saHpiSensorThresholdsGet	done
 saHpiSensorThresholdsSet	done
 saHpiSensorTypeGet		na Supported in Infra-structure code
 saHpiSensorEnableGet		done	
-saHpiSensorEnableSet		done Hardware has no sensors that can be disabled defined
+saHpiSensorEnableSet		impossible Hardware currently has no sensors that can be disabled defined
 saHpiSensorEventEnableGet	done	
-saHpiSensorEventEnableSet	done Hardware has no writable event defined
+saHpiSensorEventEnableSet	impossible Hardware currently has no writable event defined
 saHpiSensorEventMasksGet	done
-saHpiSensorEventMasksSet	done Hardware has no writable event masks defined
+saHpiSensorEventMasksSet	impossible Hardware currently has no writable event masks defined
 saHpiControlTypeGet		na Supported in Infra-structure code
 saHpiControlGet			done	
 saHpiControlSet			done
 saHpiIdrInfoGet			done
 saHpiIdrAreaHeaderGet		done
-saHpiIdrAreaAdd			done Inventory updates not allowed
-saHpiIdrAreaDelete		done Inventory updates not allowed	
+saHpiIdrAreaAdd			impossible Hardware currently has no writable inventory defined
+saHpiIdrAreaDelete		impossible Hardware currently has no writable inventory defined
 saHpiIdrFieldGet		done
-saHpiIdrFieldAdd		done Inventory updates not allowed
-saHpiIdrFieldSet		done Inventory updates not allowed		
-saHpiIdrFieldDelete		done Inventory updates not allowed
-saHpiWatchdogTimerGet		done Hardware does not have any defined watchdogs
-saHpiWatchdogTimerSet		done Hardware does not have any defined watchdogs	
-saHpiWatchdogTimerReset		done Hardware does not have any defined watchdogs
-saHpiAnnunciatorGetNext		notdone
-saHpiAnnunciatorGet		notdone
-saHpiAnnunciatorAcknowledge	notdone
-saHpiAnnunciatorAdd		notdone
-saHpiAnnunciatorDelete		notdone
-saHpiAnnunciatorModeGet		notdone
-saHpiAnnunciatorModeSet		notdone
-saHpiHotSwapPolicyCancel	done Hardware supports simple hot-swap model
-saHpiResourceActiveSet		done Hardware supports simple hot-swap model
-saHpiResourceInactiveSet	done Hardware supports simple hot-swap model
-saHpiAutoInsertTimeoutGet	done Hardware supports simple hot-swap model
-saHpiAutoInsertTimeoutSet	done Hardware supports simple hot-swap model
-saHpiAutoExtractTimeoutGet	done Hardware supports simple hot-swap model
-saHpiAutoExtractTimeoutSet	done Hardware supports simple hot-swap model
-saHpiHotSwapStateGet		done Hardware supports simple hot-swap model
-saHpiHotSwapActionRequest	done Hardware supports simple hot-swap model
-saHpiHotSwapIndicatorStateGet	done Hardware supports simple hot-swap model
-saHpiHotSwapIndicatorStateSet	done Hardware supports simple hot-swap model
-saHpiParmControl		done Hardware does not persist user-set information
+saHpiIdrFieldAdd		impossible Hardware currently has no writable inventory defined
+saHpiIdrFieldSet		impossible Hardware currently has no writable inventory defined
+saHpiIdrFieldDelete		impossible Hardware currently has no writable inventory defined
+saHpiWatchdogTimerGet		impossible Hardware does not support accessible watchdogs
+saHpiWatchdogTimerSet		impossible Hardware does not support accessible watchdogs
+saHpiWatchdogTimerReset		impossible Hardware does not support accessible watchdogs
+saHpiAnnunciatorGetNext		impossible Hardware currently has no defined annunciators
+saHpiAnnunciatorGet		impossible Hardware currently has no defined annunciators
+saHpiAnnunciatorAcknowledge	impossible Hardware currently has no defined annunciators
+saHpiAnnunciatorAdd		impossible Hardware currently has no defined annunciators
+saHpiAnnunciatorDelete		impossible Hardware currently has no defined annunciators
+saHpiAnnunciatorModeGet		impossible Hardware currently has no defined annunciators
+saHpiAnnunciatorModeSet		impossible Hardware currently has no defined annunciators
+saHpiHotSwapPolicyCancel	impossible Hardware supports simple hot-swap model
+saHpiResourceActiveSet		impossible Hardware supports simple hot-swap model
+saHpiResourceInactiveSet	impossible Hardware supports simple hot-swap model
+saHpiAutoInsertTimeoutGet	impossible Hardware supports simple hot-swap model
+saHpiAutoInsertTimeoutSet	impossible Hardware supports simple hot-swap model
+saHpiAutoExtractTimeoutGet	impossible Hardware supports simple hot-swap model
+saHpiAutoExtractTimeoutSet	impossible Hardware supports simple hot-swap model
+saHpiHotSwapStateGet		impossible Hardware supports simple hot-swap model
+saHpiHotSwapActionRequest	impossible Hardware supports simple hot-swap model
+saHpiHotSwapIndicatorStateGet	impossible Hardware supports simple hot-swap model
+saHpiHotSwapIndicatorStateSet	impossible Hardware supports simple hot-swap model
+saHpiParmControl		impossible Hardware does not persist user-set information
 saHpiResourceResetStateGet	done
 saHpiResourceResetStateSet	done
 saHpiResourcePowerStateGet	done
