@@ -29,80 +29,109 @@
             </p>
             <h2>News!</h2>
             <dl>
-	      <dt>OpenHPI 0.3 Released! (11/18/2003)</dt>
-              <dd class="strong">Major Changes in this release</dd>
-              <dl>
-              <dd class="nest">Plugin Interface has been rearchitected
-                to interface more cleanly with HPI interface.</dd>
-              <dd class="nest">3 New plugins in this release: Sysfs,
-                Linux Watchdog, Blade Center (via SNMP)</dd>
-            </dl>
-            <dd>Other Changes</dd>
+              <dt>OpenHPI 0.3 Released! (11/18/2003)</dt>
+            <ul>
+              <li class="strong">Major Changes in this release</li>
+            <ul>
+              <li>Plugin Interface has been rearchitected
+                to interface more cleanly with HPI interface.</li>
+              <li>3 New plugins in this release: Sysfs,
+                Linux Watchdog, Blade Center (via SNMP)</li>
+            </ul>
+            <li>Packaging/Build</li>
+            <ul>
+              <li>OpenHPI is now available as rpms</li>
+              <li>openhpi pkgconfig alied</li>
+              <li>OpenHPI plugins now located in /var/lib/openhpi per
+                FHS guidelines</li>
+            </ul>
+            
+            <li>Infrastructure</li>
+            <ul>
+              <li>Entity path utilities to convert between EP and
+                string</li>
+              <li>ResourceId made persistant between sessions (based
+                on EP mapping)</li>
+              <li>New RPTcache interface for consistant handling of
+                RPTEntries and RDRs</li>
+            </ul>
+            
+            <li>Sysfs</li>
+            <ul>
+              <li class="strong">plugin included in standard release</li>
+              <li>ported to libsysfs 0.2</li>
+              <li>alied set functionality</li>
+            </ul>
+
+            <li>Watchdog</li>
+            <ul>
+              <li class="strong">plugin included in standard release</li>
+              <li>added test_watchdog to examples for testing</li>
+            </ul>
+            
+            <li>Blade Center</li>
+            <ul>
+              <li class="strong">plugin included in standard
+                release</li>
+              <li>Resource Discovery works for all resources</li>
+              <li>Sensor readings work for most sensors</li>
+              <li>Early System Event Log support</li>
+            </ul>
+            
+            <li>IPMI</li>
+            <ul>
+              <li>Sensor readings improved</li>
+            </ul>
+            
+            <li>Documentation</li>
+            <ul>
+              <li>OpenHPI manual significantly improved</li>
+            </ul>
+              
+            <li>Deprecated</li>
+            <ul>
+              <li>Openhpid and text_remoting 
+                retired and will be replaced by SNMP-agent for OpenHPI remoting.</li>
+            </ul>
+          </ul>
+
+            <dt>OpenHPI 0.2 Released! (9/16/2003)</dt>
+            <dd>New content in this release:</dd>
             <dl>
-              <dd class="nest">
-                openHpi has a new plug-in interface.
-                Implemented the new 'oh_handler_state' structure.
-                (see oh_plugin.h)
+              <dd >
+                openhpi HPI remoting proof of concept and
+                openhpid.
               </dd>
-              <dd class="nest">All plug-in ported to oh_handler_state</dd>
-              <dd class="nest">New Entity Path utilities (ep_utils) to 
-                convert EP to and from string and SaHpiResourceIdT.
-              </dd>
-              <dd class="nest">New RPTcache of oh_handler_state.</dd>
-              <dd class="nest">SaHpiResourceId is persisted using 
-                EntityPatch and uid.</dd>
-              <dd class="nest">Sysfs: ported to libsysfs 0.2 and oh_handler_state.</dd>
-              <dd class="nest">Sysfs: Added Set functionality.</dd>
-              <dd class="nest">Watchdog: Added test_watchdog to examples for testing</dd>
-              <dd class="nest">SNMP: Sensor, ResourceTag and discovery are functional</dd>
-              <dd class="nest">Openhpid and text_remoting: 
-                retired and will be replaced by SNMP-agent for OpenHPI remoting.</dd>
-              <dd class="nest">Plug-in developer guide.</dd>
-              <dd class="nest">Improved build and packaging</dd>
+              <dd >Enhanced configuration file parsing.</dd>
+              <dd >Updated openhpi.conf (see
+                examples/openhpi.conf.example)</dd>
+              <dd >IPMI: Added reading values from discrete sensors.</dd>
+              <dd >IPMI: sensor ignore patch.</dd>
+              <dd >IPMI: resource removal.</dd>
             </dl>
-          </dd>
+            
+            <dt>People Page Added (9/16/2003)</dt>
+            <dd>A new people page has been added.  If you don't like
+              your entry, send something to the ML for what you want
+              it to be. :)</dd>
+            
+            <dt>High Level Design Updates (9/5/2003)</dt>
+            <dd>The High Level Design is now much more in line with
+              the current OpenHPI code based.  Updates to this
+              document will be ongoing, and continuous over the next
+              few weeks.</dd>
+            <dt>Website Updates (9/4/2003)</dt>
+            <dd>We are in the process of updating the information on
+              the website to more accurately reflect the project
+              current status.  This will also mean keeping the high
+              level design information much more up to date on the
+              website.  Stay tuned for more developments</dd>
           </dl>
-
-              <dt>OpenHPI 0.2 Released! (9/16/2003)</dt>
-              <dd>
-                New content in this release:
-                <dl>
-                  <dd class="nest">
-                    openhpi HPI remoting proof of concept and
-                    openhpid.
-                  </dd>
-                  <dd class="nest">Enhanced configuration file parsing.</dd>
-                  <dd class="nest">Updated openhpi.conf (see
-                    examples/openhpi.conf.example)</dd>
-                  <dd class="nest">IPMI: Added reading values from discrete sensors.</dd>
-                  <dd class="nest">IPMI: sensor ignore patch.</dd>
-                  <dd class="nest">IPMI: resource removal.</dd>
-                </dl>
-
-              </dd>
-              
-              <dt>People Page Added (9/16/2003)</dt>
-              <dd>A new people page has been added.  If you don't like
-                your entry, send something to the ML for what you want
-                it to be. :)</dd>
-              
-              <dt>High Level Design Updates (9/5/2003)</dt>
-              <dd>The High Level Design is now much more in line with
-                the current OpenHPI code based.  Updates to this
-                document will be ongoing, and continuous over the next
-                few weeks.</dd>
-              <dt>Website Updates (9/4/2003)</dt>
-              <dd>We are in the process of updating the information on
-                the website to more accurately reflect the project
-                current status.  This will also mean keeping the high
-                level design information much more up to date on the
-                website.  Stay tuned for more developments</dd>
-            </dl>
             <hr>
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Wed Nov 19 09:47:23 EST 2003
+Last modified: Wed Nov 19 10:13:48 EST 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
