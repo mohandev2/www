@@ -141,6 +141,7 @@ pre.report {
   border: 0;
   padding: 0;
 }
+td.linecount { color: #999999 }
 tr.na {color: grey}
 tr.ok {background-color: #dde244}
 tr.bad {background-color: red}
