@@ -25,7 +25,7 @@ saHpiSubscribe na
 saHpiUnsubscribe na 
 saHpiEventGet broken
 saHpiRdrGet broken
-saHpiSensorReadingGet broken
+saHpiSensorReadingGet functional
 saHpiSensorReadingConvert na
 saHpiSensorThresholdsGet broken
 saHpiSensorThresholdsSet broken
