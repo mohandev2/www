@@ -5,10 +5,10 @@
 #  useful things with these pulls
 #
 #  Note: if SF gave access to their export anonymously, or let agents authenticate
-#  with the site, we could do this in 2 requests instead of the couple hundred
+#  with the site, we could do this in 2 requests instead of the couple thousand
 #  that is currently required.
 #
-#  (C) Copyright 2003 IBM Corp.
+#  (C) Copyright 2003,2004 IBM Corp.
 #
 #  Author: Sean Dague
 #
@@ -19,29 +19,195 @@ use HTML::LinkExtor;
 use HTTP::Response;
 use HTTP::Request::Common;
 use Data::Dumper;
-#use LWP::Debug qw(level); level('+');
+use Time::Local;
+use Getopt::Std;
 use strict;
+use constant OPENHPI => 71730;
 
 our @track = ();
+our %opts = ();
+
+# options -
+#    -a        : get all (means you must use the SF tracker)
+#    -m mbox   : get a delta from an mbox (you must have a tracker mbox)
+#    -h        : usage
+
+getopts('ahm:', \%opts);
+
+if($opts{h}) { 
+    usage(); 
+}
+
+unless($opts{a} or $opts{'m'}) {
+    print Dumper(\%opts);
+    usage("must specify either -a or -m mbox");
+}
+
+if($opts{a} and $opts{'m'}) {
+    usage("must specify *only* one of -a and -m");
+}
+
+# now we get down to work
 
 my $ua = new LWP::UserAgent();
 $ua->env_proxy(0);
 
-my @bugs = process_tracker(532251);
-my @features = process_tracker(532254);
+# Database of past bugs / features looks as follows:
+#my $data = {
+#            features => {
+#                         trackerid => "", # tracker id for this
+#                         newest => "", # time of newest feature
+#                         data => {}, # hash (by id) of features
+#                        },
+#            bugs => {
+#                     trackerid => "", # tracker id for this
+#                     newest => "", # time of newest feature
+#                     data => {}, # hash (by id) of features
+#                    },
+#           };
 
-print ("blah");
-open(OUT,">bugs.txt");
-print OUT Dumper(\@bugs);
-close(OUT);
+my $data = load_data("tracker.db");
 
-open(OUT,">features.txt");
-print OUT Dumper(\@features);
-close(OUT);
+set_newest($data);
 
-#http://sourceforge.net/tracker/index.php?func=browse&group_id=71730&atid=532251&set=custom&_assigned_to=0&_status=100&_category=100&_group=100&order=artifact_id&sort=ASC&offset=50
+$data->{bugs}->{trackerid} ||= 532251;
+$data->{features}->{trackerid} ||= 532254;    
 
-#print $res->as_string;
+# if we want a full pull
+if($opts{a}) {
+    pull_all($data);
+}
+if($opts{'m'}) {
+    pull_from_mbox($data, $opts{'m'});
+}
+
+# always set the newest globally before saving
+set_newest($data);
+
+save_data("tracker.db",$data);
+
+######################################################
+#
+# usage
+#
+######################################################
+
+sub usage {
+    my $msg = shift;
+    print "ERROR: $msg\n" if($msg);
+    print <<END;
+sfexport.pl - export sourceforge tracker data
+  -a      : pull ALL data from SF trackers (this will take a while)
+  -m mbox : use an mbox file to pull recent changes
+  -h      : display help
+END
+    exit(1);
+}
+
+######################################################
+#
+# pull_all($data) - pull everything from the trackers
+#
+######################################################
+
+sub pull_all {
+    my $data = shift;
+    $data->{bugs}->{data} = pull_entire_tracker($data->{bugs}->{trackerid});
+    $data->{features}->{data} = pull_entire_tracker($data->{features}->{trackerid});
+}
+
+######################################################
+#
+# pull_from_mbox($data) - pull from an mbox file
+#
+######################################################
+
+sub pull_from_mbox {
+    my ($data, $mbox) = @_;
+    
+    foreach my $t (keys %$data) {
+        my %ids = ();
+        my @ids = find_mbox_items_newer($mbox, $data->{$t}->{newest}, $data->{$t}->{trackerid});
+        
+        # make them unique
+        foreach my $i (@ids) { $ids{$i}++; }
+
+        foreach my $i (sort keys %ids) {
+            print "Getting data for TID: $data->{$t}->{trackerid}, ID: $i\n";
+            my %data = get_artifact(OPENHPI,
+                                    $data->{$t}->{trackerid},
+                                    $i);
+            $data->{$t}->{data}->{$i} = \%data;
+            delay("in pull_from_mbox");
+        }
+    }
+}
+
+##############################################
+#
+# find_mbox_items_newer - find tracker urls from an mbox
+#                         for messages no older than 1 week before the
+#                         last update on the tracker.
+#
+##############################################
+
+sub find_mbox_items_newer {
+    use Mail::Box::Manager;
+    my @ids = ();
+    
+    my ($file, $newest, $trackerid) = @_;
+
+    my $time = $newest - 7*24*60*60; # back a week
+    
+    my $mgr = new Mail::Box::Manager;
+    my $folder = $mgr->open($file);
+    
+    foreach my $msg ($folder->messages) {
+        if($msg->timestamp < $time) {next;}
+        
+        if($msg->body =~ m{(sourceforge.net/tracker/\S+)}) {
+            my $url = $1;
+            if($url =~ /atid=$trackerid/) {
+                my ($project, $tracker, $id) = parse_url($url);
+                push @ids, $id;
+            }
+        }
+    }
+    return @ids;
+}
+#################
+
+sub load_data {
+    my $data = {};
+    my $file = shift;
+    my $VAR1 = undef;
+    my $tmp;
+    
+    return $data if(!-e $file);
+    
+    open(IN,"<$file") or die "Can't open $file";
+    {
+        local $/ = undef;
+        $tmp = <IN>;
+    }
+    close(IN);
+    eval $tmp;
+    $data = $VAR1;
+    return $data;
+}
+
+sub save_data {
+    my ($file, $data) = @_;
+    open(OUT,">$file") or die "Can't save $file";
+    print OUT Dumper($data);
+    close(OUT);
+}
+
+####################################################################
+#
+#  callback - used during linkextor processing
+#
+####################################################################
 
 sub callback {
     my($tag, %attr) = @_;
@@ -51,12 +217,11 @@ sub callback {
     }
 }
 
-
-sub process_tracker {
+sub pull_entire_tracker {
     my $tid = shift;
-    my @arts = ();
+    my %arts = ();
     my @links = suck_tracker("http://sourceforge.net/tracker/index.php",
-                             group_id => 71730,
+                             group_id => OPENHPI,
                              atid => $tid,
                              _status => 100,
                              set => "custom",
@@ -67,34 +232,79 @@ sub process_tracker {
     foreach my $i (@links) {
         if($i->{href} =~ /offset/) { next; }
 
+        my ($project, $tracker, $id) = parse_url($i->{href});
+        print "Getting data for TID: $tracker, ID: $id\n";        
+        my %data = get_artifact($project, $tracker, $id);
+        $arts{$id} = \%data;
+
+        delay("in pull_entire_tracker");
+    }
+    return \%arts;
+}
+
+sub process_tracker {
+    my $tid = shift;
+    my @arts = ();
+    my @links = suck_tracker("http://sourceforge.net/tracker/index.php",
+                             group_id => 71730,
+                             atid => $tid,
+                             _status => 100,
+                             set => "custom",
+                          );
+
+    delay("on process_tracker 1");
+			  
+    foreach my $i (@links) {
+        if($i->{href} =~ /offset/) { next; }
+
         my %keys = get_artifact($i->{href});
         print "processed $i->{href}\n";
         push @arts, \%keys;
-	print "Resting to keep SF off our back\n";
-	sleep 2;
+
+        delay("on process_tracker");
     }
     return @arts;
 }
 
 sub get_artifact {
-    my $relurl = shift;
-    my %keys = ();
-    my $res = $ua->request(GET "http://sourceforge.net" . $relurl);
+    my ($project, $tracker, $id) = @_;
+    my %keys = (
+                project => $project,
+                tracker => $tracker,
+                id => $id
+               );
+    
+    my $url = gen_url($project, $tracker, $id);
+
+    my $res = $ua->request(GET $url);
     
     my $content = $res->content;
-    foreach my $key ("Category", "Group", "Assigned To", "Priority", "Status", "Resolution", "Date Closed") {
+    foreach my $key ("Category", "Group", "Assigned To", "Priority", "Status", "Resolution", "Date Closed","Date Submitted","Date Last Updated") {
         if($content =~ /($key):.*?<br>([^<]+)/s) {
             $keys{$1} = $2;
         }
     }
+
+    if($keys{"Date Last Updated"} =~ /update/) {
+       $keys{"Date Last Updated"} = $keys{"Date Submitted"}; 
+    }
+    
+    $keys{mtime} = convert_time($keys{"Date Submitted"});
+
     if($content =~ /<title>SourceForge.net: Detail:(\d+) - (.*?)<\/title>/is) {
         $keys{Number} = $1;
         $keys{Title} = $2;
     }
-    $keys{Link} = "http://sourceforge.net" . $relurl;
+    $keys{Link} = gen_url($project, $tracker, $id);
     
     return %keys;
 }
+
+#######################################################
+#
+#  suck_tracker - pull all the artifacts for a given tracker
+#
+#######################################################
 
 sub suck_tracker {
     my ($base, %vars) = @_;
@@ -105,7 +315,7 @@ sub suck_tracker {
     my $p = HTML::LinkExtor->new(\&callback);      
     my $res = $ua->request(POST $base,
                            \%vars);
-		   #print $res->content;
+    #print $res->content;
     
     $p->parse($res->content);
     
@@ -121,11 +331,72 @@ sub suck_tracker {
         $res = $ua->request(GET "http://sourceforge.net" . $item->{href});
         $p->parse($res->content);
         $item = $track[scalar(@track) - 1];
-	print "Resting to keep SF off our back on tracker\n";
-	sleep 2;
+        
+        delay("on tracker suck");
 	#print $res->content;
     }
     return @track;
 }
 
-    
+##################################################
+#
+#  set_newest($data) - sets the newest field of the trackers
+#                      in the data.
+#
+##################################################
+
+sub set_newest {
+    my $data = shift;
+    foreach my $t (keys %$data) {
+        foreach my $art (sort keys %{$data->{$t}->{data}}) {
+            if($data->{$t}->{data}->{$art}->{mtime} > $data->{$t}->{newest}) {
+                $data->{$t}->{newest} = $data->{$t}->{data}->{$art}->{mtime};
+            }
+        }
+    }
+}
+
+##################################################
+#
+#  convert_time($sftime) - convert from SF Text Time to Epoch Time
+#
+##################################################
+
+sub convert_time {
+    my $sftime = shift;
+    my $time = 0;
+    if($sftime =~ /^(\d\d\d\d)-(\d\d)-(\d\d) (\d+):(\d\d)/) {
+        my ($y, $m, $d, $H, $M) = ($1, $2, $3, $4, $5);
+        $time = timegm(0,$M, $H, $d, ($m - 1), ($y - 1900));
+    }
+    return $time;
+}
+
+sub parse_url {
+    my $url = shift;
+    my ($project, $tracker, $id);
+    if($url =~ /aid=(\d+)/) {
+        $id = $1;
+    }
+    if($url =~ /group_id=(\d+)/) {
+        $project = $1;
+    }
+    if($url =~ /atid=(\d+)/) {
+        $tracker = $1;
+    }
+    return ($project, $tracker, $id);
+}
+
+sub gen_url {
+    my ($project, $tracker, $id) = @_;
+    my $url = "http://sourceforge.net/tracker/?func=detail&aid=$id&group_id=$project&atid=$tracker";
+    return $url;
+}    
+
+sub delay {
+    my $msg = shift;
+    print "Resting 2 secs to keep SF off our back";
+    print ": $msg" if $msg;
+    print "\n";
+    sleep 2;
+}
