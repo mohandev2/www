@@ -22,9 +22,9 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
-  <h4>OpenHPI 1.9.3 Development Release (12/03/2004)</h4>
+  <h4>OpenHPI 2.0.0 Stable Release (12/31/2004)</h4>
   <div>
-      OpenHPI 1.9.3 has been released! This is the fourth and last development release before our major milestone release of OpenHPI 2.0 (stable) which happens towards the end of December. This release comes out with overall beta state support for the HPI B spec, the latest spec published by the SA Forum. Some features of note are:
+      OpenHPI 2.0.0 has been released! This is the first stable release of OpenHPI providing well-tested and robust implementation of the HPI B.01.01 specification.
       <ul>
           <li>Overall plugin support for HPI B spec (beta).</li>
    <li>HPI clients now ported to support HPI B spec.</li>
