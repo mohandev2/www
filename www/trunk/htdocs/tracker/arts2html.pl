@@ -62,7 +62,7 @@ sub print_group {
         
         if($group ne $tracker->{$id}->{Category}) {
             $group = $tracker->{$id}->{Category};
-            print "<tr><td colspan=5>$group</td></tr>\n";
+            print "<tr><td class='group' colspan=5>$group</td></tr>\n";
         }
         my $bug = $tracker->{$id};
         print_item_html($bug);
