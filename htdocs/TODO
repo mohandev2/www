@@ -11,10 +11,29 @@ Infrastructure
 * Make OpenHPI Thread Safe
 * Add Support for Multiple Domains
 * Support for setting handler entity root
+* Persistance mechanism for SEL
+* Persistance mechanism for User Updateable Fields
 
 IPMI Plugin
 -------------------------
 * Resources Supported
 * SEL Supported
+* Events Supported
 
+Sysfs Plugin
+-------------------------
+??
 
+Dummy Plugin
+-------------------------
+* Support multiple instances
+
+Watchdog Plugin
+-------------------------
+??
+
+Blade Center Plugin
+-------------------------
+* Resources Supported
+* SEL Supported
+* Events Supported
