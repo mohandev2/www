@@ -24,7 +24,7 @@ saHpiEventLogStateSet
 saHpiSubscribe 
 saHpiUnsubscribe 
 saHpiEventGet 
-saHpiRdrGet functional
+saHpiRdrGet 
 saHpiSensorReadingGet 
 saHpiSensorReadingConvert 
 saHpiSensorThresholdsGet 
