@@ -42,6 +42,43 @@
             <h2>News!</h2>
             <dl>
               <!-- add announce items below -->
+			  <dt class="announce">OpenHPI 0.4 Released! (12/11/2003)</dt>
+
+			  		<h3>New in this release:</h3>
+				<ul>
+
+					<li>Developer's Plug-in guide updated in the
+						OpenHPI manual on-line.</li>
+					<li>Blade Center support</li>
+					<li>New IPMI-DIRECT plug-in</li>
+					<ul>
+						<li>Blade center inventory support.</li>
+						<li>Blade Center simulator.</li>
+					</ul>
+					<li>OpenIPMI based IPMI plug-in</li>
+					<ul>
+						<li>Added IPMI plug-in support to clear SEL.</li>
+						<li>Retrieves all MCs in a system
+							and creates individual resources for each.</li>
+						<li>Added support to retrieve SEL
+							info and entries.</li>
+					</ul>
+					<li>Sysfs</li>
+					<ul>
+						<li>Sysfs plug-in: Ported to libsysfs 0.3</li>
+						<li>New test program for set threshold.</li>
+					</ul>
+					<li>Infrastructure</li>
+					<ul>
+						<li>Support for removal of RPTs and RDRs.</li>
+					</ul>
+					<li>Build and packaging</li>
+					<ul>
+						<li>Unit test framework: using automake to
+							create a unit test framework.</li>
+					</ul>
+				</ul>
+				
               <dt class="announce">Website Updates (12/06/2003)</dt>
               <dd>
                 We are in progress to OpenHPI 0.4 right now, and lots of
