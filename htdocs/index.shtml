@@ -42,6 +42,51 @@
             <h2>News!</h2>
             <dl>
               <!-- add announce items below -->
+
+			  <dt class="announce">OpenHPI 0.5 Released! (02/06/2003)</dt>
+
+			  		<h3>New in this release:</h3>
+				<ul>
+
+					<li>Unit test framewor documentation complete</li>
+					<li>IPMI-DIRECT plug-in:</li>
+					<ul>
+						<li>IPMI command reader support</li>
+						<li>IPMI SMI interface support</li>
+						<li>Support for FRU inventory data</li>
+						<li>saHpiAutoExtractTimeoutGeg/Set implemented</li>
+						<li>Seperate thread for reading/processing SEL</li>
+					</ul>
+					<li>Blade Center support</li>
+					<ul>
+						<li>Major improvements and enhancements</li>
+					</ul>
+					<li>OpenIPMI based IPMI plug-in</li>
+					<ul>
+						<li>Code cleanup of old data structures</li>
+						<li>Initial implementation of control support</li>
+					</ul>
+					<li>Infrastructure</li>
+					<ul>
+						<li>Major code cleanup of old data structures</li>
+						<li>saHpiFinalize now clean up and unloads plugi-ins</li>
+						<li>Support for numeric entity types in epath_utils</li>
+						<li>Lots of bug fixes</li>
+					</ul>
+				</ul>
+				
+              <dt class="announce">Website Updates (12/06/2003)</dt>
+              <dd>
+                We are in progress to OpenHPI 0.4 right now, and lots of
+                documentation is being updated.  The functional test suite
+                documentation has now been added to the front page.
+                The OpenHPI manual now has the beginnings of a plugin
+                implementors guide.  Additionally, formatting changes
+                have been made to the documentation to fit into the
+                website better.
+              </dd>
+
+
             <dt class="announce">OpenHPI SNMP Subagent 0.1 Released (12/17/2003)</dt>
             <dd>
               I am pleased to announce the initial release of the OpenHPI

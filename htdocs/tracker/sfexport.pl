@@ -30,6 +30,7 @@ $ua->env_proxy(1);
 my @bugs = process_tracker(532251);
 my @features = process_tracker(532254);
 
+print ("blah");
 open(OUT,">bugs.txt");
 print OUT Dumper(\@bugs);
 close(OUT);
