@@ -28,11 +28,11 @@ a:hover { text-decoration: underline; }
 }
 small { font-size: 10px; }
 #navcolumn {
-    float: left;
     margin: 0;
     padding: 0 5px 0 8px;
 }
 .navsegment {
+    vertical-align: top;
     padding: 0;
     border: 1px solid #C9D2DC;
     background-color: #EEEEEE;
@@ -66,6 +66,7 @@ small { font-size: 10px; }
     padding: 0 8px 0 5px;
 }
 .mainsegment {
+    vertical-align: top;
     margin: 0 0 10px 0;
     padding: 0;
     border: 1px solid #93A4B7;
@@ -117,3 +118,4 @@ DD { padding-bottom: 0 }
     border: solid 1px #aaaaaa;
     padding: 0.5em;
 }
+
