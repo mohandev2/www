@@ -126,6 +126,7 @@ DD { padding-bottom: 0 }
 /* Test reporting */
 table.report {width: 600; border-width: thin; border-style: solid}
 pre.report { 
+  background-color: none;
   border: 0;
   padding: 0;
 }
