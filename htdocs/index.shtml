@@ -45,7 +45,7 @@
               
               <dt class="announce"><!-- <img src="./new03.gif"> -->OpenHPI 0.6 Released! (03/22/2004)</dt>
               
-            <h3>New in this release:</h3>
+            <b>New in this release:</b>
             <ul>
               <li>Build System</li>
               <ul>
@@ -199,9 +199,9 @@
               <li>Fix many bugs.
             </ul>
                   
-                  <dt class="announce">OpenHPI 0.5 Released! (02/06/2004)</dt>
+            <dt class="announce">OpenHPI 0.5 Released! (02/06/2004)</dt>
               
-            <h3>New in this release:</h3>
+            <b>New in this release:</b>
             <ul>
               <li>Unit test framework documentation complete</li>
               <li>195 unit tests added to openhpi tree (including ones
@@ -247,7 +247,7 @@
 		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Tue Mar 23 11:57:45 EST 2004
+Last modified: Tue Mar 23 11:59:09 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
