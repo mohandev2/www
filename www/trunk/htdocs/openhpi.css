@@ -24,7 +24,7 @@ TD.notdone { background-color: #ff8800 }
 TD.semifunc { background-color: #ffff00}
 TD.functional { background-color: #11ff00}
 TD.done { background-color: #009900; color: #ffffff }
-TD.na { background-color: #0022aa; color: #ffffff }
+TD.na { color: #0022aa }
 TD.impossible { background-color: #000000; color: #ffffff}
 TD.nodata { background-color: #990099; color: #ffff00 }
 
