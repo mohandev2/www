@@ -24,11 +24,11 @@
                 <h3>News</h3>
     <h4>OpenHPI 2.0.2 Development Release (02/24/2005)</h4>
   <div>
-   OpenHPI 2.0.1 has been released. This is essentially a bug fix from head to tail. The following bug fixes were geared to resolve threading issues:
+   OpenHPI 2.0.2 has been released. This is essentially a bug fix from head to tail. The following bug fixes were geared to resolve threading issues:
    <ul>
     <li>The event loop was reworked and improved</li>
     <li>The Blade Center plugin is now completely thread safe</li>
-    <li>The snmp utility wrappers are now using the net-snmp thread safe mdoel</li>
+    <li>The snmp utility wrappers are now using the net-snmp thread safe model</li>
    </ul>
    Other fixes include:
    <ul>
@@ -40,7 +40,7 @@
 
    Details on bug fixes and added features:
    <pre>
-Changes for 2.0.1
+Changes for 2.0.2
 -------------------
 New Features:
 HPI Shell
