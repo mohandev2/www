@@ -44,13 +44,26 @@ if(exists $bugs->{$rel} or exists $features->{$rel}) {
     print "Changes for $rel\n";
     print "-------------------\n";
     print "New Features:\n";
-    foreach my $bid (sort keys %{$features->{$rel}}) {
-        my $bug = $features->{$rel}->{$bid};
-        print "  $bug->{Number} - $bug->{Title}\n";
-    }
+
+    print_group($features->{$rel});
+
     print "\nFixed Bugs:\n";
-    foreach my $bid (sort keys %{$bugs->{$rel}}) {
-        my $bug = $bugs->{$rel}->{$bid};
+
+    print_group($bugs->{$rel});
+}
+
+sub print_group {
+    my ($tracker) = @_;
+    my $group = "";
+    foreach my $id (sort 
+                    {$tracker->{$a}->{Category}.$a cmp
+                       $tracker->{$b}->{Category}.$b} keys %{$tracker}) {
+        
+        if($group ne $tracker->{$id}->{Category}) {
+            $group = $tracker->{$id}->{Category};
+            print "$group\n";
+        }
+        my $bug = $tracker->{$id};
         print "  $bug->{Number} - $bug->{Title}\n";
     }
 }
