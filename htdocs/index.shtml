@@ -11,7 +11,7 @@
           <!--#include virtual="/sidebar.html" -->
           <td valign="top">
             <!-- <img src="images/openhpi_blue_blnk.gif"> -->
-            <h1>OpenHPI</h1>
+            <h1 align="center">OpenHPI</h1>
             <p>
               OpenHPI is an open source project created with the
               intent of providing an implementation of the <a
@@ -25,10 +25,35 @@
               and a managed hotswap interface.
             </p>
             <p>
-              This project is just starting, so stay tuned for more info.
+              OpenHPI provides a modular mechanism for adding new
+              hardware and device support easily.  Many plugins exist
+              in the OpenHPI source tree to provide access to various
+              types of hardware.  This includes, but is not limmitted
+              to, IPMI based servers, Blade Center, and machines which
+              export data via sysfs.  For up to date status on these
+              components, please check out the <a
+                href="/status/">status page</a>.
+            </p>
+            <p>
+              The OpenHPI project is always looking for more
+              participation.  If you are interested in using OpenHPI,
+              or participating the evolution of OpenHPI, please join
+              our Mailing List by following the links on the sidebar.
             </p>
             <h2>News!</h2>
             <dl>
+              <!-- add announce items below -->
+              <dt class="announce">Website Updates (12/06/2003)</dt>
+              <dd>
+                We are in progress to OpenHPI 0.4 right now, and lots of
+                documentation is being updated.  The functional test suite
+                documentation has now been added to the front page.
+                The OpenHPI manual now has the beginnings of a plugin
+                implementors guide.  Additionally, formatting changes
+                have been made to the documentation to fit into the
+                website better.
+              </dd>
+              
               <dt class="announce">OpenHPI 0.3 Released! (11/18/2003)</dt>
             <ul>
               <li class="strong">Major Changes in this release</li>
@@ -131,7 +156,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Dec  4 10:40:55 EST 2003
+Last modified: Sat Dec  6 13:38:11 EST 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
