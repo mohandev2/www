@@ -16,13 +16,13 @@
               OpenHPI is an open source project created with the
               intent of providing an implementation of the <a
                 href="http://saforum.org">SA Forum's</a> Hardware Platform
-              Interface (HPI). HPI provides a universal interface for creating
-              resource system models, typically for chassis and rack based
-              servers. 
-            </p>
-            <p>
-              In addition, HPI can be used for creating the system model of
-              clusters and virtual machines (aka plex86 and UML)
+              Interface (HPI). HPI provides an abstracted interface to
+              managing computer hardware, typically for chassis and
+              rack based servers.  HPI includes a resource modeling;
+              access to and control over sensor, control, watchdog,
+              and inventory data associated with resources; abstracted
+              System Event Log interfaces; hardware events and alerts;
+              and a managed hotswap interface.
             </p>
             <p>
               This project is just starting, so stay tuned for more info.
@@ -68,7 +68,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Sep 18 10:49:34 EDT 2003
+Last modified: Wed Nov 12 14:40:40 EST 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
