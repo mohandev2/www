@@ -27,7 +27,7 @@
               OpenHPI provides a modular mechanism for adding new
               hardware and device support easily.  Many plugins exist
               in the OpenHPI source tree to provide access to various
-              types of hardware.  This includes, but is not limmitted
+              types of hardware.  This includes, but is not limited
               to, IPMI based servers, Blade Center, and machines which
               export data via sysfs.  For up to date status on these
               components, please check out the <a
@@ -44,36 +44,46 @@
               <!-- add announce items below -->
 
 			  <dt class="announce">OpenHPI 0.5 Released! (02/06/2003)</dt>
+              
+            <h3>New in this release:</h3>
+            <ul>
+              <li>Unit test framework documentation complete</li>
+              <li>195 unit tests added to openhpi tree (including ones
+                for rpt_utils, epath_utils, sel_utils, and snmp_bc
+                plugin)</li>
 
-			  		<h3>New in this release:</h3>
-				<ul>
-
-					<li>Unit test framewor documentation complete</li>
-					<li>IPMI-DIRECT plug-in:</li>
-					<ul>
-						<li>IPMI command reader support</li>
-						<li>IPMI SMI interface support</li>
-						<li>Support for FRU inventory data</li>
-						<li>saHpiAutoExtractTimeoutGeg/Set implemented</li>
-						<li>Seperate thread for reading/processing SEL</li>
-					</ul>
-					<li>Blade Center support</li>
-					<ul>
-						<li>Major improvements and enhancements</li>
-					</ul>
-					<li>OpenIPMI based IPMI plug-in</li>
-					<ul>
-						<li>Code cleanup of old data structures</li>
-						<li>Initial implementation of control support</li>
-					</ul>
-					<li>Infrastructure</li>
-					<ul>
-						<li>Major code cleanup of old data structures</li>
-						<li>saHpiFinalize now clean up and unloads plugi-ins</li>
-						<li>Support for numeric entity types in epath_utils</li>
-						<li>Lots of bug fixes</li>
-					</ul>
-				</ul>
+              <li>IPMI-DIRECT plug-in:</li>
+            <ul>
+              <li>IPMI command reader support</li>
+              <li>IPMI SMI interface support</li>
+              <li>Support for FRU inventory data</li>
+              <li>saHpiAutoExtractTimeoutGeg/Set implemented</li>
+              <li>Separate thread for reading/processing SEL</li>
+            </ul>
+            <li>Blade Center support</li>
+            <ul>
+              <li>Power and Reset of resources enabled</li>
+              <li>Event Log Time control implemented</li>
+              <li>Rediscovery of resources works</li>
+              <li>Critical bug in Inventory support fixed</li>
+            </ul>
+            
+            <li>OpenIPMI based IPMI plug-in</li>
+            <ul>
+              <li>Code cleanup of old data structures</li>
+              <li>Initial implementation of control support</li>
+            </ul>
+            
+            <li>Infrastructure</li>
+            <ul>
+              <li>Rediscover / resource removal infrastructure added</li>
+              <li>Major code cleanup of old data structures</li>
+              <li>saHpiFinalize now clean up and unloads plugi-ins</li>
+              <li>Support for numeric entity types in epath_utils</li>
+              <li>System event log utilities added</li>
+              <li>Lots of bug fixes</li>
+            </ul>
+          </ul>
 				
               <dt class="announce">Website Updates (12/06/2003)</dt>
               <dd>
@@ -106,7 +116,7 @@
           HPI-MIB objects in nine tables:</li>
           <ul>
             <li>Resource Presence Table entities
-                <ul><li>HotSwap capabilities</li></ul>
+                <ul><li>Hotswap capabilities</li></ul>
         <li>Resource Data Records</li>
               <ul>
                 <li>Sensors</li>
@@ -201,9 +211,9 @@
             <ul>
               <li>Entity path utilities to convert between EP and
                 string</li>
-              <li>ResourceId made persistant between sessions (based
+              <li>ResourceId made persistent between sessions (based
                 on EP mapping)</li>
-              <li>New RPTcache interface for consistant handling of
+              <li>New RPTcache interface for consistent handling of
                 RPTEntries and RDRs</li>
             </ul>
             
@@ -282,7 +292,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Wed Dec 17 16:53:03 EST 2003
+Last modified: Mon Feb  9 13:27:35 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
