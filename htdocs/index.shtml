@@ -22,6 +22,83 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+              <h4>OpenHPI 1.9.1 Development Release (10/08/2004)</h4>
+              <div>
+                The OpenHPI Team is proud to announce the release OpenHPI 1.9.1, the
+                second development release supporting the HPI B.01.01 spec. This
+                development release includes the major new feature of a dynamic
+                configure interface. This allows client applications to load plugins
+                dynamically during run time, as well as open and close hardware
+                connections (handlers) on demand. This interface is still evolving,
+                and full documentation will be available soon.
+                <p>
+                  As this is a development release, many of the components of the OpenHPI tree
+                  are in only partially working states. Five plugins are functioning with the
+                  new interfaces (dummy, ipmi, sysfs, watchdog, and snmp_bc), and some of the
+                  clients have been ported. The OpenHPI daemon, and SNMP subagent are still in
+                  process.
+                <p>
+                  As always, feedback is highly valued. Please post
+                  questions and comments to <a
+                  href="mailto:openhpi-devel@lists.sf.net">openhpi-devel@lists.sf.net</a>.
+                  The complete release notes follow:
+                  <pre>
+Changes for 1.9.1
+-------------------
+New Features:
+Blade Center Plugin
+  1041525 - Port Event Log code to B.1.1 functionality
+  1041526 - Port hotplug support to B.1.1 structures
+  1041529 - Port watchdog code to B.1.1 functionality
+  1041530 - Port event code to B.1.1 structures
+  1041532 - Port sensor code to B.1.1 structures
+  1041533 - Port control code to B.1.1 structures
+  1041536 - Port inventory code to B.1.1 functions
+Dummy Plugin
+  898163 - add resource SEL to dummy plugin
+HPI Clients
+  998333 - Cleanup clients to use new utilities
+OpenHPI base library
+  1011045 - Enable run-time configuration of library
+OpenIPMI Plugin
+  1036825 - add sensor range
+Sysfs Plugin
+  1024208 - change get_sensor_data to get_sensor_reading
+
+Fixed Bugs:
+Blade Center Plugin
+  1020758 - blade center sim tests fail in distcheck
+  1023036 - Cleanup snmp_bc_snmp_get()/snmp_bc_snmp_set() interfaces 
+  1025911 - Same IdrId for resource of same type
+Build System
+  1021700 - need twice ./Bigbuild.infra
+  1035542 - define HAVE_SSIZE_T needed in config.h
+  1036712 - build errors on ia64 - sahp_struct_utils
+Dummy plugin
+  1023746 - Use new sensor_get_reading abi name
+HPI Clients
+  1029044 - countFields is not initialized
+HPI Utils
+  1020749 - sahpi_struct_utils_test fails
+OpenHPI base library
+  1020643 - Not getting historical rpt/rdr entries from plugins
+  1021586 - support unspecified domain id in event process
+  1034097 - Add action to SaHpiSensorEventMasksSet to plugin interface
+  1037174 - saHpiRptEntryGet returns wrong error codes
+  1037190 - saHpiUnsubscribe doesn't work
+  1037194 - test saHpiSessionOpen_T4 segfaults
+  1037854 - distcheck fails  1.9.1 branch (& cvs head), FAIL: ohpi_035 
+  927917 - check for ignore on sensor functions
+OpenIPMI plugin
+  1022890 - timeout make peformance decline
+  1031702 - Segment Fault when get sensor reading
+  1035961 - Fail to get sensor event mask
+
+                </pre>
+                </div>
+
+   
+
                 <h4>OpenHPI 1.9.0 Development Release Posted! (09/08/2004)</h4>
                 <div>
                     The OpenHPI team is pleased to announce the release of OpenHPI 1.9.0, the first development release on the road towards OpenHPI 2.0.0. The release can be downloaded from the OpenHPI project site.
