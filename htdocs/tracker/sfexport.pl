@@ -167,12 +167,18 @@ sub find_mbox_items_newer {
     foreach my $msg ($folder->messages) {
         if($msg->timestamp < $time) {next;}
         
+        print "Message Subject: " . $msg->subject . "\n";
         if($msg->body =~ m{(sourceforge.net/tracker/\S+)}) {
             my $url = $1;
-            if($url =~ /atid=$trackerid/) {
+            print "Found URL: $url\n";
+            if($url =~ /atid=$trackerid/g) {
                 my ($project, $tracker, $id) = parse_url($url);
                 push @ids, $id;
+            } else {
+                print "URL didn't match $trackerid\n";
             }
+        } else {
+            print "No url found\n";
         }
     }
     return @ids;
