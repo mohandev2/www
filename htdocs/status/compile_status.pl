@@ -6,6 +6,7 @@ use strict;
 my $SDIR = "raw";
 my %status = ();
 my @files = ();
+my $default_status = "broken";
 
 # aquire files
 opendir(DIR,$SDIR);
@@ -56,7 +57,7 @@ sub print_composite {
     foreach my $func ((hpi_func_array())) {
         print OUT "<tr><td>$func</td>";
         foreach my $work ((open_hpi_items())) {
-            my $state = $status->{$work}->{$func}->{state} || "nodata";
+            my $state = $status->{$work}->{$func}->{state} || $default_status;
             print OUT "<td class=\"$state\">$state</td>";
         }
         print OUT "</tr>\n";
@@ -74,7 +75,7 @@ sub print_individual {
 END
     
     foreach my $func ((hpi_func_array())) {
-        my $state = $$status{$func}{state} || "nodata";
+        my $state = $$status{$func}{state} || $default_status;
         print OUT "<tr><td class=\"$state\">$func</td><td>$$status{$func}{notes}</td></tr>\n";
     }
     print OUT "</table>\n";
