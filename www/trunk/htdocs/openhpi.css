@@ -35,6 +35,7 @@ TD.Bad { background-color: #ff0000 }
 
 .strong { font-weight: bold; color: #aa0000 }
 DT.announce { font-size: 14pt; font-weight: bold; padding-top: 15}
+DT.name { font-size: 14pt; font-weight: bold; padding-top: 15}
 DD { padding-bottom: 0 }
 
 TABLE.report {width: 600; border-width: thin; border-style: solid}
