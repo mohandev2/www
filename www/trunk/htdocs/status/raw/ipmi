@@ -4,9 +4,9 @@ saHpiInitialize   functional    Need to move plugin loading out of function
 saHpiFinalize    done 
 saHpiSessionOpen functional
 saHpiSessionClose functional
-saHpiResourcesDiscover 
-saHpiRptInfoGet 
-saHpiRptEntryGet 
+saHpiResourcesDiscover functional
+saHpiRptInfoGet functional
+saHpiRptEntryGet functional
 saHpiRptEntryGetByResourceId 
 saHpiResourceSeveritySet 
 saHpiResourceTagSet 
@@ -24,12 +24,12 @@ saHpiEventLogStateSet
 saHpiSubscribe 
 saHpiUnsubscribe 
 saHpiEventGet 
-saHpiRdrGet 
-saHpiSensorReadingGet 
+saHpiRdrGet functional
+saHpiSensorReadingGet functional
 saHpiSensorReadingConvert 
 saHpiSensorThresholdsGet 
 saHpiSensorThresholdsSet 
-saHpiSensorTypeGet 
+saHpiSensorTypeGet functional
 saHpiSensorEventEnablesGet 
 saHpiSensorEventEnablesSet 
 saHpiControlTypeGet 
