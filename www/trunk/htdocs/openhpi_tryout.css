@@ -1,43 +1,112 @@
 html, body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
 
 }
+
+a { text-decoration: none; }
+
+a:hover { text-decoration: underline; }
 
 #banner {
     width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0;
     text-align: center;
     background-color: #51657B;
-    border-bottom: 1px solid #999999;
+    border-bottom: 2px solid #999999;
+	font-family: Verdana, "Arial Black", Arial, sans-serif;
+    color: white;
 }
 
-#banner h1 {
-    margin: 0px;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 40px;
-    font-family: Verdana, "Arial Black", Arial, "Times New Roman";
-    color: white;
-    border-bottom: 1px solid #333333;
+#banner div {
+	margin: 0;
+	border-bottom: 2px solid #333333;
 }
+
+#banner div h1 {
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 40px;    
+}
+
+small { font-size: 10px; }
 
 #navbar {
     float: left;
-    font-family: Verdana, Arial, Sans, "Times New Roman";
-    width: 250px;
+	margin: 0 15px 5px 5px;
+    padding: 0;
 }
 
-#navbar p {
-    border: 1px solid #C9D2DC;
+#navbar .navsegment {
+	padding: 0;
+	border: 1px solid #C9D2DC;	
     background-color: #EEEEEE;
+    margin-bottom: 10px;
 }
 
-#navbar p h4 {
+#navbar .navsegment h4 {
+	margin: 0 0 5px 0;
+	font-family: sans-serif, Arial;
+	font-weight: bold;
     color: #000066;
     background-color: #C9D2DC;
-    border-width: 1px 0px 1px 1px;
-    border-top-color: white;
-    border-left-color: white;
-    border-bottom-color: #93A4B7;
-    padding: 3px 1px 3px 4px;
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-bottom: 1px solid #93A4B7;
+	border-right: 0;
+    padding: 2px 0 2px 5px;
+}
+
+#navbar .navsegment ul {
+    list-style: none;
+	margin: 0;
+	padding: 0 1px 0 7px;
+    font-size: 12px;
+}
+
+#navbar .navsegment ul li {
+    padding: 0;
+    margin: 0 0 5px 0;
+}
+
+#content {
+    margin: 0px 5px 5px 195px;
+    padding: 0;
+}
+
+.portion {
+    margin: 0 0 10px 0;
+    padding: 0;
+    border: 1px solid #93A4B7;
+}
+
+.portion h3 {
+    margin: 0;
+    background-color: #6D859E;
+    color: white;
+    padding: 2px 1px 2px 6px;
+    font-family: sans-serif, "Trebuchet MS", Tahoma, Arial;
+    border-top: 1px solid #C9D2DC;
+    border-left: 1px solid #C9D2DC;
+    border-bottom: 1px solid #51657B;
+    border-right: 0; 
+}
+
+.portion div {
+    margin: 0;
+    padding: 10px;
+}
+
+.portion h4 {
+    margin: 0;
+    padding: 2px 1px 2px 6px;
+    font-family: sans-serif, Arial, Tahoma;
+    background-color: #EEEEEE;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #999999;
+    border-right: 0;
 }
