@@ -1,3 +1,84 @@
 Dummy Plugin
 
 
+OpenHPI Infrastructure
+
+saHpiVersionGet			done
+saHpiSessionOpen		done
+saHpiSessionClose		done
+saHpiDiscover			done
+saHpiDomainInfoGet		done
+saHpiDrtEntryGet		notdone	this is just a stub now
+saHpiDomainTagSet		done
+saHpiRptEntryGet		done
+saHpiRptEntryGetByResourceId	done
+saHpiResourceSeveritySet	done	wrapper to plugin call
+saHpiResourceTagSet		done	wrapper to plugin call
+saHpiResourceIdGet		done	reads from config file
+saHpiEventLogInfoGet		done
+saHpiEventLogEntryGet		done
+saHpiEventLogEntryAdd		done
+saHpiEventLogClear		done
+saHpiEventLogTimeGet		done
+saHpiEventLogTimeSet		done
+saHpiEventLogStateGet		done
+saHpiEventLogStateSet		done
+saHpiEventLogOverflowReset	done
+saHpiSubscribe			done
+saHpiUnsubscribe		done
+saHpiEventGet			done	needs threading for 2 of the modes of operation
+saHpiEventAdd			done
+saHpiAlarmGetNext		notdone
+saHpiAlarmGet			notdone
+saHpiAlarmAcknowledge		notdone
+saHpiAlarmAdd			notdone
+saHpiAlarmDelete		notdone
+saHpiRdrGet			done
+saHpiRdrGetByInstrumentId	done
+saHpiSensorReadingGet		done
+saHpiSensorThresholdsGet	done
+saHpiSensorThresholdsSet	done
+saHpiSensorTypeGet		done
+saHpiSensorEnableGet		done	wrapper to plugin call
+saHpiSensorEnableSet		done	wrapper to plugin call
+saHpiSensorEventEnableGet	
+saHpiSensorEventEnableSet
+saHpiSensorEventMasksGet
+saHpiSensorEventMasksSet
+saHpiControlTypeGet		done
+saHpiControlGet			done	wrapper to plugin call
+saHpiControlSet			done	wrapper to plugin call
+saHpiIdrInfoGet			done
+saHpiIdrAreaHeaderGet		done
+saHpiIdrAreaAdd			done
+saHpiIdrAreaDelete		done
+saHpiIdrFieldGet		done
+saHpiIdrFieldAdd		done
+saHpiIdrFieldSet		done
+saHpiIdrFieldDelete		done
+saHpiWatchdogTimerGet		done
+saHpiWatchdogTimerSet		done
+saHpiWatchdogTimerReset		done
+saHpiAnnunciatorGetNext		notdone
+saHpiAnnunciatorGet		notdone
+saHpiAnnunciatorAcknowledge	notdone
+saHpiAnnunciatorAdd		notdone
+saHpiAnnunciatorDelete		notdone
+saHpiAnnunciatorModeGet		notdone
+saHpiAnnunciatorModeSet		notdone
+saHpiHotSwapPolicyCancel
+saHpiResourceActiveSet
+saHpiResourceInactiveSet
+saHpiAutoInsertTimeoutGet
+saHpiAutoInsertTimeoutSet
+saHpiAutoExtractTimeoutGet
+saHpiAutoExtractTimeoutSet
+saHpiHotSwapStateGet
+saHpiHotSwapActionRequest
+saHpiHotSwapIndicatorStateGet
+saHpiHotSwapIndicatorStateSet
+saHpiParmControl		done
+saHpiResourceResetStateGet	done
+saHpiResourceResetStateSet	done
+saHpiResourcePowerStateGet	done
+saHpiResourcePowerStateSet	done

@@ -109,11 +109,18 @@ sub open_hpi_items {
 sub hpi_infra_calls {
     my @array = qw(
                    saHpiVersionGet
+                   saHpiDomainInfoGet
+                   saHpiDrtEntryGet
+                   saHpiDomainTagSet
+                   saHpiRptEntryGet
                    saHpiRptEntryGetByResourceId
                    saHpiResourceIdGet
                    saHpiEventLogStateGet
                    saHpiSubscribe
                    saHpiUnsubscribe
+                   saHpiEventAdd	
+                   saHpiRdrGet			
+                   saHpiRdrGetByInstrumentId	
                    saHpiSensorReadingConvert
                    saHpiSensorTypeGet
                    saHpiControlTypeGet
