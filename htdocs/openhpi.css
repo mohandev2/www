@@ -4,34 +4,17 @@
 <META name="keywords" content="Dague, Sean Dague">
 <META name="author" content="Sean Dague">
 <style type="text/css">
-P {
-  FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
-}
-TD {
-  FONT-SIZE: 12px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
-}
-A {
-  COLOR: #150185
-}
-A:hover {
-  COLOR: red; TEXT-DECORATION: none
-}
-A:active {
-  COLOR: red; TEXT-DECORATION: none
-}
-.whitelink {
-  COLOR: #ffffff
-}
-.whitelink:link {
-  COLOR: #ffffff
-}
-.whitelink:hover {
-  COLOR: #ffffff; TEXT-DECORATION: none
-}
-.whitelink:active {
-  COLOR: #ffffff; TEXT-DECORATION: none
-}
-.whitelink:visited {
-  COLOR: #ffffff
-}
+
+BODY { background-color: #e8e8e8 }
+P { font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif }
+TD { font-size: 12px; font-FAMILY: Verdana, Arial, Helvetica, sans-serif }
+A { color: #150185 }
+A:hover { color: red; text-decoration: none }
+A:active { color: red; text-decoration: none }
+.whitelink { color: #ffffff }
+.whitelink:link { color: #ffffff }
+.whitelink:hover { color: #ffffff; text-decoration: none }
+.whitelink:active { color: #ffffff; text-decoration: none }
+.whitelink:visited { color: #ffffff }
+
 </style>
