@@ -2,9 +2,9 @@ IPMI Plugin
 
 saHpiInitialize   functional    Need to move plugin loading out of function
 saHpiFinalize    done 
-saHpiSessionOpen functional
-saHpiSessionClose functional
-saHpiResourcesDiscover functional
+saHpiSessionOpen done
+saHpiSessionClose done
+saHpiResourcesDiscover done
 saHpiRptInfoGet functional
 saHpiRptEntryGet functional
 saHpiRptEntryGetByResourceId na done in infrastructure
@@ -12,29 +12,29 @@ saHpiResourceSeveritySet done
 saHpiResourceTagSet done
 saHpiResourceIdGet broken
 saHpiEntitySchemaGet na done in infrastructure
-saHpiEventLogInfoGet functional need more work with OpenIPMI
-saHpiEventLogEntryGet functional need more work with OpenIPMI
-saHpiEventLogEntryAdd functional need more work with OpenIPMI
-saHpiEventLogEntryDelete functional need more work with OpenIPMI
-saHpiEventLogClear functional need more work with OpenIPMI
+saHpiEventLogInfoGet functional SEL siz not supported in OpenIPMI 
+saHpiEventLogEntryGet broken need more work with OpenIPMI
+saHpiEventLogEntryAdd broken need more work with OpenIPMI
+saHpiEventLogEntryDelete broken need more work with OpenIPMI
+saHpiEventLogClear broken need more work with OpenIPMI
 saHpiEventLogTimeGet functional need more work with OpenIPMI
 saHpiEventLogTimeSet functional need more work with OpenIPMI
 saHpiEventLogStateGet functional need more work with OpenIPMI
 saHpiEventLogStateSet functional need more work with OpenIPMI
 saHpiSubscribe done
 saHpiUnsubscribe done
-saHpiEventGet functional need more work with OpenIPMI
-saHpiRdrGet functional
-saHpiSensorReadingGet functional
+saHpiEventGet done
+saHpiRdrGet done
+saHpiSensorReadingGet done
 saHpiSensorReadingConvert na done in infrastructure
-saHpiSensorThresholdsGet functional need more work with OpenIPMI
-saHpiSensorThresholdsSet functional need more work with OpenIPMI
+saHpiSensorThresholdsGet done 
+saHpiSensorThresholdsSet broken
 saHpiSensorTypeGet na done in infrastructure
 saHpiSensorEventEnablesGet functional need more work with OpenIPMI
 saHpiSensorEventEnablesSet functional need more work with OpenIPMI
 saHpiControlTypeGet na done in infrastructure
-saHpiControlStateGet broken no such function in IPMI now
-saHpiControlStateSet broken no such function in IPMI now
+saHpiControlStateGet na no such function in IPMI now
+saHpiControlStateSet na no such function in IPMI now
 saHpiEntityInventoryDataRead broken need more work in OpenIPMI
 saHpiEntityInventoryDataWrite broken need more work in OpenIPMI
 saHpiWatchdogTimerGet done the function is in watchdog plug-in
