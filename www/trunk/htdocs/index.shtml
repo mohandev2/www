@@ -28,10 +28,10 @@
      <strong>The current stable release provides:</strong>
       <ul>
         <li>Complete library and plugin interface support for HPI B spec:</li>
-	Managed and simplified hot-swap support.<br>
-	Resource-level Event Log &amp; Domain Alarm Table support.<br>
-	Persistent Domain Event Log.<br>
-	Sensors, inventory-data &amp; controls.<br>
+	<li>Managed and simplified hot-swap support.</li>
+	<li>Resource-level Event Log &amp; Domain Alarm Table support.</li>
+	<li>Persistent Domain Event Log.</li>
+	<li>Sensors, inventory-data &amp; controls.</li>
 	<li>Dynamic plug-in load/unload interface allowing for addition and removal of platforms/resouces within a live HPI session.</li>
 	<li>IPMI plug-in with support for IPMI 1.0 and 1.5 platforms.</li>   
 	<li>BladeCenter plug-in (RSA and SNMP_BC).</li>
