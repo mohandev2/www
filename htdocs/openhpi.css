@@ -17,6 +17,8 @@ A:active { color: red; text-decoration: none }
 .whitelink:active { color: #ffffff; text-decoration: none }
 .whitelink:visited { color: #ffffff }
 
+SPAN.note { color: #cc0000 }
+
 TD.broken { background-color: #ff0000 }
 TD.notdone { background-color: #ff8800 }
 TD.semifunc { background-color: #ffff00}

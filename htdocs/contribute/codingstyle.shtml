@@ -11,6 +11,15 @@
           <!--#include virtual="/sidebar.html" -->
         <td valign="top">
     <h1>Linux Kernel Coding Style</h1>
+            <blockquote><span class="note">Note: This document is just
+                an HTML formatted version of Documentation/CodingStyle
+                found in the 2.4.22-ac4 kernel.  It is reproduced in
+                its entirety for the enjoyment of the reader, and to
+                show the justification for many of the points
+                contained herein.  For other OpenHPI style
+                requirements, please see the top level document in
+                this directory.</span>
+            </blockquote>
     <p>
       This is a short document describing the preferred coding style for the
       linux kernel.  Coding style is very personal, and I won't _force_ my
@@ -314,7 +323,7 @@ fi
           <address><a href="http://dague.net/sean">Sean Dague</a></address>
           <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
 <!-- hhmts start -->
-Last modified: Wed Oct  8 16:50:16 EDT 2003
+Last modified: Wed Oct  8 16:59:27 EDT 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
