@@ -5,7 +5,7 @@ use Data::Dumper;
 
 our $VAR1;
 
-my @RELEASES = ("0.6","0.7","0.9","1.0.0","1.9.0","1.9.1","Future","None");
+my @RELEASES = ("0.7","0.9","1.0.0","1.9.0","1.9.1","Future","None");
 
 my @f = load_items("features.txt");
 my @b = load_items("bugs.txt");
@@ -44,19 +44,28 @@ foreach my $rel (@RELEASES) {
     if(exists $bugs->{$rel} or exists $features->{$rel}) { 
         print "<h2>Release Status for $rel</h2>\n";
         print "<table>\n";
+        
+        print_group("Features",$features->{$rel});
+        print_group("Bugs",$bugs->{$rel});
 
-        print "<tr><th colspan=5>Features</th></tr>\n";
-        foreach my $bid (sort keys %{$features->{$rel}}) {
-            my $bug = $features->{$rel}->{$bid};
-            print_item_html($bug);
-        }
-
-        print "<tr><th colspan=5>Bugs</th></tr>\n";
-        foreach my $bid (sort keys %{$bugs->{$rel}}) {
-            my $bug = $bugs->{$rel}->{$bid};
-            print_item_html($bug);
-        }
         print "</table>\n";
+    }
+}
+
+sub print_group {
+    my ($name, $tracker) = @_;
+    print "<tr><th colspan=5>$name</th></tr>\n";
+    my $group = "";
+    foreach my $id (sort 
+                    {$tracker->{$a}->{Category}.$a cmp
+                       $tracker->{$b}->{Category}.$b} keys %{$tracker}) {
+        
+        if($group ne $tracker->{$id}->{Category}) {
+            $group = $tracker->{$id}->{Category};
+            print "<tr><td colspan=5>$group</td></tr>\n";
+        }
+        my $bug = $tracker->{$id};
+        print_item_html($bug);
     }
 }
 
