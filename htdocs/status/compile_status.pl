@@ -22,7 +22,7 @@ closedir(DIR);
 foreach my $file (@files) {
     open(IN,"$SDIR/$file");
     my $name = <IN>;
-    chomp($name);
+    $name =~ s/\s+$//;
     while(<IN>) {
         if(/^(saHpi\w+)\s+(\w+)\s+(.*)/) {
             $status{$name}->{$1}->{state} = $2;
