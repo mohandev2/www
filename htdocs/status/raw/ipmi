@@ -10,7 +10,7 @@ saHpiRptEntryGet functional
 saHpiRptEntryGetByResourceId done
 saHpiResourceSeveritySet done
 saHpiResourceTagSet done
-saHpiResourceIdGet no
+saHpiResourceIdGet broken
 saHpiEntitySchemaGet done
 saHpiEventLogInfoGet functional need more work with OpenIPMI
 saHpiEventLogEntryGet functional need more work with OpenIPMI
@@ -32,28 +32,28 @@ saHpiSensorThresholdsSet functional need more work with OpenIPMI
 saHpiSensorTypeGet functional functional need more work with OpenIPMI
 saHpiSensorEventEnablesGet functional need more work with OpenIPMI
 saHpiSensorEventEnablesSet functional need more work with OpenIPMI
-saHpiControlTypeGet no no such function in IPMI now
-saHpiControlStateGet no no such function in IPMI now
-saHpiControlStateSet no no such function in IPMI now
-saHpiEntityInventoryDataRead no need more work in OpenIPMI
-saHpiEntityInventoryDataWrite no need more work in OpenIPMI
+saHpiControlTypeGet broken no such function in IPMI now
+saHpiControlStateGet broken no such function in IPMI now
+saHpiControlStateSet broken no such function in IPMI now
+saHpiEntityInventoryDataRead broken need more work in OpenIPMI
+saHpiEntityInventoryDataWrite broken need more work in OpenIPMI
 saHpiWatchdogTimerGet done the function is in watchdog plug-in
 saHpiWatchdogTimerSet done the function is in watchdog plug-in
 saHpiWatchdogTimerReset done the function is in watchdog plug-in
-saHpiHotSwapControlRequest no 
-saHpiResourceActiveSet no
-saHpiResourceInactiveSet no
-saHpiAutoInsertTimeoutGet no
-saHpiAutoInsertTimeoutSet no
-saHpiAutoExtractTimeoutGet no
-saHpiAutoExtractTimeoutSet no
-saHpiHotSwapStateGet no
-saHpiHotSwapActionRequest no
-saHpiResourcePowerStateGet no
-saHpiResourcePowerStateSet no
-saHpiHotSwapIndicatorStateGet no 
-saHpiHotSwapIndicatorStateSet no
-saHpiParmControl no
-saHpiResourceResetStateGet no
-saHpiResourceResetStateSet no
+saHpiHotSwapControlRequest broken 
+saHpiResourceActiveSet broken
+saHpiResourceInactiveSet broken
+saHpiAutoInsertTimeoutGet broken
+saHpiAutoInsertTimeoutSet broken
+saHpiAutoExtractTimeoutGet broken
+saHpiAutoExtractTimeoutSet broken
+saHpiHotSwapStateGet broken
+saHpiHotSwapActionRequest broken
+saHpiResourcePowerStateGet broken
+saHpiResourcePowerStateSet broken
+saHpiHotSwapIndicatorStateGet broken 
+saHpiHotSwapIndicatorStateSet broken
+saHpiParmControl broken
+saHpiResourceResetStateGet broken
+saHpiResourceResetStateSet broken
 
