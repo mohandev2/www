@@ -2,16 +2,22 @@
 
 use strict;
 use Data::Dumper;
+use POSIX;
 
 our $VAR1;
 
+our $table = "";
+
 my @RELEASES = ("1.9.1","1.9.2","1.9.3","2.0.0","Future","None","1.0.0");
 
-my @f = load_items("features.txt");
-my @b = load_items("bugs.txt");
+my $data = load_data("tracker.db");
+
+#my @f = load_items("features.txt");
+#my @b = load_items("bugs.txt");
 
 my $features = {};
-foreach my $tmp (@f) {
+foreach my $i (sort keys %{$data->{features}->{data}}) {
+    my $tmp = $data->{features}->{data}->{$i};
     $tmp->{Type} = "Feature";
     if($tmp->{Status} =~ /Deleted/) {
         next;
@@ -27,7 +33,8 @@ foreach my $tmp (@f) {
 }
 
 my $bugs = {};
-foreach my $tmp (@b) {
+foreach my $i (sort keys %{$data->{bugs}->{data}}) {
+    my $tmp = $data->{bugs}->{data}->{$i};
     $tmp->{Type} = "Bug";
     if($tmp->{Status} =~ /Deleted/) {
         next;
@@ -42,19 +49,42 @@ foreach my $tmp (@b) {
 
 foreach my $rel (@RELEASES) {
     if(exists $bugs->{$rel} or exists $features->{$rel}) { 
-        print "<h2>Release Status for $rel</h2>\n";
-        print "<table>\n";
+        $table .=  "<h2>Release Status for $rel</h2>\n";
+        $table .=  "<table>\n";
         
         print_group("Features",$features->{$rel});
         print_group("Bugs",$bugs->{$rel});
 
-        print "</table>\n";
+        $table .= "</table>\n";
     }
 }
 
+################
+# 
+#  Now do file sub work
+#
+################
+{
+    local $/ = undef;
+    open(IN,"<index.tmpl");
+    my $content = <IN>;
+    close(IN);
+
+    $content =~ s/%% data %%/$table/igs;
+    
+    my $date = ctime(time());
+
+    $content =~ s/%% time %%/$date/igs;
+
+    open(OUT,">index.shtml");
+    print OUT $content;
+    close(OUT);
+}
+
+
 sub print_group {
     my ($name, $tracker) = @_;
-    print "<tr><th colspan=5>$name</th></tr>\n";
+    $table .=  "<tr><th colspan=5>$name</th></tr>\n";
     my $group = "";
     foreach my $id (sort 
                     {$tracker->{$a}->{Category}.$a cmp
@@ -62,7 +92,7 @@ sub print_group {
         
         if($group ne $tracker->{$id}->{Category}) {
             $group = $tracker->{$id}->{Category};
-            print "<tr><td class='group' colspan=5>$group</td></tr>\n";
+            $table .=  "<tr><td class='group' colspan=5>$group</td></tr>\n";
         }
         my $bug = $tracker->{$id};
         print_item_html($bug);
@@ -90,23 +120,28 @@ sub print_item_html {
         $url .= "&amp;atid=532251";
     }
     
-    print "<tr>\n<td class=$flag>$bid</td>\n";
-    print "<td class=sumary><a href=\"$url\">$sum</a></td><td class=owner>$owner</td>\n";
-    print "<td class=status>$status - $resolve</td></tr>\n";
+    $table .= "<tr>\n<td class=$flag>$bid</td>\n";
+    $table .= "<td class=sumary><a href=\"$url\">$sum</a></td><td class=owner>$owner</td>\n";
+    $table .= "<td class=status>$status - $resolve</td></tr>\n";
     
 }
 
-sub load_items {
-    $VAR1 = undef;
+#########################################
+sub load_data {
+    my $data = {};
     my $file = shift;
-    local $/ = undef;
-    open(IN,"<$file");
-    my $var = <IN>;
+    my $VAR1 = undef;
+    my $tmp;
+    
+    return $data if(!-e $file);
+    
+    open(IN,"<$file") or die "Can't open $file";
+    {
+        local $/ = undef;
+        $tmp = <IN>;
+    }
     close(IN);
-    
-    eval($var);
-
-    my @value = @$VAR1;
-    
-    return @value;
+    eval $tmp;
+    $data = $VAR1;
+    return $data;
 }
