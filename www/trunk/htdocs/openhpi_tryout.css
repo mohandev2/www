@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Verdana, sans-serif;
-
+    font-size: 12px;
 }
 
 a { text-decoration: none; }
@@ -15,14 +15,14 @@ a:hover { text-decoration: underline; }
     padding: 0;
     text-align: center;
     background-color: #51657B;
-    border-bottom: 2px solid #999999;
+    border-bottom: 1px solid #999999;
     font-family: Verdana, "Arial Black", Arial, sans-serif;
     color: white;
 }
 
 #banner div {
     margin: 0;
-    border-bottom: 2px solid #333333;
+    border-bottom: 1px solid #333333;
 }
 
 #banner div h1 {
@@ -34,20 +34,20 @@ a:hover { text-decoration: underline; }
 
 small { font-size: 10px; }
 
-#navbar {
+#navcolumn {
     float: left;
-    margin: 0 15px 5px 5px;
-    padding: 0;
+    margin: 0;
+    padding: 0 5px 0 8px;
 }
 
-#navbar .navsegment {
+.navsegment {
     padding: 0;
     border: 1px solid #C9D2DC;
     background-color: #EEEEEE;
     margin-bottom: 10px;
 }
 
-#navbar .navsegment h4 {
+.navsegment h4 {
     margin: 0 0 5px 0;
     font-family: sans-serif, Arial;
     font-weight: bold;
@@ -60,30 +60,31 @@ small { font-size: 10px; }
     padding: 2px 0 2px 5px;
 }
 
-#navbar .navsegment ul {
+.navsegment ul {
     list-style: none;
     margin: 0;
     padding: 0 1px 0 7px;
     font-size: 12px;
 }
 
-#navbar .navsegment ul li {
+.navsegment ul li {
+    white-space: nowrap;
     padding: 0;
     margin: 0 0 5px 0;
 }
 
-#content {
-    margin: 0px 5px 5px 195px;
-    padding: 0;
+#maincolumn {
+    margin: 0;
+    padding: 0 8px 0 5px;
 }
 
-.portion {
+.mainsegment {
     margin: 0 0 10px 0;
     padding: 0;
     border: 1px solid #93A4B7;
 }
 
-.portion h3 {
+.mainsegment h3 {
     margin: 0;
     background-color: #6D859E;
     color: white;
@@ -95,12 +96,12 @@ small { font-size: 10px; }
     border-right: 0;
 }
 
-.portion div {
+.mainsegment div {
     margin: 0;
     padding: 10px;
 }
 
-.portion h4 {
+.mainsegment h4 {
     margin: 0;
     padding: 2px 1px 2px 6px;
     font-family: sans-serif, Arial, Tahoma;
