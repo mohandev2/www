@@ -2,13 +2,13 @@
 <html>
   <head>
     <title>OpenHPI - Open Source Hardware Management</title>
-    <!--#include virtual="/openhpi.css" -->
+    <!--#include virtual="./openhpi.css" -->
   </head>
 
   <body>
     <table>
       <tr>
-        <!--#include virtual="/sidebar.html" -->
+        <!--#include virtual="./sidebar.html" -->
         <td valign="top">
             <h1 align="center">Welcome to OpenHPI's web site!</h1>
             <p>
@@ -43,9 +43,8 @@
             <dl>
               <!-- add announce items below -->
               
-              <dt class="announce"><img src="./new03.gif">OpenHPI 0.6 Released! (03/22/2004)</dt>
-              
-            <b>New in this release:</b>
+              <h3><img src="./new03.gif">OpenHPI 0.6 Released! (03/22/2004)</h3>
+            <h4>New in this release:</h4>
             <ul>
               <li>Build System</li>
               <ul>
@@ -125,8 +124,8 @@
             </ul>
           </ul>
 
-              <dt class="announce">HPI Subagent 0.2 Released!
-                (3/04/2004)</dt>
+              <h3>HPI Subagent 0.2 Released!
+                (3/04/2004)</h3>
               <ul>
               <li>Second release of the HPI SNMP sub-agent.
 
@@ -201,9 +200,9 @@
               <li>Fix many bugs.
             </ul>
                   
-            <dt class="announce">OpenHPI 0.5 Released! (02/06/2004)</dt>
+            <h3>OpenHPI 0.5 Released! (02/06/2004)</h3>
               
-            <b>New in this release:</b>
+            <h4>New in this release:</h4>
             <ul>
               <li>Unit test framework documentation complete</li>
               <li>195 unit tests added to openhpi tree (including ones
@@ -249,7 +248,7 @@
 		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Tue Mar 23 11:59:09 EST 2004
+Last modified: <!--#flastmod file="index.shtml" -->
 <!-- hhmts end -->
           </td></tr>
     </table>
