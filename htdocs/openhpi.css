@@ -124,7 +124,18 @@ DD { padding-bottom: 0 }
 }
 
 /* Test reporting */
-table.report {width: 600; border-width: thin; border-style: solid}
+h4.file {
+  background-color: #EEEEEE;
+  border: 1px solid #999999;
+  margin-top: 20px;
+}
+h4.function {
+  background-color: transparent;
+  border: 0px;
+  margin-top: 15px;
+  font-style: italic;
+}
+table.report {width: 100%; border-width: thin; border-style: solid}
 pre.report { 
   background-color: transparent;
   border: 0;
