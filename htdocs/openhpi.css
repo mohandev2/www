@@ -53,5 +53,14 @@ PRE {font-family: san-serif}
 
 .author { margin: 0}
 .AUTHOR { margin: 0 }
-.programlisting { padding: 3px; background-color: #bbbbbb; border-style: solid; border-width: 1px; border-color: #000000 }
+.synopsis {
+	background: #eeeeff;
+        border: solid 1px #aaaaff;
+        padding: 0.5em;
+}
+.programlisting {
+	background: #eeeeee;
+	border: solid 1px #aaaaaa;
+	padding: 0.5em;
+}
 </style>
