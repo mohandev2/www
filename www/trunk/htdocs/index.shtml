@@ -27,7 +27,8 @@
       OpenHPI 2.0.0 has been released! This is the first stable release of OpenHPI providing well-tested and robust implementation of the HPI B.01.01 specification.<br>
      <strong>The current stable release provides:</strong>
       <ul>
-        <li>Complete library and plugin interface support for HPI B spec:</li>
+        <li>Complete library and plugin interface support for HPI B spec.</li>
+	<li>Improved library configuration with added event queue, alarm table and event log limits.</li>
 	<li>Managed and simplified hot-swap support.</li>
 	<li>Resource-level Event Log &amp; Domain Alarm Table support.</li>
 	<li>Persistent Domain Event Log.</li>
