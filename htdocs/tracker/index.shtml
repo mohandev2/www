@@ -1,37 +1,372 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-    <title>OpenHPI - Status</title>
-    <!--#include virtual="/openhpi.css" -->
-  </head>
-
-  <body>
-    <table>
-        <tr>
-          <!--#include virtual="/sidebar.html" -->
-          <td valign="top">
-            <h1>OpenHPI :: Task Lists</h1>
-            <strong>Next Release Target is 0.3.  Expected Release data
-            October 15th, 2003</strong>
-            <p>
-              The following is a tracker extract of bugs and features
-              for OpenHPI associated with releases.  They are color coded
-            </p>
-            <table>
-                <tr><td class="Bad">Open and Unassigned</td></tr>
-                <tr><td class="Open">Open and Assigned</td></tr>
-                <tr><td class="Pending">Pending (Beta
-                    quality)</td></tr>
-                <tr><td class="Closed">Closed and Fixed</td></tr>
-            </table>
-            <!--#include virtual="data.html" -->
-            <hr>
-            <address><a href="http://dague.net/sean">Sean Dague</a></address>
-            <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
-<!-- hhmts start -->
-Last modified: Fri Oct  3 17:32:15 EDT 2003
-<!-- hhmts end -->
-          </td></tr>
-    </table>
-  </body>
-</html>
+<h2>Release Status for 0.3</h2>
+<table>
+<tr><th colspan=5>Features</th></tr>
+<tr>
+<td class=Closed>758104</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=758104&amp;group_id=71730&amp;atid=532254">define function doc standard</a></td><td class=owner>tariqx</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>758105</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=758105&amp;group_id=71730&amp;atid=532254">Release Docs</a></td><td class=owner>tariqx</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>784920</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=784920&amp;group_id=71730&amp;atid=532254">enhance configuration file</a></td><td class=owner>renierm</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>807912</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=807912&amp;group_id=71730&amp;atid=532254">make openhpi thread safe</a></td><td class=owner>djudkovi</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>808042</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=808042&amp;group_id=71730&amp;atid=532254">Setting Entity Path Root</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>808052</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=808052&amp;group_id=71730&amp;atid=532254">Support Multiple instances</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>808059</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=808059&amp;group_id=71730&amp;atid=532254">IPMI: SEL support</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>808060</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=808060&amp;group_id=71730&amp;atid=532254">Automated rpm build</a></td><td class=owner>tariqx</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>813455</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=813455&amp;group_id=71730&amp;atid=532254">Build on splitted directory</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr><th colspan=5>Bugs</th></tr>
+<tr>
+<td class=Closed>738612</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=738612&amp;group_id=71730&amp;atid=532251">Error when finalize the HPI</a></td><td class=owner>nobody</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>740834</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=740834&amp;group_id=71730&amp;atid=532251">error on open an invalid domain.</a></td><td class=owner>nobody</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>745314</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=745314&amp;group_id=71730&amp;atid=532251">Cannot init HPI after fina the HPI.</a></td><td class=owner>nobody</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>751230</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=751230&amp;group_id=71730&amp;atid=532251">Error for auto_extract_timeout process</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>751231</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=751231&amp;group_id=71730&amp;atid=532251">Error on using sleep</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>757646</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=757646&amp;group_id=71730&amp;atid=532251">Watch dog timer test issue.</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>757648</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=757648&amp;group_id=71730&amp;atid=532251">Wrong return value in reset control test suite.</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>758984</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=758984&amp;group_id=71730&amp;atid=532251">Resource ID reduplicated.</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>765737</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=765737&amp;group_id=71730&amp;atid=532251">Init error about next_entry_id, in func el_003.c</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>768948</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=768948&amp;group_id=71730&amp;atid=532251">API saHpiSensorEventEnablesSet error.</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>773487</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=773487&amp;group_id=71730&amp;atid=532251">Ignore the 1st event log entry</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>776508</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=776508&amp;group_id=71730&amp;atid=532251">SIGSEGV in saHpiEventLogInfoGet</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>776518</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=776518&amp;group_id=71730&amp;atid=532251">ResourcesDiscover doesn't work first time</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>783689</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=783689&amp;group_id=71730&amp;atid=532251">configure is not checking for /usr/bin/pkgconfig</a></td><td class=owner>sdague</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>784022</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=784022&amp;group_id=71730&amp;atid=532251">eventlog get error.</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>785119</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=785119&amp;group_id=71730&amp;atid=532251">el_004 doesn't conform spec</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>785188</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=785188&amp;group_id=71730&amp;atid=532251">Disable eventlog generate before add new eventlog entry</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>785190</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=785190&amp;group_id=71730&amp;atid=532251">Disable eventlog generate before add new eventlog entry</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Duplicate</td></tr>
+<tr>
+<td class=Closed>787095</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=787095&amp;group_id=71730&amp;atid=532251">Infrastructure should assign domain id instead of plug-in</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>804262</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=804262&amp;group_id=71730&amp;atid=532251">saEventGet arguments Rdr or RptEntry can be NULL </a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>810741</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=810741&amp;group_id=71730&amp;atid=532251">IPMI functionality not right on website</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>811731</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=811731&amp;group_id=71730&amp;atid=532251">wrong dataformat for reading of discrete sensor.</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>814812</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=814812&amp;group_id=71730&amp;atid=532251">text_remote breaks during rpm build</a></td><td class=owner>djudkovi</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>815518</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=815518&amp;group_id=71730&amp;atid=532251">sysfs2hpi plugin doesn't work with libsysfs-0.2</a></td><td class=owner>tariqx</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>831883</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=831883&amp;group_id=71730&amp;atid=532251">openhpi-config program non-existent</a></td><td class=owner>sdague</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>840180</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840180&amp;group_id=71730&amp;atid=532251">TimerUseExpFlags not set correctly</a></td><td class=owner>nobody</td>
+<td class=status>Closed - Invalid</td></tr>
+<tr>
+<td class=Closed>840182</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840182&amp;group_id=71730&amp;atid=532251">sysfs plugin needs to be converted</a></td><td class=owner>tariqx</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>840185</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840185&amp;group_id=71730&amp;atid=532251">watchdog plugin needs to be converted</a></td><td class=owner>nobody</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>840402</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840402&amp;group_id=71730&amp;atid=532251">if InitialCount = 0, wdt needs to timeout immediately</a></td><td class=owner>nobody</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>840774</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840774&amp;group_id=71730&amp;atid=532251">blade center should bail earlier if not root epath</a></td><td class=owner>renierm</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>840809</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840809&amp;group_id=71730&amp;atid=532251">ResourceTag should be populated</a></td><td class=owner>sesherman</td>
+<td class=status>Closed - None</td></tr>
+</table>
+<h2>Release Status for 0.4</h2>
+<table>
+<tr><th colspan=5>Features</th></tr>
+<tr>
+<td class=Bad>808051</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=808051&amp;group_id=71730&amp;atid=532254">Persistance mechanism for User Updateable Fields</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>812848</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=812848&amp;group_id=71730&amp;atid=532254">Plug-in to Infrastructure Interface</a></td><td class=owner>tariqx</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>827689</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=827689&amp;group_id=71730&amp;atid=532254">Retrieve IPMI SEL from MC</a></td><td class=owner>tariqx</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Closed>840193</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840193&amp;group_id=71730&amp;atid=532254">Test program for set thresholds</a></td><td class=owner>nobody</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>846280</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=846280&amp;group_id=71730&amp;atid=532254">Port to libsysfs 0.3.0</a></td><td class=owner>nobody</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>849356</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=849356&amp;group_id=71730&amp;atid=532254">Setup One resource per MC model</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Open>852058</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=852058&amp;group_id=71730&amp;atid=532254">remove RPT entry/RDR from RPT</a></td><td class=owner>renierm</td>
+<td class=status>Open - Fixed</td></tr>
+<tr>
+<td class=Closed>853733</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=853733&amp;group_id=71730&amp;atid=532254">Add ipmi_clear_sel </a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr><th colspan=5>Bugs</th></tr>
+<tr>
+<td class=Closed>825330</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=825330&amp;group_id=71730&amp;atid=532251">IPMI plug-in should use mcid instead of ipmi_mc_t</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - None</td></tr>
+<tr>
+<td class=Closed>839773</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=839773&amp;group_id=71730&amp;atid=532251">operation on illegal memory</a></td><td class=owner>kxgao</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Open>840840</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840840&amp;group_id=71730&amp;atid=532251">pthread_mutex_lock and KA-BOOM!</a></td><td class=owner>yzhuang</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>841898</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=841898&amp;group_id=71730&amp;atid=532251">abi UID should change to reflect new plugin interface</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>842426</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=842426&amp;group_id=71730&amp;atid=532251">Change default value of RPT_ENTRY_BEGIN and RDR_BEGIN </a></td><td class=owner>renierm</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>845724</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=845724&amp;group_id=71730&amp;atid=532251">uid_map_from_file fails /var/lib/openhpi does not existes</a></td><td class=owner>thkanne</td>
+<td class=status>Open - Fixed</td></tr>
+<tr>
+<td class=Closed>846275</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=846275&amp;group_id=71730&amp;atid=532251">SetThresholds fails if str length different than previous</a></td><td class=owner>tariqx</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Closed>846876</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=846876&amp;group_id=71730&amp;atid=532251">missing macro</a></td><td class=owner>thkanne</td>
+<td class=status>Closed - Accepted</td></tr>
+<tr>
+<td class=Closed>846991</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=846991&amp;group_id=71730&amp;atid=532251">Strange behavior in string2entitypatch</a></td><td class=owner>renierm</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Open>848733</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=848733&amp;group_id=71730&amp;atid=532251">ipmi version checking</a></td><td class=owner>tariqx</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>853477</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=853477&amp;group_id=71730&amp;atid=532251">corrupt inventory data</a></td><td class=owner>pdphan</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Closed>853734</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=853734&amp;group_id=71730&amp;atid=532251">UpdateTime in IPMI SEL is not correct</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+</table>
+<h2>Release Status for Future</h2>
+<table>
+<tr><th colspan=5>Features</th></tr>
+<tr>
+<td class=Bad>807928</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=807928&amp;group_id=71730&amp;atid=532254">Add Support for Multiple Domains</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>808046</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=808046&amp;group_id=71730&amp;atid=532254">Persistance for Domain SEL</a></td><td class=owner>tariqx</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>810947</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=810947&amp;group_id=71730&amp;atid=532254">Simulator file hierarchy structure spec</a></td><td class=owner>guorj</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Closed>813259</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=813259&amp;group_id=71730&amp;atid=532254">Run openhpi from CVS rep</a></td><td class=owner>yzhuang</td>
+<td class=status>Closed - Fixed</td></tr>
+<tr>
+<td class=Bad>848666</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=848666&amp;group_id=71730&amp;atid=532254">example Gui openhpi application</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr><th colspan=5>Bugs</th></tr>
+<tr>
+<td class=Open>786523</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=786523&amp;group_id=71730&amp;atid=532251">CT el_005, el_006 doesn't pass</a></td><td class=owner>yzhuang</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>840177</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840177&amp;group_id=71730&amp;atid=532251">wdt needs RDRs for temp/fan</a></td><td class=owner>nobody</td>
+<td class=status>Open - Later</td></tr>
+<tr>
+<td class=Closed>840781</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=840781&amp;group_id=71730&amp;atid=532251">hpisel doesn't check if resource has SEL</a></td><td class=owner>nobody</td>
+<td class=status>Closed - None</td></tr>
+</table>
+<h2>Release Status for None</h2>
+<table>
+<tr><th colspan=5>Features</th></tr>
+<tr>
+<td class=Open>810945</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=810945&amp;group_id=71730&amp;atid=532254">conformance test specification</a></td><td class=owner>guorj</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>810948</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=810948&amp;group_id=71730&amp;atid=532254">Simulator configure file spec</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>810949</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=810949&amp;group_id=71730&amp;atid=532254">Simulator plug-in</a></td><td class=owner>guorj</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>810950</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=810950&amp;group_id=71730&amp;atid=532254">Simulator FHS setup tool</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>810951</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=810951&amp;group_id=71730&amp;atid=532254">Simulator FHS dynamic maintaince tool</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>810952</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=810952&amp;group_id=71730&amp;atid=532254">Simulator FHS monitor tool</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr><th colspan=5>Bugs</th></tr>
+<tr>
+<td class=Bad>812854</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=812854&amp;group_id=71730&amp;atid=532251">saHpiEventGet() Error Checking</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>824648</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=824648&amp;group_id=71730&amp;atid=532251">The event queue should be cleared after unsubscribe</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>825339</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=825339&amp;group_id=71730&amp;atid=532251">Change sel_id into sel_entry_id</a></td><td class=owner>yzhuang</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>825658</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=825658&amp;group_id=71730&amp;atid=532251">Do strict snmp_bc cleanup on close()</a></td><td class=owner>renierm</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>825688</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=825688&amp;group_id=71730&amp;atid=532251">Infra not creating empty Inventory RDR on RDRless Resource</a></td><td class=owner>yzhuang</td>
+<td class=status>Open - Accepted</td></tr>
+<tr>
+<td class=Bad>831577</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=831577&amp;group_id=71730&amp;atid=532251">g_scanner_destroy should be called after exeception happens</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>836196</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=836196&amp;group_id=71730&amp;atid=532251">The event should be reported to all sessions</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>841000</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=841000&amp;group_id=71730&amp;atid=532251">saHpiEventGet blocking is done with a busy wait</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>841004</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=841004&amp;group_id=71730&amp;atid=532251">event timeout tests should be better</a></td><td class=owner>kxgao</td>
+<td class=status>Open - Fixed</td></tr>
+<tr>
+<td class=Bad>849070</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=849070&amp;group_id=71730&amp;atid=532251">/openhpi/openhpi.h:414: warning: no return statement in func</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>849076</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=849076&amp;group_id=71730&amp;atid=532251">make install ought to put hpiSubagent.conf file in NetsNMP s</a></td><td class=owner>sdague</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Open>849602</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=849602&amp;group_id=71730&amp;atid=532251">handling /var/lib/openhpi is done twice</a></td><td class=owner>sdague</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>853236</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=853236&amp;group_id=71730&amp;atid=532251">list_resources depends on netsnmp</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+<tr>
+<td class=Bad>853715</td>
+<td class=sumary><a href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=853715&amp;group_id=71730&amp;atid=532251">saHpiEventLogClear returns SA_ERR_HPI_UNSUPPORTED_API</a></td><td class=owner>nobody</td>
+<td class=status>Open - None</td></tr>
+</table>
