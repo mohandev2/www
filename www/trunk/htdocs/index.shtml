@@ -42,8 +42,82 @@
             <h2>News!</h2>
             <dl>
               <!-- add announce items below -->
+              <dt class="announce">HPI Subagent 0.2 Released!
+                (3/04/2003)</dt>
+              <ul>
+              <li>Second release of the HPI SNMP sub-agent.
 
-			  <dt class="announce">OpenHPI 0.5 Released! (02/06/2003)</dt>
+              <li>Support for full implementation of the HPI-MIB v1.4
+                (included). This means HPI 1.0 instrumentation using
+                HPI-MIB objects in twenty-three tables:
+                <ul>
+                  <li>Resource Presence Table entities,
+                    <ul>
+                      <li>HotSwap capabilities,
+                    </ul>
+                  <li>Resource Data Records,
+                    <ul>
+                      <li>Sensors
+                        <ul>
+                          <li>Current sensor reading,
+                            <ul>Reading values for
+                              <li>Max,
+                              <li>Min,
+                              <li>Nominal,
+                              <li>Normal maximum,
+                              <li>Normal minimum
+                            </ul>
+                          <li>Threshold values for:
+                            <ul>
+                              <li>Upper Critical,
+                              <li>Upper Major,
+                              <li>Upper Minor,
+                              <li>Lower Critical,
+                              <li>Lower Major,
+                              <li>Lower Minor,
+                              <li>Positive Hysteresis,
+                              <li>Negativie Hysteresis
+                            </ul>
+                        </ul>
+                    </ul>
+                  <li>Inventory,
+                  <li>Control,
+                  <li>Watchdog
+                </ul>
+            </ul>
+            <li>Events and System Event Log
+            </ul>
+              <li>SGML Guide for writing a sub-agent using NetSNMP API, titled:
+                "NetSNMP subagent development manual."
+
+                <li>Support for notifications/TRAPS as defined in the MIB:
+                  <ul>
+                    <li>For Events:
+                      <ul>
+                        <li>Sensor,
+                        <li>Hot Swap,
+                        <li>Watchdog,
+                        <li>OEM,
+                        <li>User
+                      </ul>
+                    <li>For Resource Data Records,
+                    <li>For Resource Presence Table
+
+<li>Support for user configurable options:
+                      <ul>
+                        <li>update timer for new RPT/RDR/Events ,
+                        <li>maximum events held in eventw row before they are
+                          automatically removed,
+                        <li>sending of new found RPT/RDR/Events during startup.
+                      </ul>
+
+                    <li>Example code for retrieving instrumentation information
+                      using SNMP.
+
+<li>Fix many bugs.
+                  </ul>
+                  
+                  <dt class="announce">OpenHPI 0.5 Released! (02/06/2003)</dt>
               
             <h3>New in this release:</h3>
             <ul>
@@ -293,7 +367,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Mon Feb  9 13:27:35 EST 2004
+Last modified: Thu Mar  4 10:42:57 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
