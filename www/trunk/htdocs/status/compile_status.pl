@@ -43,9 +43,9 @@ sub print_composite {
     my ($file, $name, $status) = @_;
     my %infra_funcs = hpi_infra_calls();
     open(OUT,">$file");
-    
-    print OUT "<h2>$name</h2>\n<table>\n";
-    
+
+    print OUT "<h4>$name</h4>\n<table>\n";
+
     # print header
     print OUT "<tr><th>HPI&nbsp;Function</th>";
     foreach my $work ((open_hpi_items())) {
@@ -54,7 +54,7 @@ sub print_composite {
         print OUT "<th><a href=\"$url\">$work</a></th>";
     }
     print OUT "</tr>\n";
-    
+
     # print each status
     foreach my $func ((hpi_func_array())) {
         print OUT "<tr><td>$func</td>";
@@ -79,17 +79,17 @@ sub print_individual {
     my $t = foot_html();
     print OUT <<END;
 $h
-<h1>$name Details</h1>
-<p><a href="/status/">Return to Status Overview</a></p>
+<h3>$name Status</h3>
+<div><a href="/status/">Return to Status Overview</a>
 <table>
 <tr><th>HPI Function</th><th>Notes</th></tr>
 END
-    
+
     foreach my $func ((hpi_func_array())) {
         my $state = $$status{$func}{state} || $default_status;
         print OUT "<tr><td class=\"$state\">$func</td><td>$$status{$func}{notes}</td></tr>\n";
     }
-    print OUT "</table>\n$t";
+    print OUT "</table>\n</div>$t";
     close(OUT);
 
 }
@@ -207,28 +207,32 @@ sub hpi_func_array {
 
 sub head_html {
     return <<'HEAD';
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <head>
-    <title>OpenHPI - Status</title>
-    <!--#include virtual="/openhpi.css" -->
-  </head>
-
-  <body>
-    <table>
-        <tr>
-          <!--#include virtual="/sidebar.html" -->
-          <td valign="top">
+<head>
+    <title>The OpenHPI Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="keywords" content="hpi, sa, forum, service, availability, hardware, platform, interface, c, programming, language, open, source, abstraction, layer">
+    <meta name="description" content="The OpenHPI Project, an open implementation of the SA Forum's HPI spec.">
+    <link rel="stylesheet" href="../openhpi_tryout.css" type="text/css">
+    <link rel="stylesheet" href="status.css" type="text/css">
+</head>
+<body>
+    <div id="banner"><div><h1>The OpenHPI Project</h1><small>Open Hardware Platform Interface</small></div></div>
+    <table><tr>
+        <!--#include virtual="/sidebar_tryout.html" -->
+        <td id="maincolumn">
+            <div class="mainsegment">
 HEAD
 }
 
 sub foot_html {
     return <<'FOOT';
-            <hr>
+            </div>
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
-          </td></tr>
-    </table>
-  </body>
+          </td>
+    </tr></table>
+</body>
 </html>
 FOOT
 }

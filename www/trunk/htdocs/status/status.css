@@ -1,0 +1,8 @@
+td.broken { background-color: #ff0000 }
+td.notdone { background-color: #ff8800 }
+td.semifunc { background-color: #ffff00}
+td.functional { background-color: #11ff00}
+td.done { background-color: #009900; color: #ffffff }
+td.na { color: #0022aa }
+td.impossible { background-color: #000000; color: #ffffff}
+td.nodata { background-color: #990099; color: #ffff00 }

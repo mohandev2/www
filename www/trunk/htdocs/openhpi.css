@@ -48,7 +48,7 @@ TR.bad {background-color: #e84545}
 TR.ok {background-color: #dde244}
 TR.good {background-color: #4ae544}
 TR.great {background-color: green}
-TD.num {align: right}
+TD.num {text-align: right}
 TR.notexec {background-color: #e84545}
 TR.low {background-color: #dde244}
 PRE {font-family: san-serif}
@@ -56,13 +56,13 @@ PRE {font-family: san-serif}
 .author { margin: 0}
 .AUTHOR { margin: 0 }
 .synopsis {
-	background: #eeeeff;
+    background: #eeeeff;
         border: solid 1px #aaaaff;
         padding: 0.5em;
 }
 .programlisting {
-	background: #d3d3d3;
-	border: solid 1px #aaaaaa;
-	padding: 0.5em;
+    background: #d3d3d3;
+    border: solid 1px #aaaaaa;
+    padding: 0.5em;
 }
 </style>
