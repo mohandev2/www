@@ -7,31 +7,31 @@ saHpiSessionClose functional
 saHpiResourcesDiscover done
 saHpiRptInfoGet done
 saHpiRptEntryGet done
-saHpiRptEntryGetByResourceId 
-saHpiResourceSeveritySet na
-saHpiResourceTagSet na
-saHpiResourceIdGet na
-saHpiEntitySchemaGet na
-saHpiEventLogInfoGet na
-saHpiEventLogEntryGet na
-saHpiEventLogEntryAdd na
-saHpiEventLogEntryDelete na	 
-saHpiEventLogClear na
-saHpiEventLogTimeGet na
-saHpiEventLogTimeSet na
-saHpiEventLogStateGet na
-saHpiEventLogStateSet na
-saHpiSubscribe na
-saHpiUnsubscribe na
-saHpiEventGet na
+saHpiRptEntryGetByResourceId functional
+saHpiResourceSeveritySet impossible
+saHpiResourceTagSet impossible
+saHpiResourceIdGet impossible
+saHpiEntitySchemaGet impossible
+saHpiEventLogInfoGet impossible
+saHpiEventLogEntryGet impossible
+saHpiEventLogEntryAdd impossible
+saHpiEventLogEntryDelete impossible	 
+saHpiEventLogClear impossible
+saHpiEventLogTimeGet impossible
+saHpiEventLogTimeSet impossible
+saHpiEventLogStateGet impossible
+saHpiEventLogStateSet impossible
+saHpiSubscribe impossible
+saHpiUnsubscribe impossible
+saHpiEventGet impossible
 saHpiRdrGet done
 saHpiSensorReadingGet done
 saHpiSensorReadingConvert na
 saHpiSensorThresholdsGet functional
 saHpiSensorThresholdsSet semifunc
 saHpiSensorTypeGet done
-saHpiSensorEventEnablesGet na
-saHpiSensorEventEnablesSet na
+saHpiSensorEventEnablesGet impossible
+saHpiSensorEventEnablesSet impossible
 saHpiControlTypeGet impossible
 saHpiControlStateGet impossible
 saHpiControlStateSet impossible
@@ -41,19 +41,19 @@ saHpiWatchdogTimerGet impossible
 saHpiWatchdogTimerSet impossible
 saHpiWatchdogTimerReset impossible
 saHpiHotSwapControlRequest impossible
-saHpiResourceActiveSet na
-saHpiResourceInactiveSet na
-saHpiAutoInsertTimeoutGetna
-saHpiAutoInsertTimeoutSetna
-saHpiAutoExtractTimeoutGetna
-saHpiAutoExtractTimeoutSetna
-saHpiHotSwapStateGet na
-saHpiHotSwapActionRequest na
-saHpiResourcePowerStateGet na
-saHpiResourcePowerStateSet na
-saHpiHotSwapIndicatorStateGet na
-saHpiHotSwapIndicatorStateSet na
-saHpiParmControl na
-saHpiResourceResetStateGet na
-saHpiResourceResetStateSet na
+saHpiResourceActiveSet impossible
+saHpiResourceInactiveSet impossible
+saHpiAutoInsertTimeoutGet  impossible
+saHpiAutoInsertTimeoutSet  impossible
+saHpiAutoExtractTimeoutGet impossible
+saHpiAutoExtractTimeoutSet impossible
+saHpiHotSwapStateGet impossible
+saHpiHotSwapActionRequest impossible
+saHpiResourcePowerStateGet impossible
+saHpiResourcePowerStateSet impossible
+saHpiHotSwapIndicatorStateGet impossible
+saHpiHotSwapIndicatorStateSet impossible
+saHpiParmControl impossible
+saHpiResourceResetStateGet impossible
+saHpiResourceResetStateSet impossible
 
