@@ -43,7 +43,7 @@
             <dl>
               <!-- add announce items below -->
               <dt class="announce">HPI Subagent 0.2 Released!
-                (3/04/2003)</dt>
+                (3/04/2004)</dt>
               <ul>
               <li>Second release of the HPI SNMP sub-agent.
 
@@ -118,7 +118,7 @@
               <li>Fix many bugs.
             </ul>
                   
-                  <dt class="announce">OpenHPI 0.5 Released! (02/06/2003)</dt>
+                  <dt class="announce">OpenHPI 0.5 Released! (02/06/2004)</dt>
               
             <h3>New in this release:</h3>
             <ul>
@@ -368,7 +368,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Mar  4 10:47:59 EST 2004
+Last modified: Thu Mar 18 13:37:24 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
