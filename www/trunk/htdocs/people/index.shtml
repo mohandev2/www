@@ -17,36 +17,59 @@
               irc.
             </p>
             <dl>
-              <dt>Tariq Shureih - OpenHPI Maintainer</dt>
-              <dd>Focus Areas: OpenHPI core library, the IPMI Plugin, 
-			  			overall design and releases.</dd>
+              <dt class="name">Tariq Shureih (Intel) - OpenHPI Maintainer</dt>
+              <dd>Focus Areas: OpenHPI core library, OpenIPMI Plugin, 
+                overall design and releases.</dd>
               
-              <dt><a href="http://dague.net/sean">Sean Dague</a> -
-                Developer, Webmaster, Planner</dt>
-              <dd>Focus Areas: OpenHPI
-                core library, Build System, and the High Level Design documents.
+              <dt class="name">David Ashley (IBM) - Developer</dt>
+              <dd>Focus Areas: System Event Log support, RSA Plugin</dd>
+              
+              <dt class="name">Chris Chia (IBM) - Developer</dt>
+              <dd>Focus Areas: Testing</dd>
+
+              <dt class="name"><a href="http://dague.net/sean">Sean
+                  Dague</a> (IBM) -
+                Developer, Webmaster</dt>
+              <dd>Focus Areas: OpenHPI 
+                core library, Build System, Documentation, Testing
               </dd>
+
+              <dt class="name">Julie Fleischer (Intel) - Developer</dt>
+              <dd>Focus Areas: Sysfs and watchdog plug-ins</dd>
               
-              <dt>Kevin Gao - Developer</dt>
+              <dt class="name">Kevin Gao (Intel) - Developer</dt>
               <dd>Focus Areas: HPI Conformance Test Suite</dd>
 
-              <dt>David Judkovics - Developer</dt>
-              <dd>Focus Areas: Text Remoting plugin, Threading
-                Support.</dd>
+              <dt class="name">David Judkovics (IBM) - Developer</dt>
+              <dd>Focus Areas: SNMP Client plugin, Threading
+                Support, Dummy plugin</dd>
 
-              <dt>Rusty Lynch - Developer</dt>
+              <dt class="name">Thomas Kanngieser (FCI) -
+                Developer</dt>
+              <dd>Focus Areas: OpenHPI core library, IPMI Direct
+                plugin, HPIView GUI</dd>
+
+              <dt class="name">Rusty Lynch (Intel) - Developer</dt>
               <dd>Focus Areas: OpenHPI core library, Watchdog plugin.
                 Note: Rusty is the previous OpenHPI maintainer.</dd>
 
-              <dt>Renier Morales - Developer</dt>
-              <dd>Focus Areas: Config File Engine, Blade Center SNMP plugin.
+              <dt class="name">Renier Morales (IBM) - Developer</dt>
+              <dd>Focus Areas: OpenHPI core library, RPT utilities,
+                PowerPC enablement.</dd>
               
-              <dt>Louis Zhuang - Developer</dt>
+              <dt class="name">Peter Phan (IBM) - Developer</dt>
+              <dd>Focus Areas: Blade Center Plugin</dd>
+              
+              <dt class="name">Konrad Rzeszutek (IBM) - Developer</dt>
+              <dd>Focus Areas: HPI SNMP Subagent</dd>
+              
+              <dt class="name">Steve Sherman (IBM) - Developer</dt>
+              <dd>Focus Areas: Blade Center Plugin</dd>
+              
+              <dt class="name">Louis Zhuang (Intel) - Developer</dt>
               <dd>Focus Areas: OpenHPI core library, IPMI plugin,
                 Dummy plugin</dd>
               
-              <dt>Julie Fleischer - Developer</dt>
-              <dd>Focus Areas: Sysfs and watchdog plug-ins</dd>
               
             </dl>
             
@@ -54,7 +77,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
 <!-- hhmts start -->
-Last modified: Tue Sep 16 11:26:30 EDT 2003
+Last modified: Sun Feb 15 12:02:20 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
