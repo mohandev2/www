@@ -11,8 +11,8 @@
           <!--#include virtual="/sidebar.html" -->
           <td valign="top">
             <h1>OpenHPI :: Task Lists</h1>
-            <strong>Next Release Target is 0.5.  Expected Release data
-		   January 15th, 2003</strong>
+            <strong>Next Release Target is 1.0.  Expected Release data
+		   June 30th, 2004</strong>
             <p>
               The following is a tracker extract of bugs and features
               for OpenHPI associated with releases.  They are color coded
@@ -29,7 +29,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
 <!-- hhmts start -->
-Last modified: Sat Dec  6 21:01:22 EST 2003
+Last modified: Tue Jun 22 10:31:24 EDT 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
