@@ -43,7 +43,9 @@
             <dl>
               <!-- add announce items below -->
               
-              <h3><img src="./new03.gif">OpenHPI 0.6 Released! (03/22/2004)</h3>
+              <h3><img src="./new03.gif">OpenHPI 0.7 Released! (05/04/2004)</h3>
+	<br>
+              <h3>OpenHPI 0.6 Released! (03/22/2004)</h3>
             <h4>New in this release:</h4>
             <ul>
               <li>Build System</li>
