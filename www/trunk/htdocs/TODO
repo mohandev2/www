@@ -1,0 +1,12 @@
+OpenHPI TODO List (in no particular order)
+
+HLD Work
+--------------------------
+* Plugin Interface
+* Plugin Proxy Objects
+
+
+Infrastructure
+-------------------------
+* Make OpenHPI Thread Safe
+* Add Support for Multiple Domains
