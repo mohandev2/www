@@ -103,20 +103,20 @@
                     </ul>
                   <li>For Resource Data Records,
                   <li>For Resource Presence Table
-                    
-                  <li>Support for user configurable options:
-                    <ul>
-                      <li>update timer for new RPT/RDR/Events ,
-                      <li>maximum events held in eventw row before they are
-                        automatically removed,
-                      <li>sending of new found RPT/RDR/Events during startup.
-                    </ul>
-                    
-                  <li>Example code for retrieving instrumentation information
-                    using SNMP.
-                    
-                  <li>Fix many bugs.
                 </ul>
+              <li>Support for user configurable options:
+                <ul>
+                  <li>update timer for new RPT/RDR/Events ,
+                  <li>maximum events held in eventw row before they are
+                    automatically removed,
+                  <li>sending of new found RPT/RDR/Events during startup.
+                </ul>
+                
+              <li>Example code for retrieving instrumentation information
+                using SNMP.
+                
+              <li>Fix many bugs.
+            </ul>
                   
                   <dt class="announce">OpenHPI 0.5 Released! (02/06/2003)</dt>
               
@@ -368,7 +368,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Mar  4 10:47:01 EST 2004
+Last modified: Thu Mar  4 10:47:59 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
