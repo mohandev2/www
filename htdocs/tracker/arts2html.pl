@@ -5,7 +5,7 @@ use Data::Dumper;
 
 our $VAR1;
 
-my @RELEASES = ("0.4","0.5","0.6","0.7","0.8","0.9","1.0","Future","None");
+my @RELEASES = ("0.5","0.6","0.7","0.8","0.9","1.0","Future","None");
 
 my @f = load_items("features.txt");
 my @b = load_items("bugs.txt");
