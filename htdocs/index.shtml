@@ -43,7 +43,7 @@
 		<h2>OpenHPI<img src="./r_news.gif"></h2><br>
               <!-- add announce items below -->
                   
-                  <img src="./new03.gif"<dt class="announce">OpenHPI 0.6 Released! (03/22/2004)></dt>
+                  <dt class="announce"><img src="./new03.gif">OpenHPI 0.6 Released! (03/22/2004)</dt>
               
             <h3>New in this release:</h3>
             <ul>
