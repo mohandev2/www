@@ -54,6 +54,6 @@ saHpiResourcePowerStateSet done
 saHpiHotSwapIndicatorStateGet done 
 saHpiHotSwapIndicatorStateSet done
 saHpiParmControl na
-saHpiResourceResetStateGet broken
+saHpiResourceResetStateGet na
 saHpiResourceResetStateSet done
 
