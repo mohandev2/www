@@ -25,6 +25,7 @@ use strict;
 our @track = ();
 
 my $ua = new LWP::UserAgent();
+$ua->env_proxy(1);
 
 my @bugs = process_tracker(532251);
 my @features = process_tracker(532254);
