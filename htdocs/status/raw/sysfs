@@ -4,56 +4,56 @@ saHpiInitialize   functional    Need to move plugin loading out of function
 saHpiFinalize    done 
 saHpiSessionOpen functional
 saHpiSessionClose functional
-saHpiResourcesDiscover 
-saHpiRptInfoGet 
-saHpiRptEntryGet 
+saHpiResourcesDiscover done
+saHpiRptInfoGet done
+saHpiRptEntryGet done
 saHpiRptEntryGetByResourceId 
-saHpiResourceSeveritySet 
-saHpiResourceTagSet 
-saHpiResourceIdGet 
-saHpiEntitySchemaGet
-saHpiEventLogInfoGet 
-saHpiEventLogEntryGet 
-saHpiEventLogEntryAdd 
-saHpiEventLogEntryDelete 
-saHpiEventLogClear 
-saHpiEventLogTimeGet 
-saHpiEventLogTimeSet 
-saHpiEventLogStateGet 
-saHpiEventLogStateSet 
-saHpiSubscribe 
-saHpiUnsubscribe 
-saHpiEventGet 
-saHpiRdrGet 
-saHpiSensorReadingGet 
-saHpiSensorReadingConvert 
-saHpiSensorThresholdsGet 
-saHpiSensorThresholdsSet 
-saHpiSensorTypeGet 
-saHpiSensorEventEnablesGet 
-saHpiSensorEventEnablesSet 
-saHpiControlTypeGet 
-saHpiControlStateGet 
-saHpiControlStateSet 
-saHpiEntityInventoryDataRead 
-saHpiEntityInventoryDataWrite 
-saHpiWatchdogTimerGet 
-saHpiWatchdogTimerSet 
-saHpiWatchdogTimerReset 
-saHpiHotSwapControlRequest 
-saHpiResourceActiveSet 
-saHpiResourceInactiveSet 
-saHpiAutoInsertTimeoutGet
-saHpiAutoInsertTimeoutSet
-saHpiAutoExtractTimeoutGet
-saHpiAutoExtractTimeoutSet
-saHpiHotSwapStateGet 
-saHpiHotSwapActionRequest 
-saHpiResourcePowerStateGet 
-saHpiResourcePowerStateSet 
-saHpiHotSwapIndicatorStateGet 
-saHpiHotSwapIndicatorStateSet 
-saHpiParmControl 
-saHpiResourceResetStateGet 
-saHpiResourceResetStateSet 
+saHpiResourceSeveritySet na
+saHpiResourceTagSet na
+saHpiResourceIdGet na
+saHpiEntitySchemaGet na
+saHpiEventLogInfoGet na
+saHpiEventLogEntryGet na
+saHpiEventLogEntryAdd na
+saHpiEventLogEntryDelete na	 
+saHpiEventLogClear na
+saHpiEventLogTimeGet na
+saHpiEventLogTimeSet na
+saHpiEventLogStateGet na
+saHpiEventLogStateSet na
+saHpiSubscribe na
+saHpiUnsubscribe na
+saHpiEventGet na
+saHpiRdrGet done
+saHpiSensorReadingGet done
+saHpiSensorReadingConvert na
+saHpiSensorThresholdsGet functional
+saHpiSensorThresholdsSet semifunc
+saHpiSensorTypeGet done
+saHpiSensorEventEnablesGet na
+saHpiSensorEventEnablesSet na
+saHpiControlTypeGet impossible
+saHpiControlStateGet impossible
+saHpiControlStateSet impossible
+saHpiEntityInventoryDataRead impossible
+saHpiEntityInventoryDataWrite impossible
+saHpiWatchdogTimerGet impossible
+saHpiWatchdogTimerSet impossible
+saHpiWatchdogTimerReset impossible
+saHpiHotSwapControlRequest impossible
+saHpiResourceActiveSet na
+saHpiResourceInactiveSet na
+saHpiAutoInsertTimeoutGetna
+saHpiAutoInsertTimeoutSetna
+saHpiAutoExtractTimeoutGetna
+saHpiAutoExtractTimeoutSetna
+saHpiHotSwapStateGet na
+saHpiHotSwapActionRequest na
+saHpiResourcePowerStateGet na
+saHpiResourcePowerStateSet na
+saHpiHotSwapIndicatorStateGet na
+saHpiHotSwapIndicatorStateSet na
+saHpiParmControl na
+saHpiResourceResetStateGet na
+saHpiResourceResetStateSet na
 
