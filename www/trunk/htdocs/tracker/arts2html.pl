@@ -8,7 +8,7 @@ our $VAR1;
 
 our $table = "";
 
-my @RELEASES = ("1.9.2","1.9.3","2.0.0","Future","None","1.0.0");
+my @RELEASES = ("2.0.0","2.0.1","Future","None","1.0.0");
 
 my $data = load_data("tracker.db");
 
