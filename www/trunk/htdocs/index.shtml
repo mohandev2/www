@@ -205,10 +205,11 @@
           </ul>
 				
             <hr>
-            <address><a href="http://dague.net/sean">Sean Dague</a></address>
+		<h4>For questions of comments, please email the openhpi developers at <a href="mailto:openhpi-devel@lists.sf.net">mailing list</a></h4><br>
+		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Thu Mar 18 13:37:24 EST 2004
+Last modified: Thu Mar 22 18:14:24 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
