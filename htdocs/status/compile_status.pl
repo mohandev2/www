@@ -41,6 +41,7 @@ print_composite("rollup.html","OpenHPI Composite Status",\%status);
 
 sub print_composite {
     my ($file, $name, $status) = @_;
+    my %infra_funcs = hpi_infra_calls();
     open(OUT,">$file");
     
     print OUT "<h2>$name</h2>\n<table>\n";
@@ -58,7 +59,12 @@ sub print_composite {
     foreach my $func ((hpi_func_array())) {
         print OUT "<tr><td>$func</td>";
         foreach my $work ((open_hpi_items())) {
-            my $state = $status->{$work}->{$func}->{state} || $default_status;
+            my $state = $default_status;
+            if($work !~ /Infrastructure/ and (exists $infra_funcs{$func})) {
+                $state = "na";
+            } else {
+                $state = $status->{$work}->{$func}->{state} || $default_status;
+            }
             print OUT "<td class=\"$state\">$state</td>";
         }
         print OUT "</tr>\n";
@@ -97,6 +103,22 @@ sub safename {
 sub open_hpi_items {
     my @array = ("OpenHPI Infrastructure","Dummy Plugin","IPMI Plugin","Sysfs Plugin","Snmp Client plugin","SNMP Blade Center","Linux Watchdog Plugin");
     return @array;
+}
+
+sub hpi_infra_calls {
+    my @array = qw(
+                   saHpiRptEntryGetByResourceId
+                   saHpiResourceIdGet
+                   saHpiEntitySchemaGet
+                   saHpiEventLogStateGet
+                   saHpiSubscribe
+                   saHpiUnsubscribe
+                   saHpiSensorReadingConvert
+                   saHpiSensorTypeGet
+                   saHpiControlTypeGet
+                  );
+    my %hash = map {$_ => 1} @array;
+    return %hash;
 }
 
 sub hpi_func_array {
