@@ -29,7 +29,7 @@
 				<li>openhpi-switcher - OpenHPI has 2 different connection libraries, a stand alone version suitable for most purposes, and a client library which connects to an HPI service daemon, needed in more demanding environments. openhpi-switcher manages which one is the default on the system.</li>
 				<li>Improved session management in the client library.</li>
 				<li>New client, hpitree, shows existing resource topology.</li>
-				<li>Ported IPMI pluging to work with the latest OpenIPMI 1.4.x library.</li>
+				<li>Ported IPMI pluging to work with the latest OpenIPMI 1.4.x library. With this come fast discovery, physical slot numbers in HPI EntityPath and overall improved IPMI->HPI mapping.</li>
 				<li>Improved support for redundancy sensors in BladeCenter plugin.</li>
 			</ul>
 
