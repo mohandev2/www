@@ -220,7 +220,7 @@ sub head_html {
 <body>
     <div id="banner"><div><h1>The OpenHPI Project</h1><small>Open Hardware Platform Interface</small></div></div>
     <table><tr>
-        <!--#include virtual="/sidebar_tryout.html" -->
+        <!--#include virtual="../sidebar.html" -->
         <td id="maincolumn">
             <div class="mainsegment">
 HEAD
