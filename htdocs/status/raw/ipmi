@@ -7,53 +7,53 @@ saHpiSessionClose functional
 saHpiResourcesDiscover functional
 saHpiRptInfoGet functional
 saHpiRptEntryGet functional
-saHpiRptEntryGetByResourceId 
-saHpiResourceSeveritySet 
-saHpiResourceTagSet 
-saHpiResourceIdGet 
-saHpiEntitySchemaGet
-saHpiEventLogInfoGet 
-saHpiEventLogEntryGet 
-saHpiEventLogEntryAdd 
-saHpiEventLogEntryDelete 
-saHpiEventLogClear 
-saHpiEventLogTimeGet 
-saHpiEventLogTimeSet 
-saHpiEventLogStateGet 
-saHpiEventLogStateSet 
-saHpiSubscribe 
-saHpiUnsubscribe 
-saHpiEventGet 
+saHpiRptEntryGetByResourceId done
+saHpiResourceSeveritySet done
+saHpiResourceTagSet done
+saHpiResourceIdGet no
+saHpiEntitySchemaGet done
+saHpiEventLogInfoGet functional need more work with OpenIPMI
+saHpiEventLogEntryGet functional need more work with OpenIPMI
+saHpiEventLogEntryAdd functional need more work with OpenIPMI
+saHpiEventLogEntryDelete functional need more work with OpenIPMI
+saHpiEventLogClear functional need more work with OpenIPMI
+saHpiEventLogTimeGet functional need more work with OpenIPMI
+saHpiEventLogTimeSet functional need more work with OpenIPMI
+saHpiEventLogStateGet functional need more work with OpenIPMI
+saHpiEventLogStateSet functional need more work with OpenIPMI
+saHpiSubscribe done
+saHpiUnsubscribe done
+saHpiEventGet functional need more work with OpenIPMI
 saHpiRdrGet functional
 saHpiSensorReadingGet functional
-saHpiSensorReadingConvert 
-saHpiSensorThresholdsGet 
-saHpiSensorThresholdsSet 
-saHpiSensorTypeGet functional
-saHpiSensorEventEnablesGet 
-saHpiSensorEventEnablesSet 
-saHpiControlTypeGet 
-saHpiControlStateGet 
-saHpiControlStateSet 
-saHpiEntityInventoryDataRead 
-saHpiEntityInventoryDataWrite 
-saHpiWatchdogTimerGet 
-saHpiWatchdogTimerSet 
-saHpiWatchdogTimerReset 
-saHpiHotSwapControlRequest 
-saHpiResourceActiveSet 
-saHpiResourceInactiveSet 
-saHpiAutoInsertTimeoutGet
-saHpiAutoInsertTimeoutSet
-saHpiAutoExtractTimeoutGet
-saHpiAutoExtractTimeoutSet
-saHpiHotSwapStateGet 
-saHpiHotSwapActionRequest 
-saHpiResourcePowerStateGet 
-saHpiResourcePowerStateSet 
-saHpiHotSwapIndicatorStateGet 
-saHpiHotSwapIndicatorStateSet 
-saHpiParmControl 
-saHpiResourceResetStateGet 
-saHpiResourceResetStateSet 
+saHpiSensorReadingConvert functional need more work with OpenIPMI 
+saHpiSensorThresholdsGet functional need more work with OpenIPMI
+saHpiSensorThresholdsSet functional need more work with OpenIPMI
+saHpiSensorTypeGet functional functional need more work with OpenIPMI
+saHpiSensorEventEnablesGet functional need more work with OpenIPMI
+saHpiSensorEventEnablesSet functional need more work with OpenIPMI
+saHpiControlTypeGet no no such function in IPMI now
+saHpiControlStateGet no no such function in IPMI now
+saHpiControlStateSet no no such function in IPMI now
+saHpiEntityInventoryDataRead no need more work in OpenIPMI
+saHpiEntityInventoryDataWrite no need more work in OpenIPMI
+saHpiWatchdogTimerGet done the function is in watchdog plug-in
+saHpiWatchdogTimerSet done the function is in watchdog plug-in
+saHpiWatchdogTimerReset done the function is in watchdog plug-in
+saHpiHotSwapControlRequest no 
+saHpiResourceActiveSet no
+saHpiResourceInactiveSet no
+saHpiAutoInsertTimeoutGet no
+saHpiAutoInsertTimeoutSet no
+saHpiAutoExtractTimeoutGet no
+saHpiAutoExtractTimeoutSet no
+saHpiHotSwapStateGet no
+saHpiHotSwapActionRequest no
+saHpiResourcePowerStateGet no
+saHpiResourcePowerStateSet no
+saHpiHotSwapIndicatorStateGet no 
+saHpiHotSwapIndicatorStateSet no
+saHpiParmControl no
+saHpiResourceResetStateGet no
+saHpiResourceResetStateSet no
 
