@@ -38,10 +38,10 @@ saHpiSensorThresholdsSet	done
 saHpiSensorTypeGet		done
 saHpiSensorEnableGet		done	wrapper to plugin call
 saHpiSensorEnableSet		done	wrapper to plugin call
-saHpiSensorEventEnableGet	
-saHpiSensorEventEnableSet
-saHpiSensorEventMasksGet
-saHpiSensorEventMasksSet
+saHpiSensorEventEnableGet       done	
+saHpiSensorEventEnableSet       done
+saHpiSensorEventMasksGet        done
+saHpiSensorEventMasksSet        done
 saHpiControlTypeGet		done
 saHpiControlGet			done	wrapper to plugin call
 saHpiControlSet			done	wrapper to plugin call
@@ -65,15 +65,15 @@ saHpiAnnunciatorModeGet		functional
 saHpiAnnunciatorModeSet		functional
 saHpiHotSwapPolicyCancel	done
 saHpiResourceActiveSet		done
-saHpiResourceInactiveSet		done
-saHpiAutoInsertTimeoutGet		done
-saHpiAutoInsertTimeoutSet		done
-saHpiAutoExtractTimeoutGet		done
-saHpiAutoExtractTimeoutSet		done
+saHpiResourceInactiveSet	done
+saHpiAutoInsertTimeoutGet	done
+saHpiAutoInsertTimeoutSet	done
+saHpiAutoExtractTimeoutGet	done
+saHpiAutoExtractTimeoutSet	done
 saHpiHotSwapStateGet		done
-saHpiHotSwapActionRequest		done
-saHpiHotSwapIndicatorStateGet		done
-saHpiHotSwapIndicatorStateSet		done
+saHpiHotSwapActionRequest	done
+saHpiHotSwapIndicatorStateGet	done
+saHpiHotSwapIndicatorStateSet	done
 saHpiParmControl		done
 saHpiResourceResetStateGet	done
 saHpiResourceResetStateSet	done

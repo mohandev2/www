@@ -8,13 +8,13 @@ saHpiSessionOpen		done
 saHpiSessionClose		done
 saHpiDiscover			done
 saHpiDomainInfoGet		done
-saHpiDrtEntryGet		notdone	this is just a stub now
+saHpiDrtEntryGet		na
 saHpiDomainTagSet		done
 saHpiRptEntryGet		done
 saHpiRptEntryGetByResourceId	done
-saHpiResourceSeveritySet	done	wrapper to plugin call
-saHpiResourceTagSet		done	wrapper to plugin call
-saHpiResourceIdGet		done	reads from config file
+saHpiResourceSeveritySet	done
+saHpiResourceTagSet		done
+saHpiResourceIdGet		done
 saHpiEventLogInfoGet		done
 saHpiEventLogEntryGet		done
 saHpiEventLogEntryAdd		done
@@ -26,28 +26,28 @@ saHpiEventLogStateSet		done
 saHpiEventLogOverflowReset	done
 saHpiSubscribe			done
 saHpiUnsubscribe		done
-saHpiEventGet			done	needs threading for 2 of the modes of operation
+saHpiEventGet			done
 saHpiEventAdd			done
-saHpiAlarmGetNext		notdone
-saHpiAlarmGet			notdone
-saHpiAlarmAcknowledge		notdone
-saHpiAlarmAdd			notdone
-saHpiAlarmDelete		notdone
+saHpiAlarmGetNext		na
+saHpiAlarmGet			na
+saHpiAlarmAcknowledge		na
+saHpiAlarmAdd			na
+saHpiAlarmDelete		na
 saHpiRdrGet			done
 saHpiRdrGetByInstrumentId	done
 saHpiSensorReadingGet		done
 saHpiSensorThresholdsGet	done
 saHpiSensorThresholdsSet	done
 saHpiSensorTypeGet		done
-saHpiSensorEnableGet		done	wrapper to plugin call
-saHpiSensorEnableSet		done	wrapper to plugin call
-saHpiSensorEventEnableGet	
-saHpiSensorEventEnableSet
-saHpiSensorEventMasksGet
-saHpiSensorEventMasksSet
+saHpiSensorEnableGet		done
+saHpiSensorEnableSet		done
+saHpiSensorEventEnableGet	done
+saHpiSensorEventEnableSet	done
+saHpiSensorEventMasksGet	done
+saHpiSensorEventMasksSet	done
 saHpiControlTypeGet		done
-saHpiControlGet			done	wrapper to plugin call
-saHpiControlSet			done	wrapper to plugin call
+saHpiControlGet			done
+saHpiControlSet			done
 saHpiIdrInfoGet			done
 saHpiIdrAreaHeaderGet		done
 saHpiIdrAreaAdd			done
