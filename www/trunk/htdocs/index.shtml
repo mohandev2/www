@@ -122,6 +122,139 @@
                     </pre>
                 </div>
             </div>
+            <div class="mainsegment">
+                <h3>OpenHPI 1.0.0 Stable Released! (06/30/2004)</h3>
+                <div>
+                    After a long year of development the OpenHPI Team is proud to announce the release of OpenHPI 1.0.0.  This release provides support for the SA Forum HPI A.1.1 specification.  OpenHPI 1.0.0 is available in source format from <a href="https://sourceforge.net/project/showfiles.php?group_id=71730">the SourceForge file repository</a>.  Binary RPMs for numerous platforms will be made available in the
+                    coming weeks.
+                    <p>OpenHPI 1.0.0 supports the following hardware:
+                    <ul>
+                        <li>IPMI based servers and blades (via OpenIPMI or IPMIDirect plugins)</li>
+                        <li>IBM Blade Center (via SNMP Blade Center plugin)</li>
+                        <li>IBM xSeries servers (via SNMP RSA plugin)</li>
+                        <li>Linux 2.4 & 2.6 watchdog devices (via watchdog plugin)</li>
+                        <li>Linux 2.6 systems (via sysfs plugin)</li>
+                        <li>A Dummy Plugin designed for testing and writing HPI applications</li>
+                    </ul>
+                    The release contains a number of sample command line utilities as example usage of the hpi interface.
+                    These include:
+                    <ul>
+                        <li>hpisensor - displays live readings of all sensors discovered</li>
+                        <li>hpiinv - displays inventory data for all resources which support it</li>
+                        <li>hpisel - fetches and displays event logs for all resources in the system</li>
+                        <li>hpipower/hpireset - power cycle or reset resources in the hpi instance</li>
+                    </ul>
+                    Along with the release there is a companion SNMP subagent (provided separately) which provides an SNMP interface to the OpenHPI library.  This allows users of SNMP client software to gain access to HPI information quickly and easily.
+                    <p>There is also an experimental HPI Daemon included with the release. The HPI Daemon is a user of the OpenHPI library that provides HPI as a system service.  Client applications can link to  libopenhpiclient which will transparently connect them to the HPI Daemon.
+                    <p>A complete change list of everything since 0.9 follows:
+                    <pre>
+Changes for 1.0.0
+-------------------
+New Features:
+Build System
+  953747 - rpm installation defaultly includes ipmi-plugin configuratio
+IPMI Direct plugin
+  938011 - refactoring of reading inventory data
+OpenIPMI Plugin
+  942029 - add test tool set to ipmi plugin
+  952885 - IPMI Plug-in performance enhancement
+  953322 - investigate on threshold event failure in some sensor
+  953324 - investigate on threshold event failure on Lan interface
+RSA Plugin
+  934306 - Create Unit Tests for RSA Plugin
+SNMP Client plugin
+  931903 - Enable abi sensor functions
+Test Suites
+  938099 - HPITEST - Conformance Tests for Errors
+
+Fixed Bugs:
+Blade Center Plugin
+  942692 - BC Power Reset and Set generates Errors
+  951569 - hpitest Setting Event Log State Fails
+  954279 - entity_inventory_data conformance test fail
+  961800 - return SA_ERR_HPI_BUSY if snmp times out
+  965268 - interpret dates better
+  965297 - fix false detection of daughter cards
+  966718 - Conformance tests - Add events fail
+  977729 - BladeCenter doesn't support Blade Identity LED
+Build System
+  924029 - Makefile in examples ignores the --sysconfdir
+  968511 - --enable-debug not being used anymore
+Documentation
+  927550 - scrub manual for typos
+HPI Clients
+  976775 - hpiinv is no reporting inventory data correctly.
+HPI Utils
+  925518 - Move Sensor utils to utils/ lib
+  969633 - No absolute timestamp supported in sel utils
+IPMI Direct plugin
+  919410 - sensor SetEventEnables is buggy
+  953173 - compilation error in ipmi_sensor.cpp
+  962488 - IPMIDirect Aborts with list_resources
+None
+  943669 - make check fails at marshal_***, 0..7beta snapshot
+OpenHPI base library
+  919458 - auto inservtion/extraction only works when timeout is 0
+  944799 - Dynamically turn on/off debugging
+  965773 - blocking timeout doesn't seem to work
+  969212 - rpm dependency errors
+  969705 - Set default DEL severity to minor
+  974839 - clean rules broken all over the place
+  976994 - change OHDEBUG -> OPENHPI_DEBUG
+OpenIPMI plugin
+  947896 - AdvancedTCA entity string "invalid"
+  954105 - some valid sensor readings return error
+  957580 - set_resource_tag abi is not implemented
+  959749 - hpithres returns -1006 from ThresholdsGet
+  959753 - No Inventory RDRs are populated
+  965422 - use ipmi_fru_get_xx instead of ipmi_entity_get_xxx
+  968522 - empty Resource Tag
+  969022 - warning message in fetching  fru
+  969042 - control state is not correctly set
+  969076 - PosThdHysteresis and NegThdHysteresis is not correctly set
+  969093 - sensor discrete event is not populated to HPI
+  981666 - OpenIPMI 1.3.9 suggested
+Test Suites
+  914909 - test hs_001
+  950172 - HPI Conformance Test: error valid
+  965411 - Conformance driver does not handle segfault, remove tests
+  965936 - Two conformance sensor_threshold tests return NA?
+  979327 - Conformance Test does not restore Time
+
+                    </pre>
+                    Questions, Comments, or Bugs should be sent to the OpenHPI development mailing list (openhpi-devel at
+                    sourceforge dot net).
+                    <p>With OpenHPI 1.0.0 released, the OpenHPI team is now fully focusing on the new HPI B.1.1  specification. Expect to see new development releases in the near future.
+                    <p>OpenHPI 1.0.0 was produced by the efforts of a large number of individuals, without whom we could have never accomplished such a quality implementation is such a short window of time. The following people directly contributed to the success of this project (if someone was left off the list, we are very sorry, and please speak up on openhpi-devel).
+                    <ul>
+                        <li>David Ashley</li>
+                        <li>Jean-Michel Audet</li>
+                        <li>Andrea Brugger</li>
+                        <li>Chris Chia</li>
+                        <li>Andy Cress</li>
+                        <li>Sean Dague</li>
+                        <li>Julie Fleischer</li>
+                        <li>Kevin Gao</li>
+                        <li>David Judkovics</li>
+                        <li>Thomas Kanngieser</li>
+                        <li>James P. Ketrenos</li>
+                        <li>Rusty Lynch</li>
+                        <li>Carl McAdams</li>
+                        <li>Renier Morales</li>
+                        <li>Guo Ruijing</li>
+                        <li>Konrad Rzeszutek</li>
+                        <li>Peter D Phan</li>
+                        <li>Pierre Sangouard</li>
+                        <li>Steve Sherman</li>
+                        <li>Tariq Shureih</li>
+                        <li>Armin Stauber</li>
+                        <li>Bill Swortwood</li>
+                        <li>Louis Yan Zhuang</li>
+                        <li>Serge Zhukov</li>
+                    </ul>
+                    Thanks again to everyone that made this a success. Watch for OpenHPI 2.0 (electric bugallow)      coming to a theater near you soon. :)
+                </div>
+            </div>
             <b>For questions or comments, please <a href="mailto:openhpi-devel@lists.sourceforge.net">email the openhpi developers</a>.</b>
             <p>You can also contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a>.
             <br>Last modified: Wed Sep  8 16:44:53 EDT 2004
