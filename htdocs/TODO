@@ -10,15 +10,15 @@ Infrastructure
 * Make OpenHPI Thread Safe (v 0.3)
 * Add Support for Multiple Domains (v 0.5)
 * Support for setting handler entity root (v 0.3)
-* Persistance mechanism for SEL (
-* Persistance mechanism for User Updateable Fields
+* Persistance mechanism for SEL (v 0.4)
+* Persistance mechanism for User Updateable Fields (v 0.4)
 
 IPMI Plugin
 -------------------------
-* Resources
-* RDR
-* SEL
-* Events
+* Resources (v 0.2)
+* RDR (v 0.2)
+* SEL (v 0.3)
+* Events 
 * HPI Set Functions
 * Watchdog
 * Hotswap
