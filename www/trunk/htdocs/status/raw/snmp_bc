@@ -1,59 +1,59 @@
-SNMP Blade Center
+SNMP BladeCenter
 
-saHpiInitialize   functional    
-saHpiFinalize    done 
-saHpiSessionOpen functional
-saHpiSessionClose functional
-saHpiResourcesDiscover semifunc Many RPT entries and RDRs are discovered. Not handling rediscovery.
-saHpiRptInfoGet functional
-saHpiRptEntryGet semifunc You can get resources, but they don't have the full information yet.
-saHpiRptEntryGetByResourceId na done in infrastructure
-saHpiResourceSeveritySet semifunc You can set this, but not handling resource absence yet.
-saHpiResourceTagSet 
-saHpiResourceIdGet 
-saHpiEntitySchemaGet na
-saHpiEventLogInfoGet functional Seems to be working, need to make it more efficient
-saHpiEventLogEntryGet functional hands up only OEM events for now
-saHpiEventLogEntryAdd impossible SEL doesn't support adding events from user
-saHpiEventLogEntryDelete done we don't support it per spec
-saHpiEventLogClear 
-saHpiEventLogTimeGet na this call is done in infrastructure
-saHpiEventLogTimeSet 
-saHpiEventLogStateGet na this call is done in infrastructure
-saHpiEventLogStateSet impossible you can't turn off this SEL from user space
-saHpiSubscribe 
-saHpiUnsubscribe 
-saHpiEventGet semifunc
-saHpiRdrGet semifunc
-saHpiSensorReadingGet semifunc
-saHpiSensorReadingConvert na done in infrastructure
-saHpiSensorThresholdsGet semifunc
-saHpiSensorThresholdsSet
-saHpiSensorTypeGet na this call is done in infrastructure
-saHpiSensorEventEnablesGet 
-saHpiSensorEventEnablesSet 
-saHpiControlTypeGet na this call is done in infrastructure
-saHpiControlStateGet semifunc
-saHpiControlStateSet 
-saHpiEntityInventoryDataRead 
-saHpiEntityInventoryDataWrite 
-saHpiWatchdogTimerGet na Current MIB doesn't have watchdogs
-saHpiWatchdogTimerSet na Current MIB doesn't have watchdogs
-saHpiWatchdogTimerReset na Current MIB doesn't have watchdogs
-saHpiHotSwapControlRequest na Blade Center supports simplified hotswap
-saHpiResourceActiveSet na Blade Center supports simplified hotswap
-saHpiResourceInactiveSet na Blade Center supports simplified hotswap
-saHpiAutoInsertTimeoutGet na Blade Center supports simplified hotswap
-saHpiAutoInsertTimeoutSet na Blade Center supports simplified hotswap
-saHpiAutoExtractTimeoutGet na Blade Center supports simplified hotswap
-saHpiAutoExtractTimeoutSet na Blade Center supports simplified hotswap
-saHpiHotSwapStateGet broken only will support simplified model
-saHpiHotSwapActionRequest broken not sure where this will be used yet
-saHpiResourcePowerStateGet 
-saHpiResourcePowerStateSet 
-saHpiHotSwapIndicatorStateGet broken not sure if this applies
-saHpiHotSwapIndicatorStateSet broken not sure if this applies
-saHpiParmControl broken unclear that this is really supportable, as nvram fields aren't big enough
-saHpiResourceResetStateGet 
-saHpiResourceResetStateSet 
+saHpiInitialize 		done
+saHpiFinalize 			done
+saHpiSessionOpen 		done
+saHpiSessionClose 		done
+saHpiResourcesDiscover 		done
+saHpiRptInfoGet 		done
+saHpiRptEntryGet 		done
+saHpiRptEntryGetByResourceId 	na 		Done in infrastructure
+saHpiResourceSeveritySet 	done 		Not persistant
+saHpiResourceTagSet 		done 		Not persistant
+saHpiResourceIdGet 		na		Done in infrastructure
+saHpiEntitySchemaGet 		na
+saHpiEventLogInfoGet 		done
+saHpiEventLogEntryGet 		done
+saHpiEventLogEntryAdd 		impossible 	No MIB support for adding events
+saHpiEventLogEntryDelete 	done 		Optional in spec; Cannot delete events
+saHpiEventLogClear 		done
+saHpiEventLogTimeGet 		done
+saHpiEventLogTimeSet 		done
+saHpiEventLogStateGet 		na 		Done in infrastructure
+saHpiEventLogStateSet 		impossible 	No MIB support to turn off logging
+saHpiSubscribe 			na 		Done in infrastructure
+saHpiUnsubscribe 		na 		Done in infrastructure
+saHpiEventGet 			done
+saHpiRdrGet 			done
+saHpiSensorReadingGet 		done
+saHpiSensorReadingConvert 	na 		Done in infrastructure
+saHpiSensorThresholdsGet 	done
+saHpiSensorThresholdsSet	impossible	No MIB support for writable thresholds
+saHpiSensorTypeGet 		na 		Done in infrastructure
+saHpiSensorEventEnablesGet 	done
+saHpiSensorEventEnablesSet 	done
+saHpiControlTypeGet 		na 		Done in infrastructure
+saHpiControlStateGet 		done
+saHpiControlStateSet 		done
+saHpiEntityInventoryDataRead 	done
+saHpiEntityInventoryDataWrite 	impossible	No MIB support for writable inventory data
+saHpiWatchdogTimerGet 		impossible	No MIB support for watchdogs
+saHpiWatchdogTimerSet 		impossible 	No MIB support for watchdogs
+saHpiWatchdogTimerReset 	impossible	No MIB support for watchdogs
+saHpiHotSwapControlRequest 	impossible	BladeCenter supports simplified hot-swap
+saHpiResourceActiveSet 		impossible	BladeCenter supports simplified hot-swap
+saHpiResourceInactiveSet 	impossible	BladeCenter supports simplified hot-swap
+saHpiAutoInsertTimeoutGet 	impossible	BladeCenter supports simplified hot-swap
+saHpiAutoInsertTimeoutSet 	impossible	BladeCenter supports simplified hot-swap
+saHpiAutoExtractTimeoutGet 	impossible	BladeCenter supports simplified hot-swap
+saHpiAutoExtractTimeoutSet 	impossible	BladeCenter supports simplified hot-swap
+saHpiHotSwapStateGet 		done		Simplified hot-swap states only
+saHpiHotSwapActionRequest 	impossible	BladeCenter supports simplified hot-swap 
+saHpiResourcePowerStateGet 	done
+saHpiResourcePowerStateSet 	done
+saHpiHotSwapIndicatorStateGet 	impossible	No physical hot-swap indicator
+saHpiHotSwapIndicatorStateSet 	impossible	No physical hot-swap indicator
+saHpiParmControl 		impossible	No MIB support to allow persistance of data
+saHpiResourceResetStateGet 	done		Always get SAHPI_RESET_DEASSERT
+saHpiResourceResetStateSet 	impossible	BladeCenter supports simplified hot-swap
 
