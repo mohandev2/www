@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>OpenHPI - Contributors</title>
+    <!--#include virtual="/openhpi.css" -->
+  </head>
+
+  <body>
+    <table>
+        <tr>
+          <!--#include virtual="/sidebar.html" -->
+          <td valign="top">
+            <h1>OpenHPI :: Contributors</h1>
+            <p>
+              The following people make up the HPI team.  They are the
+              ones that can be found on the openhpi mailing lists or
+              irc.
+            </p>
+            <dl>
+              <dt>Tariq Shureih - OpenHPI Maintainer</dt>
+              <dd>Focus Areas: OpenHPI core library and the IPMI Plugin.</dd>
+              
+              <dt><a href="http://dague.net/sean">Sean Dague</a> -
+                Developer, Webmaster, Planner</dt>
+              <dd>Focus Areas: OpenHPI
+                core library, Build System, and the High Level Design documents.
+              </dd>
+              
+              <dt>Kevin Gao - Developer</dt>
+              <dd>Focus Areas: HPI Conformance Test Suite</dd>
+
+              <dt>David Judkovics - Developer</dt>
+              <dd>Focus Areas: Text Remoting plugin, Threading
+                Support.</dd>
+
+              <dt>Rusty Lynch - Developer</dt>
+              <dd>Focus Areas: OpenHPI core library, Watchdog plugin.
+                Note: Rusty is the previous OpenHPI maintainer.</dd>
+
+              <dt>Renier Morales - Developer</dt>
+              <dd>Focus Areas: Config File Engine, Blade Center SNMP plugin.
+              
+              <dt>Louis Zhuang - Developer</dt>
+              <dd>Focus Areas: OpenHPI core library, IPMI plugin,
+                Dummy plugin, OpenHPI Simulator</dd>
+              
+            </dl>
+            
+            <hr>
+            <address><a href="http://dague.net/sean">Sean Dague</a></address>
+            <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
+<!-- hhmts start -->
+Last modified: Tue Sep 16 11:26:30 EDT 2003
+<!-- hhmts end -->
+          </td></tr>
+    </table>
+  </body>
+</html>
