@@ -1,3 +1,82 @@
-IPMI Plugin
+SNMP BladeCenter/RSA
 
+saHpiVersionGet			na Supported in Infra-structure code
+saHpiSessionOpen		done
+saHpiSessionClose		done
+saHpiDiscover			done
+saHpiDomainInfoGet		na Supported in Infra-structure code
+saHpiDrtEntryGet		na Supported in Infra-structure code
+saHpiDomainTagSet		na Supported in Infra-structure code
+saHpiRptEntryGet		na Supported in Infra-structure code
+saHpiRptEntryGetByResourceId	na Supported in Infra-structure code
+saHpiResourceSeveritySet	
+saHpiResourceTagSet		done
+saHpiResourceIdGet		na Supported in Infra-structure code
+saHpiEventLogInfoGet		done
+saHpiEventLogEntryGet		done
+saHpiEventLogEntryAdd		na
+saHpiEventLogClear		done
+saHpiEventLogTimeGet		done Infra-structure gets time thru saHpiEventLogInfoGet internally
+saHpiEventLogTimeSet		done
+saHpiEventLogStateGet		done Infra-structure gets state thru saHpiEventLogInfoGet internally
+saHpiEventLogStateSet		na
+saHpiEventLogOverflowReset	broken
+saHpiSubscribe			na Supported in Infra-structure code
+saHpiUnsubscribe		na Supported in Infra-structure code
+saHpiEventGet			broken
+saHpiEventAdd			na Supported in Infra-structure code
+saHpiAlarmGetNext		na Supported in Infra-structure code
+saHpiAlarmGet			na Supported in Infra-structure code
+saHpiAlarmAcknowledge		na Supported in Infra-structure code
+saHpiAlarmAdd			na Supported in Infra-structure code
+saHpiAlarmDelete		na Supported in Infra-structure code
+saHpiRdrGet			na Supported in Infra-structure code
+saHpiRdrGetByInstrumentId	na Supported in Infra-structure code
+saHpiSensorReadingGet		done
+saHpiSensorThresholdsGet	done
+saHpiSensorThresholdsSet	done
+saHpiSensorTypeGet		na Supported in Infra-structure code
+saHpiSensorEnableGet		done	
+saHpiSensorEnableSet		done Hardware has no sensors that can be disabled defined
+saHpiSensorEventEnableGet	done	
+saHpiSensorEventEnableSet	done Hardware has no writable event defined
+saHpiSensorEventMasksGet	done
+saHpiSensorEventMasksSet	done Hardware has no writable event masks defined
+saHpiControlTypeGet		na Supported in Infra-structure code
+saHpiControlGet			done	
+saHpiControlSet			done
+saHpiIdrInfoGet			done
+saHpiIdrAreaHeaderGet		done
+saHpiIdrAreaAdd			na Inventory updates not allowed
+saHpiIdrAreaDelete		na Inventory updates not allowed	
+saHpiIdrFieldGet		done
+saHpiIdrFieldAdd		na Inventory updates not allowed
+saHpiIdrFieldSet		na Inventory updates not allowed		
+saHpiIdrFieldDelete		na Inventory updates not allowed
+saHpiWatchdogTimerGet		broken Hardware does not have any defined watchdogs
+saHpiWatchdogTimerSet		broken Hardware does not have any defined watchdogs	
+saHpiWatchdogTimerReset		broken Hardware does not have any defined watchdogs
+saHpiAnnunciatorGetNext		notdone
+saHpiAnnunciatorGet		notdone
+saHpiAnnunciatorAcknowledge	notdone
+saHpiAnnunciatorAdd		notdone
+saHpiAnnunciatorDelete		notdone
+saHpiAnnunciatorModeGet		notdone
+saHpiAnnunciatorModeSet		notdone
+saHpiHotSwapPolicyCancel	broken Hardware supports simple hot-swap model
+saHpiResourceActiveSet		broken Hardware supports simple hot-swap model
+saHpiResourceInactiveSet	broken Hardware supports simple hot-swap model
+saHpiAutoInsertTimeoutGet	broken Hardware supports simple hot-swap model
+saHpiAutoInsertTimeoutSet	broken Hardware supports simple hot-swap model
+saHpiAutoExtractTimeoutGet	broken Hardware supports simple hot-swap model
+saHpiAutoExtractTimeoutSet	broken Hardware supports simple hot-swap model
+saHpiHotSwapStateGet		done Hardware supports simple hot-swap model
+saHpiHotSwapActionRequest	broken Hardware supports simple hot-swap model
+saHpiHotSwapIndicatorStateGet	done Hardware supports simple hot-swap model
+saHpiHotSwapIndicatorStateSet	done Hardware supports simple hot-swap model
+saHpiParmControl		broken Hardware does not persist user-set information
+saHpiResourceResetStateGet	done
+saHpiResourceResetStateSet	done
+saHpiResourcePowerStateGet	done
+saHpiResourcePowerStateSet	done
 
