@@ -30,8 +30,8 @@ saHpiSensorReadingConvert na
 saHpiSensorThresholdsGet functional
 saHpiSensorThresholdsSet functional
 saHpiSensorTypeGet na
-saHpiSensorEventEnablesGet NotDone
-saHpiSensorEventEnablesSet NotDone
+saHpiSensorEventEnablesGet functional
+saHpiSensorEventEnablesSet functional
 saHpiControlTypeGet na
 saHpiControlStateGet functional
 saHpiControlStateSet broken 
