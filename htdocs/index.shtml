@@ -47,8 +47,6 @@ HPI Shell
   1100593 - Hpi Shell should support openhpid2
 OpenHPI base library
   1113817 - Model the reset return status for some Platforms
-OpenIPMI Plugin
-  1100592 - Port IPMI plug-in to use OpenIPMI 1.4.x
 Test Suites
   1104215 - Expand rpt_utils unit tests to get 80%+ coverage
 
