@@ -37,6 +37,19 @@ TD.Bad { background-color: #ff0000 }
 DT.announce { font-size: 14pt; font-weight: bold; padding-top: 15}
 DD { padding-bottom: 0 }
 
+TABLE.report {width: 600; border-width: thin; border-style: solid}
+TR.function {font-size: larger; font-weight: bold}
+TR.file {font-size: largest; font-weight: bold}
+TR.na {color: grey}
+TR.bad {background-color: #e84545}
+TR.ok {background-color: #dde244}
+TR.good {background-color: #4ae544}
+TR.great {background-color: green}
+TD.num {align: right}
+TR.notexec {background-color: #e84545}
+TR.low {background-color: #dde244}
+PRE {font-family: san-serif}
+
 .author { margin: 0}
 .AUTHOR { margin: 0 }
 .programlisting { padding: 3px; background-color: #bbbbbb; border-style: solid; border-width: 1px; border-color: #000000 }
