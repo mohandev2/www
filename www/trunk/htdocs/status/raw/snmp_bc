@@ -9,15 +9,15 @@ saHpiRptInfoGet functional
 saHpiRptEntryGet semifunc You can get resources, but they don't have the full information yet.
 saHpiRptEntryGetByResourceId semifunc
 saHpiResourceSeveritySet semifunc You can set this, but not handling resource absence yet.
-saHpiResourceTagSet done
-saHpiResourceIdGet done
-saHpiEntitySchemaGet done
-saHpiEventLogInfoGet 
+saHpiResourceTagSet 
+saHpiResourceIdGet 
+saHpiEntitySchemaGet na
+saHpiEventLogInfoGet semifunc Seems to be working, need to make it more efficient
 saHpiEventLogEntryGet 
 saHpiEventLogEntryAdd impossible SEL doesn't support adding events from user
-saHpiEventLogEntryDelete 
+saHpiEventLogEntryDelete done we don't support it per spec
 saHpiEventLogClear 
-saHpiEventLogTimeGet 
+saHpiEventLogTimeGet na this call is done in infrastructure
 saHpiEventLogTimeSet 
 saHpiEventLogStateGet 
 saHpiEventLogStateSet 
@@ -29,10 +29,10 @@ saHpiSensorReadingGet semifunc
 saHpiSensorReadingConvert 
 saHpiSensorThresholdsGet semifunc
 saHpiSensorThresholdsSet
-saHpiSensorTypeGet done
+saHpiSensorTypeGet na this call is done in infrastructure
 saHpiSensorEventEnablesGet 
 saHpiSensorEventEnablesSet 
-saHpiControlTypeGet done
+saHpiControlTypeGet na this call is done in infrastructure
 saHpiControlStateGet semifunc
 saHpiControlStateSet 
 saHpiEntityInventoryDataRead 
