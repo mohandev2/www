@@ -28,10 +28,10 @@ saHpiRdrGet broken
 saHpiSensorReadingGet functional
 saHpiSensorReadingConvert na
 saHpiSensorThresholdsGet functional
-saHpiSensorThresholdsSet NotDone
+saHpiSensorThresholdsSet functional
 saHpiSensorTypeGet na
-saHpiSensorEventEnablesGet broken
-saHpiSensorEventEnablesSet broken 
+saHpiSensorEventEnablesGet NotDone
+saHpiSensorEventEnablesSet NotDone
 saHpiControlTypeGet na
 saHpiControlStateGet functional
 saHpiControlStateSet broken 
