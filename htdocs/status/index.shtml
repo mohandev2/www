@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>OpenHPI - Status</title>
+    <!--#include virtual="/openhpi.css" -->
+  </head>
+
+  <body>
+    <table>
+        <tr>
+          <!--#include virtual="/sidebar.html" -->
+          <td valign="top">
+            <h1>OpenHPI :: Status</h1>
+            <p>
+              OpenHPI is an open source project, so is continually a
+              work in progress.  As OpenHPI 1.0 is a set of 56 APIs,
+              which are fullfilled by both the OpenHPI infrastructure
+              and OpenHPI plugins.  We will be providing tracking of
+              the status of the APIs based on the following key.
+            </p>
+            <table>
+                <tr><td class="broken">Broken</td><td>Functionality
+                    hasn't be started yet, or is in a non operational state</td></tr>
+                <tr><td class="semifunc">Semi Functional</td><td>Functionality
+                    exists, but isn't guaranteed to work properly.
+                    Considered alpha level functionality.</td></tr>
+                <tr><td class="functional">Functional</td><td>Functionality
+                    exists, and <em>should work</em>.  It has not be
+                    extensively tested, and should be considered beta quality</td></tr>
+                <tr><td class="done">Done</td><td>Functionality exists
+                    and has been tested aggressively.  Considered GA quality</td></tr>
+                <tr><td class="impossible">Impossible</td><td>It is
+                    impossible to implement this function.  This may
+                    be the case for some functions on some hardware.</td></tr>
+            </table>
+            <!--#include virtual="infrastruct.html" -->
+            <hr>
+            <address><a href="http://dague.net/sean">Sean Dague</a></address>
+            <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
+            <!-- hhmts start -->
+Last modified: Fri Sep  5 16:58:47 EDT 2003
+<!-- hhmts end -->
+          </td></tr>
+    </table>
+  </body>
+</html>
