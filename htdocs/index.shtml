@@ -70,6 +70,7 @@
             
             <li>OpenIPMI based IPMI plug-in</li>
             <ul>
+	      <li>Requires OpenIPMI library 1.2.7 or later</li>
               <li>Code cleanup of old data structures</li>
               <li>Initial implementation of control support</li>
             </ul>
