@@ -1,0 +1,43 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+#banner {
+    width: 100%;
+    text-align: center;
+    background-color: #51657B;
+    border-bottom: 1px solid #999999;
+}
+
+#banner h1 {
+    margin: 0px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: Verdana, "Arial Black", Arial, "Times New Roman";
+    color: white;
+    border-bottom: 1px solid #333333;
+}
+
+#navbar {
+    float: left;
+    font-family: Verdana, Arial, Sans, "Times New Roman";
+    width: 250px;
+}
+
+#navbar p {
+    border: 1px solid #C9D2DC;
+    background-color: #EEEEEE;
+}
+
+#navbar p h4 {
+    color: #000066;
+    background-color: #C9D2DC;
+    border-width: 1px 0px 1px 1px;
+    border-top-color: white;
+    border-left-color: white;
+    border-bottom-color: #93A4B7;
+    padding: 3px 1px 3px 4px;
+}
