@@ -29,6 +29,33 @@
             </p>
             <h2>News!</h2>
             <dl>
+	      <dt>OpenHPI 0.3 Released! (11/18/2003)</dt>
+	      <dd>
+	      New in this release:
+		<dl>
+		 <dd class="nest">
+		   openHpi has a new plug-in interface.
+		   Implemented the new 'oh_handler_state' structure.
+			(see oh_plugin.h)
+		 </dd>
+		 <dd class=nest">All plug-in ported to oh_handler_state</dd>
+		 <dd class="nest">New Entity Path utilities (ep_utils) to 
+		   convert EP to and from string and SaHpiResourceIdT.
+		 </dd>
+		 <dd class="nest">New RPTcache of oh_handler_state.</dd>
+		 <dd class="nest">SaHpiResourceId is persisted using 
+		   EntityPatch and uid.</dd>
+		 <dd class="nest">Sysfs: ported to libsysfs 0.2 and oh_handler_state.</dd>
+		 <dd class="nest">Sysfs: Added Set functionality.</dd>
+		 <dd class="nest">Watchdog: Added test_watchdog to examples for testing</dd>
+		 <dd class="nest">SNMP: Sensor, ResourceTag and discovery are functional</dd>
+		 <dd class=nest">Openhpid and text_remoting: retired and will be replaced by SNMP-agent for OpenHPI remoting.</dd>
+		 <dd class="nest">Plug-in developer guide.</dd>
+		 <dd class="nest">Improved build and packaging</dd>
+		 
+		</dl>
+		</dd>
+
               <dt>OpenHPI 0.2 Released! (9/16/2003)</dt>
               <dd>
                 New content in this release:
