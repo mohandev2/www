@@ -2,58 +2,58 @@ Dummy Plugin
 
 saHpiInitialize   done
 saHpiFinalize    done 
-saHpiSessionOpen semifunc   Dummy doesn't allow for multiple instances
-saHpiSessionClose semifunc  Works, but should probably do some cleanup
+saHpiSessionOpen done
+saHpiSessionClose done
 saHpiResourcesDiscover done
 saHpiRptInfoGet done
 saHpiRptEntryGet done
-saHpiRptEntryGetByResourceId 
-saHpiResourceSeveritySet 
-saHpiResourceTagSet 
-saHpiResourceIdGet 
+saHpiRptEntryGetByResourceId broken nothing to do in dummy
+saHpiResourceSeveritySet done
+saHpiResourceTagSet done
+saHpiResourceIdGet done
 saHpiEntitySchemaGet done
-saHpiEventLogInfoGet 
-saHpiEventLogEntryGet 
-saHpiEventLogEntryAdd functional
-saHpiEventLogEntryDelete 
-saHpiEventLogClear 
-saHpiEventLogTimeGet broken
-saHpiEventLogTimeSet broken
-saHpiEventLogStateGet 
-saHpiEventLogStateSet 
-saHpiSubscribe 
-saHpiUnsubscribe 
-saHpiEventGet 
-saHpiRdrGet 
-saHpiSensorReadingGet 
-saHpiSensorReadingConvert 
-saHpiSensorThresholdsGet 
-saHpiSensorThresholdsSet 
-saHpiSensorTypeGet 
-saHpiSensorEventEnablesGet 
-saHpiSensorEventEnablesSet 
-saHpiControlTypeGet 
-saHpiControlStateGet 
-saHpiControlStateSet 
-saHpiEntityInventoryDataRead 
-saHpiEntityInventoryDataWrite 
-saHpiWatchdogTimerGet broken
-saHpiWatchdogTimerSet broken
-saHpiWatchdogTimerReset broken
-saHpiHotSwapControlRequest 
-saHpiResourceActiveSet 
-saHpiResourceInactiveSet 
-saHpiAutoInsertTimeoutGet
-saHpiAutoInsertTimeoutSet
-saHpiAutoExtractTimeoutGet
-saHpiAutoExtractTimeoutSet
-saHpiHotSwapStateGet 
-saHpiHotSwapActionRequest 
-saHpiResourcePowerStateGet 
-saHpiResourcePowerStateSet 
-saHpiHotSwapIndicatorStateGet 
-saHpiHotSwapIndicatorStateSet 
-saHpiParmControl 
-saHpiResourceResetStateGet 
-saHpiResourceResetStateSet 
+saHpiEventLogInfoGet done
+saHpiEventLogEntryGet done
+saHpiEventLogEntryAdd done
+saHpiEventLogEntryDelete broken the function will be deleted because of spec errata
+saHpiEventLogClear done
+saHpiEventLogTimeGet done fake impl. but can pass test
+saHpiEventLogTimeSet done fake impl. but can pass test
+saHpiEventLogStateGet done
+saHpiEventLogStateSet done
+saHpiSubscribe done
+saHpiUnsubscribe done
+saHpiEventGet done
+saHpiRdrGet done
+saHpiSensorReadingGet done
+saHpiSensorReadingConvert N/A it is infra.'s work
+saHpiSensorThresholdsGet done
+saHpiSensorThresholdsSet done
+saHpiSensorTypeGet done
+saHpiSensorEventEnablesGet done
+saHpiSensorEventEnablesSet done
+saHpiControlTypeGet done
+saHpiControlStateGet done
+saHpiControlStateSet done
+saHpiEntityInventoryDataRead done
+saHpiEntityInventoryDataWrite done
+saHpiWatchdogTimerGet N/A watchdog plug-in will simulate it
+saHpiWatchdogTimerSet N/A watchdog plug-in will simulate it
+saHpiWatchdogTimerReset N/A watchdog plug-in will simulate it
+saHpiHotSwapControlRequest N/A it is infra.'s work
+saHpiResourceActiveSet done
+saHpiResourceInactiveSet done
+saHpiAutoInsertTimeoutGet N/A it is infra.'s work
+saHpiAutoInsertTimeoutSet N/A it is infra.'s work
+saHpiAutoExtractTimeoutGet N/A it is infra.'s work
+saHpiAutoExtractTimeoutSet N/A it is infra.'s work
+saHpiHotSwapStateGet done
+saHpiHotSwapActionRequest done
+saHpiResourcePowerStateGet done
+saHpiResourcePowerStateSet done
+saHpiHotSwapIndicatorStateGet done
+saHpiHotSwapIndicatorStateSet done
+saHpiParmControl done
+saHpiResourceResetStateGet done
+saHpiResourceResetStateSet done
 
