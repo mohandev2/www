@@ -22,53 +22,142 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+    <h4>OpenHPI 2.0.2 Development Release (02/24/2005)</h4>
+  <div>
+   OpenHPI 2.0.1 has been released. This is essentially a bug fix from head to tail. The following bug fixes were geared to resolve threading issues:
+   <ul>
+    <li>The event loop was reworked and improved</li>
+    <li>The Blade Center plugin is now completely thread safe</li>
+    <li>The snmp utility wrappers are now using the net-snmp thread safe mdoel</li>
+   </ul>
+   Other fixes include:
+   <ul>
+    <li>Improved resource and inventory readings in IPMI plugin</li>
+    <li>IPMI direct plugin now ported to B spec</li>
+    <li>More unit tests added to the resource precense table and event log utilities</li>
+    <li>Restriction lifted in resource table to accept an HPI defined set of resource types for compatibility with ipmi plugins which can report a larger set of types not in the HPI resource set.</li>
+   </ul>
+
+   Details on bug fixes and added features:
+   <pre>
+Changes for 2.0.1
+-------------------
+New Features:
+HPI Shell
+  1100593 - Hpi Shell should support openhpid2
+OpenHPI base library
+  1113817 - Model the reset return status for some Platforms
+OpenIPMI Plugin
+  1100592 - Port IPMI plug-in to use OpenIPMI 1.4.x
+Test Suites
+  1104215 - Expand rpt_utils unit tests to get 80%+ coverage
+
+Fixed Bugs:
+Blade Center Plugin
+  1096228 - Fix controls - add RID to discovery; delete blade restart
+  1098146 - Up SNMP timeout value to 2 seconds
+  1099140 - (Conformance) tests hang after ResourceResetStateGet_Set
+  1100394 - Dont build elcache until after discovery
+  1100905 - IPMI Sensors not being discovered
+  1102604 - Add in mutex support for multiple thread support
+  1102606 - Handle periods at end of threshold value strings
+  1103202 - Fix tevent unit test
+  1104123 - Add mutex lock/unlock around snmp_bc plugin interfaces
+  1105644 - &quot;make check&quot; fails in treaded env
+  1105932 - BEAM: fix misplaced parenthesis
+  1109353 - acknowleging Alarm won't work for all severities
+  1109355 - Update Copyright statements for 2005
+  1113114 - snmp_bc threaded env: threads hangs.
+HPI Clients
+  1098067 - hpisensor output usability
+  1105935 - BEAM: fix missing break in case statement
+HPI Shell
+  1107311 - make distcheck fails.
+  1108198 - Build fails in HPI shell
+HPI Utils
+  1101900 - openhpi doesn't compile against net-snmp 5.2
+  1102581 - Don't require percentages strings to be translated to floats
+  1109784 - Can't add resources with non HPI defined entity type
+  1114918 - Wrong timestamp information in domain event log
+OpenHPI base library
+  1064526 - saHpiEventLogOverflowReset returns unsupported API
+  1086613 - Not signaling the event loop thread
+  1096528 - Redundant code left in saHpiUnsubscribe
+  1101134 - thread loop, init order
+  1108323 - hotswap policy does not support SAHPI_TIMEOUT_BLOCK
+  1113781 - Possible hang in oh_remove_alarm() code
+  1113866 - src/control_state/saHpiControlSet_T13.c return issue
+  1113869 - src/control_state/saHpiControlSet_T25 return code issue
+  1113874 - src/control_state/saHpiControlSet_T11 return code issue
+OpenIPMI plugin
+  1086122 - Can't set (write) Inventory fields
+  1093644 - saHpiResourceResetStateGet always return error!
+  1095225 - Inventory content truncated
+  1095256 - Takes 5 Discovery passes to fill in FRU data
+  1095262 - Inventory Custom field not retrieved
+  1095266 - Inventory Product Fields report Board Area type
+  1098073 - ThresholdsGet sometimes returns TIMEOUT
+  1100360 - ControlStateGet returns -1005
+SNMP Client plugin
+  1115902 - Need to use threadsafe net-snmp APIs
+Test Suites
+  1096562 - PowerManagement tests wait conditions
+  1096568 - saHpiPowerStateGet_Set_T3.c invalid test
+  1096684 - comments in saHpiControlGet_T8 are wrong
+  1096792 - saHpiControlGet_Set_T1 not working correctly
+  1098483 - Some Hot Swap Indicator tests are wrongly skipped
+  1098503 - Wrong reading type used in saHpiSensorThresholdsGet_Set_T2
+  1104765 - saHpiSensorReadingGet_T1.c add delay for BUSY
+  1106900 - Unit Test Failed: utils/t/rpt/rpt_utils_072
+   </pre>
+    </div>
   <h4>OpenHPI 2.0.0 Stable Release (12/31/2004)</h4>
   <div>
       OpenHPI 2.0.0 has been released! This is the first stable release of OpenHPI providing well-tested and robust implementation of the HPI B.01.01 specification.<br>
      <strong>The current stable release provides:</strong>
       <ul>
         <li>Complete library and plugin interface support for HPI B spec.</li>
-	<li>Improved library configuration with added event queue, alarm table and event log limits.</li>
-	<li>Managed and simplified hot-swap support.</li>
-	<li>Resource-level Event Log &amp; Domain Alarm Table support.</li>
-	<li>Persistent Domain Event Log.</li>
-	<li>Sensors, inventory-data &amp; controls.</li>
-	<li>Dynamic plug-in load/unload interface allowing for addition and removal of platforms/resouces within a live HPI session.</li>
-	<li>IPMI plug-in with support for IPMI 1.0 and 1.5 platforms.</li>   
-	<li>BladeCenter plug-in (RSA and SNMP_BC).</li>
-	<li>A set of command line utilities exercising the HPI interfaces.</li>
-	<li>An Hpi Shell command line utility providing a single client for HPI interfaces</li>
-	<li>A large number of bug fixes and feature completions has been achieved. (&lt;20 open bugs)</li>
+ <li>Improved library configuration with added event queue, alarm table and event log limits.</li>
+ <li>Managed and simplified hot-swap support.</li>
+ <li>Resource-level Event Log &amp; Domain Alarm Table support.</li>
+ <li>Persistent Domain Event Log.</li>
+ <li>Sensors, inventory-data &amp; controls.</li>
+ <li>Dynamic plug-in load/unload interface allowing for addition and removal of platforms/resouces within a live HPI session.</li>
+ <li>IPMI plug-in with support for IPMI 1.0 and 1.5 platforms.</li>   
+ <li>BladeCenter plug-in (RSA and SNMP_BC).</li>
+ <li>A set of command line utilities exercising the HPI interfaces.</li>
+ <li>An Hpi Shell command line utility providing a single client for HPI interfaces</li>
+ <li>A large number of bug fixes and feature completions has been achieved. (&lt;20 open bugs)</li>
      </ul>
-	<strong>HpiView:</strong><br>
-	Bundled with the release is a preview of HpiView, a GTK based GUI application to be run with OpenHPI.<br><br>
+ <strong>HpiView:</strong><br>
+ Bundled with the release is a preview of HpiView, a GTK based GUI application to be run with OpenHPI.<br><br>
 
-	The binaries and source can be obtained by accessing the <a href="https://sourceforge.net/project/showfiles.php?group_id=71730">Files</a> section in SourceForge.  For convenience a direct link is also available on this web site.<br>
-	RPMs for SuSE are provided; however, the build has been tested on RedHat/Fedora as well and Source RPM is provided.<br>
-	For Assistance with installing/running the release, feel free to contact us via the mailing list or at #openhpi on irc.freenode.net.
+ The binaries and source can be obtained by accessing the <a href="https://sourceforge.net/project/showfiles.php?group_id=71730">Files</a> section in SourceForge.  For convenience a direct link is also available on this web site.<br>
+ RPMs for SuSE are provided; however, the build has been tested on RedHat/Fedora as well and Source RPM is provided.<br>
+ For Assistance with installing/running the release, feel free to contact us via the mailing list or at #openhpi on irc.freenode.net.
 <br><br>
-	<strong>Quality and Testing:</strong><br>
-	The OpenHPI team has worked very hard to achieve a high-quality implementation.<br>
-	As noted above, the current bug count is very low and is primarily in platform support versus interface
-	implementation, feature support and/or specification conformance.<br>
-	The current release was based on a criteria taking into account both conformance and functional aspects of the code.<br>
+ <strong>Quality and Testing:</strong><br>
+ The OpenHPI team has worked very hard to achieve a high-quality implementation.<br>
+ As noted above, the current bug count is very low and is primarily in platform support versus interface
+ implementation, feature support and/or specification conformance.<br>
+ The current release was based on a criteria taking into account both conformance and functional aspects of the code.<br>
 <pre>
-	Platform: Intel Carrier Grade TIGPR2U Server with IPMI 1.5 .
-	OpenHPI Plug-in: IPMI
-	OpenIPMI Version: 1.3.16 (latest)
-	----------------
-	Conformance results (hpitest):
-	----------------
-	Total test cases: 530
-	Pass: 341 (64%)
-	Fail: 3 (&lt;1%)
-	N/A: 186 (35%)
+ Platform: Intel Carrier Grade TIGPR2U Server with IPMI 1.5 .
+ OpenHPI Plug-in: IPMI
+ OpenIPMI Version: 1.3.16 (latest)
+ ----------------
+ Conformance results (hpitest):
+ ----------------
+ Total test cases: 530
+ Pass: 341 (64%)
+ Fail: 3 (&lt;1%)
+ N/A: 186 (35%)
 
-	----------------
-	Functional stats(hpifun):
-	----------------
-	Total test cases: 81
-	Pass: 51 (63%)
+ ----------------
+ Functional stats(hpifun):
+ ----------------
+ Total test cases: 81
+ Pass: 51 (63%)
 	Fail: 0 (0%)
 	N/A: 186 (35%)
 <br>
@@ -263,7 +352,7 @@ Test Suites
   1084630 - Tests Missing main() function
   1084686 - saHpiResourceTagSet_T7 is wrong
   1091577 - readonly check error in saHpiSensorEventMasksSet_T9.c
-</pre>	
+</pre> 
                 </div>
             </div>
             <b>For questions or comments, please <a href="mailto:openhpi-devel@lists.sourceforge.net">email the openhpi developers</a>.</b>
