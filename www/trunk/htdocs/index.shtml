@@ -30,7 +30,7 @@
    <li>HPI clients now ported to support HPI B spec.</li>
    <li>Alarm SA_APIs now implemented and in beta state.</li>
    <li>SNMP RSA plugin has been merged into the SNMP Blade Center plugin by sharing common code.</li>
-   <li>Numerous bug fixes across the board, specially on the main plugins IPMI and BladeCenter/RSA (See changelog below for details).</li>   
+   <li>Numerous bug fixes on the library and the IPMI, BladeCenter/RSA, and Dummy plugins (see changelog below for details).</li>   
       </ul>
       As always, everyone is invited to download the release and post any problems, questions, or suggestions about it to the OpenHPI mailing list (<a href="mailto:openhpi-devel@lists.sourceforge.net">openhpi-devel@lists.sf.net</a>).
       <pre>
