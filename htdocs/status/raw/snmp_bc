@@ -1,4 +1,4 @@
-SNMP BladeCenter
+SNMP BladeCenter/RSA
 
 saHpiVersionGet			na Supported in Infra-structure code
 saHpiSessionOpen		done
@@ -56,13 +56,13 @@ saHpiIdrFieldDelete		done Inventory updates not allowed
 saHpiWatchdogTimerGet		done Hardware does not have any defined watchdogs
 saHpiWatchdogTimerSet		done Hardware does not have any defined watchdogs	
 saHpiWatchdogTimerReset		done Hardware does not have any defined watchdogs
-saHpiAnnunciatorGetNext		not done
-saHpiAnnunciatorGet		not done
-saHpiAnnunciatorAcknowledge	not done
-saHpiAnnunciatorAdd		not done
-saHpiAnnunciatorDelete		not done
-saHpiAnnunciatorModeGet		not done
-saHpiAnnunciatorModeSet		not done
+saHpiAnnunciatorGetNext		notdone
+saHpiAnnunciatorGet		notdone
+saHpiAnnunciatorAcknowledge	notdone
+saHpiAnnunciatorAdd		notdone
+saHpiAnnunciatorDelete		notdone
+saHpiAnnunciatorModeGet		notdone
+saHpiAnnunciatorModeSet		notdone
 saHpiHotSwapPolicyCancel	done Hardware supports simple hot-swap model
 saHpiResourceActiveSet		done Hardware supports simple hot-swap model
 saHpiResourceInactiveSet	done Hardware supports simple hot-swap model

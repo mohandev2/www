@@ -102,7 +102,7 @@ sub safename {
 }
 
 sub open_hpi_items {
-    my @array = ("OpenHPI Infrastructure","Dummy Plugin","IPMI Plugin","SNMP BladeCenter");
+    my @array = ("OpenHPI Infrastructure","Dummy Plugin","IPMI Plugin","SNMP BladeCenter/RSA");
     return @array;
 }
 
