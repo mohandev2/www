@@ -103,7 +103,7 @@ pre, .programlisting {
     padding: 10px;
 }
 
-/* Docbook formatting statements */
+/* Docbook formatting */
 h3.SECT3, h3.AUTHOR {
     border: 0;
     font-family: sans-serif, serif;
@@ -122,4 +122,13 @@ DD { padding-bottom: 0 }
     border: solid 1px #aaaaff;
     padding: 10px;
 }
+
+/* Test reporting */
+table.report {width: 600; border-width: thin; border-style: solid}
+tr.na {color: grey}
+tr.ok {background-color: #dde244}
+tr.good {background-color: #4ae544}
+tr.great {background-color: green}
+tr.notexec {background-color: #e84545}
+tr.low {background-color: #dde244}
 
