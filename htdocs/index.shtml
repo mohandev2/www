@@ -29,7 +29,7 @@
             </p>
             <h2>News!</h2>
             <dl>
-              <dt>OpenHPI 0.3 Released! (11/18/2003)</dt>
+              <dt class="announce">OpenHPI 0.3 Released! (11/18/2003)</dt>
             <ul>
               <li class="strong">Major Changes in this release</li>
             <ul>
@@ -95,7 +95,7 @@
             </ul>
           </ul>
             
-            <dt>OpenHPI 0.2 Released! (9/16/2003)</dt>
+            <dt class="announce">OpenHPI 0.2 Released! (9/16/2003)</dt>
             <dd>New content in this release:</dd>
             <dl>
               <dd >
@@ -110,17 +110,17 @@
               <dd >IPMI: resource removal.</dd>
             </dl>
             
-            <dt>People Page Added (9/16/2003)</dt>
+            <dt class="announce">People Page Added (9/16/2003)</dt>
             <dd>A new people page has been added.  If you don't like
               your entry, send something to the ML for what you want
               it to be. :)</dd>
             
-            <dt>High Level Design Updates (9/5/2003)</dt>
+            <dt class="announce">High Level Design Updates (9/5/2003)</dt>
             <dd>The High Level Design is now much more in line with
               the current OpenHPI code based.  Updates to this
               document will be ongoing, and continuous over the next
               few weeks.</dd>
-            <dt>Website Updates (9/4/2003)</dt>
+            <dt class="announce">Website Updates (9/4/2003)</dt>
             <dd>We are in the process of updating the information on
               the website to more accurately reflect the project
               current status.  This will also mean keeping the high
@@ -131,7 +131,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Wed Nov 19 10:15:42 EST 2003
+Last modified: Thu Dec  4 10:40:55 EST 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
