@@ -23,11 +23,11 @@
             <h2>Coding Style</h2>
             <p>
               From day one OpenHPI has adopted the <a
-                href="codingstyle.html">Linux Kernel Coding
+                href="codingstyle.shtml">Linux Kernel Coding
                 Style</a> guidelines as the base for it's style.  For the
               convenience of our developers and users, this document
               is reproduced <a
-                href="codingstyle.html">on our website</a>.  One
+                href="codingstyle.shtml">on our website</a>.  One
               should read it throughly before continuing.  All patches
               must comply to those guidelines.
             </p>
@@ -48,7 +48,7 @@
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Wed Oct  8 17:31:16 EDT 2003
+Last modified: Wed Oct  8 17:33:10 EDT 2003
 <!-- hhmts end -->
           </td></tr>
     </table>
