@@ -4,3 +4,8 @@ td.pending { background-color: #11ff00 }
 td.bad { background-color: #ff0000 }
 
 td.group { padding-top: 10px; font-weight: bold; font-size: 13px }
+td.summary, td.status, td.owner {
+    background-color: #EEEEEE;
+    padding: 2px;
+}
+

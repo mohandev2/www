@@ -46,7 +46,7 @@
                         <td>It is impossible to implement this function.  This may be the case for some functions on some hardware.</td>
                     </tr>
                     <tr>
-                        <td class="na">No Applicable</td>
+                        <td class="na">Not Applicable</td>
                         <td>This code isn't supposed to do this function.  This is used for HPI calls that are entirely handled in the infrastructure.</td>
                     </tr>
                     <tr>
