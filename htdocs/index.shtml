@@ -10,7 +10,7 @@
       <tr>
         <!--#include virtual="/sidebar.html" -->
         <td valign="top">
-            <h1 align="center">OpenHPI</h1>
+            <h1 align="center">Welcome to OpenHPI's web site!</h1>
             <p>
               OpenHPI is an open source project created with the
               intent of providing an implementation of the <a
@@ -39,9 +39,52 @@
               or participating the evolution of OpenHPI, please join
               our Mailing List by following the links on the sidebar.
             </p>
-            <h2>News!</h2>
             <dl>
+		<h2>OpenHPI<img src="./r_news.gif"></h2><br>
               <!-- add announce items below -->
+                  
+                  <img src="./new03.gif"<dt class="announce">OpenHPI 0.6 Released! (03/22/2004)></dt>
+              
+            <h3>New in this release:</h3>
+            <ul>
+              <li>EP and RPT utils are compiled as a seperate library.</li>
+              <li>Utils directory is now knows as clients.</li>
+              <li>CVS directory structure changed so plug-ins, core library,
+		  EP and RPT utils and clients are parallel. </li>
+              <li>Internal helper utility documentation added to OpenHPI Manual.</li>
+              <li>Core library compiled on IA64 systems.</li>
+              <li>Debug flag is now configurable (configure --enable-debug).</li>
+              <li>Minimum GCC version supported is 3.2.0.</li>
+              <li>Configure script will check for net-snmp, OpenIPMI and FAM.</li>
+              <li>New libopenhpi_snmp for common snmp calls.</li>
+              <li>New unit tests for RPT utils.</li>
+
+
+              <li>IPMI-DIRECT plug-in:</li>
+            <ul>
+              <li>Fast discover process</li>
+              <li>Fail-safe RMCP connection</li>
+              <li>Framework for vendor specific features</li>
+              <li>Controls discovery added including FAN controls</li>
+              <li>Common base class for Sensors and Controls</li>
+            </ul>
+            <li>Blade Center support</li>
+            <ul>
+              <li>Code clean-up and otimization</li>
+              <li>Enabled snmp v3</li>
+              <li>Enhanced even reporting</li>
+
+            </ul>
+            
+            <li>OpenIPMI based IPMI plug-in</li>
+            <ul>
+	      <li>Requires OpenIPMI library 1.2.21 or later (strict)</li>
+              <li>FRU/Inventory support added</li>
+              <li>Enhanced Management Controllers discovery and detection of SEL</li>
+            </ul>
+            
+          </ul>
+
               <dt class="announce">HPI Subagent 0.2 Released!
                 (3/04/2004)</dt>
               <ul>
@@ -161,209 +204,6 @@
             </ul>
           </ul>
 				
-              <dt class="announce">Website Updates (12/06/2003)</dt>
-              <dd>
-                We are in progress to OpenHPI 0.4 right now, and lots of
-                documentation is being updated.  The functional test suite
-                documentation has now been added to the front page.
-                The OpenHPI manual now has the beginnings of a plugin
-                implementors guide.  Additionally, formatting changes
-                have been made to the documentation to fit into the
-                website better.
-              </dd>
-
-
-            <dt class="announce">OpenHPI SNMP Subagent 0.1 Released (12/17/2003)</dt>
-            <dd>
-              I am pleased to announce the initial release of the OpenHPI
-        SNMP Subagent.  This provides an SNMP interface to OpenHPI
-        data structures, allowing OpenHPI enabled hardware to be
-        accessed and controlled via SNMP.
-        
-        <ul>
-          <li>First release of the HPI SNMP sub-agent.</li>
-          <ul>
-            Through this subagent one can includes support for multiple 
-            different types of hardware including: IPMI, IBM Blade Center 
-            (via SNMP), Linux Watchdog devices, and Sysfs based systems.
-          </ul>
-        <li>Support for full implementation of the HPI-MIB v1.3 
-         (included). This means HPI 1.0 instrumentation using 
-          HPI-MIB objects in nine tables:</li>
-          <ul>
-            <li>Resource Presence Table entities
-                <ul><li>Hotswap capabilities</li></ul>
-        <li>Resource Data Records</li>
-              <ul>
-                <li>Sensors</li>
-                <li>Inventory</li>
-                <li>Control</li>
-                <li>Watchdog</li>
-                </ul>
-              <li>Events and System Event Log</li>
-          </ul>
-        <li><strong>NOTE:</strong> The OID of the HPI-MIB v1.3 is 'experimental.90.'
-            This MIB branch location *WILL* change in the next
-            release. Consider this a technology review code.</li>
-          
-          <li>Support for user configurable options:</li>
-              <ul>
-                <li>update timer for new RPT/RDR/Events</li>
-                <li>maximum events held in events row before they are
-                  automatically removed</li>
-                <li>sending of new found RPT/RDR/Events during startup</li>
-              </ul>
-              <li>Example code for retrieving instrumentation information
-                using SNMP</li>
-              </ul>
-              </dd>
-
-			  <dt class="announce">OpenHPI 0.4 Released! (12/11/2003)</dt>
-
-			  		<h3>New in this release:</h3>
-				<ul>
-
-					<li>Developer's Plug-in guide updated in the
-						OpenHPI manual on-line.</li>
-					<li>New IPMI-DIRECT plug-in</li>
-					<li>Blade Center support</li>
-					<ul>
-						<li>Blade center inventory support.</li>
-						<li>Blade Center simulator.</li>
-					</ul>
-					<li>OpenIPMI based IPMI plug-in</li>
-					<ul>
-						<li>Added IPMI plug-in support to clear SEL.</li>
-						<li>Retrieves all MCs in a system
-							and creates individual resources for each.</li>
-						<li>Added support to retrieve SEL
-							info and entries.</li>
-					</ul>
-					<li>Sysfs</li>
-					<ul>
-						<li>Sysfs plug-in: Ported to libsysfs 0.3</li>
-						<li>New test program for set threshold.</li>
-					</ul>
-					<li>Infrastructure</li>
-					<ul>
-						<li>Support for removal of RPTs and RDRs.</li>
-					</ul>
-					<li>Build and packaging</li>
-					<ul>
-						<li>Unit test framework: using automake to
-							create a unit test framework.</li>
-					</ul>
-				</ul>
-				
-              <dt class="announce">Website Updates (12/06/2003)</dt>
-              <dd>
-                We are in progress to OpenHPI 0.4 right now, and lots of
-                documentation is being updated.  The functional test suite
-                documentation has now been added to the front page.
-                The OpenHPI manual now has the beginnings of a plugin
-                implementors guide.  Additionally, formatting changes
-                have been made to the documentation to fit into the
-                website better.
-              </dd>
-              
-              <dt class="announce">OpenHPI 0.3 Released! (11/18/2003)</dt>
-            <ul>
-              <li class="strong">Major Changes in this release</li>
-            <ul>
-              <li>Plugin Interface has been rearchitected
-                to interface more cleanly with HPI interface.</li>
-              <li>3 New plugins in this release: Sysfs,
-                Linux Watchdog, Blade Center (via SNMP)</li>
-            </ul>
-            <li>Packaging/Build</li>
-            <ul>
-              <li>OpenHPI is now available as rpms</li>
-              <li>openhpi pkgconfig alied</li>
-              <li>OpenHPI plugins now located in /var/lib/openhpi per
-                FHS guidelines</li>
-            </ul>
-            
-            <li>Infrastructure</li>
-            <ul>
-              <li>Entity path utilities to convert between EP and
-                string</li>
-              <li>ResourceId made persistent between sessions (based
-                on EP mapping)</li>
-              <li>New RPTcache interface for consistent handling of
-                RPTEntries and RDRs</li>
-            </ul>
-            
-            <li>Sysfs</li>
-            <ul>
-              <li class="strong">plugin included in standard release</li>
-              <li>ported to libsysfs 0.2</li>
-              <li>alied set functionality</li>
-            </ul>
-
-            <li>Watchdog</li>
-            <ul>
-              <li class="strong">plugin included in standard release</li>
-              <li>added test_watchdog to examples for testing</li>
-            </ul>
-            
-            <li>Blade Center</li>
-            <ul>
-              <li class="strong">plugin included in standard
-                release</li>
-              <li>Resource Discovery works for all resources</li>
-              <li>Sensor readings work for most sensors</li>
-              <li>Early System Event Log support</li>
-            </ul>
-            
-            <li>IPMI</li>
-            <ul>
-              <li>Sensor readings improved</li>
-            </ul>
-            
-            <li>Documentation</li>
-            <ul>
-              <li>OpenHPI manual significantly improved</li>
-            </ul>
-              
-            <li>Deprecated</li>
-            <ul>
-              <li>Openhpid and text_remoting 
-                retired and will be replaced by SNMP-agent for OpenHPI remoting.</li>
-            </ul>
-          </ul>
-            
-            <dt class="announce">OpenHPI 0.2 Released! (9/16/2003)</dt>
-            <dd>New content in this release:</dd>
-            <dl>
-              <dd >
-                openhpi HPI remoting proof of concept and
-                openhpid.
-              </dd>
-              <dd >Enhanced configuration file parsing.</dd>
-              <dd >Updated openhpi.conf (see
-                examples/openhpi.conf.example)</dd>
-              <dd >IPMI: Added reading values from discrete sensors.</dd>
-              <dd >IPMI: sensor ignore patch.</dd>
-              <dd >IPMI: resource removal.</dd>
-            </dl>
-            
-            <dt class="announce">People Page Added (9/16/2003)</dt>
-            <dd>A new people page has been added.  If you don't like
-              your entry, send something to the ML for what you want
-              it to be. :)</dd>
-            
-            <dt class="announce">High Level Design Updates (9/5/2003)</dt>
-            <dd>The High Level Design is now much more in line with
-              the current OpenHPI code based.  Updates to this
-              document will be ongoing, and continuous over the next
-              few weeks.</dd>
-            <dt class="announce">Website Updates (9/4/2003)</dt>
-            <dd>We are in the process of updating the information on
-              the website to more accurately reflect the project
-              current status.  This will also mean keeping the high
-              level design information much more up to date on the
-              website.  Stay tuned for more developments</dd>
-          </dl>
             <hr>
             <address><a href="http://dague.net/sean">Sean Dague</a></address>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
