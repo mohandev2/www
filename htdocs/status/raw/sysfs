@@ -11,7 +11,7 @@ saHpiRptEntryGetByResourceId functional
 saHpiResourceSeveritySet impossible
 saHpiResourceTagSet impossible
 saHpiResourceIdGet impossible
-saHpiEntitySchemaGet impossible
+saHpiEntitySchemaGet na done in infrastructure
 saHpiEventLogInfoGet impossible
 saHpiEventLogEntryGet impossible
 saHpiEventLogEntryAdd impossible
@@ -26,13 +26,13 @@ saHpiUnsubscribe impossible
 saHpiEventGet impossible
 saHpiRdrGet done
 saHpiSensorReadingGet done
-saHpiSensorReadingConvert na
+saHpiSensorReadingConvert na done in infrastructure
 saHpiSensorThresholdsGet functional
 saHpiSensorThresholdsSet semifunc
-saHpiSensorTypeGet done
+saHpiSensorTypeGet na done in infrastructure
 saHpiSensorEventEnablesGet impossible
 saHpiSensorEventEnablesSet impossible
-saHpiControlTypeGet impossible
+saHpiControlTypeGet na done in infrastructure
 saHpiControlStateGet impossible
 saHpiControlStateSet impossible
 saHpiEntityInventoryDataRead impossible
