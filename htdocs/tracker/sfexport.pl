@@ -159,7 +159,7 @@ sub find_mbox_items_newer {
     
     my ($file, $backdays, $newest, $trackerid) = @_;
 
-    my $time = $newest - 7*24*60*60; # back a week
+    my $time = $newest - $backdays*24*60*60; # back a week
     
     my $mgr = new Mail::Box::Manager;
     my $folder = $mgr->open($file);
