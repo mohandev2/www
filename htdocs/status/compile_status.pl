@@ -107,9 +107,9 @@ sub open_hpi_items {
 
 sub hpi_infra_calls {
     my @array = qw(
+                   saHpiVersionGet
                    saHpiRptEntryGetByResourceId
                    saHpiResourceIdGet
-                   saHpiEntitySchemaGet
                    saHpiEventLogStateGet
                    saHpiSubscribe
                    saHpiUnsubscribe
@@ -123,62 +123,85 @@ sub hpi_infra_calls {
 
 sub hpi_func_array {
     my @array = qw(
-                   saHpiInitialize
-                   saHpiFinalize 
-                   saHpiSessionOpen 
-                   saHpiSessionClose 
-                   saHpiResourcesDiscover 
-                   saHpiRptInfoGet 
-                   saHpiRptEntryGet 
-                   saHpiRptEntryGetByResourceId 
-                   saHpiResourceSeveritySet 
-                   saHpiResourceTagSet 
-                   saHpiResourceIdGet 
-                   saHpiEntitySchemaGet 
-                   saHpiEventLogInfoGet 
-                   saHpiEventLogEntryGet 
-                   saHpiEventLogEntryAdd 
-                   saHpiEventLogEntryDelete 
-                   saHpiEventLogClear 
-                   saHpiEventLogTimeGet 
-                   saHpiEventLogTimeSet 
-                   saHpiEventLogStateGet 
-                   saHpiEventLogStateSet 
-                   saHpiSubscribe 
-                   saHpiUnsubscribe 
-                   saHpiEventGet 
-                   saHpiRdrGet 
-                   saHpiSensorReadingGet 
-                   saHpiSensorReadingConvert 
-                   saHpiSensorThresholdsGet 
-                   saHpiSensorThresholdsSet 
-                   saHpiSensorTypeGet 
-                   saHpiSensorEventEnablesGet 
-                   saHpiSensorEventEnablesSet 
-                   saHpiControlTypeGet 
-                   saHpiControlStateGet 
-                   saHpiControlStateSet 
-                   saHpiEntityInventoryDataRead 
-                   saHpiEntityInventoryDataWrite 
-                   saHpiWatchdogTimerGet 
-                   saHpiWatchdogTimerSet 
-                   saHpiWatchdogTimerReset 
-                   saHpiHotSwapControlRequest 
-                   saHpiResourceActiveSet 
-                   saHpiResourceInactiveSet 
+                   saHpiVersionGet
+                   saHpiSessionOpen
+                   saHpiSessionClose
+                   saHpiDiscover
+                   saHpiDomainInfoGet
+                   saHpiDrtEntryGet
+                   saHpiDomainTagSet
+                   saHpiRptEntryGet
+                   saHpiRptEntryGetByResourceId
+                   saHpiResourceSeveritySet
+                   saHpiResourceTagSet
+                   saHpiResourceIdGet
+                   saHpiEventLogInfoGet
+                   saHpiEventLogEntryGet
+                   saHpiEventLogEntryAdd
+                   saHpiEventLogClear
+                   saHpiEventLogTimeGet
+                   saHpiEventLogTimeSet
+                   saHpiEventLogStateGet
+                   saHpiEventLogStateSet
+                   saHpiEventLogOverflowReset
+                   saHpiSubscribe
+                   saHpiUnsubscribe
+                   saHpiEventGet
+                   saHpiEventAdd
+                   saHpiAlarmGetNext
+                   saHpiAlarmGet
+                   saHpiAlarmAcknowledge
+                   saHpiAlarmAdd
+                   saHpiAlarmDelete
+                   saHpiRdrGet
+                   saHpiRdrGetByInstrumentId
+                   saHpiSensorReadingGet
+                   saHpiSensorThresholdsGet
+                   saHpiSensorThresholdsSet
+                   saHpiSensorTypeGet
+                   saHpiSensorEnableGet
+                   saHpiSensorEnableSet
+                   saHpiSensorEventEnableGet
+                   saHpiSensorEventEnableSet
+                   saHpiSensorEventMasksGet
+                   saHpiSensorEventMasksSet
+                   saHpiControlTypeGet
+                   saHpiControlGet
+                   saHpiControlSet
+                   saHpiIdrInfoGet
+                   saHpiIdrAreaHeaderGet
+                   saHpiIdrAreaAdd
+                   saHpiIdrAreaDelete
+                   saHpiIdrFieldGet
+                   saHpiIdrFieldAdd
+                   saHpiIdrFieldSet
+                   saHpiIdrFieldDelete
+                   saHpiWatchdogTimerGet
+                   saHpiWatchdogTimerSet
+                   saHpiWatchdogTimerReset
+                   saHpiAnnunciatorGetNext
+                   saHpiAnnunciatorGet
+                   saHpiAnnunciatorAcknowledge
+                   saHpiAnnunciatorAdd
+                   saHpiAnnunciatorDelete
+                   saHpiAnnunciatorModeGet
+                   saHpiAnnunciatorModeSet
+                   saHpiHotSwapPolicyCancel
+                   saHpiResourceActiveSet
+                   saHpiResourceInactiveSet
                    saHpiAutoInsertTimeoutGet
                    saHpiAutoInsertTimeoutSet
                    saHpiAutoExtractTimeoutGet
                    saHpiAutoExtractTimeoutSet
-                   saHpiHotSwapStateGet 
-                   saHpiHotSwapActionRequest 
-                   saHpiResourcePowerStateGet 
-                   saHpiResourcePowerStateSet 
-                   saHpiHotSwapIndicatorStateGet 
-                   saHpiHotSwapIndicatorStateSet 
-                   saHpiParmControl 
-                   saHpiResourceResetStateGet 
-                   saHpiResourceResetStateSet);
+                   saHpiHotSwapStateGet
+                   saHpiHotSwapActionRequest
+                   saHpiHotSwapIndicatorStateGet
+                   saHpiHotSwapIndicatorStateSet
+                   saHpiParmControl
+                   saHpiResourceResetStateGet
+                   saHpiResourceResetStateSet
+                   saHpiResourcePowerStateGet
+                   saHpiResourcePowerStateSet);
     return @array;
 }
 
