@@ -1,45 +1,45 @@
 OpenHPI Infrastructure
 
-saHpiInitialize   functional    Need to move plugin loading out of function based on HPI errata
-saHpiFinalize    semifunc   Need to actually do handler shutdown
-saHpiSessionOpen functional 
-saHpiSessionClose semifunc  Need to look at cleanup
+saHpiInitialize   done    
+saHpiFinalize    done   
+saHpiSessionOpen done 
+saHpiSessionClose done
 saHpiResourcesDiscover functional   Still need to resolve blocking/non-blocking on resource discovery
 saHpiRptInfoGet done
 saHpiRptEntryGet done
 saHpiRptEntryGetByResourceId done
-saHpiResourceSeveritySet functional pushes down to plugin
-saHpiResourceTagSet functional pushes down to plugin
-saHpiResourceIdGet broken no good way to figure this out yet
-saHpiEntitySchemaGet semifunc Returns 0 always. Need to add really entity path checking.
+saHpiResourceSeveritySet done pushes down to plugin
+saHpiResourceTagSet done pushes down to plugin
+saHpiResourceIdGet done provided via conf file
+saHpiEntitySchemaGet done Returns 0 always
 saHpiEventLogInfoGet done
-saHpiEventLogEntryGet functional pushes down to plugin, still needs rdr and rpt translation
-saHpiEventLogEntryAdd done pushes down to plugin
-saHpiEventLogEntryDelete done pushes down to plugin
-saHpiEventLogClear done pushes down to plugin
+saHpiEventLogEntryGet done
+saHpiEventLogEntryAdd done 
+saHpiEventLogEntryDelete done 
+saHpiEventLogClear done pushes 
 saHpiEventLogTimeGet done 
-saHpiEventLogTimeSet done pushes down to plugin
+saHpiEventLogTimeSet done 
 saHpiEventLogStateGet done
-saHpiEventLogStateSet done pushes down to plugin
+saHpiEventLogStateSet done
 saHpiSubscribe functional
 saHpiUnsubscribe functional
-saHpiEventGet semifunc  Threading concerns are surfacing, David looking at possible rework
-saHpiRdrGet functional
+saHpiEventGet functional Blocking version is still in need of some work
+saHpiRdrGet done
 saHpiSensorReadingGet           done    Wrapper to plugin abi
 saHpiSensorReadingConvert done
-saHpiSensorThresholdsGet semifunc    Wrapper to plugin abi
-saHpiSensorThresholdsSet semifunc    Wrapper to plugin abi
+saHpiSensorThresholdsGet done    Wrapper to plugin abi
+saHpiSensorThresholdsSet done    Wrapper to plugin abi
 saHpiSensorTypeGet done 
-saHpiSensorEventEnablesGet semifunc    Wrapper to plugin abi
-saHpiSensorEventEnablesSet semifunc    Wrapper to plugin abi
+saHpiSensorEventEnablesGet done    Wrapper to plugin abi
+saHpiSensorEventEnablesSet done    Wrapper to plugin abi
 saHpiControlTypeGet done 
-saHpiControlStateGet semifunc    Wrapper to plugin abi
-saHpiControlStateSet semifunc    Wrapper to plugin abi
-saHpiEntityInventoryDataRead semifunc    Wrapper to plugin abi
-saHpiEntityInventoryDataWrite semifunc    Wrapper to plugin abi
-saHpiWatchdogTimerGet semifunc    Wrapper to plugin abi
-saHpiWatchdogTimerSet semifunc    Wrapper to plugin abi
-saHpiWatchdogTimerReset semifunc    Wrapper to plugin abi
+saHpiControlStateGet done    Wrapper to plugin abi
+saHpiControlStateSet done    Wrapper to plugin abi
+saHpiEntityInventoryDataRead done    Wrapper to plugin abi
+saHpiEntityInventoryDataWrite done    Wrapper to plugin abi
+saHpiWatchdogTimerGet done    Wrapper to plugin abi
+saHpiWatchdogTimerSet done    Wrapper to plugin abi
+saHpiWatchdogTimerReset done    Wrapper to plugin abi
 saHpiHotSwapControlRequest semifunc    Wrapper to plugin abi
 saHpiResourceActiveSet semifunc    Wrapper to plugin abi
 saHpiResourceInactiveSet semifunc    Wrapper to plugin abi
@@ -49,11 +49,11 @@ saHpiAutoExtractTimeoutGet semifunc    Wrapper to plugin abi
 saHpiAutoExtractTimeoutSet semifunc    Wrapper to plugin abi
 saHpiHotSwapStateGet semifunc    Wrapper to plugin abi
 saHpiHotSwapActionRequest semifunc    Wrapper to plugin abi
-saHpiResourcePowerStateGet semifunc    Wrapper to plugin abi
-saHpiResourcePowerStateSet semifunc    Wrapper to plugin abi
+saHpiResourcePowerStateGet done    Wrapper to plugin abi
+saHpiResourcePowerStateSet done    Wrapper to plugin abi
 saHpiHotSwapIndicatorStateGet semifunc    Wrapper to plugin abi
 saHpiHotSwapIndicatorStateSet semifunc    Wrapper to plugin abi
-saHpiParmControl semifunc    Wrapper to plugin abi
-saHpiResourceResetStateGet semifunc    Wrapper to plugin abi
-saHpiResourceResetStateSet semifunc    Wrapper to plugin abi
+saHpiParmControl done    Wrapper to plugin abi
+saHpiResourceResetStateGet done    Wrapper to plugin abi
+saHpiResourceResetStateSet done    Wrapper to plugin abi
 
