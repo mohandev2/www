@@ -39,11 +39,11 @@
               or participating the evolution of OpenHPI, please join
               our Mailing List by following the links on the sidebar.
             </p>
+              <h2>OpenHPI<img src="./r_news.gif"></h2>
             <dl>
-		<h2>OpenHPI<img src="./r_news.gif"></h2><br>
               <!-- add announce items below -->
-                  
-                  <dt class="announce"><img src="./new03.gif">OpenHPI 0.6 Released! (03/22/2004)</dt>
+              
+              <dt class="announce"><!-- <img src="./new03.gif"> -->OpenHPI 0.6 Released! (03/22/2004)</dt>
               
             <h3>New in this release:</h3>
             <ul>
@@ -247,7 +247,7 @@
 		You can contact <a href="mailt:sean@dague.net">Sean Dague</a> or <a href="mailt:tariq@linux.intel.com">Tariq Shureih</a><br>
             <!-- Created: Thu Sep  4 16:51:52 EDT 2003 -->
             <!-- hhmts start -->
-Last modified: Tue Mar 23 10:57:07 EST 2004
+Last modified: Tue Mar 23 11:57:45 EST 2004
 <!-- hhmts end -->
           </td></tr>
     </table>
