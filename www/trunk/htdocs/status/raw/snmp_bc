@@ -12,21 +12,21 @@ saHpiResourceSeveritySet semifunc You can set this, but not handling resource ab
 saHpiResourceTagSet 
 saHpiResourceIdGet 
 saHpiEntitySchemaGet na
-saHpiEventLogInfoGet semifunc Seems to be working, need to make it more efficient
-saHpiEventLogEntryGet 
+saHpiEventLogInfoGet functional Seems to be working, need to make it more efficient
+saHpiEventLogEntryGet functional hands up only OEM events for now
 saHpiEventLogEntryAdd impossible SEL doesn't support adding events from user
 saHpiEventLogEntryDelete done we don't support it per spec
 saHpiEventLogClear 
 saHpiEventLogTimeGet na this call is done in infrastructure
 saHpiEventLogTimeSet 
-saHpiEventLogStateGet 
-saHpiEventLogStateSet 
+saHpiEventLogStateGet na this call is done in infrastructure
+saHpiEventLogStateSet impossible you can't turn off this SEL from user space
 saHpiSubscribe 
 saHpiUnsubscribe 
 saHpiEventGet semifunc
 saHpiRdrGet semifunc
 saHpiSensorReadingGet semifunc
-saHpiSensorReadingConvert 
+saHpiSensorReadingConvert na done in infrastructure
 saHpiSensorThresholdsGet semifunc
 saHpiSensorThresholdsSet
 saHpiSensorTypeGet na this call is done in infrastructure

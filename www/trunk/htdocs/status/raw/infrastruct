@@ -3,36 +3,36 @@ OpenHPI Infrastructure
 saHpiInitialize   functional    Need to move plugin loading out of function based on HPI errata
 saHpiFinalize    semifunc   Need to actually do handler shutdown
 saHpiSessionOpen functional 
-saHpiSessionClose semifunc
+saHpiSessionClose semifunc  Need to look at cleanup
 saHpiResourcesDiscover functional   Still need to resolve blocking/non-blocking on resource discovery
 saHpiRptInfoGet done
-saHpiRptEntryGet functional
-saHpiRptEntryGetByResourceId functional
-saHpiResourceSeveritySet functional
-saHpiResourceTagSet functional
-saHpiResourceIdGet broken
+saHpiRptEntryGet done
+saHpiRptEntryGetByResourceId done
+saHpiResourceSeveritySet functional pushes down to plugin
+saHpiResourceTagSet functional pushes down to plugin
+saHpiResourceIdGet broken no good way to figure this out yet
 saHpiEntitySchemaGet semifunc Returns 0 always. Need to add really entity path checking.
-saHpiEventLogInfoGet functional
-saHpiEventLogEntryGet functional
-saHpiEventLogEntryAdd functional
-saHpiEventLogEntryDelete functional
-saHpiEventLogClear functional
-saHpiEventLogTimeGet functional
-saHpiEventLogTimeSet functional
-saHpiEventLogStateGet functional
-saHpiEventLogStateSet functional
+saHpiEventLogInfoGet done
+saHpiEventLogEntryGet functional pushes down to plugin, still needs rdr and rpt translation
+saHpiEventLogEntryAdd done pushes down to plugin
+saHpiEventLogEntryDelete done pushes down to plugin
+saHpiEventLogClear done pushes down to plugin
+saHpiEventLogTimeGet done 
+saHpiEventLogTimeSet done pushes down to plugin
+saHpiEventLogStateGet done
+saHpiEventLogStateSet done pushes down to plugin
 saHpiSubscribe functional
 saHpiUnsubscribe functional
 saHpiEventGet semifunc  Threading concerns are surfacing, David looking at possible rework
 saHpiRdrGet functional
-saHpiSensorReadingGet           semifunc    Wrapper to plugin abi
-saHpiSensorReadingConvert semifunc    Wrapper to plugin abi
+saHpiSensorReadingGet           done    Wrapper to plugin abi
+saHpiSensorReadingConvert done
 saHpiSensorThresholdsGet semifunc    Wrapper to plugin abi
 saHpiSensorThresholdsSet semifunc    Wrapper to plugin abi
-saHpiSensorTypeGet semifunc    Wrapper to plugin abi
+saHpiSensorTypeGet done 
 saHpiSensorEventEnablesGet semifunc    Wrapper to plugin abi
 saHpiSensorEventEnablesSet semifunc    Wrapper to plugin abi
-saHpiControlTypeGet semifunc    Wrapper to plugin abi
+saHpiControlTypeGet done 
 saHpiControlStateGet semifunc    Wrapper to plugin abi
 saHpiControlStateSet semifunc    Wrapper to plugin abi
 saHpiEntityInventoryDataRead semifunc    Wrapper to plugin abi
