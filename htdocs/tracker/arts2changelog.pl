@@ -64,12 +64,17 @@ sub print_group {
                     {$tracker->{$a}->{Category}.$a cmp
                        $tracker->{$b}->{Category}.$b} keys %{$tracker}) {
         
-        if($group ne $tracker->{$id}->{Category}) {
+        my $bug = $tracker->{$id};
+	if ($bug->{Status} ne "Closed") {
+		next;
+	}
+	
+	if($group ne $tracker->{$id}->{Category}) {
             $group = $tracker->{$id}->{Category};
             print "$group\n";
         }
-        my $bug = $tracker->{$id};
-        print "  $bug->{id} - $bug->{Title}\n";
+        
+	print "  $bug->{id} - $bug->{Title}\n";
     }
 }
 

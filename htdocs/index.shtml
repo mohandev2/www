@@ -22,6 +22,64 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.1.1 Development Release! (05/02/2005)</h4>
+		<div>
+			The OpenHPI development 2.1.1 release is out! Our second development release since OpenHPI 2. Several feautures and bug fixes came through for this version including multiple domain capability.
+			<ul>
+				<li>Multiple domain support.</li>
+				<li>hpitree client shows more information.</li>
+				<li>Several installation bugs fixed</li>
+				<li>Increased space for global parameters</li>
+			</ul>
+
+			Following, the complete bug and feature list for 2.1.1:
+			<pre>
+Changes for 2.1.1
+-------------------
+New Features:
+Blade Center Plugin
+  1164703 - Move Voltage sensors to MM and from the chassis resource
+  1165716 - remove DEASSERT capability of all resources
+  1169457 - Support Web names as HPI blade tags
+  1172739 - Validate redundancy sensors
+  1177151 - Switch from IANA number 2 (IBM) to 20944 (Modular Blade Serv
+HPI Clients
+  1178636 - Add EP paths and Name to sensor printout - hpitree
+HPI Utils
+  1178634 - Add hex to RDR Numbers
+OpenHPI base library
+  807928 - Add Support for Multiple Domains
+
+Fixed Bugs:
+Build System
+  1021439 - openhpi.conf is not installed if examples is off
+HPI Clients
+  1183923 - list_resources doesn't build
+HPI Utils
+  1145575 - OH_MAX_TEXT_BUFFER_LENGTH of 1024 is not enough
+IPMI Direct plugin
+  1186696 - segfault running ipmidirect, CVS Head 04/19
+  1186705 - ipmidirect plugin - BEAM Complains  07Mar05
+OpenHPI Daemon
+  1183265 - Need to call SaHpiSessionClose on broken connection
+OpenHPI base library
+  1163612 - saHpiIdrFieldDelete_T7.c return error code
+  1163623 - sensor event enable status change does not generate an event
+  1172854 - Passing 1 shouldn't work for saHpiSessionOpen
+  1178061 - DomainInfo DomainTag Elements Length Invalid
+  1182287 - Resource Events should not be used for FRU resources
+  1186952 - oh_error.h should not be installed
+OpenIPMI plugin
+  1113869 - src/control_state/saHpiControlSet_T25 return code issue
+  1165809 - Can't handle the LED control correctly in ATCA platform
+  1165835 - Fail to explain the discrete  sensor reading
+SNMP Client plugin
+  913594 - snmp_client_get_sensor_thresholds() omits &gt;EventStatus
+Test Suites
+  1104765 - saHpiSensorReadingGet_T1.c add delay for BUSY
+  1178578 - Watchdog_Fun Test - Set_T1 Hangs with Dummy
+			</pre>
+		</div>
 		<h4>OpenHPI 2.1.0 Development Release is out! (04/04/2005)</h4>
 		<div>
 			OpenHPI 2.1.0 is out! This is our first development release since 2.0.0 came out. Following, a summary of the features for this release:
