@@ -22,6 +22,10 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.0.4 Stable Release (05/20/2005)</h4>
+		<div>
+			A quick 2.0.4 release was made to fix some installations issues in the utilities library. Applications using the installed utils library should compile without issues now.
+		</div>
 		<h4>OpenHPI 2.1.1 Development Release! (05/02/2005)</h4>
 		<div>
 			The OpenHPI development 2.1.1 release is out! Our second development release since OpenHPI 2. Several feautures and bug fixes came through for this version including multiple domain capability.
