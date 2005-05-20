@@ -22,6 +22,44 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI SNMP Subagent 2.0.0 released! (05/20/2005)</h4>
+		<div>
+			This is the second stable release of the SNMP subagent. Many bugs have been fixed, but the major feature with this new release is that 2.0.0 supports the HPI B.01.01 specification created by the SA Forum.
+		<p>With the subagent 2.0.0 you can: do discovery, write rows, create rows, and delete rows where applicable.</p>
+		In addition, the following tables have been completed (29 out of 56).:
+		<ul>
+			<li>saHpiDomainInfoTable</li>
+			<li>saHpiDomainAlarmTable</li>
+			<li>saHpiDomainReferenceTable</li>
+			<li>saHpiResourceTable</li>
+			<li>saHpiRdrTable</li>
+			<li>saHpiCtrlDigitalTable</li>
+			<li>saHpiCtrlDiscreteTable</li>
+			<li>saHpiCtrlAnalogTable</li>
+			<li>saHpiCtrlStreamTable</li>
+			<li>saHpiCtrlTextTable</li>
+			<li>saHpiCtrlOemTable</li>
+			<li>saHpiSensorTable</li>
+		        <li>saHpiCurrentSensorStateTable</li>
+		        <li>saHpiSensorReadingMaxTable</li>
+			<li>saHpiSensorReadingMinTable</li>
+			<li>saHpiSensorReadingNominalTable</li>
+			<li>saHpiSensorReadingNormalMaxTable</li>
+		        <li>saHpiSensorReadingNormalMinTable</li>
+			<li>saHpiSensorThdLowCriticalTable</li>
+			<li>saHpiSensorThdLowMajorTable</li>
+			<li>saHpiSensorThdLowMinorTable</li>
+		        <li>saHpiSensorThdUpCriticalTable</li>
+			<li>saHpiSensorThdUpMajorTable</li>
+			<li>saHpiSensorThdUpMinorTable</li>
+			<li>saHpiSensorThdPosHysteresisTable</li>
+			<li>saHpiSensorThdNegHysteresisTable</li>
+			<li>saHpiAnnunciatorTable</li>
+			<li>saHpiInventoryTable</li>
+			<li>saHpiAreaTable</li>
+		        <li>saHpiFieldTable</li>
+		</ul>
+		</div>
 		<h4>OpenHPI 2.0.4 Stable Release (05/20/2005)</h4>
 		<div>
 			A quick 2.0.4 release was made to fix some installations issues in the utilities library. Applications using the installed utils library should compile without issues now.
