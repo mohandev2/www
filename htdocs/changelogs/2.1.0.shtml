@@ -1,0 +1,83 @@
+<!--#include virtual="changelog_head.shtml" -->
+             <h3>Changelog for 2.1.0</h3>
+             <h4>New Features</h4>
+             <div>
+                  <b>Blade Center Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1165715&group_id=71730&atid=532254">1165715</a> - Change SAHPI_ENT_INTERCONNECT to SAHPI_ENT_SWITCH</li>
+                  </ul>
+                  <b>HPI Clients:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1154781&group_id=71730&atid=532254">1154781</a> - Add new application client to display system topology</li>
+                  </ul>
+                  <b>HPI Utils:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1161047&group_id=71730&atid=532254">1161047</a> - Display ResourceInfo and Severity for RDRs</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1164166&group_id=71730&atid=532254">1164166</a> - Add oh_valid_eventstate option to check for exclusive events</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1172759&group_id=71730&atid=532254">1172759</a> - hpitree - sensors can not support readable thresholds</li>
+                  </ul>
+                  <b>IPMI Direct plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1151011&group_id=71730&atid=532254">1151011</a> - Update head with all bug fixes from 2.0.x</li>
+                  </ul>
+                  <b>OpenHPI base library:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1172756&group_id=71730&atid=532254">1172756</a> - Transparently switch between standalone and daemon libs</li>
+                  </ul>
+                  <b>OpenIPMI Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1100592&group_id=71730&atid=532254">1100592</a> - Port IPMI plug-in to use OpenIPMI 1.4.x</li>
+                  </ul>
+              </div>
+              <h4>Fixed Bugs:</h4>
+              <div>
+                  <b>Blade Center Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1050151&group_id=71730&atid=532251">1050151</a> - make distcheck fails, libsnmp_bc.so is not portable!</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1123408&group_id=71730&atid=532251">1123408</a> - using hpiview, reading wrong sensor</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1152049&group_id=71730&atid=532251">1152049</a> - Occational segfault in snmp_bc, CVS Head</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1164891&group_id=71730&atid=532251">1164891</a> - fail on make distcheck</li>
+                  </ul>
+                  <b>Build System:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1166501&group_id=71730&atid=532251">1166501</a> - make distcheck fails &quot;ERROR: files left after uninstall&quot;</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1167056&group_id=71730&atid=532251">1167056</a> - build breaks, cvs HEAD 03/20 07:00 hrs</li>
+                  </ul>
+                  <b>HPI Utils:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1121492&group_id=71730&atid=532251">1121492</a> - make check fails el_test025.c, cvs HEAD</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1164828&group_id=71730&atid=532251">1164828</a> - Remove check for lesser thresholds in oh_validate_eventstate</li>
+                  </ul>
+                  <b>IPMI Direct plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1120808&group_id=71730&atid=532251">1120808</a> - cvs HEAD, ipmidirect build fails</li>
+                  </ul>
+                  <b>None:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=949399&group_id=71730&atid=532251">949399</a> - Hpiview does not rediscover resources</li>
+                  </ul>
+                  <b>OpenHPI Daemon Client:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=943669&group_id=71730&atid=532251">943669</a> - make check fails at marshal_***, 0..7beta snapshot</li>
+                  </ul>
+                  <b>OpenHPI Daemon:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1172943&group_id=71730&atid=532251">1172943</a> - installed init script doesn't work</li>
+                  </ul>
+                  <b>OpenHPI base library:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1152213&group_id=71730&atid=532251">1152213</a> - Increase buffer size for global parameters</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1172858&group_id=71730&atid=532251">1172858</a> - ohpi_035 segfaults in HEAD branch</li>
+                  </ul>
+                  <b>OpenIPMI plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1066539&group_id=71730&atid=532251">1066539</a> - no entitiy in ATCA supports power or reset</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1086122&group_id=71730&atid=532251">1086122</a> - Can't set (write) Inventory fields</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1095256&group_id=71730&atid=532251">1095256</a> - Takes 5 Discovery passes to fill in FRU data</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1120732&group_id=71730&atid=532251">1120732</a> - 2.0.1 Tarball: OpenIPMI fails</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1144652&group_id=71730&atid=532251">1144652</a> - Build fails: CVS Head 02/19/05 Checkout</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1167975&group_id=71730&atid=532251">1167975</a> - Wrong Entity Type assigned for ATCA Entity</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1177502&group_id=71730&atid=532251">1177502</a> - saHpiEventLogStateSet can't work on LangleyPr</li>
+                  </ul>
+              </div>
+<!--#include virtual="changelog_bottom.html" -->
