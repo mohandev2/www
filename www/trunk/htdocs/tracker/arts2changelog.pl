@@ -2,12 +2,27 @@
 
 use strict;
 use Data::Dumper;
+use Getopt::Std;
 
-my $rel = shift;
-
+our %opts = ();
 our $VAR1;
 
+# options:
+#     -w	     produce html output instead of plain text
+#     -r release     release for which to produce changelog (required)
+#     -h             print this message
+
+getopts('hwr:', \%opts);
+
+if($opts{h}) {
+    usage();
+}
+
 my $data = load_data("tracker.db");
+my $rel = $opts{r};
+if(!$rel) {
+	usage("Need a release (e.g. ... -r 2.0.0)");
+}
 # = load_items("features.txt");
 #my @b = load_items("bugs.txt");
 
@@ -28,7 +43,7 @@ foreach my $key (sort keys (%{$data->{features}->{data}})) {
     
 }
 
-print Dumper($features);
+#print Dumper($features);
 
 my $bugs = {};
 foreach my $key (sort keys (%{$data->{bugs}->{data}})) {
@@ -45,16 +60,46 @@ foreach my $key (sort keys (%{$data->{bugs}->{data}})) {
     $bugs->{$tmp->{Group}}->{$tmp->{id}} = $tmp;
 }
 
-if(exists $bugs->{$rel} or exists $features->{$rel}) { 
-    print "Changes for $rel\n";
-    print "-------------------\n";
-    print "New Features:\n";
+if(exists $bugs->{$rel} or exists $features->{$rel}) {
+    if($opts{w}) {
+	print "<!--#include virtual=\"changelog_head.shtml\" -->\n";
+	print "             <h3>Changelog for $rel</h3>\n";
+	print "             <h4>New Features</h4>\n";
+	print "             <div>\n";
+    } else {
+    	print "Changelog for $rel\n";
+    	print "-------------------\n";
+    	print "New Features:\n";
+    }
 
     print_group($features->{$rel});
 
-    print "\nFixed Bugs:\n";
+    if($opts{w}) {
+	print "              </div>\n";
+	print "              <h4>Fixed Bugs:</h4>\n";
+	print "              <div>\n";
+    } else {
+	print "\nFixed Bugs:\n";
+    }
 
     print_group($bugs->{$rel});
+
+    if($opts{w}) {	
+	print "              </div>\n";
+	print "<!--#include virtual=\"changelog_bottom.html\" -->\n";
+    }
+}
+
+sub usage {
+    my $msg = shift;
+    print "ERROR: $msg\n" if($msg);
+    print <<END;
+arts2changelog.pl - generate changelog from tracker
+  -w      	  : produce html output instead of plain text
+  -r release	  : specifies release for which to produce changelog (required)
+  -h      	  : print this message
+END
+    exit(1);
 }
 
 sub print_group {
@@ -70,11 +115,27 @@ sub print_group {
 	}
 	
 	if($group ne $tracker->{$id}->{Category}) {
+	    if($group && $opts{w}) {
+		print "                  </ul>\n";
+	    }
             $group = $tracker->{$id}->{Category};
-            print "$group\n";
+            if($opts{w}) {
+		print "                  <b>$group:</b>\n";
+	        print "                  <ul>\n";
+	    } else {
+	        print "$group\n";
+	    }
         }
         
-	print "  $bug->{id} - $bug->{Title}\n";
+	if($opts{w}) {
+	    print "                      <li><a href=\"$bug->{Link}\">$bug->{id}</a> - $bug->{Title}\</li>\n";
+	} else {
+	    print "  $bug->{id} - $bug->{Title}\n";
+	}
+    }
+    
+    if($group && $opts{w}) {
+        print "                  </ul>\n";
     }
 }
 
