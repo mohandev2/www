@@ -30,6 +30,7 @@
 				<li>Blade Center plugin - alarm panel support</li>
 				<li>HPI Clients - we have a new client to display the domain event log</li>
 				<li>IPMI Direct plugin - exposure of all OEM FRU multirecords</li>
+				<li>New plugin loader - This will prevent plugins from having to be rebuilt if the plugin abi changes. Furthermore, it prevents segfaults if new functions are added that a plugin doesn't support. Overall, this this makes the plugin abi much more flexible to future changes.</li>
 			</ul>
 			For a complete list of 2.1.2 bugs and features, take a look a the <a href="changelogs/2.1.2.shtml">Changelog for 2.1.2</a>
 		</div>
