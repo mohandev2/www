@@ -1,0 +1,97 @@
+<!--#include virtual="changelog_head.shtml" -->
+             <h3>Changelog for 2.1.2</h3>
+             <h4>New Features</h4>
+             <div>
+                  <b>Blade Center Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1168666&group_id=71730&atid=532254">1168666</a> - Support Access to Telco Alarm Panel</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1183824&group_id=71730&atid=532254">1183824</a> - Add PHYSICAL_SLOT/SYSTEM_BOARD to Blade Entity Paths</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1188085&group_id=71730&atid=532254">1188085</a> - Add Entity Paths to sensors</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1188108&group_id=71730&atid=532254">1188108</a> - Change EP ADD_IN_CARD to SYS_EXPANSION_CARD</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1188115&group_id=71730&atid=532254">1188115</a> - Add FRONT_PANEL to Media Tray's EP</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1188126&group_id=71730&atid=532254">1188126</a> - Add Entity Paths to sensors</li>
+                  </ul>
+                  <b>HPI Clients:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1224376&group_id=71730&atid=532254">1224376</a> - New client to retrieve and display Domain Event Log</li>
+                  </ul>
+                  <b>IPMI Direct plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1201972&group_id=71730&atid=532254">1201972</a> - Expose all OEM FRU multirecords</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1201975&group_id=71730&atid=532254">1201975</a> - Remove unnecessary text in log file</li>
+                  </ul>
+              </div>
+              <h4>Fixed Bugs:</h4>
+              <div>
+                  <b>Blade Center Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1221993&group_id=71730&atid=532251">1221993</a> - Can not read some of the sensors due to bad ep</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1229293&group_id=71730&atid=532251">1229293</a> - No alias for oh_reset_watchdog</li>
+                  </ul>
+                  <b>Build System:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1163216&group_id=71730&atid=532251">1163216</a> - Spec file is outdated.</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1196249&group_id=71730&atid=532251">1196249</a> - g_strdup should be poison, and be replaced by g_strndup ()</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1229816&group_id=71730&atid=532251">1229816</a> - openhpi-switcher does not run on make install</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1229934&group_id=71730&atid=532251">1229934</a> - ./configure is not checking for correct OIPMI level</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1231481&group_id=71730&atid=532251">1231481</a> - distcheck failed on install target running openhpi-switcher</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1232020&group_id=71730&atid=532251">1232020</a> - openhpi-switcher --set=standard return error</li>
+                  </ul>
+                  <b>HPI Clients:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1196727&group_id=71730&atid=532251">1196727</a> - Client hpiel.c stops too soon on error</li>
+                  </ul>
+                  <b>HPI Shell:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1229035&group_id=71730&atid=532251">1229035</a> - make distcheck fails in hpi_shell</li>
+                  </ul>
+                  <b>HPI Utils:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1195835&group_id=71730&atid=532251">1195835</a> - Wrong datalength is reported by oh_decode_eventstate()</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1196248&group_id=71730&atid=532251">1196248</a> - Encode utilities handle non-NULL terminated strings</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1224863&group_id=71730&atid=532251">1224863</a> - Invalid log-timestamp in Domain Event Log</li>
+                  </ul>
+                  <b>IPMI Direct plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1204099&group_id=71730&atid=532251">1204099</a> - Compilation error on Fedora Core 3</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1221194&group_id=71730&atid=532251">1221194</a> - Plugin crashes when device SDR repository is empty</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1221196&group_id=71730&atid=532251">1221196</a> - Plugin crashes when there is no MC Device Locator record</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1221203&group_id=71730&atid=532251">1221203</a> - ATCA board can not be inserted when plugged into a shelf</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1229747&group_id=71730&atid=532251">1229747</a> - Can't open new RMCP session when retrying connection</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1230835&group_id=71730&atid=532251">1230835</a> - Wrong assertion value in threshold based sensors events</li>
+                  </ul>
+                  <b>OpenHPI base library:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1058401&group_id=71730&atid=532251">1058401</a> - make check failed with oHpi tests</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1113866&group_id=71730&atid=532251">1113866</a> - src/control_state/saHpiControlSet_T13.c return issue</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1163498&group_id=71730&atid=532251">1163498</a> - saHpiIdrAreaAdd_T8.c return error code</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1177669&group_id=71730&atid=532251">1177669</a> - saHpiIdrFieldAdd return code error when input error Datatype</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1177670&group_id=71730&atid=532251">1177670</a> - saHpiIdrFieldAdd return code error when input invalid string</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1177678&group_id=71730&atid=532251">1177678</a> - saHpiIdrFieldAdd return code error when input error language</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1177681&group_id=71730&atid=532251">1177681</a> - saHpiIdrAreaAdd return code err when input error area type</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1180627&group_id=71730&atid=532251">1180627</a> - saHpiIdrAreaDelete return code err when IDR is READONLY</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1180633&group_id=71730&atid=532251">1180633</a> - Return code err for saHpiIdrFieldGet when input unlikely ID</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1181365&group_id=71730&atid=532251">1181365</a> - saHpiIdrAreaDelete return code when include a readonly field</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1181385&group_id=71730&atid=532251">1181385</a> - No implementation for add or del idr_area(field)</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1201099&group_id=71730&atid=532251">1201099</a> - the default config path is not /etc/openhpi/openhpi.conf</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1208294&group_id=71730&atid=532251">1208294</a> - saHpiRdrGetByInstrumentId conformance issue when type=NO_REC</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1208892&group_id=71730&atid=532251">1208892</a> - The alarm.acknowledged=0xff after saHpiAlarmAdd</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1208896&group_id=71730&atid=532251">1208896</a> - saHpiControlSet should ignore state input if mode=AUTO</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1209801&group_id=71730&atid=532251">1209801</a> - No event send out when EventMask change</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1213367&group_id=71730&atid=532251">1213367</a> - Add more check for Field param when invoke saHpiIdrFieldAdd.</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1226591&group_id=71730&atid=532251">1226591</a> - saHpiEventAdd()</li>
+                  </ul>
+                  <b>OpenIPMI plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1155016&group_id=71730&atid=532251">1155016</a> - OpenIPMI plugin: ohoi_get_control_state not get mode info</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1177568&group_id=71730&atid=532251">1177568</a> - saHpiEventLogStateSet can't work on LangleyPr</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1181984&group_id=71730&atid=532251">1181984</a> - saHpiControlGet can't work on ATCA platform</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1204218&group_id=71730&atid=532251">1204218</a> - There is no event_log_state_get function in ipmi plugin</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1229992&group_id=71730&atid=532251">1229992</a> - make distcheck fails on ipmi with FC3</li>
+                  </ul>
+                  <b>SNMP Client plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=914380&group_id=71730&atid=532251">914380</a> - Create Error Condition for snmp_get2()</li>
+                  </ul>
+              </div>
+<!--#include virtual="changelog_bottom.html" -->

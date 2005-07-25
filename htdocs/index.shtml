@@ -22,6 +22,17 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.1.2 Development Release! (07/25/2005)</h4>
+		<div>
+			This is the third development release since OpenHPI 2.0.0 stable came out. The next release will be 2.2.0 stable.
+			This development release has bug fixes across the board. New features include:
+			<ul>
+				<li>Blade Center plugin - alarm panel support</li>
+				<li>HPI Clients - we have a new client to display the domain event log</li>
+				<li>IPMI Direct plugin - exposure of all OEM FRU multirecords</li>
+			</ul>
+			For a complete list of 2.1.2 bugs and features, take a look a the <a href="changelogs/2.1.2.shtml">Changelog for 2.1.2</a>
+		</div>
 		<h4>OpenHPI SNMP Subagent 2.0.0 released! (05/20/2005)</h4>
 		<div>
 			This is the second stable release of the SNMP subagent. Many bugs have been fixed, but the major feature with this new release is that 2.0.0 supports the HPI B.01.01 specification created by the SA Forum.
