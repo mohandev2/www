@@ -76,7 +76,7 @@ if(exists $bugs->{$rel} or exists $features->{$rel}) {
 
     if($opts{w}) {
 	print "              </div>\n";
-	print "              <h4>Fixed Bugs:</h4>\n";
+	print "              <h4>Fixed Bugs</h4>\n";
 	print "              <div>\n";
     } else {
 	print "\nFixed Bugs:\n";
