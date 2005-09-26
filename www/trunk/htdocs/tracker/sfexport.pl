@@ -323,6 +323,7 @@ sub get_artifact {
     my $content = $res->content;
     foreach my $key ("Category", "Group", "Assigned To", "Priority", "Status", "Resolution", "Date Closed","Date Submitted","Date Last Updated") {
         if($content =~ /($key):.*?<br>([^<]+)/s) {
+	    $2 =~ s/[\x0a\x09]//g;
             $keys{$1} = $2;
         }
     }
