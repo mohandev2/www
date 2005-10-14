@@ -9,7 +9,6 @@ Infrastructure
 -------------------------
 * Make OpenHPI Thread Safe (v 0.3)
 * Add Support for Multiple Domains (v 0.5)
-* Support for setting handler entity root (v 0.3)
 * Persistance mechanism for SEL (v 0.4)
 * Persistance mechanism for User Updateable Fields (v 0.4)
 
