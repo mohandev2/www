@@ -47,7 +47,7 @@
 			<li>More efficient synchronization on plugin access</li>
 			<li>Get next lookups have been optimized for speed</li>
 		</ul>
-		For a complete list of 2.2.0 bugs and features, take a look a the <a href="changelogs/2.2.0.shtml">Changelog for 2.2.0</a>
+		For a complete list of 2.2.0 bugs and features, take a look a the <a href="changelogs/2.2.0.shtml"><b>Changelog for 2.2.0</b></a>
 		</div>
 		<h4>OpenHPI 2.1.2 Development Release! (07/25/2005)</h4>
 		<div>
@@ -59,7 +59,7 @@
 				<li>IPMI Direct plugin - exposure of all OEM FRU multirecords</li>
 				<li>New plugin loader - This will prevent plugins from having to be rebuilt if the plugin abi changes. Furthermore, it prevents segfaults if new functions are added that a plugin doesn't support. Overall, this this makes the plugin abi much more flexible to future changes.</li>
 			</ul>
-			For a complete list of 2.1.2 bugs and features, take a look a the <a href="changelogs/2.1.2.shtml">Changelog for 2.1.2</a>
+			For a complete list of 2.1.2 bugs and features, take a look a the <a href="changelogs/2.1.2.shtml"><b>Changelog for 2.1.2</b></a>
 		</div>
 		<h4>OpenHPI SNMP Subagent 2.0.0 released! (05/20/2005)</h4>
 		<div>
