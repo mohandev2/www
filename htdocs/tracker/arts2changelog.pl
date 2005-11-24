@@ -14,54 +14,52 @@ our $VAR1;
 
 getopts('hwr:', \%opts);
 
-if($opts{h}) {
+if($opts{'h'}) {
     usage();
 }
 
 my $data = load_data("tracker.db");
-my $rel = $opts{r};
+my $rel = $opts{'r'};
 if(!$rel) {
 	usage("Need a release (e.g. ... -r 2.0.0)");
 }
-# = load_items("features.txt");
-#my @b = load_items("bugs.txt");
 
 my $features = {};
-foreach my $key (sort keys (%{$data->{features}->{data}})) {
-    my $tmp = $data->{features}->{data}->{$key};
-    $tmp->{Type} = "Feature";
-    if($tmp->{Status} =~ /Deleted/) {
+foreach my $key (sort keys (%{$data->{'features'}->{'data'}})) {
+    my $tmp = $data->{'features'}->{'data'}->{$key};
+    $tmp->{'Type'} = "Feature";
+    if($tmp->{'Status'} =~ /Deleted/) {
         next;
     }
     # probably old
-    if($tmp->{Status} =~ /Closed/ and
-       $tmp->{Group} =~ /None/) {
+    if($tmp->{'Status'} =~ /Closed/ and
+       $tmp->{'Group'} =~ /None/) {
         next;
     }
     
-    $features->{$tmp->{Group}}->{$tmp->{id}} = $tmp;
+    $features->{$tmp->{'Group'}}->{$tmp->{'id'}} = $tmp;
     
 }
 
 #print Dumper($features);
 
 my $bugs = {};
-foreach my $key (sort keys (%{$data->{bugs}->{data}})) {
-    my $tmp = $data->{bugs}->{data}->{$key};
-    $tmp->{Type} = "Bug";
-    if($tmp->{Status} =~ /Deleted/) {
+foreach my $key (sort keys (%{$data->{'bugs'}->{'data'}})) {
+    my $tmp = $data->{'bugs'}->{'data'}->{$key};
+    $tmp->{'Type'} = "Bug";
+    if($tmp->{'Status'} =~ /Deleted/) {
         next;
     }
     # probably old
-    if($tmp->{Status} =~ /Closed/ and
-       $tmp->{Group} =~ /None/) {
-        next;
-    }
-    $bugs->{$tmp->{Group}}->{$tmp->{id}} = $tmp;
+    #if($tmp->{'Status'} =~ /Closed/ and
+    #   $tmp->{'Group'} =~ /None/) {
+    #    next;
+    #}
+    $bugs->{$tmp->{'Group'}}->{$tmp->{'id'}} = $tmp;
 }
 
 if(exists $bugs->{$rel} or exists $features->{$rel}) {
-    if($opts{w}) {
+    if($opts{'w'}) {
 	print "<!--#include virtual=\"changelog_head.shtml\" -->\n";
 	print "             <h3>Changelog for $rel</h3>\n";
 	print "             <h4>New Features</h4>\n";
@@ -74,7 +72,7 @@ if(exists $bugs->{$rel} or exists $features->{$rel}) {
 
     print_group($features->{$rel});
 
-    if($opts{w}) {
+    if($opts{'w'}) {
 	print "              </div>\n";
 	print "              <h4>Fixed Bugs</h4>\n";
 	print "              <div>\n";
@@ -84,7 +82,7 @@ if(exists $bugs->{$rel} or exists $features->{$rel}) {
 
     print_group($bugs->{$rel});
 
-    if($opts{w}) {	
+    if($opts{'w'}) {	
 	print "              </div>\n";
 	print "<!--#include virtual=\"changelog_bottom.html\" -->\n";
     }
@@ -106,20 +104,21 @@ sub print_group {
     my ($tracker) = @_;
     my $group = "";
     foreach my $id (sort 
-                    {$tracker->{$a}->{Category}.$a cmp
-                       $tracker->{$b}->{Category}.$b} keys %{$tracker}) {
+                    {$tracker->{$a}->{'Category'}.$a cmp
+                     $tracker->{$b}->{'Category'}.$b} keys %{$tracker}) {
         
         my $bug = $tracker->{$id};
-	if ($bug->{Status} ne "Closed") {
+	if ($bug->{'Status'} ne "Closed" or
+	    $bug->{'Category'} eq "SNMP Agent") {
 		next;
 	}
 	
-	if($group ne $tracker->{$id}->{Category}) {
-	    if($group && $opts{w}) {
+	if($group ne $tracker->{$id}->{'Category'}) {
+	    if($group && $opts{'w'}) {
 		print "                  </ul>\n";
 	    }
-            $group = $tracker->{$id}->{Category};
-            if($opts{w}) {
+            $group = $tracker->{$id}->{'Category'};
+            if($opts{'w'}) {
 		print "                  <b>$group:</b>\n";
 	        print "                  <ul>\n";
 	    } else {
@@ -127,14 +126,14 @@ sub print_group {
 	    }
         }
         
-	if($opts{w}) {
+	if($opts{'w'}) {
 	    print "                      <li><a href=\"$bug->{Link}\">$bug->{id}</a> - $bug->{Title}\</li>\n";
 	} else {
 	    print "  $bug->{id} - $bug->{Title}\n";
 	}
     }
     
-    if($group && $opts{w}) {
+    if($group && $opts{'w'}) {
         print "                  </ul>\n";
     }
 }
