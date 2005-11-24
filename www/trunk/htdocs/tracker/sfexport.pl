@@ -8,9 +8,10 @@
 #  with the site, we could do this in 2 requests instead of the couple thousand
 #  that is currently required.
 #
-#  (C) Copyright 2003,2004 IBM Corp.
+#  (C) Copyright 2003-2005 IBM Corp.
 #
 #  Author: Sean Dague
+#  Modifications: Renier Morales
 #
 #  This file is distributed under that same terms as OpenHPI itself
 
@@ -25,6 +26,7 @@ use strict;
 use constant OPENHPI => 71730;
 
 our @track = ();
+our @items = ();
 our %opts = ();
 
 # options -
@@ -35,16 +37,16 @@ our %opts = ();
 
 getopts('ahm:t:s:', \%opts);
 
-if($opts{h}) { 
+if($opts{'h'}) { 
     usage(); 
 }
 
-unless($opts{a} or $opts{'m'} or $opts{'s'}) {
-    print Dumper(\%opts);
-    usage("must specify either -a or -m mbox");
-}
+#unless($opts{'a'} or $opts{'m'} or $opts{'s'}) {
+    #print Dumper(\%opts);
+    #usage("must specify either -a or -m mbox");
+#}
 
-if($opts{a} and $opts{'m'}) {
+if($opts{'a'} and $opts{'m'}) {
     usage("must specify *only* one of -a and -m");
 }
 
@@ -71,11 +73,12 @@ my $data = load_data("tracker.db");
 
 set_newest($data);
 
-$data->{bugs}->{trackerid} ||= 532251;
-$data->{features}->{trackerid} ||= 532254;    
+## Add trackers here
+$data->{'bugs'}->{'trackerid'} ||= 532251;
+$data->{'features'}->{'trackerid'} ||= 532254;    
 
 # if we want a full pull
-if($opts{a}) {
+if($opts{'a'}) {
     pull_all($data);
 }
 if($opts{'m'}) {
@@ -84,6 +87,11 @@ if($opts{'m'}) {
 if($opts{'s'}) {
     pull_single($data, $opts{'s'});
 }
+
+unless($opts{'a'} or $opts{'m'} or $opts{'s'}) {
+    pull_new($data);
+}
+
 
 # always set the newest globally before saving
 set_newest($data);
@@ -100,7 +108,7 @@ sub usage {
     my $msg = shift;
     print "ERROR: $msg\n" if($msg);
     print <<END;
-sfexport.pl - export sourceforge tracker data
+sfexport.pl - export sourceforge tracker data. pulls newest artifacts by default.
   -a      : pull ALL data from SF trackers (this will take a while)
   -m mbox : use an mbox file to pull recent changes
   -h      : display help
@@ -116,10 +124,16 @@ END
 
 sub pull_all {
     my $data = shift;
-    $data->{bugs}->{data} = pull_entire_tracker($data->{bugs}->{trackerid});
-    $data->{features}->{data} = pull_entire_tracker($data->{features}->{trackerid});
+    $data->{'bugs'}->{'data'} = pull_entire_tracker($data->{'bugs'}->{'trackerid'});
+    $data->{'features'}->{'data'} = pull_entire_tracker($data->{'features'}->{'trackerid'});
 }
 
+sub pull_new {
+    my $data = shift;
+    $data->{'bugs'}->{'data'} = pull_new_in_tracker($data->{'bugs'}->{'trackerid'});
+    $data->{'bugs'}->{'data'} = pull_new_in_tracker($data-{'newest'},
+    						    $data->{'bugs'}->{'trackerid'});
+}
 ######################################################
 #
 # pull_from_mbox($data) - pull from an mbox file
@@ -138,13 +152,13 @@ sub pull_single {
         foreach my $i (sort keys %ids) {
             print "Getting data for TID: $data->{$t}->{trackerid}, ID: $i\n";
             my %data = get_artifact(OPENHPI,
-                                    $data->{$t}->{trackerid},
+                                    $data->{$t}->{'trackerid'},
                                     $i);
-            if(!$data{Number}) {
+            if(!$data{'Number'}) {
                 next;
             }
             print Dumper(\%data);
-            $data->{$t}->{data}->{$i} = \%data;
+            $data->{$t}->{'data'}->{$i} = \%data;
             delay("in pull_single");
         }
     }
@@ -163,7 +177,7 @@ sub pull_from_mbox {
 
     foreach my $t (keys %$data) {
         my %ids = ();
-        my @ids = find_mbox_items_newer($mbox, $backlog, $data->{$t}->{newest}, $data->{$t}->{trackerid});
+        my @ids = find_mbox_items_newer($mbox, $backlog, $data->{$t}->{'newest'}, $data->{$t}->{'trackerid'});
         
         # make them unique
         foreach my $i (@ids) { $ids{$i}++; }
@@ -171,9 +185,9 @@ sub pull_from_mbox {
         foreach my $i (sort keys %ids) {
             print "Getting data for TID: $data->{$t}->{trackerid}, ID: $i\n";
             my %data = get_artifact(OPENHPI,
-                                    $data->{$t}->{trackerid},
+                                    $data->{$t}->{'trackerid'},
                                     $i);
-            $data->{$t}->{data}->{$i} = \%data;
+            $data->{$t}->{'data'}->{$i} = \%data;
             delay("in pull_from_mbox");
         }
     }
@@ -245,20 +259,6 @@ sub save_data {
     close(OUT);
 }
 
-####################################################################
-#
-#  callback - used during linkextor processing
-#
-####################################################################
-
-sub callback {
-    my($tag, %attr) = @_;
-    if($tag eq 'a' and $attr{href} =~ m{/tracker/index.php}) {
-        #        print Dumper(\%attr);
-        push @track, \%attr;
-    }
-}
-
 sub pull_entire_tracker {
     my $tid = shift;
     my %arts = ();
@@ -268,14 +268,40 @@ sub pull_entire_tracker {
                              _status => 100,
                              set => "custom",
                           );
-    print "Resting to keep SF off our back\n";
+    print "Resting 2 seconds to keep SF off our back\n";
     sleep 2;
 			  
     foreach my $i (@links) {
-        if($i->{href} =~ /offset/) { next; }
+        if($i->{'href'} =~ /offset/) { next; }
 
-        my ($project, $tracker, $id) = parse_url($i->{href});
+        my ($project, $tracker, $id) = parse_url($i->{'href'});
         print "Getting data for TID: $tracker, ID: $id\n";        
+        my %data = get_artifact($project, $tracker, $id);
+        $arts{$id} = \%data;
+
+        delay("in pull_entire_tracker");
+    }
+    return \%arts;
+}
+
+sub pull_new_in_tracker {
+    my $newest = shift;
+    my $tid = shift;
+    my %arts = ();
+    my @links = suck_new_in_tracker($newest,
+    				    "http://sourceforge.net/tracker/index.php",
+                                    group_id => OPENHPI,
+				    atid => $tid,
+				    _status => 100,
+				    set => "custom");
+    print "Resting 2 seconds to keep SF off our back\n";
+    sleep 2;
+
+    foreach my $i (@links) {
+        if($i->{'href'} =~ /offset/) { next; }
+
+        my ($project, $tracker, $id) = parse_url($i->{'href'});
+        print "Getting data for TID: $tracker, ID: $id\n";
         my %data = get_artifact($project, $tracker, $id);
         $arts{$id} = \%data;
 
@@ -297,9 +323,9 @@ sub process_tracker {
     delay("on process_tracker 1");
 			  
     foreach my $i (@links) {
-        if($i->{href} =~ /offset/) { next; }
+        if($i->{'href'} =~ /offset/) { next; }
 
-        my %keys = get_artifact($i->{href});
+        my %keys = get_artifact($i->{'href'});
         print "processed $i->{href}\n";
         push @arts, \%keys;
 
@@ -321,28 +347,46 @@ sub get_artifact {
     my $res = $ua->request(GET $url);
     
     my $content = $res->content;
-    foreach my $key ("Category", "Group", "Assigned To", "Priority", "Status", "Resolution", "Date Closed","Date Submitted","Date Last Updated") {
-        if($content =~ /($key):.*?<br>([^<]+)/s) {
-	    $2 =~ s/[\x0a\x09]//g;
-            $keys{$1} = $2;
+
+    foreach my $key ("Category", "Group", "Assigned To", "Priority", "Status", "Resolution") {    
+        if($content =~ />($key): .*?br>(.*?)<\/td/s) {    	
+	    $keys{$key} = $2;
+	    $keys{$key} =~ s/[\x0a\x09]//g;
         }
     }
+    foreach my $key ("Date","Closed as of","Date Submitted","Date Last Updated") {
+        if($content =~ /($key):.*?(\d.*?)$/sm) {
+	    $keys{$key} = $2;
+	    $keys{$key} =~ s/[\x0a\x09]//g;
+        }
+    }
+    $keys{"Closed"} = $keys{"Closed as of"};
 
     if($keys{"Date Last Updated"} =~ /update/) {
        $keys{"Date Last Updated"} = $keys{"Date Submitted"}; 
     }
     
-    $keys{mtime} = convert_time($keys{"Date Submitted"});
+    $keys{'mtime'} = convert_time($keys{"Date Submitted"});
 
     if($content =~ m{<h2>\s*\[\s*(\d+)\s*\]\s*(.*?)\s*</h2>}is) {
-        $keys{Number} = $1;
-        $keys{Title} = $2;
+        $keys{'Number'} = $1;
+        $keys{'Title'} = $2;
     }
-    $keys{Link} = gen_url($project, $tracker, $id);
 
-#    print STDERR Dumper(\%keys);
+    $keys{'Link'} = gen_url($project, $tracker, $id);
+
+#    print STDERR Dumper(\%keys); # Debug
     
     return %keys;
+}
+
+sub callback {
+    my($tag, %attr) = @_;
+    
+    if($tag eq 'a' and $attr{'href'} =~ m{aid=|offset=}) {
+#        print "$attr{href}\n"; # Debug
+        push @track, \%attr;
+    }
 }
 
 #######################################################
@@ -366,14 +410,14 @@ sub suck_tracker {
     
     my $item = $track[scalar(@track) - 1];
     my $offset = 0;
-    while($item->{href} =~ /offset=(\d+)/) {
+    while($item->{'href'} =~ /offset=(\d+)/) {
         my $newoff = $1;
         if($newoff < $offset) {
             last;
         }
         $offset = $newoff;
         pop(@track);
-        $res = $ua->request(GET "http://sourceforge.net" . $item->{href});
+        $res = $ua->request(GET "http://sourceforge.net" . $item->{'href'});
         $p->parse($res->content);
         $item = $track[scalar(@track) - 1];
         
@@ -381,6 +425,63 @@ sub suck_tracker {
 	#print $res->content;
     }
     return @track;
+}
+
+sub suck_new_in_tracker {
+    my ($newest, $base, %vars) = @_;
+    
+    my $res = $ua->request(POST $base,
+                           \%vars);
+    
+    @items = ();
+    
+    parse_newest($newest, $res->content, \@items);
+    
+    my $item = $items[scalar(@items) - 1];
+    my $offset = 0;
+    
+    while($item->{'href'} =~ /offset=(\d+)/) {
+        my $newoff = $1;
+        if($newoff < $offset) {
+            last;
+        }
+        $offset = $newoff;
+        pop(@items);
+        $res = $ua->request(GET "http://sourceforge.net" . $item->{'href'});
+        parse_newest($res->content, \@items);
+        $item = $items[scalar(@items) - 1];
+        
+        delay("on tracker suck");
+	#print $res->content;
+    }
+    
+    return @items;
+}
+
+sub parse_newest {
+    my ($newest, $content, @items) = @_;
+    
+    use HTML::TokeParser;
+
+    my $p = HTML::TokeParser->new(\$content);
+
+    while (my $token = $p->get_tag('a')) {
+    	my $url = $token->[1]{'href'};
+	my %item = {};
+    	if ($url =~ /aid=/) {
+            if ($token = $p->get_tag('td')) {
+                my $open_date = $p->get_trimmed_text('/td');
+                $open_date =~ s/[\xa0\x09 ]//g;
+                if (convert_time($open_date) > $newest) {		    
+		    $item{'href'} = $url;
+		    push(@items, \%item);
+		}
+            }
+        } elsif ($url =~ /offset=/) {
+	    $item{'href'} = $url;
+	    push(@items, \%item);
+        }
+    }
 }
 
 ##################################################
@@ -393,9 +494,9 @@ sub suck_tracker {
 sub set_newest {
     my $data = shift;
     foreach my $t (keys %$data) {
-        foreach my $art (sort keys %{$data->{$t}->{data}}) {
-            if($data->{$t}->{data}->{$art}->{mtime} > $data->{$t}->{newest}) {
-                $data->{$t}->{newest} = $data->{$t}->{data}->{$art}->{mtime};
+        foreach my $art (sort keys %{$data->{$t}->{'data'}}) {
+            if($data->{$t}->{'data'}->{$art}->{'mtime'} > $data->{$t}->{'newest'}) {
+                $data->{$t}->{'newest'} = $data->{$t}->{'data'}->{$art}->{'mtime'};
             }
         }
     }
@@ -445,3 +546,4 @@ sub delay {
     print "\n";
     sleep 2;
 }
+
