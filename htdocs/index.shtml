@@ -22,6 +22,32 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.3.0 Development Release is out! (11/19/2005)</h4>
+		<div>
+		After a long wait, the first development release since the latest stable version is finally out. The wait was worth it, though, as this release comes with many important fixes and improvements to both the library and plugins.
+		<p><strong>Highlights:</strong></p>
+		<ul>
+			<li>C++ wrappers to SaHpi structures - an experimental set of wrappers has been created that enables coders to use SaHpi strucures using C++ syntax. Check it out under the top cpp directory in the source tree.</li>
+			<li>saHpiEventGet Optimization - The code responsible for fetching HPI events has been tightened up and is now leaner, meaner, and quicker. Any delays to get existing events is reduced.</li>
+			<li>Improved Blade Center plugin - Much better mappings of hardware have been added to this plugin</li>
+			<li>IA64 cleanliness</li>
+			<li>Client library improvement - sharing of session ids between threads is now possible (experimental).</li>
+		</ul>
+		</div>
+		<h4>OpenHPI SNMP Subagent 2.3 released (11/19/2005)</h4>
+		<div>
+		This is the third stable release this year. A lot of features have been added to the subagent, along with a few bug fixes. Release 2.3.0, the most solid subagent release up to date.
+		<p><strong>Highlights:</strong></p>
+		<ul>
+			<li>Changed MIB name from HPI-MIB to HPI-B0101-MIB.</li>
+			<li>The MIB now conforms to standards set forth in RFC 2578 and compiles cleanly with various MIB compilers (e.g., SMICng).</li>
+			<li>Timestamps are now represented as an Octet string rather than a Counter64.</li>
+			<li>All timestamps are now displayed in network-byte order.</li>
+			<li>Added mechanisms to convert time from network-byte order to little-endian form and vice versa</li>
+			<li>Entry_Count and Entry_Count_Total scalars have been replaced by Active_Entries and Lifetime_Changes, respectively.</li>
+			<li>Supports threads by the use of a newly implemented locking mechanism.</li>
+		</ul>
+		</div>
 		<h4>OpenHPI SNMP Subagent 2.2 Stable Released! (10/14/2005)</h4>
 		<div>
 		The OpenHPI SNMP Subagent 2.2 was released today after several months of improvements and bug fixes. The HPI MIB that it uses was home-grown in the OpenHPI project and has been adopted by the SA Forum as the official HPI SNMP MIB. So come and get the first open source SNMP Subagent for HPI, from the very originators of the HPI MIB, right here.
@@ -35,6 +61,7 @@
 			<li>Time values are now displayed in network-byte order.</li>
 			<li>All sensor reading values are now displayed using ASCII decimal digits.</li>
 		</ul>
+		For a complete list of 2.3.0 bugs and features, take a look a the <a href="changelogs/2.3.0.shtml"><b>Changelog for 2.3.0</b></a>
 		</div>
 		<h4>OpenHPI 2.2.0 Stable Release! (09/19/2005)</h4>
 		<div>

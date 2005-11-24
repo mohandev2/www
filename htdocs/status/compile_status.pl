@@ -49,7 +49,7 @@ sub print_composite {
 
     # print header
     print OUT "<tr><th>HPI&nbsp;Function</th>";
-    foreach my $work ((open_hpi_items())) {
+    foreach my $work ((open_hpi_aka())) {
         #$work =~ s/ /&nbsp;/;
         my $url = safename($work) . ".shtml";
         print OUT "<th><a href=\"$url\">$work</a></th>";
@@ -102,7 +102,12 @@ sub safename {
 }
 
 sub open_hpi_items {
-    my @array = ("OpenHPI Infrastructure","Dummy Plugin","IPMI Plugin","SNMP BladeCenter/RSA");
+    my @array = ("OpenHPI Infrastructure","Dummy Plugin","IPMI Plugin","SNMP BladeCenter/RSA","IPMI Direct Plugin");
+    return @array;
+}
+
+sub open_hpi_aka {
+    my @array = ("OpenHPI Core","Dummy","IPMI","SNMP BladeCenter/RSA","IPMI Direct");
     return @array;
 }
 
