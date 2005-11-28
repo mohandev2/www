@@ -1,0 +1,82 @@
+Simulator
+
+saHpiVersionGet			na Supported in Infra-structure code
+saHpiSessionOpen		done
+saHpiSessionClose		done
+saHpiDiscover			done
+saHpiDomainInfoGet		na Supported in Infra-structure code
+saHpiDrtEntryGet		na Supported in Infra-structure code
+saHpiDomainTagSet		na Supported in Infra-structure code
+saHpiRptEntryGet		na Supported in Infra-structure code
+saHpiRptEntryGetByResourceId	na Supported in Infra-structure code
+saHpiResourceSeveritySet	done
+saHpiResourceTagSet		done
+saHpiResourceIdGet		na Supported in Infra-structure code
+saHpiEventLogInfoGet		done
+saHpiEventLogEntryGet		done
+saHpiEventLogEntryAdd		done
+saHpiEventLogClear		done
+saHpiEventLogTimeGet		done Infra-structure gets time thru saHpiEventLogInfoGet internally
+saHpiEventLogTimeSet            done
+saHpiEventLogStateGet		done Infra-structure gets state thru saHpiEventLogInfoGet internally
+saHpiEventLogStateSet		done
+saHpiEventLogOverflowReset	done
+saHpiSubscribe			na Supported in Infra-structure code
+saHpiUnsubscribe		na Supported in Infra-structure code
+saHpiEventGet			done
+saHpiEventAdd			na Supported in Infra-structure code
+saHpiAlarmGetNext		na Supported in Infra-structure code
+saHpiAlarmGet			na Supported in Infra-structure code
+saHpiAlarmAcknowledge		na Supported in Infra-structure code
+saHpiAlarmAdd			na Supported in Infra-structure code
+saHpiAlarmDelete		na Supported in Infra-structure code
+saHpiRdrGet			na Supported in Infra-structure code
+saHpiRdrGetByInstrumentId	na Supported in Infra-structure code
+saHpiSensorReadingGet		done
+saHpiSensorThresholdsGet	done
+saHpiSensorThresholdsSet	done
+saHpiSensorTypeGet		na Supported in Infra-structure code
+saHpiSensorEnableGet		done
+saHpiSensorEnableSet		done
+saHpiSensorEventEnableGet	done
+saHpiSensorEventEnableSet	done
+saHpiSensorEventMasksGet	done
+saHpiSensorEventMasksSet	done
+saHpiControlTypeGet		na Supported in Infra-structure code
+saHpiControlGet			done
+saHpiControlSet			done
+saHpiIdrInfoGet			done
+saHpiIdrAreaHeaderGet		done
+saHpiIdrAreaAdd			done
+saHpiIdrAreaDelete		done
+saHpiIdrFieldGet		done
+saHpiIdrFieldAdd		done
+saHpiIdrFieldSet		done
+saHpiIdrFieldDelete		done
+saHpiWatchdogTimerGet		done
+saHpiWatchdogTimerSet		done
+saHpiWatchdogTimerReset		done
+saHpiAnnunciatorGetNext		done
+saHpiAnnunciatorGet		done
+saHpiAnnunciatorAcknowledge	done
+saHpiAnnunciatorAdd		done
+saHpiAnnunciatorDelete		done
+saHpiAnnunciatorModeGet		done
+saHpiAnnunciatorModeSet		done
+saHpiHotSwapPolicyCancel	done
+saHpiResourceActiveSet		done
+saHpiResourceInactiveSet	done
+saHpiAutoInsertTimeoutGet	done
+saHpiAutoInsertTimeoutSet	done
+saHpiAutoExtractTimeoutGet	done
+saHpiAutoExtractTimeoutSet	done
+saHpiHotSwapStateGet		done
+saHpiHotSwapActionRequest	done
+saHpiHotSwapIndicatorStateGet	done
+saHpiHotSwapIndicatorStateSet	done
+saHpiParmControl		done
+saHpiResourceResetStateGet	done
+saHpiResourceResetStateSet	done
+saHpiResourcePowerStateGet	done
+saHpiResourcePowerStateSet	done
+
