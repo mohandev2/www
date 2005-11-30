@@ -43,6 +43,8 @@ print_composite("rollup.html","OpenHPI Composite Status",\%status);
 sub print_composite {
     my ($file, $name, $status) = @_;
     my %infra_funcs = hpi_infra_calls();
+    my $counter = 0;
+    
     open(OUT,">$file");
 
     print OUT "<h4>$name</h4>\n<table>\n";
@@ -51,8 +53,9 @@ sub print_composite {
     print OUT "<tr><th>HPI&nbsp;Function</th>";
     foreach my $work ((open_hpi_aka())) {
         #$work =~ s/ /&nbsp;/;
-        my $url = safename($work) . ".shtml";
+        my $url = safename((open_hpi_items())[$counter]) . ".shtml";
         print OUT "<th><a href=\"$url\">$work</a></th>";
+	$counter++;
     }
     print OUT "</tr>\n";
 
@@ -102,12 +105,12 @@ sub safename {
 }
 
 sub open_hpi_items {
-    my @array = ("OpenHPI Infrastructure","Dummy Plugin","IPMI Plugin","SNMP BladeCenter/RSA","IPMI Direct Plugin");
+    my @array = ("OpenHPI Infrastructure","IPMI Plugin","SNMP BladeCenter/RSA","IPMI Direct Plugin", "Simulator Plugin", "Dummy Plugin");
     return @array;
 }
 
 sub open_hpi_aka {
-    my @array = ("OpenHPI Core","Dummy","IPMI","SNMP BladeCenter/RSA","IPMI Direct");
+    my @array = ("OpenHPI Core","IPMI","SNMP BladeCenter/RSA","IPMI Direct","Simulator", "Dummy");
     return @array;
 }
 
