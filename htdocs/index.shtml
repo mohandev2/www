@@ -28,9 +28,9 @@
 		<ul>
 			<li><b>Blade Center plugin</b> - now recognizes more types of events from the Management Module.</li>
 			<li><b>Blade Center simulator</b> - Along with more test cases, more types of resources were added in order to simulate the additional types of events.</li>
-			<li><b>Better initialization</b> - OpenHPI not initializes itself at linked time rather than waiting for the first session open. This is an advantage in threaded mode as it improves how quickly the resource presence table gets populated.</li>
+			<li><b>Better initialization</b> - OpenHPI now initializes itself at linked time rather than waiting for the first session open. This is an advantage in threaded mode as it improves how quickly the resource presence table gets populated.</li>
 		</ul>
-		For a complete list of 2.3.0 bugs and features, take a look a the <a href="changelogs/2.3.1.shtml"><b>Changelog for 2.3.1</b></a>
+		For a complete list of 2.3.1 bugs and features, take a look a the <a href="changelogs/2.3.1.shtml"><b>Changelog for 2.3.1</b></a>
 		</div>
 		<h4>OpenHPI 2.3.0 Development Release is out! (11/19/2005)</h4>
 		<div>
