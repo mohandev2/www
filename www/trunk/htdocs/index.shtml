@@ -22,6 +22,18 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>New Stable Version OpenHPI 2.4.0 is released! (2/12/2006)</h4>
+		<div>
+		OpenHPI presents the new stable version 2.4.0. This is the first stable release of the year after having gone through the maturing development release cycles of 2.3.x, and paves the way for 2.6 around mid-year which will incorporate some big changes like better multi-domain configurability and an exclusive client-server infrastructure for added conformance to HPI.
+		In this release, you will find:
+		<ul>
+		<li><b>PowerPC plugin using RTAS interface (BETA stage)</b> - reading of sensors is supported</li>
+		<li><b>ATCA-HPI mapping support added to OpenIPMI plugin</b></li>
+		<li><b>Installation of HPI daemon as an init.d service</b></li>
+		<li>..and many bug fixes. See the changelog for details</li>
+		</ul>
+		For a complete list of 2.4.0 bugs and features, take a look a the <a href="changelogs/2.4.0.shtml"><b>Changelog for 2.4.0</b></a>
+		</div>
 		<h4>OpenHPI 2.3.1 Development Release is out! (1/12/2006)</h4>
 		<div>
 		Happy New Year 2006! The OpenHPI Team welcomed the new year with a new 2.3.1 development release. Bugs have been fixed in the core library that came out of conformance testing. The Blade Center plugin went through some live testing where several bugs were found and fixed, along with added improvements. Here are the highlights:
