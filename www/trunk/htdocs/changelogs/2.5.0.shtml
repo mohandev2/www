@@ -1,0 +1,57 @@
+<!--#include virtual="changelog_head.shtml" -->
+             <h3>Changelog for 2.5.0</h3>
+             <h4>New Features</h4>
+             <div>
+                  <b>Blade Center Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1078453&group_id=71730&atid=532254">1078453</a> - Support auto-generated files for SMP systems</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1169462&group_id=71730&atid=532254">1169462</a> - Do not have threshold events unless actual threshold defined</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1438139&group_id=71730&atid=532254">1438139</a> - Use SNMP_MSG_GETBULK for elcache build</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1438470&group_id=71730&atid=532254">1438470</a> - Separate variable declarations and initialization</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1440548&group_id=71730&atid=532254">1440548</a> - Modulize snmp_bc discovery process</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1441888&group_id=71730&atid=532254">1441888</a> - Support fan hot-swap messages</li>
+                  </ul>
+                  <b>HPI Utils:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1440552&group_id=71730&atid=532254">1440552</a> - Display EntityPath (resource) with event</li>
+                  </ul>
+              </div>
+              <h4>Fixed Bugs</h4>
+              <div>
+                  <b>Blade Center Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1436951&group_id=71730&atid=532251">1436951</a> - Assign threshold events only one state</li>
+                  </ul>
+                  <b>Build System:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1459093&group_id=71730&atid=532251">1459093</a> - Various install/unistall errors on distcheck</li>
+                  </ul>
+                  <b>HPI Shell:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1456109&group_id=71730&atid=532251">1456109</a> - hpi_cmd does not work with -c option</li>
+                  </ul>
+                  <b>HPI Utils:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1442005&group_id=71730&atid=532251">1442005</a> - use uuid_unparse utility on rpt.Guuid</li>
+                  </ul>
+                  <b>IPMI Direct plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1446601&group_id=71730&atid=532251">1446601</a> - Events coming from the SEL are ignored when count % 256 == 0</li>
+                  </ul>
+                  <b>OpenHPI base library:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1432908&group_id=71730&atid=532251">1432908</a> - saHpiIgrFieldSet returns SA_OK with invalid Language</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1435753&group_id=71730&atid=532251">1435753</a> - AutoInsert Timeout must be a per domain value</li>
+                  </ul>
+                  <b>OpenIPMI plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1432992&group_id=71730&atid=532251">1432992</a> - saHpiIdrAreaDelete failed with SAHPI_FIRST_ENTRY</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1432996&group_id=71730&atid=532251">1432996</a> - saHpiIdrFieldGet returns NOT_PRESENT for the last field</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1435155&group_id=71730&atid=532251">1435155</a> - Not all memory is freed after FRU extraction</li>
+                  </ul>
+                  <b>Test Suites:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1459092&group_id=71730&atid=532251">1459092</a> - failing simulator unit tests 46-65</li>
+                  </ul>
+              </div>
+<!--#include virtual="changelog_bottom.html" -->

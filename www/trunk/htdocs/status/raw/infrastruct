@@ -5,7 +5,7 @@ saHpiSessionOpen		done
 saHpiSessionClose		done
 saHpiDiscover			done
 saHpiDomainInfoGet		done
-saHpiDrtEntryGet		notdone	this is just a stub now
+saHpiDrtEntryGet		done
 saHpiDomainTagSet		done
 saHpiRptEntryGet		done
 saHpiRptEntryGetByResourceId	done
