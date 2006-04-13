@@ -24,7 +24,7 @@
                 <h3>News</h3>
 		<h4>OpenHPI 2.5.0 development release (3/24/2006)</h4>
 		<div>
-		This is a development release based on the latest stable which has several bugfixes and includes a more robust BladeCenter plugin.
+		This is a development release based on the latest stable which has several bugfixes and includes a more robust BladeCenter plugin.<br />
 		<b>Highlights:</b>
 		<ul>
 		<li><b>ATCA-HPI support now added to utilities</b> - These utilities are used both internally and externally</li>
