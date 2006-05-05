@@ -22,6 +22,18 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.5.1 development release (5/04/2006)</h4>
+		<div>
+		OpenHPI 2.5.1 is out on sourceforge. Get it and give us your feedback. This release serves as the development base for a couple of major changes coming for 2.6 which include a revamped multi-domain handling that takes the load off of the plugin developers, and an exclusive client/server oriented architecture. 2.5.1 rolls out with SNMPv3-related added features, hotswap improvements, UTF-16 validation support, stronger testing for annunciators, a more sculpted daemon, and several bugs caught and fixed.
+		<b>Highlights:</b>
+		<ul>
+		<li><b>Blade Center</b> - support for snmpv3 added parameters, managed hotswap support, MM standby support, targeted discovery enhancing performance</li>
+		<li><b>Core library</b> - UTF-16 string validation, annunciator utility bugs fixed, hotswap policy cancel abi added.</li>
+		<li><b>Build system</b> - SNMP wrappers more selectively built, better cflag filtering</li>
+		<li><b>Daemon</b></li> - better suited for running in threaded mode. memory leak fixed in client library.
+		</ul>
+		For a complete list of 2.5.1 bugs and features, take a look a the <a href="changelogs/2.5.1.shtml"><b>Changelog for 2.5.1</b></a>
+		</div>
 		<h4>OpenHPI 2.5.0 development release (3/24/2006)</h4>
 		<div>
 		This is a development release based on the latest stable which has several bugfixes and includes a more robust BladeCenter plugin.<br />
