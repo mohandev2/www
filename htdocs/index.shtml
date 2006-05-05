@@ -30,7 +30,7 @@
 		<li><b>Blade Center</b> - support for snmpv3 added parameters, managed hotswap support, MM standby support, targeted discovery enhancing performance</li>
 		<li><b>Core library</b> - UTF-16 string validation, annunciator utility bugs fixed, hotswap policy cancel abi added.</li>
 		<li><b>Build system</b> - SNMP wrappers more selectively built, better cflag filtering</li>
-		<li><b>Daemon</b></li> - better suited for running in threaded mode. memory leak fixed in client library.
+		<li><b>Daemon</b> - better suited for running in threaded mode. memory leak fixed in client library.</li>
 		</ul>
 		For a complete list of 2.5.1 bugs and features, take a look a the <a href="changelogs/2.5.1.shtml"><b>Changelog for 2.5.1</b></a>
 		</div>
