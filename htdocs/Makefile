@@ -25,8 +25,8 @@ all: uptodate status/rollup.html tracker/index.shtml
 	$(CHMODD)
 
 uptodate:
-	cvs up -dP
-	cvs ci
+	svn up
+	svn ci
 
 $(SDIR)/$(SPROG):
 
