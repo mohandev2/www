@@ -22,6 +22,19 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.5.2 released! (6/13/2006)</h4>		
+		2.5.2 is out the door. A lot of clean up has been done around several areas to make the code leaner and more bug-free. Note that for this release, threaded mode is always on. The option to choose otherwise has been eliminated. This is to prepare for a related change coming in 2.6.x concerning the integration of the standard core library into the daemon.<br />
+		<b>Highlights are:</b>
+		<ul>
+		<li><b>Blade Center H support</b> - Yes, support for the new blade center model is already in OpenHPI through the <em>snmp_bc</em> plugin.</li>
+		<li><b>More blade sensors</b> - <em>snmp_bc</em> has added code to detect additional sensors (see changelog for details).</li>
+		<li><b>Client programs cleaned up</b> - Obsolete programs deleted. <em>hpiel</em> was revamped and now accepts long-style options. The rest of the client programs will follow this trend in future releases.</li>
+		<li><b>Fixed client library connection bug</b> - Default timeout for connections to the daemon is now unlimited. Used to be 30 minutes unless you specified a different one when running <em>openhpid</em>.</li>
+		<li><b>Code cleanup</b> - Thanks to patches from the community, there where a couple of HPI conformance bugs fixed, better error checking added, and other build related issues ironed out.</li>
+		</ul>
+		<div>
+		For a complete list of 2.5.2 bugs and features, take a look a the <a href="changelogs/2.5.2.shtml"><b>Changelog for 2.5.2</b></a>
+		</div>
 		<h4>OpenHPI 2.5.1 development release (5/04/2006)</h4>
 		<div>
 		OpenHPI 2.5.1 is out on sourceforge. Get it and give us your feedback. This release serves as the development base for a couple of major changes coming for 2.6 which include a revamped multi-domain handling that takes the load off of the plugin developers, and an exclusive client/server oriented architecture. 2.5.1 rolls out with SNMPv3-related added features, hotswap improvements, UTF-16 validation support, stronger testing for annunciators, a more sculpted daemon, and several bugs caught and fixed.<br />

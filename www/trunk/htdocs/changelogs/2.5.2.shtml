@@ -1,0 +1,87 @@
+<!--#include virtual="changelog_head.shtml" -->
+             <h3>Changelog for 2.5.2</h3>
+             <h4>New Features</h4>
+             <div>
+                  <b>Blade Center Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1165486&group_id=71730&atid=532254">1165486</a> - Add 1.8VSB Sense sensor</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1482520&group_id=71730&atid=532254">1482520</a> - Add Virtual Management Resource and associated sensors</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1487541&group_id=71730&atid=532254">1487541</a> - Add MM failover control</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1491156&group_id=71730&atid=532254">1491156</a> - Support BCH platform</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1491203&group_id=71730&atid=532254">1491203</a> - Remove MM network uplink sensor; Rename OVR_MMACT</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1491757&group_id=71730&atid=532254">1491757</a> - Discover BCT Fan 3 and 4</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1491803&group_id=71730&atid=532254">1491803</a> - Use OIDs in chassisTopology group</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1493219&group_id=71730&atid=532254">1493219</a> - Add slot info to Blade&#039;s Name</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1494347&group_id=71730&atid=532254">1494347</a> - Add support for Fan Packs for new BCH</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1502443&group_id=71730&atid=532254">1502443</a> - Make strcmp independent of case</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1502445&group_id=71730&atid=532254">1502445</a> - Add sensors for new 8853 blade</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1503025&group_id=71730&atid=532254">1503025</a> - Add SaHpiBladeCenter.h to include directory</li>
+                  </ul>
+                  <b>Dummy Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1494321&group_id=71730&atid=532254">1494321</a> - Support Temp/Voltage sensors on BEM attached to BMC blades</li>
+                  </ul>
+                  <b>HPI Clients:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1034107&group_id=71730&atid=532254">1034107</a> - move/delete list_resources.c</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1489841&group_id=71730&atid=532254">1489841</a> - Cleanup directories and clients</li>
+                  </ul>
+                  <b>HPI Utils:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1011820&group_id=71730&atid=532254">1011820</a> - message utilities</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1499578&group_id=71730&atid=532254">1499578</a> - oh_derive_string support offsets</li>
+                  </ul>
+                  <b>OpenHPI base library:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1493747&group_id=71730&atid=532254">1493747</a> - Strip out non-threaded mode</li>
+                  </ul>
+                  <b>Watchdog plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1034105&group_id=71730&atid=532254">1034105</a> - Move test_watchdog.c and set_resources.c</li>
+                  </ul>
+              </div>
+              <h4>Fixed Bugs</h4>
+              <div>
+                  <b>Blade Center Plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1491586&group_id=71730&atid=532251">1491586</a> - Allow for privacy_passwd</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1493719&group_id=71730&atid=532251">1493719</a> - Comment out OIDs that no longer in use</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1494316&group_id=71730&atid=532251">1494316</a> - Fix IPMI Blade Sensors</li>
+                  </ul>
+                  <b>Build System:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1487566&group_id=71730&atid=532251">1487566</a> - Headers files for disabled features should not be installed</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1502896&group_id=71730&atid=532251">1502896</a> - hpp files not being installed under /usr/include/openhpi</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1504230&group_id=71730&atid=532251">1504230</a> - Makefiles have wrong daemon dir</li>
+                  </ul>
+                  <b>HPI Clients:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1115710&group_id=71730&atid=532251">1115710</a> - Remove hpireset.c, rename hpireset2.c</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1487450&group_id=71730&atid=532251">1487450</a> - hpidomainel prints hash table err when run in client mode</li>
+                  </ul>
+                  <b>HPI Utils:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1493887&group_id=71730&atid=532251">1493887</a> - uid utils do not check initialized state</li>
+                  </ul>
+                  <b>None:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1493669&group_id=71730&atid=532251">1493669</a> - Need to add newly declared OIDs to bc simulator</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1494115&group_id=71730&atid=532251">1494115</a> - Incorrect use of memset() at various places</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1494116&group_id=71730&atid=532251">1494116</a> - Patch to make openhpi build on gcc-4.1</li>
+                  </ul>
+                  <b>OpenHPI Daemon:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1473169&group_id=71730&atid=532251">1473169</a> - Default timeout for daemon connections should be unlimited</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1490448&group_id=71730&atid=532251">1490448</a> - daemon init.d script not printing stop outcome</li>
+                  </ul>
+                  <b>OpenHPI base library:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1504234&group_id=71730&atid=532251">1504234</a> - Early events don&#039;t show up in threaded mode</li>
+                  </ul>
+                  <b>Simulator plugin:</b>
+                  <ul>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1504232&group_id=71730&atid=532251">1504232</a> - dbg() statements shoud be trace()</li>
+                      <li><a href="http://sourceforge.net/tracker/?func=detail&aid=1505492&group_id=71730&atid=532251">1505492</a> - saHpiSensorEVentMasksGet not returnin OK on NULL params</li>
+                  </ul>
+              </div>
+<!--#include virtual="changelog_bottom.html" -->
