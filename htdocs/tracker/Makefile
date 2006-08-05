@@ -2,8 +2,8 @@
 
 
 all:
-	./arts2html.pl > data.html
+	./sf2html.py
 
 pull:
-	./sfexport.pl
+	./sfexport.py
 
