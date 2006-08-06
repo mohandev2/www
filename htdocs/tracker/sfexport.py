@@ -10,7 +10,8 @@
 # full licensing terms.
 #
 """
-Fetch the sourceforge XML export file for the project
+Fetch the SourceForge XML export file for the project.
+Need to have admin privileges on SF to use this.
 
 Author(s):
         Renier Morales <renierm@users.sf.net>
