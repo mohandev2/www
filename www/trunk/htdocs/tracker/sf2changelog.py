@@ -118,8 +118,8 @@ class ParseExport(handler.ContentHandler):
 	def _print_html(self):
 		db = self._db
 		sp1 = '\t\t'; sp2 = '\t\t\t'; sp3 = '\t\t\t\t'
-		url = 'http://sourceforge.net/tracker/?func=detail&' \
-		      'aid=%s&group_id=71730&atid='
+		url = ('http://sourceforge.net/tracker/?func=detail&'
+		       'aid=%s&group_id=71730&atid=')
 		
 		print '<!--#include virtual="changelog_head.shtml" -->'
 		print sp1+'<h3>Changelog for ' + self._release + '</h3>'
@@ -136,10 +136,10 @@ class ParseExport(handler.ContentHandler):
 					aid = artifact['artifact_id']
 					aurl = curl % (aid)
 					summary = artifact['summary']
-					print sp3+'<li><a href=%s>%s</a>' \
-					      ' - %s</li>' % (aurl,
-					      		      aid,
-					      		      summary)
+					print (sp3+'<li><a href=%s>%s</a>'
+					       ' - %s</li>' % (aurl,
+					      		       aid,
+					      		       summary))
 					
 				print sp2+'</ul>'
 				
