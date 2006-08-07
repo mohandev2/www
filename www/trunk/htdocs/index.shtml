@@ -22,6 +22,28 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.6.0 has been released! (7/31/2006)</h4>
+		<div>
+		The 2.6.0 stable release is available on SourceForge (http://sourceforge.net/projects/openhpi). This version places the OpenHPI daemon as the standard way to get HPI data. The old non-daemon configuration is still available for debugging purposes, but you have to recompile the library with the right options, and it will not be the supported way for using OpenHPI.<br>
+Various features had been added to the 2.5.x development line for this release including:
+		<ul>
+		<li><b>Blade Center Telco H support</b></li>
+		<li><b>IPMI ATCA support</b></li>
+		<li><b>Blade Center topology is now 'ATCA topology friendly'</b></li>
+		<li><b>More blade sensors supported</b></li>
+		<li><b>PowerPC support</b></li>
+		<li><b>Unicode text buffer validation added</b></li>
+		</ul>
+		Highlights for 2.6.0 are:
+		<ul>
+		<li><b>Persistence of Domain Alarm Table</b> - Alarms are now persisted to disk per domain. This feature has to be enabled in openhpi.conf.</li>
+		<li><b>Hotswap management enhancements</b> - More plugin abi functions where added to give them a better control over insertion and extraction events.</li>
+		<li><b>Daemon enhancements</b> - The daemon is the standard way to use OpenHPI now. The advantage of the daemon is that you now have a default installation in which automatic discovery starts out much earlier regardless of any client connection. It also allows multiple connections to see the exact same HPI domain from different places in the network. Also, the daemon now logs to /var/log/messages for any error condition.</li>
+		<li><b>Blade Center plugin improvements</b> - Added blade bmc reset control and made blade operational sensors readable.</li>
+		<li><b></b></li>
+		</ul>
+		For a complete list of 2.6.0 bugs and features, take a look a the <a href="changelogs/2.6.0.shtml"><b>Changelog for 2.6.0</b></a>
+		</div>
 		<h4>OpenHPI 2.5.2 released! (6/13/2006)</h4>		
 		<div>
 		2.5.2 is out the door. A lot of clean up has been done in several areas to make the code nimbler and more bug-free. Note that for this release, threaded mode is always on. The option to choose otherwise has been eliminated. This is to prepare for a related change coming in 2.6.x concerning the integration of the standard core library into the daemon.<br />
