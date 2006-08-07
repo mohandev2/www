@@ -2,10 +2,10 @@
 #
 
 TDIR=tracker
-TPROG=arts2html.pl
+TPROG=sf2html.py
 
 SDIR=status
-SDATA=$(shell ls -d $(SDIR)/raw/* | grep -v CVS)
+SDATA=$(shell ls -d $(SDIR)/raw/* | grep -v .svn)
 SPROG=compile_status.pl
 
 ifdef SFUID
@@ -30,7 +30,7 @@ uptodate:
 
 $(SDIR)/$(SPROG):
 
-tracker/index.shtml: tracker/index.tmpl tracker/tracker.db $(shell ls tracker/*pl)
+tracker/index.shtml: tracker/index.tmpl $(shell ls tracker/*py)
 	cd $(TDIR) && ./$(TPROG)
 
 status/rollup.html: $(SDATA) $(SDIR)/$(SPROG)

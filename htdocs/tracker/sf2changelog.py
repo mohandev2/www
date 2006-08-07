@@ -18,7 +18,7 @@ Author(s):
 """
 import sys
 from optparse import OptionParser
-from xml.sax import make_parser, handler, SAXException
+import sfparser
 
 # Parse options
 optsparser = OptionParser(usage='%prog [options] <release>')
@@ -40,115 +40,53 @@ if len(args) != 1:
 	optsparser.print_help()
 	sys.exit()
 	
-# Parse XML
-class ParseExport(handler.ContentHandler):
+db = sfparser.get_data(options.xmlfile, [args[0]])
 
-	def __init__(self, release, web):
-        	handler.ContentHandler.__init__(self)
-        	self._release = release
-        	self._web = web        	
-        	self._db = [
-        			{'title' : 'New Features',
-        			 'id' : '532254',
-        			 'categories' : {}},
-        			 
-        			{'title' : 'Fixed Bugs',
-        			 'id' : '532251',
-        			 'categories' : {}}
-        		    ]
-        	self._trackers = {'Feature Requests' : 0,
-        			   'Bugs' : 1 }
-        	self._artifact = None
-
-	def startElement(self, tagname, attrs):	
-        	if tagname == 'artifact':
-		       	self._artifact = {}
-        	elif tagname == 'field' and self._artifact != None:
-       			self._artifact['_name'] = attrs['name']
-        			
-        def characters(self, content):
-        	c = content.encode('latin_1', 'ignore').strip()
-        	artifact = self._artifact
-        	if artifact != None and artifact.has_key('_name'):
-        		artifact[artifact['_name']] = artifact.get(
-        			artifact['_name'], '') + c        		
-        
-        def endElement(self, tagname):
-        	artifact = self._artifact
-        	db = self._db
-        	if tagname != 'artifact' or artifact == None: return
-        	if (artifact['artifact_group_id'] != self._release or
-        	    artifact['status'] != 'Closed' or
-        	    artifact['artifact_type'] not in self._trackers.keys()):
-        		del artifact
-        		self._artifact = None
-        		return
-        	
-		tpos = self._trackers[artifact['artifact_type']]
-		categories = db[tpos]['categories']
-
-		if not categories.has_key(artifact['category']):
-			categories[artifact['category']] = []
+if not options.web: # Print text
+	print 'Changelog for %s' % args[0]
+    	print '-'*19
+	for x in db:
+		print '[%s]' % x['title']
+		categories = x['categories'].keys()
+		categories.sort()
+		for category in categories:
+			c = ' ' + category + '\n'
+			a = ''
+			for artifact in x['categories'][category]:
+				if artifact['status'] != 'Closed': continue
+				a += '   %s - %s\n' % (artifact['artifact_id'],
+						     artifact['summary'])
+			if a != '':
+				print c + a,
+		print ''
 			
-		categories[artifact['category']].append(artifact)			
-        	self._artifact = None
-
-	def endDocument(self):
-		if self._web:
-			self._print_html()
-		else:
-			self._print_txt()
-	
-	def _print_txt(self):
-		db = self._db
-		print 'Changelog for %s' % self._release
-    		print '-'*19
-		for x in db:
-			print '[%s]' % x['title']
-			categories = x['categories'].keys()
-			categories.sort()
-			for category in categories:
-				print '', category
-				for artifact in x['categories'][category]:
-					print '   %s - %s' % (
-						artifact['artifact_id'],
-						artifact['summary'])
-			print ''
-				
-	def _print_html(self):
-		db = self._db
-		sp1 = '\t\t'; sp2 = '\t\t\t'; sp3 = '\t\t\t\t'
-		url = ('http://sourceforge.net/tracker/?func=detail&'
-		       'aid=%s&group_id=71730&atid=')
+else: # Print html
+	sp1 = '\t\t'; sp2 = '\t\t\t'; sp3 = '\t\t\t\t'
+	url = ('http://sourceforge.net/tracker/?func=detail&'
+	       'aid=%s&group_id=71730&atid=')
 		
-		print '<!--#include virtual="changelog_head.shtml" -->'
-		print sp1+'<h3>Changelog for ' + self._release + '</h3>'
-		for x in db:
-			print sp1+'<h4>%s</h4>' % x['title']
-			print sp1+'<div>'
-			curl = url + x['id']
-			categories = x['categories'].keys()
-			categories.sort()
-			for category in categories:
-				print sp2+'<strong>%s</strong>' % category
-				print sp2+'<ul>'				
-				for artifact in x['categories'][category]:	
-					aid = artifact['artifact_id']
-					aurl = curl % (aid)
-					summary = artifact['summary']
-					print (sp3+'<li><a href=%s>%s</a>'
-					       ' - %s</li>' % (aurl,
-					      		       aid,
-					      		       summary))
-					
-				print sp2+'</ul>'
-				
-			print sp1+'</div>'
+	print '<!--#include virtual="changelog_head.shtml" -->'
+	print sp1+'<h3>Changelog for ' + args[0] + '</h3>'
+	for x in db:
+		print sp1+'<h4>%s</h4>' % x['title']
+		print sp1+'<div>'
+		curl = url + x['id']
+		categories = x['categories'].keys()
+		categories.sort()
+		for category in categories:
+			c = sp2+'<strong>%s</strong>\n' % category
+			c += sp2+'<ul>\n'
+			a = ''
+			for artifact in x['categories'][category]:	
+				aid = artifact['artifact_id']
+				aurl = curl % (aid)
+				summary = artifact['summary']
+				a += (sp3+'<li><a href=%s>%s</a> - %s</li>\n' %
+				      (aurl, aid, summary))
+			if a != '':
+				print c + a + '</ul>'
+			
+		print sp1+'</div>'
 		
-		print '<!--#include virtual="changelog_bottom.html" -->'
+	print '<!--#include virtual="changelog_bottom.html" -->'
 
-
-xmlparser = make_parser()
-xmlparser.setFeature(handler.feature_namespaces, 0)
-xmlparser.setContentHandler(ParseExport(args[0], options.web))
-xmlparser.parse(options.xmlfile)
