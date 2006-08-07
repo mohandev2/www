@@ -40,7 +40,6 @@ Various features had been added to the 2.5.x development line for this release i
 		<li><b>Hotswap management enhancements</b> - More plugin abi functions where added to give them a better control over insertion and extraction events.</li>
 		<li><b>Daemon enhancements</b> - The daemon is the standard way to use OpenHPI now. The advantage of the daemon is that you now have a default installation in which automatic discovery starts out much earlier regardless of any client connection. It also allows multiple connections to see the exact same HPI domain from different places in the network. Also, the daemon now logs to /var/log/messages for any error condition.</li>
 		<li><b>Blade Center plugin improvements</b> - Added blade bmc reset control and made blade operational sensors readable.</li>
-		<li><b></b></li>
 		</ul>
 		For a complete list of 2.6.0 bugs and features, take a look a the <a href="changelogs/2.6.0.shtml"><b>Changelog for 2.6.0</b></a>
 		</div>
