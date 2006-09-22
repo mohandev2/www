@@ -22,6 +22,28 @@
             </div>
             <div class="mainsegment">
                 <h3>News</h3>
+		<h4>OpenHPI 2.6.2 has been released! (09/15/2006)</h4>
+		<div>
+		OpenHPI 2.6 underwent intense conformance testing using the <a href="http://sourceforge.net/projects/saftest">SAFTest suite</a>. The result is 2.6.2.<br />
+		<b>Some highlights:</b>
+		<ul>
+		<li>Plugins now build correctly whether the daemon is enabled or not</li>
+		<li>There was a deadlock issue found in SaHpiEventLogTimeSet that has been fixed.</li>
+		<li>The domain event log now properly represents absolute and relative times</li>
+		<li>The simulator plugin received much improvement during conformance testing. Better support for recording power, timeout, and hotswap state has been added.</li>
+		<li>...and many more bug fixes. Check the changelogs</li>
+		</ul>
+		For a complete list of 2.6.2 bugs and features, take a look a the <a href="changelogs/2.6.1.shtml"><b>Changelog for 2.6.1</b></a> and the <a href="changelogs/2.6.2.shtml"><b>Changelog for 2.6.2</b></a>
+		</div>
+		<h4>SNMP Subagent 2.3.4 has been released (09/13/06)</h4>
+		<div>
+		An updated OpenHPI SNMP Subagent, version 2.3.4, was released with a much needed update of the <a href="http://saforum.org">SAF</a> MIB files.
+		<ul>
+		<li>MIB files have been updated to latest version available from the <a href="http://saforum.org">SAF</a></li>
+		<li>Installation now also installs the needed mibs under $prefix/share/snmp/mibs</li>
+		<li>Patched up to work with OpenHPI 2.6 latest stable.</li>
+		</ul>
+		</div>
 		<h4>PyOpenHPI - OpenHPI wrapper for Python programs! (9/1/2006)</h4>
 		<div>
 		Yes, you heard right. The OpenHPI team presents its python binding module. There is no official release for this yet, but you can get it from the subversion repository. Even though this is in beta state, the module already features all of the APIs made available through libopenhpi and the very handy libopenhpiutils.<br /><br />We would very much like to know what people think of this python module. So check it out, take a look at and try the examples. Make sure you read the README file before you start as there is some good information about usage and system requirements for building the module. I think you'll be surprised by how well the APIs have been adapted to python, but you be the final judge on that.<br /><br />Assuming you have subversion installed, type the following to <b>checkout the PyOpenHPI python module:</b><br /><br /><code>svn co https://svn.sourceforge.net/svnroot/openhpi/python/trunk pyopenhpi</code>

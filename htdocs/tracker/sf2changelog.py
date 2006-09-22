@@ -46,6 +46,7 @@ if not options.web: # Print text
 	print 'Changelog for %s' % args[0]
     	print '-'*19
 	for x in db:
+		if len(x['categories']) == 0: continue
 		print '[%s]' % x['title']
 		categories = x['categories'].keys()
 		categories.sort()
@@ -68,6 +69,7 @@ else: # Print html
 	print '<!--#include virtual="changelog_head.shtml" -->'
 	print sp1+'<h3>Changelog for ' + args[0] + '</h3>'
 	for x in db:
+		if len(x['categories']) == 0: continue
 		print sp1+'<h4>%s</h4>' % x['title']
 		print sp1+'<div>'
 		curl = url + x['id']

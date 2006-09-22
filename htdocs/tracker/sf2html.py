@@ -23,7 +23,7 @@ from time import ctime
 import sfparser
 
 # List of releases to go in the html report
-releases = ['2.6.1', 'Future', '2.6.0', 'None']
+releases = ['2.7.0']
 # Parse options
 optsparser = OptionParser(usage='%prog [options] [release [release ...]]')
 optsparser.add_option('-t', '--template',
@@ -36,7 +36,7 @@ optsparser.add_option('-o', '--output',
 		      metavar='OUTPUTFILE',
 		      help='HTML report will be written to this filename [default: %default]',
 		      default='index.shtml')
-optsparser.add_option('-x', '--xmlfile',
+optsparser.add_option('-f', '--xmlfile',
 		      dest='xmlfile',
 		      metavar='XMLEXPORTFILE',
 		      help='XML file which contains the SF exported data [default: %default]',
