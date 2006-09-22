@@ -23,12 +23,17 @@ import re
 
 # options parsing
 optsparser = OptionParser(usage='%prog [options] <release>')
-optsparser.add_option('-f',
-		      '--file',
+optsparser.add_option('-o',
+		      '--output',
 		      default='xml_export.xml',
 		      dest='xmlfile',
 		      help='Save the xml export to this file '
 			   '[default: %default]')
+optsparser.add_option('-s',
+		      '--status',
+		      dest='status',
+                      help='Artifact status to filter on [default: %default]',
+                      default='Closed')
 options, args = optsparser.parse_args()
 if len(args) != 1:
         print 'Did not get a release level (e.g. %s 2.6.0).' % sys.argv[0]
@@ -36,6 +41,7 @@ if len(args) != 1:
         sys.exit()
 
 z = 2
+status = options.status
 trackers = { 'Bugs': '532251', 'Feature Requests': '532254' }
 
 # rules for parsing html
@@ -67,12 +73,12 @@ for x in trackers.keys():
 	print 'Going to %s tracker' % x
 	response = br.open(url + trackers[x])
 	br.select_form('tracker_browse')
-	print 'Looking for closed %s for %s release' % (x, args[0])
+	print 'Looking for %s %s for %s release' % (status, x, args[0])
 	control = br.find_control('_status', type='select')
 	for item in control.items:
-		if item.attrs['contents'] == 'Closed': break
+		if item.attrs['contents'] == status: break
 	else:
-		print 'Closed state does not exist!'
+		print '%s state does not exist!' % status
 		break	
 	br['_status'] = [item.name]
 	

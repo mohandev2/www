@@ -22,8 +22,8 @@ from getpass import getpass
 from mechanize import Browser
 
 optsparser = OptionParser()
-optsparser.add_option('-f',
-		      '--file',
+optsparser.add_option('-o',
+		      '--output',
 		      default='xml_export.xml',
 		      dest='xmlfile',
 		      help='Save the xml export to this file '
@@ -42,6 +42,7 @@ password = getpass('Enter password for \'%s\': ' % username)
 # Login to sourceforge
 print 'Logging into SourceForge...'
 br = Browser()
+br.set_handle_robots(False) # don't pay attention to robots.txt
 login_url = 'https://sourceforge.net/account/login.php'
 xml_url = 'https://sourceforge.net/export/xml_export.php?group_id=71730'
 br.open(login_url)
