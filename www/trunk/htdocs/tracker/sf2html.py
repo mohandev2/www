@@ -63,7 +63,7 @@ for release in releases:
 	print '==== %s ====' % release
 	for x in db:
 		if len(x['categories']) == 0: continue
-		print "'''~+%s+~'''\n" % x['title']
+		print "||||||||<tablestyle=\"border: 0\"style=\"border: 0; text-align: center\"> [[BR]]'''~+%s+~''' ||" % x['title']
 		curl = url + x['id']
 		categories = x['categories'].keys()
 		categories.sort()
@@ -74,7 +74,7 @@ for release in releases:
 					continue
 				if artifact['status'] == 'Deleted': continue
 				if not printed_cat:
-					print " '''%s'''[[BR]]" % category
+					print "||||||||<(> '''%s''' ||" % category
 					printed_cat = True
 				aid = artifact['artifact_id']
 				aurl = curl % aid
@@ -82,6 +82,5 @@ for release in releases:
 				assigned_to = artifact['assigned_to']
 				status = artifact['status']
 				resolution = artifact['resolution']
-				print ' ||%s %s ||<bgcolor="#eeeeee"> [%s %s] ||<bgcolor="#eeeeee"> %s ||<bgcolor="#eeeeee"> %s - %s ||' % (get_colors(artifact), aid, aurl, summary, assigned_to, status, resolution)
-		print ''
+				print '||%s %s ||<bgcolor="#eeeeee"> [%s %s] ||<bgcolor="#eeeeee"> %s ||<bgcolor="#eeeeee"> %s - %s ||' % (get_colors(artifact), aid, aurl, summary, assigned_to, status, resolution)
 
