@@ -39,10 +39,8 @@ if len(args) != 1:
 	print 'Did not get a release level (e.g. %s 2.6.0).' % sys.argv[0]
 	optsparser.print_help()
 	sys.exit()
-	
-db = sfparser.get_data(options.xmlfile, [args[0]])
 
-if not options.web: # Print text
+def print_text(db, args):
 	print 'Changelog for %s' % args[0]
     	print '-'*19
 	for x in db:
@@ -61,7 +59,7 @@ if not options.web: # Print text
 				print c + a,
 		print ''
 			
-else: # Print html
+def print_html(db, args):
 	sp1 = '\t\t'; sp2 = '\t\t\t'; sp3 = '\t\t\t\t'
 	url = ('http://sourceforge.net/tracker/?func=detail&'
 	       'aid=%s&group_id=71730&atid=')
@@ -91,4 +89,36 @@ else: # Print html
 		print sp1+'</div>'
 		
 	print '<!--#include virtual="changelog_bottom.html" -->'
+
+def print_wiki(db, args):
+	url = ('http://sourceforge.net/tracker/?func=detail&'
+               'aid=%s&group_id=71730&atid=')
+
+	print '== Changelog for %s ==' % args[0]
+        for x in db:
+                if len(x['categories']) == 0: continue
+                print '===== %s =====' % x['title']
+		curl = url + x['id']
+                categories = x['categories'].keys()
+                categories.sort()
+                for category in categories:
+                        c = "'''" + category + "'''\n"
+                        a = ''
+                        for artifact in x['categories'][category]:
+				aid = artifact['artifact_id']
+                                aurl = curl % (aid)
+                                if artifact['status'] != 'Closed': continue
+                                a += ' * [%s %s] - %s\n' % (aurl, aid,
+							artifact['summary'])
+                        if a != '':
+                                print c + a,
+                print ''
+
+# Main
+db = sfparser.get_data(options.xmlfile, [args[0]])
+print_changelog = print_text
+#if options.web: print_changelog = print_html
+if options.web: print_changelog = print_wiki
+
+print_changelog(db, args)
 
