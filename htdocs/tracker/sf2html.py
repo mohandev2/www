@@ -63,7 +63,7 @@ for release in releases:
 	print '==== %s ====' % release
 	for x in db:
 		if len(x['categories']) == 0: continue
-		print "||||||||<tablestyle=\"border: 0\"style=\"border: 0; text-align: center\"> [[BR]]'''~+%s+~''' ||" % x['title']
+		print "||||||||<tablestyle=\"border: 0\"style=\"border: 0\"> '''~+%s+~''' ||" % x['title']
 		curl = url + x['id']
 		categories = x['categories'].keys()
 		categories.sort()

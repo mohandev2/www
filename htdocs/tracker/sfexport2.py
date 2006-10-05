@@ -65,6 +65,7 @@ xmlfile.write('<project_export>\n<artifacts>\n')
 
 url = 'http://sourceforge.net/tracker/?group_id=71730&atid='
 br = Browser()
+br.clear_history()
 br.set_handle_robots(False) # don't pay attention to robots.txt
 
 for x in trackers.keys():
