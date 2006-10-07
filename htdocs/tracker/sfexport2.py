@@ -73,7 +73,7 @@ for x in trackers.keys():
 	# Go to page and set to browse specific state and release
 	print 'Going to %s tracker' % x
 	response = br.open(url + trackers[x])
-	br.select_form('tracker_browse')
+	br.select_form(name='tracker_browse')
 	print 'Looking for %s %s for %s release' % (status, x, args[0])
 	control = br.find_control('_status', type='select')
 	for item in control.items:

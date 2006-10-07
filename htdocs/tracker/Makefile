@@ -2,7 +2,7 @@
 
 
 all:
-	./sf2html.py
+	./sf2wiki.py
 
 pull:
 	./sfexport.py
