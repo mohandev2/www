@@ -2,7 +2,7 @@
 #
 
 TDIR=tracker
-TPROG=sf2wiki.py
+TPROG=xml2wiki.py
 
 SDIR=status
 SDATA=$(shell ls -d $(SDIR)/raw/* | grep -v .svn)

@@ -18,7 +18,7 @@ Author(s):
 """
 from optparse import OptionParser
 from xml.sax import make_parser, handler, SAXException
-import sfparser
+import sf2xml_parser
 
 # List of releases to go in the html report
 releases = ['2.7.0']
