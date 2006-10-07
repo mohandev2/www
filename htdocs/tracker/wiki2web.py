@@ -48,7 +48,7 @@ if len(args) != 1:
 z = 1
 # Capture wiki tracker data
 print 'Capturing wiki data...'
-popen = Popen('./sf2wiki.py -f %s %s' % (options.xmlfile, args[0]),
+popen = Popen('./xml2wiki.py -f %s %s' % (options.xmlfile, args[0]),
 	      shell=True,
 	      stdout=PIPE)
 popen.wait()

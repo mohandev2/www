@@ -18,7 +18,7 @@ Author(s):
 """
 import sys
 from optparse import OptionParser
-import sfparser
+import sf2xml_parser
 
 # Parse options
 optsparser = OptionParser(usage='%prog [options] <release>')
