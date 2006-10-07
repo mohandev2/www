@@ -25,7 +25,7 @@ optsparser = OptionParser(usage='%prog [options] <release>')
 optsparser.add_option('-w',
 		      '--web',
 		      dest='web',
-		      help='Produce html output instead of plain text',
+		      help='Produce wiki output instead of plain text',
 		      action='store_true',
 		      default=False)
 optsparser.add_option('-f',
