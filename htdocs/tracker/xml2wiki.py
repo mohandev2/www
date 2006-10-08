@@ -16,14 +16,13 @@ showing the status of bugs and feature per release in html.
 Author(s):
         Renier Morales <renierm@users.sf.net>
 """
+import sys
 from optparse import OptionParser
 from xml.sax import make_parser, handler, SAXException
 import sf2xml_parser
 
-# List of releases to go in the html report
-releases = ['2.7.0']
 # Parse options
-optsparser = OptionParser(usage='%prog [options] [release [release ...]]')
+optsparser = OptionParser(usage='%prog [options] <release [release [release ...]]>')
 optsparser.add_option('-f', '--xmlfile',
 		      dest='xmlfile',
 		      metavar='XMLEXPORTFILE',
@@ -32,8 +31,11 @@ optsparser.add_option('-f', '--xmlfile',
 options, args = optsparser.parse_args()
 
 # Get list of releases if specified
-if len(args) > 0:
-	releases = args
+releases = args
+if len(releases) == 0:
+	print 'Did not get a release level (e.g. %s 2.6.0).' % sys.argv[0]
+        optsparser.print_help()
+        sys.exit()
 	
 # This is for determining what css class name to use for printing the artifact
 def get_colors(artifact):
@@ -55,7 +57,7 @@ def get_colors(artifact):
 			return style % colors['Closed']
 
 # Go get the parsed data
-db = sfparser.get_data(options.xmlfile, releases, ['Features', 'Bugs'])
+db = sf2xml_parser.get_data(options.xmlfile, releases, ['Features', 'Bugs'])
 
 # Generate the wiki page
 url = 'http://sourceforge.net/tracker/?func=detail&aid=%s&group_id=71730&atid='
