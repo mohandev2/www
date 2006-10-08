@@ -115,7 +115,7 @@ def print_wiki(db, args):
                 print ''
 
 # Main
-db = sfparser.get_data(options.xmlfile, [args[0]])
+db = sf2xml_parser.get_data(options.xmlfile, [args[0]])
 print_changelog = print_text
 #if options.web: print_changelog = print_html
 if options.web: print_changelog = print_wiki

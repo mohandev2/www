@@ -17,17 +17,16 @@ Author(s):
 	Renier Morales <renier@openhpi.org>
 """
 import sys, time
-from subprocess import Popen, PIPE
 from mechanize import Browser
 from optparse import OptionParser
 from getpass import getpass
 
-optsparser = OptionParser(usage='%prog [options] <release>')
+optsparser = OptionParser(usage='%prog [options]')
 optsparser.add_option('-f',
-                      '--xmlfile',
-                      default='xml_export.xml',
-                      dest='xmlfile',
-                      help='Read tracker data from this file '
+                      '--wikifile',
+                      default='tracker.wiki',
+                      dest='wikifile',
+                      help='Read tracker data from this wiki file '
                            '[default: %default]')
 optsparser.add_option('-u',
                       '--username',
@@ -40,19 +39,12 @@ optsparser.add_option('-p',
                       dest='password',
                       help='Password')
 options, args = optsparser.parse_args()
-if len(args) != 1:
-	print 'Did not get a release level (e.g. %s 2.6.0).' % sys.argv[0]
-	optsparser.print_help()
-	sys.exit()
 
 z = 1
 # Capture wiki tracker data
 print 'Capturing wiki data...'
-popen = Popen('./xml2wiki.py -f %s %s' % (options.xmlfile, args[0]),
-	      shell=True,
-	      stdout=PIPE)
-popen.wait()
-wikidata = popen.stdout.read()
+wikifile = open(options.wikifile, 'r')
+wikidata = wikifile.read()
 
 # Post it
 br = Browser()
