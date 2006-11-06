@@ -28,16 +28,29 @@ optsparser.add_option('-o',
 		      dest='xmlfile',
 		      help='Save the xml export to this file '
 			   '[default: %default]')
+optsparser.add_option('-u',
+                      '--username',
+                      default=None,
+                      dest='user',
+                      help='Username')
+optsparser.add_option('-p',
+                      '--password',
+                      default=None,
+                      dest='password',
+                      help='Password')
 options, args = optsparser.parse_args()
 
 # Get username and password
-username = ''
-if os.environ.has_key('SFUID'):
-	username = os.environ['SFUID']
-else:
-	username = raw_input('Enter your SourceForge username: ')
+username = options.user
+if not username:
+	if os.environ.has_key('SFUID'):
+		username = os.environ['SFUID']
+	else:
+		username = raw_input('Enter your SourceForge username: ')
 
-password = getpass('Enter password for \'%s\': ' % username)
+password = options.password
+if not password:
+	password = getpass('Enter password for \'%s\': ' % username)
 
 # Login to sourceforge
 print 'Logging into SourceForge...'
