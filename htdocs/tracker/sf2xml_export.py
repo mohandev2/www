@@ -59,7 +59,7 @@ br.set_handle_robots(False) # don't pay attention to robots.txt
 login_url = 'https://sourceforge.net/account/login.php'
 xml_url = 'https://sourceforge.net/export/xml_export.php?group_id=71730'
 br.open(login_url)
-br.select_form('login')
+br.select_form(nr=2)
 br['form_loginname'] = username
 br['form_pw'] = password
 br.submit()
