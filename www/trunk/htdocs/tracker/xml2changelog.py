@@ -40,6 +40,8 @@ if len(args) != 1:
 	optsparser.print_help()
 	sys.exit()
 
+close_resolutions = ['Accepted', 'Fixed', 'None', 'Remind']
+
 def print_text(db, args):
 	print 'Changelog for %s' % args[0]
     	print '-'*19
@@ -52,44 +54,13 @@ def print_text(db, args):
 			c = ' ' + category + '\n'
 			a = ''
 			for artifact in x['categories'][category]:
-				if artifact['status'] != 'Closed': continue
+				if artifact['status'] != 'Closed' and artifact['resolution'] not in close_resolutions: continue
 				a += '   %s - %s\n' % (artifact['artifact_id'],
 						     artifact['summary'])
 			if a != '':
 				print c + a,
 		print ''
 			
-def print_html(db, args):
-	sp1 = '\t\t'; sp2 = '\t\t\t'; sp3 = '\t\t\t\t'
-	url = ('http://sourceforge.net/tracker/?func=detail&'
-	       'aid=%s&group_id=71730&atid=')
-		
-	print '<!--#include virtual="changelog_head.shtml" -->'
-	print sp1+'<h3>Changelog for ' + args[0] + '</h3>'
-	for x in db:
-		if len(x['categories']) == 0: continue
-		print sp1+'<h4>%s</h4>' % x['title']
-		print sp1+'<div>'
-		curl = url + x['id']
-		categories = x['categories'].keys()
-		categories.sort()
-		for category in categories:
-			c = sp2+'<strong>%s</strong>\n' % category
-			c += sp2+'<ul>\n'
-			a = ''
-			for artifact in x['categories'][category]:	
-				aid = artifact['artifact_id']
-				aurl = curl % (aid)
-				summary = artifact['summary']
-				a += (sp3+'<li><a href=%s>%s</a> - %s</li>\n' %
-				      (aurl, aid, summary))
-			if a != '':
-				print c + a + '</ul>'
-			
-		print sp1+'</div>'
-		
-	print '<!--#include virtual="changelog_bottom.html" -->'
-
 def print_wiki(db, args):
 	url = ('http://sourceforge.net/tracker/?func=detail&'
                'aid=%s&group_id=71730&atid=')
@@ -107,7 +78,7 @@ def print_wiki(db, args):
                         for artifact in x['categories'][category]:
 				aid = artifact['artifact_id']
                                 aurl = curl % (aid)
-                                if artifact['status'] != 'Closed': continue
+                                if artifact['status'] != 'Closed' and artifact['resolution'] not in close_resolutions: continue
                                 a += ' * [%s %s] - %s\n' % (aurl, aid,
 							artifact['summary'])
                         if a != '':
