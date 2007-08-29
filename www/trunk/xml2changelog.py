@@ -54,7 +54,7 @@ def print_text(db, args):
 			c = ' ' + category + '\n'
 			a = ''
 			for artifact in x['categories'][category]:
-				if artifact['status'] != 'Closed' and artifact['resolution'] not in close_resolutions: continue
+				if artifact['status'] != 'Closed' or artifact['resolution'] not in close_resolutions: continue
 				a += '   %s - %s\n' % (artifact['artifact_id'],
 						     artifact['summary'])
 			if a != '':
@@ -78,7 +78,7 @@ def print_wiki(db, args):
                         for artifact in x['categories'][category]:
 				aid = artifact['artifact_id']
                                 aurl = curl % (aid)
-                                if artifact['status'] != 'Closed' and artifact['resolution'] not in close_resolutions: continue
+                                if artifact['status'] != 'Closed' or artifact['resolution'] not in close_resolutions: continue
                                 a += ' * [%s %s] - %s\n' % (aurl, aid,
 							artifact['summary'])
                         if a != '':
