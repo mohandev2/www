@@ -47,7 +47,7 @@ trackers = { 'Bugs': '532251', 'Feature Requests': '532254' }
 # rules for parsing html
 rules = {
 'artifact_id': r'.*<h2>\[ ([0-9]+) \].*',
-'submitted_by': r'.*<b>Submitted By:</b>\s+<br>\s+([A-Za-z_, -]+) - <a.*',
+'submitted_by': r'.*<b>Submitted By:</b>\s+<br>\s+([A-Za-z_, -/]+) - [n<].*',
 'assigned_to': r'.*<b>Assigned To: <a .*?</a></b>\s+<br>\s+([A-Za-z_ -]+[a-z]).*',
 'status': r'.*<b>Status: <a .*?</a></b>\s+<br>\s+([A-Z][a-z]+)\s+.*',
 'resolution': r'.*<b>Resolution: <a .*?</a></b>\s+<br>\s+([A-Z][a-z]+)\s+.*',
@@ -111,7 +111,11 @@ for x in trackers.keys():
 		for rule in rules.keys():
 			cre = re.compile(rules[rule], re.MULTILINE | re.DOTALL)
         		match = cre.match(htmldoc)
-			xmlfile.write('<field name="%s">%s</field>\n' % (rule, match.groups()[0]))				
+			try:
+				xmlfile.write('<field name="%s">%s</field>\n' % (rule, match.groups()[0]))
+			except:
+				print rule
+				raise
 		xmlfile.write('</artifact>\n')	
 
 xmlfile.write('</artifacts>\n</project_export>\n')
