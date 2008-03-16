@@ -43,14 +43,14 @@ options, args = optsparser.parse_args()
 # Get username and password
 username = options.user
 if not username:
-	if os.environ.has_key('SFUID'):
-		username = os.environ['SFUID']
-	else:
-		username = raw_input('Enter your SourceForge username: ')
+    if os.environ.has_key('SFUID'):
+        username = os.environ['SFUID']
+    else:
+        username = raw_input('Enter your SourceForge username: ')
 
 password = options.password
 if not password:
-	password = getpass('Enter password for \'%s\': ' % username)
+    password = getpass('Enter password for \'%s\': ' % username)
 
 # Login to sourceforge
 print 'Logging into SourceForge...'
@@ -71,9 +71,9 @@ print 'Reading XML...'
 response = br.open(xml_url)
 xml = response.read()
 if len(xml) < 250:
-	print 'Unauthorized login or download corrupted. Nothing was saved.'
-	sys.exit(-1)
-	
+    print 'Unauthorized login or download corrupted. Nothing was saved.'
+    sys.exit(-1)
+
 # Save file
 xmlfile = open(options.xmlfile, 'w')
 xmlfile.write(xml)

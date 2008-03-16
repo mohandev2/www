@@ -14,7 +14,7 @@ Navigate to the bugs and features pages for the project
 capturing all bugs and features closed for a specific release.
 
 Author(s):
-        Renier Morales <renierm@users.sf.net>
+    Renier Morales <renierm@users.sf.net>
 """
 import sys, os, time
 from optparse import OptionParser
@@ -36,9 +36,9 @@ optsparser.add_option('-s',
                       default='Closed')
 options, args = optsparser.parse_args()
 if len(args) != 1:
-        print 'Did not get a release level (e.g. %s 2.6.0).' % sys.argv[0]
-        optsparser.print_help()
-        sys.exit()
+    print 'Did not get a release level (e.g. %s 2.6.0).' % sys.argv[0]
+    optsparser.print_help()
+    sys.exit()
 
 z = 2
 status = options.status
@@ -69,54 +69,54 @@ br.clear_history()
 br.set_handle_robots(False) # don't pay attention to robots.txt
 
 for x in trackers.keys():
-	links = []
-	# Go to page and set to browse specific state and release
-	print 'Going to %s tracker' % x
-	response = br.open(url + trackers[x])
-	br.select_form(name='tracker_browse')
-	print 'Looking for %s %s for %s release' % (status, x, args[0])
-	control = br.find_control('_status', type='select')
-	for item in control.items:
-		if item.attrs['contents'] == status: break
-	else:
-		print '%s state does not exist!' % status
-		break	
-	br['_status'] = [item.name]
-	
-	control = br.find_control('_group', type='select')
-	for item in control.items:
-		if item.attrs['contents'] == args[0]: break
-	else:
-		print 'None found, moving on.'
-		continue
-	br['_group'] = [item.name]
-	
-	time.sleep(z) # Don't get blocked by SF for scraping
-	response = br.submit()
-	
-	# For each page of results, go to each bug/feature and get info
-	print 'Getting links'
-	for link in br.links(url_regex="func=detail"):
-		links.append(link)
-	
-	print 'Parsing %s pages' % x
-	
-	for link in links:
-		time.sleep(z)
-		response = br.follow_link(link)
-		# scrape the webpage.
-		htmldoc = response.read()
-		xmlfile.write('<artifact>\n')
-		xmlfile.write('<field name="artifact_type">%s</field>\n' % x)
-		for rule in rules.keys():
-			cre = re.compile(rules[rule], re.MULTILINE | re.DOTALL)
-        		match = cre.match(htmldoc)
-			try:
-				xmlfile.write('<field name="%s">%s</field>\n' % (rule, match.groups()[0]))
-			except:
-				print rule
-				raise
-		xmlfile.write('</artifact>\n')	
+    links = []
+    # Go to page and set to browse specific state and release
+    print 'Going to %s tracker' % x
+    response = br.open(url + trackers[x])
+    br.select_form(name='tracker_browse')
+    print 'Looking for %s %s for %s release' % (status, x, args[0])
+    control = br.find_control('_status', type='select')
+    for item in control.items:
+        if item.attrs['contents'] == status: break
+    else:
+        print '%s state does not exist!' % status
+        break	
+    br['_status'] = [item.name]
+
+    control = br.find_control('_group', type='select')
+    for item in control.items:
+        if item.attrs['contents'] == args[0]: break
+    else:
+        print 'None found, moving on.'
+        continue
+    br['_group'] = [item.name]
+
+    time.sleep(z) # Don't get blocked by SF for scraping
+    response = br.submit()
+
+    # For each page of results, go to each bug/feature and get info
+    print 'Getting links'
+    for link in br.links(url_regex="func=detail"):
+        links.append(link)
+
+    print 'Parsing %s pages' % x
+
+    for link in links:
+        time.sleep(z)
+        response = br.follow_link(link)
+        # scrape the webpage.
+        htmldoc = response.read()
+        xmlfile.write('<artifact>\n')
+        xmlfile.write('<field name="artifact_type">%s</field>\n' % x)
+        for rule in rules.keys():
+            cre = re.compile(rules[rule], re.MULTILINE | re.DOTALL)
+            match = cre.match(htmldoc)
+            try:
+                xmlfile.write('<field name="%s">%s</field>\n' % (rule, match.groups()[0]))
+            except:
+                print rule
+                raise
+        xmlfile.write('</artifact>\n')	
 
 xmlfile.write('</artifacts>\n</project_export>\n')
 xmlfile.close()
