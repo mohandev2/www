@@ -54,8 +54,8 @@ print 'Going to wiki...'
 response = br.open('http://www.openhpi.org/Status/OpenhpiBugsFeatures?action=login')
 br.select_form(nr=2) # The form we want is the third one
 br['name'] = options.user or raw_input('Enter your username: ')
-br['password'] = options.password or getpass('Enter password for \'%s\': ' %
-					     br['name'])
+br['password'] = options.password or \
+    getpass('Enter password for \'%s\': ' % br['name'])
 print 'Loggin in...'
 time.sleep(z) # Be nice to the website
 response = br.submit()
