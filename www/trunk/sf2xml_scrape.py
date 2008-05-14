@@ -53,7 +53,7 @@ rules = {
 'resolution': r'.*<b>Resolution: <a .*?</a></b>\s+<br>\s+([A-Z][a-z]+)\s+.*',
 'summary': r'.*<h2>\[ [0-9]+ \] (.*?)</h2>.*',
 'open_date': r'.*<b>Date Submitted:</b>\s+<br>\s+([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2})\s+.*',
-'category': r'.*<b>Category: <a .*?</a></b>\s+<br>\s+<!-- google_ad_section_start -->([A-Za-z ]+)<!-- google_ad_section_end -->\s+.*',
+'category': r'.*<b>Category: <a .*?</a></b>\s+<br>\s+<!-- google_ad_section_start -->([A-Za-z -]+)<!-- google_ad_section_end -->\s+.*',
 'artifact_group_id': r'.*<b>Group: <a .*?</a></b>\s+<br>\s+([0-9\.]+)\s+.*'
 }
 
