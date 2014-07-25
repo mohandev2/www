@@ -6,7 +6,7 @@
 # file and program are licensed under a BSD style license. See
 # the Copying file included with the OpenHPI distribution for
 # full licensing terms.
-#
+# 
 """
 This will parse the SF XML export file and create a
 structure containing the tracker data which can be used
@@ -14,7 +14,9 @@ by other programs.
 
 Author(s):
         Renier Morales <renierm@users.sf.net>
-"""
+        Shyamala Hirepatt <shyamala.hirepatt@hp.com>
+        Mohan Devarajulu <mohan@fc.hp.com>
+"""     
 from xml.sax import make_parser, handler, SAXException
 
 class ParseSFExport(handler.ContentHandler):
@@ -55,7 +57,7 @@ class ParseSFExport(handler.ContentHandler):
         artifact = self._artifact
         db = self._db
         if tagname != 'artifact' or artifact == None: return
-        if (artifact['artifact_group_id'] not in self._releases or        	    
+        if (artifact['Milestone'] not in self._releases or        	    
             artifact['artifact_type'] not in self._trackers.keys()):
             del artifact
             self._artifact = None
@@ -64,10 +66,10 @@ class ParseSFExport(handler.ContentHandler):
         tpos = self._trackers[artifact['artifact_type']]
         categories = db[tpos]['categories']
 
-        if not categories.has_key(artifact['category']):
-            categories[artifact['category']] = []
+        if not categories.has_key(artifact['Labels']):
+            categories[artifact['Labels']] = []
 
-        categories[artifact['category']].append(artifact)
+        categories[str(artifact['Labels'])].append(artifact)
         self._artifact = None
 
 def get_data(xmlfile, releases, titles=None):

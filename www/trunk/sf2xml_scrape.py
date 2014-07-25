@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # (C) Copyright IBM Corp. 2006
-#
+# 
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. This
@@ -15,10 +15,13 @@ capturing all bugs and features closed for a specific release.
 
 Author(s):
     Renier Morales <renierm@users.sf.net>
+    Shyamala Hirepatt <shyamala.hirepatt@hp.com>
+    Mohan Devarajulu <mohan@fc.hp.com>
 """
 import sys, os, time
 from optparse import OptionParser
 from mechanize import Browser
+from BeautifulSoup import BeautifulSoup
 import re
 
 # options parsing
@@ -29,11 +32,6 @@ optsparser.add_option('-o',
 		      dest='xmlfile',
 		      help='Save the xml export to this file '
 			   '[default: %default]')
-optsparser.add_option('-s',
-		      '--status',
-		      dest='status',
-                      help='Artifact status to filter on [default: %default]',
-                      default='Closed')
 options, args = optsparser.parse_args()
 if len(args) != 1:
     print 'Did not get a release level (e.g. %s 2.6.0).' % sys.argv[0]
@@ -41,82 +39,105 @@ if len(args) != 1:
     sys.exit()
 
 z = 2
-status = options.status
-trackers = { 'Bugs': '532251', 'Feature Requests': '532254' }
-
-# rules for parsing html
-rules = {
-'artifact_id': r'.*<h2>\[ ([0-9]+) \].*',
-'submitted_by': r'.*<b>Submitted By:</b>\s+<br>\s+([A-Za-z_, -/]+) - [n<].*',
-'assigned_to': r'.*<b>Assigned To: <a .*?</a></b>\s+<br>\s+([A-Za-z_ -]+[a-z]).*',
-'status': r'.*<b>Status: <a .*?</a></b>\s+<br>\s+([A-Z][a-z]+)\s+.*',
-'resolution': r'.*<b>Resolution: <a .*?</a></b>\s+<br>\s+([A-Z][a-z]+)\s+.*',
-'summary': r'.*<h2>\[ [0-9]+ \] (.*?)</h2>.*',
-'open_date': r'.*<b>Date Submitted:</b>\s+<br>\s+([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2})\s+.*',
-'category': r'.*<b>Category: <a .*?</a></b>\s+<br>\s+<!-- google_ad_section_start -->([A-Za-z -]+)<!-- google_ad_section_end -->\s+.*',
-'artifact_group_id': r'.*<b>Group: <a .*?</a></b>\s+<br>\s+([0-9\.]+)\s+.*'
-}
+trackers = { 'Bugs': 'bugs/', 'Feature Requests': 'feature-requests/' }
+list = ['Ticket Number', 'Summary'];
 
 # output will be written in xml format following SF's export file format
 xmlfile = open(options.xmlfile, 'w')
 xmlfile.write("<?xml version='1.0' encoding='ISO-8859-1'?>\n")
-xmlfile.write('<!DOCTYPE project_export SYSTEM "http://sourceforge.net/export/sf_project_export_0.1.dtd">\n')
-xmlfile.write('<project_export>\n<artifacts>\n')
+xmlfile.write('<project_export>\n\n<artifacts>\n\n')
 
-url = 'http://sourceforge.net/tracker/?group_id=71730&atid='
+url = 'http://sourceforge.net/p/openhpi/'
 br = Browser()
 br.clear_history()
 br.set_handle_robots(False) # don't pay attention to robots.txt
 
 for x in trackers.keys():
-    links = []
+    rows = []
     # Go to page and set to browse specific state and release
     print 'Going to %s tracker' % x
     response = br.open(url + trackers[x])
-    br.select_form(name='tracker_browse')
-    print 'Looking for %s %s for %s release' % (status, x, args[0])
-    control = br.find_control('_status', type='select')
-    for item in control.items:
-        if item.attrs['contents'] == status: break
-    else:
-        print '%s state does not exist!' % status
-        break	
-    br['_status'] = [item.name]
+    html = response.read()
+    soup = BeautifulSoup(html)
+    for href in soup.findAll('a'):
+        if href.text == "Closed Tickets":
+            closed_tickets = href.get('href')
+            break
 
-    control = br.find_control('_group', type='select')
-    for item in control.items:
-        if item.attrs['contents'] == args[0]: break
-    else:
-        print 'None found, moving on.'
-        continue
-    br['_group'] = [item.name]
+    url1 = 'http://sourceforge.net' + closed_tickets + "&limit=250"
+    response = br.open(url1)
+    html = response.read()
+    soup = BeautifulSoup(html)
+    ticket_table = soup.find('table', {'class': 'ticket-list'})
 
-    time.sleep(z) # Don't get blocked by SF for scraping
-    response = br.submit()
+    print 'Getting %s Milestone Closed %s' % (args[0], x)
+    for row in ticket_table.findAll('tr')[1:]:
+        for col in row.findAll('td'):
+            if col.text == args[0]:
+                rows.append(row)
+    if not rows:
+        print 'There are no Closed %s for Release %s' % (x, args[0])
+        continue        
 
-    # For each page of results, go to each bug/feature and get info
-    print 'Getting links'
-    for link in br.links(url_regex="func=detail"):
-        links.append(link)
-
-    print 'Parsing %s pages' % x
-
-    for link in links:
-        time.sleep(z)
-        response = br.follow_link(link)
-        # scrape the webpage.
-        htmldoc = response.read()
+    list_len = len(list)
+    for row in rows:
+        i = 0
         xmlfile.write('<artifact>\n')
-        xmlfile.write('<field name="artifact_type">%s</field>\n' % x)
-        for rule in rules.keys():
-            cre = re.compile(rules[rule], re.MULTILINE | re.DOTALL)
-            match = cre.match(htmldoc)
-            try:
-                xmlfile.write('<field name="%s">%s</field>\n' % (rule, match.groups()[0]))
-            except:
-                print rule
-                raise
-        xmlfile.write('</artifact>\n')	
+        xmlfile.write('\t<field name="artifact_type">%s</field>\n' % x)
+        for col in row.findAll('td'):
+            xmlfile.write('\t<field name="%s">%s</field>\n' % (list[i], col.text))
+            if list[i] == "Ticket Number":
+                url2 = url + trackers[x] + col.text
+            i = i + 1
+            if i >= list_len:
+                break
+        response = br.open(url2)
+        html = response.read()
+        soup = BeautifulSoup(html)
+        divs = soup.findAll('div', {'class': 'grid-20 pad'})
+        for div in divs:
+            grids = div.find('div', {'class': 'view_holder'})
+            for grid in grids.findAll('div'):
+                mylist = grid.text.split(':')
+                if mylist[0] != "":
+                    if mylist[0] == "Labels":
+                        mylist[1] = mylist[1].split(" (")[0]
+                    xmlfile.write('\t<field name="%s">%s</field>\n' % (mylist[0], mylist[1]))
+            ticket_content = div.find('div', {'id': 'ticket_content'})
+            xmlfile.write('\t<field name="%s">' % "Details")
+            lines = 0
+            for p in ticket_content.findAll('p'):
+                lines = lines + 1
+                if lines > 1:
+                    xmlfile.write('\n\t\t\t      ')
+                xmlfile.write('%s' % str(p.text.encode('utf-8')))
+            xmlfile.write('</field>\n')
+            discussion = div.find('div', {'id': 'discussion_holder'})
+            xmlfile.write('\t<field name="%s">\n' % discussion.h2.text)
+            comment = discussion.find('div', {'id': 'comment'})
+            for discussion in comment.findAll('div', {'class': 'discussion-post'}):
+                xmlfile.write('<message>\n')
+                for small in discussion.findAll('small'):
+                    try:
+                        xmlfile.write('\t\t<field name="%s">%s</field>\n' % ("mod_by", small.a.text))
+                    except:
+                        xmlfile.write('\t\t<field name="%s">%s</field>\n' % ("entry_date",  small.text))
+                for display_post in discussion.findAll('div', {'class': 'display_post'}):
+                    xmlfile.write('\t\t<field name="%s">' % "content")
+                    lines = 0
+                    for li in display_post.findAll('li'):
+                        content = li.text
+                        content = content.replace('--&gt;', '-->')
+                        lines = lines + 1
+                        if lines > 1:
+                            xmlfile.write('\n\t\t\t\t      ')
+                        xmlfile.write('%s' % content) 
+                    for p in display_post.findAll('p'):
+                        xmlfile.write('%s' % p.text) 
+                    xmlfile.write('</field>\n')
+                xmlfile.write('</message>\n')
+            xmlfile.write('</field>\n')
+            xmlfile.write('</artifact>\n') 
 
 xmlfile.write('</artifacts>\n</project_export>\n')
 xmlfile.close()
