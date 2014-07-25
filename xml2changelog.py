@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # (C) Copyright IBM Corp. 2006
-#
+# 
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. This
@@ -10,16 +10,20 @@
 # full licensing terms.
 #
 """
-This will parse the SF XML export file and print the changelog
+This will parse the SF XML export file and print the changelog 
 for the specified version level.
 
 Author(s):
         Renier Morales <renierm@users.sf.net>
+        Shyamala Hirepatt <shyamala.hirepatt@hp.com>
+        Mohan Devarajulu <mohan@fc.hp.com>
 """
 import sys
 from optparse import OptionParser
 import sf2xml_parser
 
+#import pdb
+#pdb.set_trace()
 # Parse options
 optsparser = OptionParser(usage='%prog [options] <release>')
 optsparser.add_option('-w',
@@ -40,7 +44,7 @@ if len(args) != 1:
     optsparser.print_help()
     sys.exit()
 
-close_resolutions = ['Accepted', 'Fixed', 'None', 'Remind']
+close_resolutions = ['closed-accepted', 'closed', 'closed-fixed', 'closed-remind']
 
 def print_text(db, args):
     print 'Changelog for %s' % args[0]
@@ -54,11 +58,11 @@ def print_text(db, args):
             c = ' ' + category + '\n'
             a = ''
             for artifact in x['categories'][category]:
-                if (artifact['status'] != 'Closed' or
-                    artifact['resolution'] not in close_resolutions):
+                    #artifact['resolution'] not in close_resolutions):
+                if (artifact['Status'] != 'closed-fixed'):
                     continue
                 a += '   %s - %s\n' % \
-                    (artifact['artifact_id'], artifact['summary'])
+                    (artifact['Ticket Number'], artifact['Summary'])
             
             if a != '':
                 print c + a,
@@ -66,26 +70,28 @@ def print_text(db, args):
         print ''
 
 def print_wiki(db, args):
-    url = ('http://sourceforge.net/tracker/?func=detail&'
-           'aid=%s&group_id=71730&atid=')
+    url = ('http://sourceforge.net/p/openhpi/')
 
     print '== Changelog for %s ==' % args[0]
     for x in db:
         if len(x['categories']) == 0: continue
         print '===== %s =====' % x['title']
-        curl = url + x['id']
+        if (x['title'] == "New Features"):
+            curl = url + "feature-requests/"
+        else:
+            curl = url + "bugs/"
         categories = x['categories'].keys()
         categories.sort()
         for category in categories:
             c = "'''" + category + "'''\n"
             a = ''
             for artifact in x['categories'][category]:
-                aid = artifact['artifact_id']
-                aurl = curl % (aid)
-                if artifact['status'] != 'Closed' or \
-                   artifact['resolution'] not in close_resolutions: continue
+                aid = artifact['Ticket Number']
+                aurl = curl + (aid)
+                if artifact['Status'] != 'closed-fixed':
+                   continue
                 a += ' * [%s %s] - %s\n' % \
-                    (aurl, aid, artifact['summary'])
+                    (aurl, aid, artifact['Summary'])
             
             if a != '':
                 print c + a,

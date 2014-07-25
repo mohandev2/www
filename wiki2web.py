@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # (C) Copyright IBM Corp. 2006
-#
+# 
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. This
@@ -14,7 +14,9 @@ Get parsed data from SourceForge tracker in wiki format. Then, post that
 to the wiki on http://www.openhpi.org/Status/OpenhpiBugsFeatures
 
 Author(s):
-	Renier Morales <renier@openhpi.org>
+        Renier Morales <renier@openhpi.org>
+        Shyamala Hirepatt <shyamala.hirepatt@hp.com>
+        Mohan Devarajulu <mohan@fc.hp.com>
 """
 import sys, time
 from mechanize import Browser

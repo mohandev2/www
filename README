@@ -1,0 +1,132 @@
+This directory is used in the release process. Release steps are given at
+http://openhpi.org/OpenHPI/ReleaseSteps
+
+During June 2013, sourceforge moved to a new platform and it changed many things.
+One key thing was bug/feature numbers were changed from system wide to project wide. Every
+project had numbers starting from 1. The old bug numbers which were 7 digits got mapped to 
+1,2,3 or 4 digit bug numbers. Old bug numbers mentioned in the old releases are not visible 
+easily.  
+
+Only bug numbers(bn) are needed in the new system to reach the bugs page at
+https://sourceforge.net/p/openhpi/bugs/"bn"/ (Ex. "bn" = 1800). Older sourceforge needed
+group_id(gid) and sub id (pid) also. (Ex. bn=3614068, gid=71730, pid=532251 for 
+http://sourceforge.net/tracker/?func=detail&aid="bn"&group_id="gid"&atid="pid" )
+
+Old to new bug/feature numbers mapping files were created and those files are placed
+in this directory for easy cross-reference of bugs/features checkedin during the 
+legacy releases. 
+
+Python scripts Execution:
+========================
+
+Dependency Packages:
+--------------------
+There are two dependency Python library packages(mechanize and beautifulsoup) need to be installed. 
+These packages are specific to OS(RHEL/SUSE/CentOS etc), specific to OS bit(64-bit/32-bit). 
+They can be downloaded from 'http://rpm.pbone.net/'.
+Ex:
+python-mechanize-0.2.5-1.el6.rf.noarch.rpm
+python-BeautifulSoup-3.2.0-1.1.el6.noarch.rpm
+
+Install downloaded rpm packages.
+
+[root@dl380g5-3 Python_scripts]# rpm -ivh python-mechanize-0.2.5-1.el5.rf.noarch.rpm
+warning: python-mechanize-0.2.5-1.el5.rf.noarch.rpm: Header V3 DSA signature: NOKEY, key ID 6b8d79e6
+Preparing...                ########################################### [100%]
+   1:python-mechanize       ########################################### [100%]
+[root@dl380g5-3 Python_scripts]#
+[root@dl380g5-3 Python_scripts]# rpm -ivh python-beautifulsoup-3.2.0-1.el5.rf.noarch.rpm
+warning: python-beautifulsoup-3.2.0-1.el5.rf.noarch.rpm: Header V3 DSA signature: NOKEY, key ID 6b8d79e6
+Preparing...                ########################################### [100%]
+   1:python-beautifulsoup   ########################################### [100%]
+[root@dl380g5-3 Python_scripts]#
+
+NOTE: If required, need to install other dependency package/s, while installing the above required rpms. 
+It is different for different OS and their releases.
+
+Proxy Setting:
+-------------
+Set http proxy before running the script to avoid error.
+Ex:
+export http_proxy=proxy.loc.company.com:8080
+
+
+Script Usage:
+------------
+1)sf2xml_scrape.py
+  Navigate to the bugs and features pages for the project capturing all bugs and features closed for a specific release.
+
+  ./sf2xml_scrape.py 3.4.0
+  Output: xml_export.xml
+
+2)xml2changelog.py
+  This will parse the SF XML export file and print the changelog for the specified version level.
+  This will execute sf2xml_parser.py to create intermediate .sf2xml_parser.pyc. sf2xml_parser.py parses xml_export.xml and creates a
+  file with tracker data. Non need to execute this script directly.
+
+  ./xml2changelog.py 3.4.0
+  Changelog for 3.4.0
+  -------------------
+  [New Features]
+   OpenHPI Daemon
+     697 - Clear text authentication credentials is a security problem
+
+  [Fixed Bugs]
+   HP c-Class Plugin
+     1815 - mutex not unlocked when there is a memory problem
+     1813 - Replace getAllEvents with getAllEventsEx call.
+     1812 - SIGINT(15) is not processed for a long time
+     1810 - RPT is missing when event arrives
+     1809 - Get Powercapconfig fails sometimes
+     1808 - oa_soap does not work with IPV6 addresses
+     1801 - Pulling network cable from Active OA creates OA link status sensor event that never clears.
+   Marshal Library
+     1805 - Fix compiler warnings in the build
+   OpenHPI Daemon
+     1759 - OA_SOAP and ilo2_ribcl plugins require plain text passwords
+   OpenHPI base library
+     1806 - uid_map created as world writable - a security risk
+
+  [root@dl380g8-1 new_python_scripts]# ./xml2changelog.py 3.4.0 -w
+  == Changelog for 3.4.0 ==
+  ===== New Features =====
+  '''OpenHPI Daemon'''
+   * [http://sourceforge.net/p/openhpi/feature-requests/697 697] - Clear text authentication credentials is a security problem
+
+  ===== Fixed Bugs =====
+  '''HP c-Class Plugin'''
+   * [http://sourceforge.net/p/openhpi/bugs/1815 1815] - mutex not unlocked when there is a memory problem
+   * [http://sourceforge.net/p/openhpi/bugs/1813 1813] - Replace getAllEvents with getAllEventsEx call.
+   * [http://sourceforge.net/p/openhpi/bugs/1812 1812] - SIGINT(15) is not processed for a long time
+   * [http://sourceforge.net/p/openhpi/bugs/1810 1810] - RPT is missing when event arrives
+   * [http://sourceforge.net/p/openhpi/bugs/1809 1809] - Get Powercapconfig fails sometimes
+   * [http://sourceforge.net/p/openhpi/bugs/1808 1808] - oa_soap does not work with IPV6 addresses
+   * [http://sourceforge.net/p/openhpi/bugs/1801 1801] - Pulling network cable from Active OA creates OA link status sensor event that never clears.
+  '''Marshal Library'''
+   * [http://sourceforge.net/p/openhpi/bugs/1805 1805] - Fix compiler warnings in the build
+  '''OpenHPI Daemon'''
+   * [http://sourceforge.net/p/openhpi/bugs/1759 1759] - OA_SOAP and ilo2_ribcl plugins require plain text passwords
+  '''OpenHPI base library'''
+   * [http://sourceforge.net/p/openhpi/bugs/1806 1806] - uid_map created as world writable - a security risk
+  
+3)sf2xml_scrape_all_tickets.py
+  Navigate to the bugs and features pages for the project capturing all bugs and features for a specific release.
+  Before running xml2wiki.py script, need to run sf2xml_scrape_all_tickets.py to get xml_export_all.xml file, 
+  which is required as a input to xml2wiki.py script.
+
+  ./sf2xml_scrape_all_tickets.py 3.4.0
+  Output: xml_export_all.xml
+
+4)xml2wiki.py
+  This will parse the SF XML export file and generate a table showing the status of bugs and feature per release in html.
+
+  ./xml2wiki.py 3.4.0 -f xml_export_all.xml > tracker.wiki
+
+5)wiki2web.py
+  Get parsed data from SourceForge tracker in wiki format (tracker.wiki). 
+  Then, post that to the wiki on http://www.openhpi.org/Status/OpenhpiBugsFeatures.
+  
+  ./wiki2web.py
+
+
+NOTE: Files xml_export.xml and xml_export_all.xml are different and they are used for different purposes.

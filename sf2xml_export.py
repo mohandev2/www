@@ -15,6 +15,8 @@ Need to have admin privileges on SF to use this.
 
 Author(s):
         Renier Morales <renierm@users.sf.net>
+        Shyamala Hirepatt <shyamala.hirepatt@hp.com>
+        Mohan Devarajulu <mohan@fc.hp.com>
 """
 import sys, os, time
 from optparse import OptionParser
