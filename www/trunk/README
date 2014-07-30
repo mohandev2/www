@@ -61,8 +61,8 @@ Script Usage:
 
 2)xml2changelog.py
   This will parse the SF XML export file and print the changelog for the specified version level.
-  This will execute sf2xml_parser.py to create intermediate .sf2xml_parser.pyc. sf2xml_parser.py parses xml_export.xml and creates a
-  file with tracker data. Non need to execute this script directly.
+  This will execute sf2xml_parser.py to create intermediate .sf2xml_parser.pyc. sf2xml_parser.py parses xml_export.xml 
+  and creates a file with tracker data. Non need to execute this script directly.
 
   ./xml2changelog.py 3.4.0
   Changelog for 3.4.0
@@ -109,24 +109,14 @@ Script Usage:
   '''OpenHPI base library'''
    * [http://sourceforge.net/p/openhpi/bugs/1806 1806] - uid_map created as world writable - a security risk
   
-3)sf2xml_scrape_all_tickets.py
-  Navigate to the bugs and features pages for the project capturing all bugs and features for a specific release.
-  Before running xml2wiki.py script, need to run sf2xml_scrape_all_tickets.py to get xml_export_all.xml file, 
-  which is required as a input to xml2wiki.py script.
-
-  ./sf2xml_scrape_all_tickets.py 3.4.0
-  Output: xml_export_all.xml
-
-4)xml2wiki.py
+3)xml2wiki.py
   This will parse the SF XML export file and generate a table showing the status of bugs and feature per release in html.
 
-  ./xml2wiki.py 3.4.0 -f xml_export_all.xml > tracker.wiki
+  ./xml2wiki.py 3.4.0 > tracker.wiki
 
-5)wiki2web.py
+4)wiki2web.py
   Get parsed data from SourceForge tracker in wiki format (tracker.wiki). 
   Then, post that to the wiki on http://www.openhpi.org/Status/OpenhpiBugsFeatures.
   
   ./wiki2web.py
 
-
-NOTE: Files xml_export.xml and xml_export_all.xml are different and they are used for different purposes.
