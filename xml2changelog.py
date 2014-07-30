@@ -22,8 +22,6 @@ import sys
 from optparse import OptionParser
 import sf2xml_parser
 
-#import pdb
-#pdb.set_trace()
 # Parse options
 optsparser = OptionParser(usage='%prog [options] <release>')
 optsparser.add_option('-w',
@@ -58,8 +56,7 @@ def print_text(db, args):
             c = ' ' + category + '\n'
             a = ''
             for artifact in x['categories'][category]:
-                    #artifact['resolution'] not in close_resolutions):
-                if (artifact['Status'] != 'closed-fixed'):
+                if (artifact['Status'] not in close_resolutions):
                     continue
                 a += '   %s - %s\n' % \
                     (artifact['Ticket Number'], artifact['Summary'])
@@ -88,7 +85,7 @@ def print_wiki(db, args):
             for artifact in x['categories'][category]:
                 aid = artifact['Ticket Number']
                 aurl = curl + (aid)
-                if artifact['Status'] != 'closed-fixed':
+                if (artifact['Status'] not in close_resolutions):
                    continue
                 a += ' * [%s %s] - %s\n' % \
                     (aurl, aid, artifact['Summary'])

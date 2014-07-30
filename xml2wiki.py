@@ -88,6 +88,5 @@ for release in releases:
                 summary = artifact['Summary']
                 assigned_to = artifact['Owner']
                 status = artifact['Status']
-                #resolution = artifact['resolution']
                 print '||%s %s ||<bgcolor="#eeeeee"> [%s %s] ||<bgcolor="#eeeeee"> %s ||<bgcolor="#eeeeee"> %s ||' % (get_colors(artifact), aid, aurl, summary, assigned_to, status)
 

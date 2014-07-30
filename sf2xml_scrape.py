@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # (C) Copyright IBM Corp. 2006
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. This
@@ -11,17 +11,20 @@
 #
 """
 Navigate to the bugs and features pages for the project
-capturing all bugs and features closed for a specific release.
+capturing all bugs and features for a specific release.
 
 Author(s):
-    Renier Morales <renierm@users.sf.net>
-    Shyamala Hirepatt <shyamala.hirepatt@hp.com>
-    Mohan Devarajulu <mohan@fc.hp.com>
+	Renier Morales <renierm@users.sf.net>
+	Shyamala Hirepatt <shyamala.hirepatt@hp.com>
+	Mohan Devarajulu <mohan@fc.hp.com>
+
 """
 import sys, os, time
 from optparse import OptionParser
 from mechanize import Browser
 from BeautifulSoup import BeautifulSoup
+import urllib2
+from urllib2 import URLError
 import re
 
 # options parsing
@@ -56,27 +59,31 @@ for x in trackers.keys():
     rows = []
     # Go to page and set to browse specific state and release
     print 'Going to %s tracker' % x
-    response = br.open(url + trackers[x])
-    html = response.read()
-    soup = BeautifulSoup(html)
-    for href in soup.findAll('a'):
-        if href.text == "Closed Tickets":
-            closed_tickets = href.get('href')
-            break
+    try:
+        response = br.open(url + trackers[x] + "/milestone/" + args[0] + "/?limit=250")
+    except urllib2.HTTPError:
+	print 'There is no %s release found for %s' % (args[0], x)
+        continue
+    except urllib2.URLError:
+ 	raise	
+    except:
+        print 'There are no %s for the release %s' % (x, args[0])
+        continue
 
-    url1 = 'http://sourceforge.net' + closed_tickets + "&limit=250"
-    response = br.open(url1)
     html = response.read()
     soup = BeautifulSoup(html)
     ticket_table = soup.find('table', {'class': 'ticket-list'})
 
-    print 'Getting %s Milestone Closed %s' % (args[0], x)
+    print 'Getting %s Milestone All %s' % (args[0], x)
+    if not ticket_table:
+        print 'There are no %s for Release %s' % (x, args[0])
+        continue        
     for row in ticket_table.findAll('tr')[1:]:
         for col in row.findAll('td'):
             if col.text == args[0]:
                 rows.append(row)
     if not rows:
-        print 'There are no Closed %s for Release %s' % (x, args[0])
+        print 'There are no %s for Release %s' % (x, args[0])
         continue        
 
     list_len = len(list)
@@ -133,7 +140,7 @@ for x in trackers.keys():
                             xmlfile.write('\n\t\t\t\t      ')
                         xmlfile.write('%s' % content) 
                     for p in display_post.findAll('p'):
-                        xmlfile.write('%s' % p.text) 
+                        xmlfile.write('%s' % str(p.text.encode('utf-8'))) 
                     xmlfile.write('</field>\n')
                 xmlfile.write('</message>\n')
             xmlfile.write('</field>\n')
