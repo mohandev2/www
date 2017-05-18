@@ -50,7 +50,7 @@ xmlfile = open(options.xmlfile, 'w')
 xmlfile.write("<?xml version='1.0' encoding='ISO-8859-1'?>\n")
 xmlfile.write('<project_export>\n\n<artifacts>\n\n')
 
-url = 'http://sourceforge.net/p/openhpi/'
+url = 'https://sourceforge.net/p/openhpi/'
 br = Browser()
 br.clear_history()
 br.set_handle_robots(False) # don't pay attention to robots.txt
@@ -138,7 +138,7 @@ for x in trackers.keys():
                         lines = lines + 1
                         if lines > 1:
                             xmlfile.write('\n\t\t\t\t      ')
-                        xmlfile.write('%s' % content) 
+                        xmlfile.write('%s' % str(content.encode('utf-8'))) 
                     for p in display_post.findAll('p'):
                         xmlfile.write('%s' % str(p.text.encode('utf-8'))) 
                     xmlfile.write('</field>\n')
